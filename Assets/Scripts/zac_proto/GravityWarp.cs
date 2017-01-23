@@ -10,11 +10,13 @@ public class GravityWarp : MonoBehaviour {
 
 	public Transform[] boxes;
 
+	int counter =0;
 	public float thrust;
 
 	public string effected = "Wood";
 	string gravity = "D";
 
+	float keyCool =0f;
 	string lastGravDir;
 	// Use this for initialization
 	void Start () {
@@ -23,7 +25,6 @@ public class GravityWarp : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
 		if(Input.GetKey(KeyCode.Z)&& changeobject > 0.5f){
 			if(effected == "Wood"){
 				effected = "Metal";
@@ -37,27 +38,31 @@ public class GravityWarp : MonoBehaviour {
 		text.text = boxes[0].GetComponent<Rigidbody2D>().velocity.ToString();
 		
 		for (int i = 0; i < boxes.Length; i++) {
-			if(changeGrav > 0.7f){
+			if(changeGrav > 5f && keyCool> 0.3f) {
 				if(boxes[i].CompareTag(effected)){
-					if (Input.GetKey(KeyCode.UpArrow) || boxes[i].GetComponent<boxInfo>().gravity  == 'U') {
+					if (Input.GetKey(KeyCode.UpArrow) && boxes[i].GetComponent<boxInfo>().gravity !='U') {
 						boxes[i].GetComponent<Rigidbody2D> ().gravityScale = -gravityScale;
 						boxes[i].GetComponent<boxInfo>().gravity  = 'U';
-						changeGrav=0f;
+						counter++;
+						keyCool=0f;
 					}
-					if (Input.GetKey (KeyCode.DownArrow) || boxes[i].GetComponent<boxInfo>().gravity  == 'D') {
+					if (Input.GetKey (KeyCode.DownArrow) && boxes[i].GetComponent<boxInfo>().gravity !='D') {
 						boxes[i].GetComponent<Rigidbody2D> ().gravityScale = gravityScale;
 						boxes[i].GetComponent<boxInfo>().gravity  = 'D';
-						changeGrav=0f;
+						counter++;
+						keyCool=0f;
 					}
-					if (Input.GetKey (KeyCode.LeftArrow)) {
+					if (Input.GetKey (KeyCode.LeftArrow)&& boxes[i].GetComponent<boxInfo>().gravity !='R') {
 						boxes[i].GetComponent<Rigidbody2D> ().gravityScale = 0;
 						boxes[i].GetComponent<boxInfo>().gravity  = 'R';
-						changeGrav=0f;
+						counter++;
+						keyCool=0f;
 					}
-					if (Input.GetKey (KeyCode.RightArrow)) {
+					if (Input.GetKey (KeyCode.RightArrow)&& boxes[i].GetComponent<boxInfo>().gravity !='L') {
 						boxes[i].GetComponent<Rigidbody2D> ().gravityScale = 0;
 						boxes[i].GetComponent<boxInfo>().gravity = 'L';
-						changeGrav=0f;
+						counter++;
+						keyCool=0f;
 					}
 					/*if (Input.GetKey (KeyCode.Space)) {
 						if (gravity == "0") {
@@ -71,7 +76,13 @@ public class GravityWarp : MonoBehaviour {
 				}
 			}else{
 				changeGrav+= Time.deltaTime;
+				keyCool += Time.deltaTime;
 			}
+			if( counter>4){
+				counter =0;
+				changeGrav=0f;
+			}
+			
 			if (boxes[i].GetComponent<boxInfo>().gravity == 'L') {
 					boxes[i].GetComponent<Rigidbody2D> ().AddForce(new Vector2(4.0f * thrust, 0));
 			}
