@@ -3,21 +3,15 @@ using UnityEngine.UI;
 
 public class GravityWarp : MonoBehaviour {
 
-	float gravityScale = 4.0f;
+	public float gravityScale = 4.0f;
 
 	public Text text;
 
 	public Transform[] boxes;
 
-	public float thrust;
-
-	string gravity = "D";
+	public static string gravity = "D";
 
 	string lastGravDir;
-	// Use this for initialization
-	void Start () {
-		
-	}
 
 	// Update is called once per frame
 	void Update () {
@@ -31,13 +25,13 @@ public class GravityWarp : MonoBehaviour {
 				boxes[i].GetComponent<Rigidbody2D> ().gravityScale = gravityScale;
 				gravity = "D";
 			}
-			if (Input.GetKey (KeyCode.LeftArrow)) {
-				boxes[i].GetComponent<Rigidbody2D> ().gravityScale = 0;
-				gravity = "R";
-			}
-			if (Input.GetKey (KeyCode.RightArrow)) {
+			if (Input.GetKey (KeyCode.LeftArrow) || gravity == "L") {
 				boxes[i].GetComponent<Rigidbody2D> ().gravityScale = 0;
 				gravity = "L";
+			}
+			if (Input.GetKey (KeyCode.RightArrow) || gravity == "R") {
+				boxes[i].GetComponent<Rigidbody2D> ().gravityScale = 0;
+				gravity = "R";
 			}
 			if (Input.GetKey (KeyCode.Space)) {
 				if (gravity == "0") {
@@ -49,10 +43,10 @@ public class GravityWarp : MonoBehaviour {
 				}
 			}
 			if (gravity == "L") {
-				boxes[i].GetComponent<Rigidbody2D> ().AddForce(new Vector2(4.0f * thrust, 0));
+				boxes[i].GetComponent<Rigidbody2D> ().AddForce(new Vector2(-gravityScale * 9.8f, 0));
 			}
 			if (gravity == "R") {
-				boxes[i].GetComponent<Rigidbody2D> ().AddForce(new Vector2(-4.0f * thrust, 0));
+				boxes[i].GetComponent<Rigidbody2D> ().AddForce(new Vector2(gravityScale * 9.8f, 0));
 			}
 		}
 	}
