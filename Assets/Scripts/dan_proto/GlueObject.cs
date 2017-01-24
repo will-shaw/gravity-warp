@@ -6,7 +6,7 @@ public class GlueObject : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		other.GetComponent<Glue>().gluing();
-		
+		Destroy(gameObject);
 	}
 		
 }

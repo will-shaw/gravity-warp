@@ -10,6 +10,8 @@ public class Glue : MonoBehaviour {
 
 	public float glueTime;
 
+	public Transform glue;
+
 	// Use this for initialization
 	void Start () {
 		glued  = false;
