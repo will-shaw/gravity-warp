@@ -28,11 +28,6 @@ public class Glue : MonoBehaviour {
 		
 	}
 
-	void OnMouseOver(){
-		if(Input.GetMouseButtonDown(0)) {
-			gluing();
-		}
-	}
 
 	public void gluing() {
 		if(glued){
