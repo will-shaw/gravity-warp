@@ -35,59 +35,60 @@ public class GravityWarp2 : MonoBehaviour {
 		}
 		text.text = boxes[0].GetComponent<Rigidbody2D>().velocity.ToString();
 		for (int i = 0; i < boxes.Length; i++) {
-			if(boxes[i].CompareTag(effected)||boxes[i].CompareTag(altEffected)){
-				if (Input.GetKey(KeyCode.UpArrow)) {
-					if(boxes[i].CompareTag(effected)){
-						boxes[i].GetComponent<Rigidbody2D> ().gravityScale = -gravityScale;
-						boxes[i].GetComponent<boxInfo>().gravity  = 'U';
-					}else{
-						boxes[i].GetComponent<Rigidbody2D> ().gravityScale = gravityScale;
-						boxes[i].GetComponent<boxInfo>().gravity  = 'D';
+			if(!(boxes[i].GetComponent<Glue>().isGlued())) {
+				if(boxes[i].CompareTag(effected)||boxes[i].CompareTag(altEffected)){
+					if (Input.GetKey(KeyCode.UpArrow)) {
+						if(boxes[i].CompareTag(effected)){
+							boxes[i].GetComponent<Rigidbody2D> ().gravityScale = -gravityScale;
+							boxes[i].GetComponent<boxInfo>().gravity  = 'U';
+						}else{
+							boxes[i].GetComponent<Rigidbody2D> ().gravityScale = gravityScale;
+							boxes[i].GetComponent<boxInfo>().gravity  = 'D';
+						}
 					}
-				}
-				if (Input.GetKey (KeyCode.DownArrow)) {
-					if(boxes[i].CompareTag(effected)){
-						boxes[i].GetComponent<Rigidbody2D> ().gravityScale = gravityScale;
-						boxes[i].GetComponent<boxInfo>().gravity  = 'D';
-					}else{
-						boxes[i].GetComponent<Rigidbody2D> ().gravityScale = -gravityScale;
-						boxes[i].GetComponent<boxInfo>().gravity  = 'U';
+					if (Input.GetKey (KeyCode.DownArrow)) {
+						if(boxes[i].CompareTag(effected)){
+							boxes[i].GetComponent<Rigidbody2D> ().gravityScale = gravityScale;
+							boxes[i].GetComponent<boxInfo>().gravity  = 'D';
+						}else{
+							boxes[i].GetComponent<Rigidbody2D> ().gravityScale = -gravityScale;
+							boxes[i].GetComponent<boxInfo>().gravity  = 'U';
+						}
 					}
-				}
-				if (Input.GetKey (KeyCode.LeftArrow)) {
-					
-					boxes[i].GetComponent<Rigidbody2D> ().gravityScale = 0;
-					if(boxes[i].CompareTag(effected)){
-						boxes[i].GetComponent<boxInfo>().gravity  = 'R';
-					}else{
-						boxes[i].GetComponent<boxInfo>().gravity  = 'L';
-					}
-				}
-				if (Input.GetKey (KeyCode.RightArrow)) {
-					boxes[i].GetComponent<Rigidbody2D> ().gravityScale = 0;
-					if(boxes[i].CompareTag(effected)){
-						boxes[i].GetComponent<boxInfo>().gravity = 'L';
-					}else{
-						boxes[i].GetComponent<boxInfo>().gravity  = 'R';
-					}
-				}
-				/*if (Input.GetKey (KeyCode.Space)) {
-					if (gravity == "0") {
-						gravity = lastGravDir;
-					} else {
-						lastGravDir = gravity;
-						gravity = "0";
+					if (Input.GetKey (KeyCode.LeftArrow)) {
+						
 						boxes[i].GetComponent<Rigidbody2D> ().gravityScale = 0;
+						if(boxes[i].CompareTag(effected)){
+							boxes[i].GetComponent<boxInfo>().gravity  = 'R';
+						}else{
+							boxes[i].GetComponent<boxInfo>().gravity  = 'L';
+						}
 					}
-				}*/
+					if (Input.GetKey (KeyCode.RightArrow)) {
+						boxes[i].GetComponent<Rigidbody2D> ().gravityScale = 0;
+						if(boxes[i].CompareTag(effected)){
+							boxes[i].GetComponent<boxInfo>().gravity = 'L';
+						}else{
+							boxes[i].GetComponent<boxInfo>().gravity  = 'R';
+						}
+					}
+					/*if (Input.GetKey (KeyCode.Space)) {
+						if (gravity == "0") {
+							gravity = lastGravDir;
+						} else {
+							lastGravDir = gravity;
+							gravity = "0";
+							boxes[i].GetComponent<Rigidbody2D> ().gravityScale = 0;
+						}
+					}*/
+				}
+				if (boxes[i].GetComponent<boxInfo>().gravity == 'L') {
+						boxes[i].GetComponent<Rigidbody2D> ().AddForce(new Vector2(4.0f * thrust, 0));
+				}
+				if (boxes[i].GetComponent<boxInfo>().gravity  == 'R') {
+					boxes[i].GetComponent<Rigidbody2D> ().AddForce(new Vector2(-4.0f * thrust, 0));
+				}
 			}
-			if (boxes[i].GetComponent<boxInfo>().gravity == 'L') {
-					boxes[i].GetComponent<Rigidbody2D> ().AddForce(new Vector2(4.0f * thrust, 0));
-			}
-			if (boxes[i].GetComponent<boxInfo>().gravity  == 'R') {
-				boxes[i].GetComponent<Rigidbody2D> ().AddForce(new Vector2(-4.0f * thrust, 0));
-			}
-		
 		}
 	}
 }

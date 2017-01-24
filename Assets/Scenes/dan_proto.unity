@@ -241,6 +241,7 @@ GameObject:
   - component: {fileID: 312032840}
   - component: {fileID: 312032839}
   - component: {fileID: 312032842}
+  - component: {fileID: 312032843}
   m_Layer: 0
   m_Name: solid_box
   m_TagString: Untagged
@@ -342,6 +343,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glueTime: 5
+--- !u!114 &312032843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 312032837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85cd2ec9fd3f14de1aa76bc3b20a3254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravity: 0
 --- !u!1 &319632484
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,14 +631,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1158426516}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 949965d392c78334d9fe9d91ef79c3f1, type: 3}
+  m_Script: {fileID: 11500000, guid: 40b1ae1d75716479e9a3472cff621893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 58375664}
+  text: {fileID: 0}
   boxes:
   - {fileID: 1435401837}
   - {fileID: 312032838}
   thrust: 4
+  effected: Wood
+  altEffected: Metal
 --- !u!81 &1158426518
 AudioListener:
   m_ObjectHideFlags: 0
@@ -736,6 +751,7 @@ GameObject:
   - component: {fileID: 1435401839}
   - component: {fileID: 1435401838}
   - component: {fileID: 1435401841}
+  - component: {fileID: 1435401842}
   m_Layer: 0
   m_Name: destructable_box
   m_TagString: Untagged
@@ -837,6 +853,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glueTime: 5
+--- !u!114 &1435401842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1435401836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85cd2ec9fd3f14de1aa76bc3b20a3254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravity: 0
 --- !u!1 &1508453695
 GameObject:
   m_ObjectHideFlags: 0
