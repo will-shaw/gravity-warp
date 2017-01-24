@@ -535,6 +535,7 @@ MonoBehaviour:
   - {fileID: 1698961034}
   - {fileID: 1135236171}
   thrust: 4
+  effected: Wood
 --- !u!1 &1135236170
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,9 +547,10 @@ GameObject:
   - component: {fileID: 1135236174}
   - component: {fileID: 1135236173}
   - component: {fileID: 1135236172}
+  - component: {fileID: 1135236175}
   m_Layer: 0
   m_Name: solid_box
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -635,6 +637,18 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &1135236175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1135236170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85cd2ec9fd3f14de1aa76bc3b20a3254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravity: 0
 --- !u!1 &1563454592
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,9 +724,10 @@ GameObject:
   - component: {fileID: 1698961033}
   - component: {fileID: 1698961032}
   - component: {fileID: 1698961031}
+  - component: {fileID: 1698961035}
   m_Layer: 0
   m_Name: destructable_box
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -799,6 +814,18 @@ Transform:
   m_Father: {fileID: 517967520}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1698961035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1698961030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85cd2ec9fd3f14de1aa76bc3b20a3254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravity: 0
 --- !u!1 &1788908457
 GameObject:
   m_ObjectHideFlags: 0
