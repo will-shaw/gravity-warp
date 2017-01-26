@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114863205052162694}
   m_Layer: 0
   m_Name: destructable_box
-  m_TagString: Wood
+  m_TagString: destructable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

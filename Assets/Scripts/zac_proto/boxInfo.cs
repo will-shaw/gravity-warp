@@ -20,8 +20,8 @@ public class boxInfo : MonoBehaviour {
 			mainWarp.boxes.Remove(gameObject.transform);
 			Destroy(gameObject);
 			}
-		else if(!(other.transform.CompareTag("Untagged"))){
-			Debug.Log(other.transform.GetComponent<Rigidbody2D>().velocity);
+		else if(!(other.transform.CompareTag("Untagged")) && gameObject.CompareTag("destructable")){
+			
 			if(other.transform.GetComponent<Rigidbody2D>().velocity.x >8f){
 				mainWarp.boxes.Remove(gameObject.transform);
 				Destroy(gameObject);
