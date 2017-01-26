@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Metal
   - Wood
+  - Glue
+  - Wall
   layers:
   - Default
   - TransparentFX

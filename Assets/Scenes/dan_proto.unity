@@ -343,7 +343,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glueTime: 5
-  glue: {fileID: 0}
 --- !u!114 &312032843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,6 +417,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &448442735 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4706726621467956, guid: 5ae39f70525404f00bf513c1679780c2,
+    type: 2}
+  m_PrefabInternal: {fileID: 640649429}
 --- !u!1 &615015555
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,11 +495,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4706726621467956, guid: 5ae39f70525404f00bf513c1679780c2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -12.44
+      value: -12.54
       objectReference: {fileID: 0}
     - target: {fileID: 4706726621467956, guid: 5ae39f70525404f00bf513c1679780c2, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 5.5
+      value: 4.86
       objectReference: {fileID: 0}
     - target: {fileID: 4706726621467956, guid: 5ae39f70525404f00bf513c1679780c2, type: 2}
       propertyPath: m_LocalPosition.z
@@ -535,7 +539,8 @@ Prefab:
       propertyPath: m_Size.y
       value: 0.15
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 5ae39f70525404f00bf513c1679780c2, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &657347227
@@ -598,7 +603,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1158426516}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1c61f70e5d534b24bf18b9344e8827f, type: 3}
+  m_Script: {fileID: 11500000, guid: f5188f4478f9046979d4f2f2186874ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 58375664}
@@ -606,7 +611,13 @@ MonoBehaviour:
   - {fileID: 1435401837}
   - {fileID: 312032838}
   thrust: 4
-  effected: Wood
+  glue:
+  - {fileID: 448442735}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  glueCount: 1
 --- !u!81 &1158426518
 AudioListener:
   m_ObjectHideFlags: 0
@@ -831,7 +842,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glueTime: 5
-  glue: {fileID: 0}
 --- !u!114 &1435401842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -948,7 +958,7 @@ GameObject:
   - component: {fileID: 1514489822}
   m_Layer: 0
   m_Name: roof
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1008,7 +1018,7 @@ GameObject:
   - component: {fileID: 2082356015}
   m_Layer: 0
   m_Name: floor
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

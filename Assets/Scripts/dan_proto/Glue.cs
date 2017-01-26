@@ -10,7 +10,6 @@ public class Glue : MonoBehaviour {
 
 	public float glueTime;
 
-	public Transform glue;
 
 	// Use this for initialization
 	void Start () {
@@ -30,15 +29,10 @@ public class Glue : MonoBehaviour {
 
 
 	public void gluing() {
-		if(glued){
-				glued = false;
-				gluedTime = 0;
-				GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-			} else {
-				glued = true;
-				gluedTime = glueTime;
-				GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-			}
+			glued = true;
+			gluedTime = glueTime;
+			GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+			Camera.main.GetComponent<GravityWarpGlue>().changeGlueCount(0);
 	}
 
 
