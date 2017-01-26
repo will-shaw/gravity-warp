@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Metal
   - Wood
+  - box destruct
   layers:
   - Default
   - TransparentFX

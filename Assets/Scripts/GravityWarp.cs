@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+//using System.Collections.Generic;
 
 public class GravityWarp : MonoBehaviour {
 
@@ -7,37 +8,43 @@ public class GravityWarp : MonoBehaviour {
 
 	public Text text;
 
-	public Transform[] boxes;
+	public Transform[] resources;
+
+	 public System.Collections.Generic.List<Transform> boxes = new System.Collections.Generic.List<Transform>();
 
 	public float thrust;
 
+	public int boxSize;
 	string gravity = "D";
 
 	string lastGravDir;
 	// Use this for initialization
 	void Start () {
-		
+		boxSize =2;
+		boxes.Add( Instantiate(resources[0]));
+		boxes.Add(Instantiate(resources[1]));
 	}
 
 	// Update is called once per frame
 	void Update () {
-		text.text = boxes[0].GetComponent<Rigidbody2D>().velocity.ToString();
-		for (int i = 0; i < boxes.Length; i++) {
-			if(!(boxes[i].GetComponent<Glue>().isGlued())) {
+		//for (int i = 0; i < boxes.Capacity; i++) {
+			foreach(Transform box in boxes){
+				//Debug.Log(box.GetComponent<Rigidbody2D>().velocity);
+			if(!(box.GetComponent<Glue>().isGlued())) {
 				if (Input.GetKey(KeyCode.UpArrow) || gravity == "U") {
-					boxes[i].GetComponent<Rigidbody2D> ().gravityScale = -gravityScale;
+					box.GetComponent<Rigidbody2D> ().gravityScale = -gravityScale;
 					gravity = "U";
 				}
 				if (Input.GetKey (KeyCode.DownArrow) || gravity == "D") {
-					boxes[i].GetComponent<Rigidbody2D> ().gravityScale = gravityScale;
+					box.GetComponent<Rigidbody2D> ().gravityScale = gravityScale;
 					gravity = "D";
 				}
 				if (Input.GetKey (KeyCode.LeftArrow)) {
-					boxes[i].GetComponent<Rigidbody2D> ().gravityScale = 0;
+					box.GetComponent<Rigidbody2D> ().gravityScale = 0;
 					gravity = "R";
 				}
 				if (Input.GetKey (KeyCode.RightArrow)) {
-					boxes[i].GetComponent<Rigidbody2D> ().gravityScale = 0;
+					box.GetComponent<Rigidbody2D> ().gravityScale = 0;
 					gravity = "L";
 				}
 				if (Input.GetKey (KeyCode.Space)) {
@@ -46,14 +53,14 @@ public class GravityWarp : MonoBehaviour {
 					} else {
 						lastGravDir = gravity;
 						gravity = "0";
-						boxes[i].GetComponent<Rigidbody2D> ().gravityScale = 0;
+						box.GetComponent<Rigidbody2D> ().gravityScale = 0;
 					}
 				}
 				if (gravity == "L") {
-					boxes[i].GetComponent<Rigidbody2D> ().AddForce(new Vector2(4.0f * thrust, 0));
+					box.GetComponent<Rigidbody2D> ().AddForce(new Vector2(4.0f * thrust, 0));
 				}
 				if (gravity == "R") {
-					boxes[i].GetComponent<Rigidbody2D> ().AddForce(new Vector2(-4.0f * thrust, 0));
+					box.GetComponent<Rigidbody2D> ().AddForce(new Vector2(-4.0f * thrust, 0));
 				}
 			}
 		}
