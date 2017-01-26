@@ -5,8 +5,13 @@ using UnityEngine;
 public class GlueObject : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
-		other.GetComponent<Glue>().gluing();
-		Destroy(gameObject);
+		if(other.gameObject.tag != "Wall") {
+			other.GetComponent<Glue>().gluing();
+			Destroy(gameObject);
+		} else {
+			GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+		}
+		
 	}
 		
 }
