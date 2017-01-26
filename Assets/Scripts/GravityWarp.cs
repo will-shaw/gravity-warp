@@ -20,9 +20,12 @@ public class GravityWarp : MonoBehaviour {
 	string lastGravDir;
 	// Use this for initialization
 	void Start () {
-		boxSize =2;
+		boxSize =3;
 		boxes.Add( Instantiate(resources[0]));
 		boxes.Add(Instantiate(resources[1]));
+		Transform newPlayer = Instantiate(resources[2]);
+		Camera.main.GetComponent<Player>().player = newPlayer;
+		boxes.Add(newPlayer);
 	}
 
 	// Update is called once per frame
