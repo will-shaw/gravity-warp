@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
 
 		
         //player.Translate(new Vector3(Time.deltaTime * speed * movementInput, 0, 0), Space.World);
-        //Camera.main.GetComponent<Transform>().position = new Vector3(player.position.x, player.position.y + 2.54f, -10); // Camera follows the player with specified offset position
+        Camera.main.GetComponent<Transform>().position = new Vector3(player.position.x, player.position.y + 2.54f, -10); // Camera follows the player with specified offset position
         //bg.position = new Vector3(player.position.x * 0.5f, 0, 2); // Camera follows the player with specified offset position
 
         if (Input.GetKey(KeyCode.W) && Time.realtimeSinceStartup > cooldown + 1)
