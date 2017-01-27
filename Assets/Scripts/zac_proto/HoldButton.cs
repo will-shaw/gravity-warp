@@ -9,17 +9,21 @@ public class HoldButton : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		on = true;
-		Debug.Log(true);
-		toggleItemStatus();
+		if(other.gameObject.tag != "Glue") {
+			on = true;
+			Debug.Log(true);
+			toggleItemStatus();
+		}
 	}
 
 	
 	void OnTriggerExit2D(Collider2D other)
 	{
-		on = false;
-		Debug.Log(false);
-		toggleItemStatus();
+		if(other.gameObject.tag != "Glue") {
+			on = false;
+			Debug.Log(false);
+			toggleItemStatus();
+		}
 	}
 
 	void toggleItemStatus() {

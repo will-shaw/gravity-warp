@@ -21,9 +21,10 @@ GameObject:
   - component: {fileID: 4346830989624806}
   - component: {fileID: 212767594371205116}
   - component: {fileID: 61048159646860976}
+  - component: {fileID: 114465169571095872}
   m_Layer: 0
   m_Name: blockingLaser
-  m_TagString: Untagged
+  m_TagString: bl
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,6 +56,20 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1.36, y: 3.01}
+--- !u!114 &114465169571095872
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1262887594444966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 251ca8bc22ef6463493ca0cea1c354a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offSprite: {fileID: 21300000, guid: e87ac093984824a03baf92cfb7df9af0, type: 3}
+  onSprite: {fileID: 21300000, guid: d47d310e0903bfd49a6ff817a881e302, type: 3}
+  on: 0
 --- !u!212 &212767594371205116
 SpriteRenderer:
   m_ObjectHideFlags: 1

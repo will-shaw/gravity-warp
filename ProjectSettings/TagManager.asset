@@ -12,6 +12,7 @@ TagManager:
   - Glue
   - pkl
   - okl
+  - bl
   layers:
   - Default
   - TransparentFX

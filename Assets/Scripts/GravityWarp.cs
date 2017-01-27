@@ -21,7 +21,7 @@ public class GravityWarp : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		boxSize =2;
-		boxes.Add( Instantiate(resources[0]));
+		boxes.Add(Instantiate(resources[0]));
 		boxes.Add(Instantiate(resources[1]));
 	}
 
