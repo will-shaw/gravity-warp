@@ -8,6 +8,10 @@ TagManager:
   - Wood
   - box destruct
   - destructable
+  - Wall
+  - Glue
+  - pkl
+  - okl
   layers:
   - Default
   - TransparentFX

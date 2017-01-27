@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114072294519365542}
   m_Layer: 0
   m_Name: playerKillingLaser
-  m_TagString: Untagged
+  m_TagString: pkl
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67,6 +67,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 251ca8bc22ef6463493ca0cea1c354a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offSprite: {fileID: 21300000, guid: e87ac093984824a03baf92cfb7df9af0, type: 3}
+  onSprite: {fileID: 21300000, guid: d47d310e0903bfd49a6ff817a881e302, type: 3}
+  on: 1
 --- !u!212 &212445936641205700
 SpriteRenderer:
   m_ObjectHideFlags: 1

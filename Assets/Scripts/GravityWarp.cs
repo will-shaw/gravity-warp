@@ -20,12 +20,9 @@ public class GravityWarp : MonoBehaviour {
 	string lastGravDir;
 	// Use this for initialization
 	void Start () {
-		boxSize =3;
+		boxSize =2;
 		boxes.Add( Instantiate(resources[0]));
 		boxes.Add(Instantiate(resources[1]));
-		Transform newPlayer = Instantiate(resources[2]);
-		Camera.main.GetComponent<Player>().player = newPlayer;
-		boxes.Add(newPlayer);
 	}
 
 	// Update is called once per frame
@@ -33,37 +30,39 @@ public class GravityWarp : MonoBehaviour {
 		//for (int i = 0; i < boxes.Capacity; i++) {
 			foreach(Transform box in boxes){
 				//Debug.Log(box.GetComponent<Rigidbody2D>().velocity);
-			if(!(box.GetComponent<Glue>().isGlued())) {
-				if (Input.GetKey(KeyCode.UpArrow) || gravity == "U") {
-					box.GetComponent<Rigidbody2D> ().gravityScale = -gravityScale;
-					gravity = "U";
-				}
-				if (Input.GetKey (KeyCode.DownArrow) || gravity == "D") {
-					box.GetComponent<Rigidbody2D> ().gravityScale = gravityScale;
-					gravity = "D";
-				}
-				if (Input.GetKey (KeyCode.LeftArrow)) {
-					box.GetComponent<Rigidbody2D> ().gravityScale = 0;
-					gravity = "R";
-				}
-				if (Input.GetKey (KeyCode.RightArrow)) {
-					box.GetComponent<Rigidbody2D> ().gravityScale = 0;
-					gravity = "L";
-				}
-				if (Input.GetKey (KeyCode.Space)) {
-					if (gravity == "0") {
-						gravity = lastGravDir;
-					} else {
-						lastGravDir = gravity;
-						gravity = "0";
-						box.GetComponent<Rigidbody2D> ().gravityScale = 0;
+			if(box != null) {
+				if(!(box.GetComponent<Glue>().isGlued())) {
+					if (Input.GetKey(KeyCode.UpArrow) || gravity == "U") {
+						box.GetComponent<Rigidbody2D> ().gravityScale = -gravityScale;
+						gravity = "U";
 					}
-				}
-				if (gravity == "L") {
-					box.GetComponent<Rigidbody2D> ().AddForce(new Vector2(4.0f * thrust, 0));
-				}
-				if (gravity == "R") {
-					box.GetComponent<Rigidbody2D> ().AddForce(new Vector2(-4.0f * thrust, 0));
+					if (Input.GetKey (KeyCode.DownArrow) || gravity == "D") {
+						box.GetComponent<Rigidbody2D> ().gravityScale = gravityScale;
+						gravity = "D";
+					}
+					if (Input.GetKey (KeyCode.LeftArrow)) {
+						box.GetComponent<Rigidbody2D> ().gravityScale = 0;
+						gravity = "R";
+					}
+					if (Input.GetKey (KeyCode.RightArrow)) {
+						box.GetComponent<Rigidbody2D> ().gravityScale = 0;
+						gravity = "L";
+					}
+					if (Input.GetKey (KeyCode.Space)) {
+						if (gravity == "0") {
+							gravity = lastGravDir;
+						} else {
+							lastGravDir = gravity;
+							gravity = "0";
+							box.GetComponent<Rigidbody2D> ().gravityScale = 0;
+						}
+					}
+					if (gravity == "L") {
+						box.GetComponent<Rigidbody2D> ().AddForce(new Vector2(4.0f * thrust, 0));
+					}
+					if (gravity == "R") {
+						box.GetComponent<Rigidbody2D> ().AddForce(new Vector2(-4.0f * thrust, 0));
+					}
 				}
 			}
 		}
