@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/dan_proto.meta
 guid: 8175a8fabcd7d4141bbd1925da5f58bc
 folderAsset: yes
 timeCreated: 1485134521
+=======
+guid: f36e0a11315cb4c4eb86b1b51cac3a2f
+timeCreated: 1485224231
+>>>>>>> will_proto:Assets/Scenes/loading.unity.meta
 licenseType: Free
 DefaultImporter:
   userData: 
