@@ -702,6 +702,7 @@ GameObject:
   - component: {fileID: 971322913}
   - component: {fileID: 971322912}
   - component: {fileID: 971322917}
+  - component: {fileID: 971322918}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -791,6 +792,22 @@ MonoBehaviour:
   bg: {fileID: 297629681}
   player: {fileID: 1330873958}
   speed: 4
+--- !u!114 &971322918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 971322911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5f169270e94a4b409c3d5f15f80bfaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1330873958}
+  levelCenter: {x: 20, y: 12, z: -10}
+  maxZoom: 20
+  minZoom: 5
+  zoomSpeed: 10
 --- !u!1 &1049914943
 GameObject:
   m_ObjectHideFlags: 0
