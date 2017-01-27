@@ -21,22 +21,24 @@ public class boxInfo : MonoBehaviour {
 			Destroy(gameObject);
 			}
 		else if(!(other.transform.CompareTag("Untagged")) && gameObject.CompareTag("destructable")){
-			
-			if(other.transform.GetComponent<Rigidbody2D>().velocity.x >8f){
-				mainWarp.boxes.Remove(gameObject.transform);
-				Destroy(gameObject);
-			}
-			if(other.transform.GetComponent<Rigidbody2D>().velocity.x < -8f){
-				mainWarp.boxes.Remove(gameObject.transform);
-				Destroy(gameObject);
-			}	
-			if(other.transform.GetComponent<Rigidbody2D>().velocity.y >8f){
-				mainWarp.boxes.Remove(gameObject.transform);
-				Destroy(gameObject);
-			}
-			if(other.transform.GetComponent<Rigidbody2D>().velocity.y < -8f){
-				mainWarp.boxes.Remove(gameObject.transform);
-				Destroy(gameObject);
+			if(other.gameObject.tag != "Wall") {
+
+				if(other.transform.GetComponent<Rigidbody2D>().velocity.x >8f){
+					mainWarp.boxes.Remove(gameObject.transform);
+					Destroy(gameObject);
+				}
+				if(other.transform.GetComponent<Rigidbody2D>().velocity.x < -8f){
+					mainWarp.boxes.Remove(gameObject.transform);
+					Destroy(gameObject);
+				}	
+				if(other.transform.GetComponent<Rigidbody2D>().velocity.y >8f){
+					mainWarp.boxes.Remove(gameObject.transform);
+					Destroy(gameObject);
+				}
+				if(other.transform.GetComponent<Rigidbody2D>().velocity.y < -8f){
+					mainWarp.boxes.Remove(gameObject.transform);
+					Destroy(gameObject);
+				}
 			}
 		}
 	}

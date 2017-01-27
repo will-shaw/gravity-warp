@@ -15,7 +15,7 @@ public class GravityWarp : MonoBehaviour {
 	public float thrust;
 
 	public int boxSize;
-	string gravity = "D";
+	public static string gravity = "D";
 
 	string lastGravDir;
 	// Use this for initialization
