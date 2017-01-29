@@ -10,9 +10,9 @@ public class CombinedGravityWarp : MonoBehaviour {
 
 	public Transform[] resources;
 
-	 public System.Collections.Generic.List<Transform> boxes = new System.Collections.Generic.List<Transform>();
+	 public List<Transform> boxes = new List<Transform>();
 
-	 public System.Collections.Generic.List<Transform> glues = new System.Collections.Generic.List<Transform>();
+	 public List<Transform> glues = new List<Transform>();
 
 	public float thrust;
 
@@ -30,6 +30,7 @@ public class CombinedGravityWarp : MonoBehaviour {
 		Transform newPlayer = Instantiate(resources[2]);
 		GetComponent<Player>().player = newPlayer;
 		GetComponent<CameraZoom>().player = newPlayer;
+		GetComponent<CameraTrack>().player = newPlayer;
 		boxes.Add(newPlayer);
 	}
 
