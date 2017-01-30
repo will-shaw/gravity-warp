@@ -765,9 +765,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   levelCenter: {x: -7.87, y: 0.7, z: -10}
-  maxZoom: 10
-  minZoom: 5
+  zoomFar: 10
+  zoomClose: 5
   zoomSpeed: 7
+  trackingDistance: 3
+  trackingSpeed: 6
 --- !u!4 &838564248 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4248294937134146, guid: 535021feb995246d89bb17399ab83863,

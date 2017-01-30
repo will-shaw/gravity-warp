@@ -30,7 +30,6 @@ public class CombinedGravityWarp : MonoBehaviour {
 		Transform newPlayer = Instantiate(resources[2]);
 		GetComponent<Player>().player = newPlayer;
 		GetComponent<CameraZoom>().player = newPlayer;
-		GetComponent<CameraTrack>().player = newPlayer;
 		boxes.Add(newPlayer);
 	}
 

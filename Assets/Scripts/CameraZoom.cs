@@ -13,6 +13,10 @@ public class CameraZoom : MonoBehaviour
     static Vector3 eventCenter; // Centerpoint of event to move to.
     static int move = 0; // State of the movement.
 
+    /* Camera Tracking */
+    public float trackingDistance; // Deadzone distance before triggering movement.
+    public float trackingSpeed; // Speed at which the camera follows.
+
     void Start()
     {
         cam = Camera.main.GetComponent<Transform>();
@@ -21,6 +25,10 @@ public class CameraZoom : MonoBehaviour
 
     void Update()
     {
+        if (GetDistFromCenter(player.position.x, player.position.y) > trackingDistance && Camera.main.orthographicSize == zoomClose)
+        {
+            Move(player.position.x, player.position.y, cam.position.z);
+        }
         // If camera is currently zoomed out, pressing tab should zoom in.
         if (Camera.main.orthographicSize == zoomFar && Input.GetKeyDown(KeyCode.Tab))
         {
@@ -54,7 +62,7 @@ public class CameraZoom : MonoBehaviour
             }
 
             if ((Camera.main.orthographicSize == zoomClose || Camera.main.orthographicSize == zoomFar) &&
-                        ((cam.position.x == player.position.x && cam.position.x == player.position.x) ||
+                        ((cam.position.x == player.position.x && cam.position.y == player.position.y) ||
                         cam.position == levelCenter || cam.position == eventCenter))
             {
                 move = 0;
@@ -73,6 +81,12 @@ public class CameraZoom : MonoBehaviour
         float zoom = Mathf.MoveTowards(Camera.main.orthographicSize, target, zoomSpeed * Time.deltaTime);
 
         Camera.main.orthographicSize = zoom;
+    }
+
+    /* Returns the object distance from the camera center point. */
+    float GetDistFromCenter(float x, float y)
+    {
+        return Mathf.Pow(player.position.x, 2) + Mathf.Pow(player.position.y, 2);
     }
 
     /* Pans the camera to the given position. Really is a Vector3, but
