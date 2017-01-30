@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: efb764e5305c7854ab271c89ce015013
-timeCreated: 1485767281
+guid: f9efa58157031504d8aae86b06d9e59b
+timeCreated: 1485807481
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: ship_set_0
-    21300002: ship_set_1
-    21300004: ship_set_2
-    21300006: ship_set_3
-    21300008: ship_set_4
-    21300010: ship_set_7
-    21300012: ship_set_10
-    21300014: ship_set_11
-    21300016: ship_set_13
-    21300018: ship_set_14
-    21300020: ship_set_15
-    21300022: ship_set_5
-    21300024: ship_set_6
+    21300000: level_set_0
+    21300002: level_set_1
+    21300004: level_set_2
+    21300006: level_set_3
+    21300008: level_set_4
+    21300010: level_set_5
+    21300012: level_set_6
+    21300014: level_set_7
+    21300016: level_set_8
+    21300018: level_set_9
+    21300020: level_set_10
+    21300022: level_set_11
+    21300024: level_set_12
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -91,72 +91,98 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ship_set_0
+      name: level_set_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 741
-        width: 125
-        height: 707
+        x: 1610
+        y: 111
+        width: 243
+        height: 1264
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 3, z: 2, w: 3}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ship_set_1
+      name: level_set_1
+      rect:
+        serializedVersion: 2
+        x: 1881
+        y: 126
+        width: 246
+        height: 1283
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 7, y: 0, z: 7, w: 2}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: level_set_2
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 741
+        width: 123
+        height: 707
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 3, z: 3, w: 2}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: level_set_3
       rect:
         serializedVersion: 2
         x: 162
-        y: 741
+        y: 742
         width: 124
-        height: 707
+        height: 706
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 1, z: 2, w: 1}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ship_set_2
+      name: level_set_4
       rect:
         serializedVersion: 2
         x: 329
         y: 740
         width: 361
-        height: 689
+        height: 690
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 3, z: 2, w: 3}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ship_set_3
+      name: level_set_5
       rect:
         serializedVersion: 2
         x: 756
-        y: 671
+        y: 672
         width: 557
-        height: 771
+        height: 770
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ship_set_4
+      name: level_set_6
       rect:
         serializedVersion: 2
-        x: 1335
+        x: 1333
         y: 1123
-        width: 244
+        width: 247
         height: 252
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 3, z: 4, w: 2}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ship_set_7
+      name: level_set_7
       rect:
         serializedVersion: 2
         x: 1335
@@ -164,38 +190,38 @@ TextureImporter:
         width: 247
         height: 217
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 11, y: 5, z: 9, w: 5}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ship_set_10
+      name: level_set_8
       rect:
         serializedVersion: 2
         x: 22
-        y: 588
+        y: 589
         width: 707
-        height: 123
+        height: 122
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 2, z: 2, w: 2}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ship_set_11
+      name: level_set_9
       rect:
         serializedVersion: 2
-        x: 1173
-        y: 302
-        width: 360
-        height: 362
+        x: 1136
+        y: 335
+        width: 436
+        height: 317
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 4, y: 3, z: 3, w: 3}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ship_set_13
+      name: level_set_10
       rect:
         serializedVersion: 2
         x: 22
@@ -203,57 +229,31 @@ TextureImporter:
         width: 707
         height: 123
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 3, z: 3, w: 3}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ship_set_14
+      name: level_set_11
       rect:
         serializedVersion: 2
         x: 27
-        y: 37
-        width: 1085
-        height: 391
+        y: 38
+        width: 1084
+        height: 390
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ship_set_15
+      name: level_set_12
       rect:
         serializedVersion: 2
         x: 1158
         y: 34
-        width: 394
+        width: 393
         height: 258
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: ship_set_5
-      rect:
-        serializedVersion: 2
-        x: 1612
-        y: 111
-        width: 243
-        height: 1264
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: ship_set_6
-      rect:
-        serializedVersion: 2
-        x: 1882
-        y: 120
-        width: 246
-        height: 1288
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
