@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61227688235004890}
   - component: {fileID: 114682571620076592}
   m_Layer: 0
-  m_Name: button
+  m_Name: pf-button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69,7 +69,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activates:
   - {fileID: 0}
-  active: 0
   toggleable: 0
 --- !u!212 &212424651828351700
 SpriteRenderer:
