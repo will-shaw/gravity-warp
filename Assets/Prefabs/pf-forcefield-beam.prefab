@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4124881192393374}
   - component: {fileID: 212316143659602638}
   - component: {fileID: 61452891380853910}
+  - component: {fileID: 114683814241681502}
   m_Layer: 0
   m_Name: pf-forcefield-beam
   m_TagString: Untagged
@@ -55,6 +56,22 @@ BoxCollider2D:
   m_Offset: {x: -0.09098947, y: 0.007905245}
   serializedVersion: 2
   m_Size: {x: 1.4636533, y: 5.152176}
+--- !u!114 &114683814241681502
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1351011284950344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaa78fe834cdf48fda1ee0c1adddeb1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offSprite: {fileID: 21300004, guid: c2d5474ca6a5a8940815548060442158, type: 3}
+  onSprite: {fileID: 21300000, guid: c2d5474ca6a5a8940815548060442158, type: 3}
+  on: 1
+  objectKilling: 0
+  forceField: 1
 --- !u!212 &212316143659602638
 SpriteRenderer:
   m_ObjectHideFlags: 1

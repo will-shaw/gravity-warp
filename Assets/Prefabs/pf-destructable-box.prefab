@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212794605507598960}
   - component: {fileID: 50974706274746846}
   - component: {fileID: 61599784786201094}
+  - component: {fileID: 114873180094283358}
   m_Layer: 0
   m_Name: pf-destructable-box
   m_TagString: Untagged
@@ -76,6 +77,18 @@ BoxCollider2D:
   m_Offset: {x: 0.0041948557, y: -0.0041947365}
   serializedVersion: 2
   m_Size: {x: 1.8909318, y: 1.8909321}
+--- !u!114 &114873180094283358
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1333829418288276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed42678329f0d4c50b173e3c49ae9232, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glueTime: 5
 --- !u!212 &212794605507598960
 SpriteRenderer:
   m_ObjectHideFlags: 1
