@@ -11,11 +11,9 @@ public class ToggleButton : MonoBehaviour {
 	{
 		if(on){
 			on = false;
-			Debug.Log(false);
 			toggleItemStatus();
 		}else{
 			on = true;
-			Debug.Log(true);
 			toggleItemStatus();
 		}
 	}
