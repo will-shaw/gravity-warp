@@ -32,7 +32,7 @@ public class Glue : MonoBehaviour {
 			glued = true;
 			gluedTime = glueTime;
 			GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-			Camera.main.GetComponent<GravityWarp>().changeGlueCount(0);
+			Camera.main.GetComponent<GlueControl>().changeGlueCount(0);
 	}
 
 
