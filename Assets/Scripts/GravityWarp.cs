@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class GravityWarp : MonoBehaviour {
 
-	float gravityScale = 4.0f;
+	public float gravityScale = 4.0f;
 
 	public Text text;
 
