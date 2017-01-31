@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 1258ac6a30b65b04298a947c674865f8
-timeCreated: 1485766358
+timeCreated: 1485848758
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -103,9 +103,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 21
-        y: 61
+        y: 175
         width: 38
-        height: 166
+        height: 52
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,7 +117,7 @@ TextureImporter:
         serializedVersion: 2
         x: 15
         y: 15
-        width: 164
+        width: 50
         height: 38
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
