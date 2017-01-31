@@ -1,17 +1,17 @@
 fileFormatVersion: 2
 guid: c53544ca5c2f7834d887812af0d7a37b
-timeCreated: 1485766907
+timeCreated: 1485835113
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: door_set_0
-    21300002: door_set_1
+    21300002: door_light_red_left
     21300004: door_set_2
-    21300006: door_set_3
+    21300006: door_light_red_right
     21300008: door_set_4
     21300010: door_set_5
-    21300012: door_set_6
-    21300014: door_set_7
+    21300012: door_light_green_right
+    21300014: door_light_green_left
     21300016: door_set_8
   serializedVersion: 4
   mipmaps:
@@ -95,12 +95,12 @@ TextureImporter:
         width: 194
         height: 1369
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: door_set_1
+      name: door_light_red_left
       rect:
         serializedVersion: 2
         x: 265
@@ -108,7 +108,7 @@ TextureImporter:
         width: 35
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -121,12 +121,12 @@ TextureImporter:
         width: 195
         height: 1368
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: door_set_3
+      name: door_light_red_right
       rect:
         serializedVersion: 2
         x: 265
@@ -134,7 +134,7 @@ TextureImporter:
         width: 35
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -147,7 +147,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -160,12 +160,12 @@ TextureImporter:
         width: 16
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: door_set_6
+      name: door_light_green_right
       rect:
         serializedVersion: 2
         x: 263
@@ -173,12 +173,12 @@ TextureImporter:
         width: 35
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: door_set_7
+      name: door_light_green_left
       rect:
         serializedVersion: 2
         x: 262
@@ -186,7 +186,7 @@ TextureImporter:
         width: 35
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -199,7 +199,7 @@ TextureImporter:
         width: 58
         height: 689
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
