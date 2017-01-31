@@ -10,10 +10,13 @@ public class GlueControl : MonoBehaviour {
 
 	public int glueCount;
 
+	public float spawnRange;
+
 
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetMouseButtonDown(0)) {
+		float distance = Vector2.Distance(Camera.main.GetComponent<Player>().player.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+		if(Input.GetMouseButtonDown(0) && spawnRange > distance) {
 			GravityWarp gw = Camera.main.GetComponent<GravityWarp>();
 			if(glueCount < glueLimit){
 				Transform glueNew;
