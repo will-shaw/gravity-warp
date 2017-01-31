@@ -16,8 +16,6 @@ public class GravityWarp : MonoBehaviour {
 
 	public float thrust;
 
-	public int glueCount;
-
 	string gravity = "D";
 
 	string lastGravDir;
@@ -29,7 +27,7 @@ public class GravityWarp : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		doGravity();
-		if(glueCount > 0) {
+		if(Camera.main.GetComponent<GlueControl>().glueCount > 0) {
 			doGlueGravity();
 		}
 	}
@@ -92,17 +90,5 @@ public class GravityWarp : MonoBehaviour {
 				}
 			}
 		}
-	}
-
-	public void changeGlueCount(int i) {
-		if(i == 0) {
-			glueCount--;
-		} else {
-			glueCount++;
-		}
-	}
-
-	public int getGlueCount() {
-		return glueCount;
 	}
 }

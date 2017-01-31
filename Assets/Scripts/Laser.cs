@@ -13,6 +13,14 @@ public class Laser : MonoBehaviour {
 	public bool objectKilling;
 
 	public bool forceField;
+
+	void Start() {
+		if(on){
+			gameObject.GetComponent<SpriteRenderer>().sprite = onSprite;
+		} else {
+			gameObject.GetComponent<SpriteRenderer>().sprite = offSprite;
+		}
+	}
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if(on){
