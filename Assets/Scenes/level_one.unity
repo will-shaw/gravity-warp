@@ -3556,7 +3556,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4429646857624070, guid: 2a4ef6d8f01b54ef78febeb6b8705dbe, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -9.56
+      value: -9.5
       objectReference: {fileID: 0}
     - target: {fileID: 4429646857624070, guid: 2a4ef6d8f01b54ef78febeb6b8705dbe, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3585,6 +3585,26 @@ Prefab:
     - target: {fileID: 4429646857624070, guid: 2a4ef6d8f01b54ef78febeb6b8705dbe, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198033675625590728, guid: 2a4ef6d8f01b54ef78febeb6b8705dbe,
+        type: 2}
+      propertyPath: randomSeed
+      value: 717612405
+      objectReference: {fileID: 0}
+    - target: {fileID: 198033675625590728, guid: 2a4ef6d8f01b54ef78febeb6b8705dbe,
+        type: 2}
+      propertyPath: ShapeModule.type
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 198033675625590728, guid: 2a4ef6d8f01b54ef78febeb6b8705dbe,
+        type: 2}
+      propertyPath: ShapeModule.boxY
+      value: 0.4078612
+      objectReference: {fileID: 0}
+    - target: {fileID: 198033675625590728, guid: 2a4ef6d8f01b54ef78febeb6b8705dbe,
+        type: 2}
+      propertyPath: ShapeModule.boxZ
+      value: 0.2814123
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2a4ef6d8f01b54ef78febeb6b8705dbe, type: 2}
@@ -3895,7 +3915,6 @@ MonoBehaviour:
   - {fileID: 651565912}
   glues: []
   thrust: 4
-  gravity: D
 --- !u!114 &1985525424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3929,6 +3948,7 @@ MonoBehaviour:
   glueLimit: 6
   glueCount: 0
   spawnRange: 2
+  gluePlace: {fileID: 0}
 --- !u!114 &1985525426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3943,7 +3963,6 @@ MonoBehaviour:
   bg: {fileID: 1462933082}
   player: {fileID: 651565912}
   speed: 2
-  gravity: D
 --- !u!1001 &2041455244
 Prefab:
   m_ObjectHideFlags: 0
