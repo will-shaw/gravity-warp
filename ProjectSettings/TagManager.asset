@@ -15,6 +15,7 @@ TagManager:
   - bl
   - entry_point
   - exit_point
+  - Beam
   layers:
   - Default
   - TransparentFX
