@@ -12,6 +12,8 @@ public class GlueControl : MonoBehaviour {
 
 	public float spawnRange;
 
+	public AudioClip gluePlace;
+
 
 	// Update is called once per frame
 	void Update () {
@@ -23,6 +25,7 @@ public class GlueControl : MonoBehaviour {
 				glueNew = Instantiate(gluePrefab);
 				Vector3 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 				mouse.z = 0;
+				AudioSource.PlayClipAtPoint(gluePlace, mouse);
 				glueNew.position = mouse;
 				glueCount++;
 				gw.glues.Add(glueNew);
