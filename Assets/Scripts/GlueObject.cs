@@ -9,6 +9,7 @@ public class GlueObject : MonoBehaviour
 
     string currGrav;
 
+    GravityWarp gravitywarp;
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag != "Wall")
@@ -34,24 +35,27 @@ public class GlueObject : MonoBehaviour
         }
     }
 
+    void start(){
+        gravitywarp = Camera.main.GetComponent<GravityWarp>();
+    }
     void Update()
     {
-        if (GravityWarp.gravity != currGrav && !stuck)
+        if (gravitywarp.gravity != currGrav && !stuck)
         {
-			currGrav = GravityWarp.gravity;
-            if (GravityWarp.gravity == "U")
+			currGrav = gravitywarp.gravity;
+            if (gravitywarp.gravity == "U")
             {
                 gameObject.transform.Rotate(new Vector3(0, 0, 0));
             }
-            else if (GravityWarp.gravity == "R")
+            else if (gravitywarp.gravity == "R")
             {
                 gameObject.transform.Rotate(new Vector3(0, 0, 90));
             }
-            else if (GravityWarp.gravity == "D")
+            else if (gravitywarp.gravity == "D")
             {
                 gameObject.transform.Rotate(new Vector3(0, 0, 180));
             }
-            else if (GravityWarp.gravity == "L")
+            else if (gravitywarp.gravity == "L")
             {
                 gameObject.transform.Rotate(new Vector3(0, 0, 270));
             }

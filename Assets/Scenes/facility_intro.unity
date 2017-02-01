@@ -569,6 +569,9 @@ GameObject:
   - component: {fileID: 1348518740}
   - component: {fileID: 1348518745}
   - component: {fileID: 1348518746}
+  - component: {fileID: 1348518748}
+  - component: {fileID: 1348518749}
+  - component: {fileID: 1348518747}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -681,6 +684,55 @@ MonoBehaviour:
   - {fileID: 1152773056}
   - {fileID: 1661444857}
   - {fileID: 1541765553}
+--- !u!114 &1348518747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1348518739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dccacf5fb09c64f66a59cbbec6768bbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravityScale: 4
+  text: {fileID: 0}
+  resources: []
+  boxes:
+  - {fileID: 1514391892}
+  glues: []
+  thrust: 4
+  gravity: D
+--- !u!114 &1348518748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1348518739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d75fa720ab619496ca9644d926147fc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gluePrefab: {fileID: 4535306469873588, guid: ee86be60910051d48888721ee5ef233c, type: 2}
+  glueLimit: 0
+  glueCount: 0
+  spawnRange: 0
+--- !u!114 &1348518749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1348518739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb5a5f6e0cac6f740b6f32461eef35f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bg: {fileID: 1165297219}
+  player: {fileID: 1514391892}
+  speed: 3
+  gravity: D
 --- !u!1 &1367922263
 GameObject:
   m_ObjectHideFlags: 0
@@ -758,6 +810,7 @@ GameObject:
   - component: {fileID: 1514391889}
   - component: {fileID: 1514391894}
   - component: {fileID: 1514391893}
+  - component: {fileID: 1514391895}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -788,7 +841,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1514391888}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb5a5f6e0cac6f740b6f32461eef35f8, type: 3}
   m_Name: 
@@ -796,6 +849,7 @@ MonoBehaviour:
   bg: {fileID: 1165297219}
   player: {fileID: 1514391892}
   speed: 2
+  gravity: 
 --- !u!212 &1514391891
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -878,6 +932,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1514391895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1514391888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed42678329f0d4c50b173e3c49ae9232, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glueTime: 3
 --- !u!1 &1524597865
 GameObject:
   m_ObjectHideFlags: 0
