@@ -4,11 +4,13 @@ public class Button : MonoBehaviour
 {
     public Transform[] activates;
     public bool toggleable = true;
+    public bool active = false;
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.GetComponent<GlueObject>() == null)
         {
+            active = true;
 			Activate(1);
         }
     }
@@ -18,6 +20,7 @@ public class Button : MonoBehaviour
         if(!(toggleable)) {
             if (other.gameObject.GetComponent<GlueObject>() == null)
             {
+                active = false;
                 Activate(0);
             }
         }

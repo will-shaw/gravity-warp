@@ -1,18 +1,18 @@
 fileFormatVersion: 2
 guid: c53544ca5c2f7834d887812af0d7a37b
-timeCreated: 1485835113
+timeCreated: 1485926235
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: door_set_0
-    21300002: door_light_red_left
-    21300004: door_set_2
-    21300006: door_light_red_right
-    21300008: door_set_4
+    21300000: door_frame_up
+    21300002: door_light_left
+    21300004: door_frame_down
+    21300006: door_light_right
+    21300008: door_led
     21300010: door_set_5
     21300012: door_light_green_right
     21300014: door_light_green_left
-    21300016: door_set_8
+    21300016: door
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -87,7 +87,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: door_set_0
+      name: door_frame_up
       rect:
         serializedVersion: 2
         x: 6
@@ -100,7 +100,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: door_light_red_left
+      name: door_light_left
       rect:
         serializedVersion: 2
         x: 265
@@ -113,7 +113,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: door_set_2
+      name: door_frame_down
       rect:
         serializedVersion: 2
         x: 354
@@ -126,7 +126,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: door_light_red_right
+      name: door_light_right
       rect:
         serializedVersion: 2
         x: 265
@@ -139,7 +139,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: door_set_4
+      name: door_led
       rect:
         serializedVersion: 2
         x: 265
@@ -152,46 +152,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: door_set_5
-      rect:
-        serializedVersion: 2
-        x: 265
-        y: 911
-        width: 16
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: door_light_green_right
-      rect:
-        serializedVersion: 2
-        x: 263
-        y: 868
-        width: 35
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: door_light_green_left
-      rect:
-        serializedVersion: 2
-        x: 262
-        y: 825
-        width: 35
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: door_set_8
+      name: door
       rect:
         serializedVersion: 2
         x: 252
