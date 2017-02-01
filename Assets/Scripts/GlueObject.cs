@@ -42,22 +42,22 @@ public class GlueObject : MonoBehaviour
     }
     void Update()
     {
-        if (Camera.main.GetComponent<GravityWarp>().gravity != currGrav && !stuck)
+        if (GravityWarp.gravity != currGrav && !stuck)
         {
-			currGrav = Camera.main.GetComponent<GravityWarp>().gravity;
-            if (Camera.main.GetComponent<GravityWarp>().gravity == "U")
+			currGrav = GravityWarp.gravity;
+            if (GravityWarp.gravity == "U")
             {
                 gameObject.transform.Rotate(new Vector3(0, 0, 0));
             }
-            else if (Camera.main.GetComponent<GravityWarp>().gravity == "R")
+            else if (GravityWarp.gravity == "R")
             {
                 gameObject.transform.Rotate(new Vector3(0, 0, 90));
             }
-            else if (Camera.main.GetComponent<GravityWarp>().gravity == "D")
+            else if (GravityWarp.gravity == "D")
             {
                 gameObject.transform.Rotate(new Vector3(0, 0, 180));
             }
-            else if (Camera.main.GetComponent<GravityWarp>().gravity == "L")
+            else if (GravityWarp.gravity == "L")
             {
                 gameObject.transform.Rotate(new Vector3(0, 0, 270));
             }
