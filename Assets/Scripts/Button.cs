@@ -15,9 +15,11 @@ public class Button : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-		if (other.gameObject.GetComponent<GlueObject>() == null)
-        {
-            Activate(0);
+        if(!(toggleable)) {
+            if (other.gameObject.GetComponent<GlueObject>() == null)
+            {
+                Activate(0);
+            }
         }
     }
 
