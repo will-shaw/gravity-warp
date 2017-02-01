@@ -503,7 +503,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 200051135}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -7}
+  m_LocalPosition: {x: -17.7, y: -9.7, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 651565912}
@@ -609,7 +609,7 @@ GameObject:
   - component: {fileID: 290411207}
   m_Layer: 0
   m_Name: button_base
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1018,7 +1018,7 @@ GameObject:
   - component: {fileID: 503067894}
   m_Layer: 0
   m_Name: button_base (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1417,7 +1417,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 651565906}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.86, y: 1.93, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 200051136}
@@ -1713,6 +1713,10 @@ Prefab:
     - target: {fileID: 1858849061245228, guid: 917904f8af7c26c4c8a4124a49cdda7a, type: 2}
       propertyPath: m_Name
       value: button_top_left
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858849061245228, guid: 917904f8af7c26c4c8a4124a49cdda7a, type: 2}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 917904f8af7c26c4c8a4124a49cdda7a, type: 2}
@@ -2045,6 +2049,10 @@ Prefab:
       propertyPath: m_Name
       value: button_top_right
       objectReference: {fileID: 0}
+    - target: {fileID: 1858849061245228, guid: 917904f8af7c26c4c8a4124a49cdda7a, type: 2}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 917904f8af7c26c4c8a4124a49cdda7a, type: 2}
   m_IsPrefabParent: 0
@@ -2114,7 +2122,7 @@ GameObject:
   - component: {fileID: 1134289927}
   m_Layer: 0
   m_Name: button_base (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2297,7 +2305,7 @@ GameObject:
   - component: {fileID: 1233413179}
   m_Layer: 0
   m_Name: button_base
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2408,6 +2416,10 @@ Prefab:
       propertyPath: activates.Array.data[1]
       value: 
       objectReference: {fileID: 709279727}
+    - target: {fileID: 1858849061245228, guid: 917904f8af7c26c4c8a4124a49cdda7a, type: 2}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 917904f8af7c26c4c8a4124a49cdda7a, type: 2}
   m_IsPrefabParent: 0
@@ -2513,6 +2525,10 @@ Prefab:
     - target: {fileID: 4789459780330420, guid: b1bbfa63ee3f36543a7119f3f6793136, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1459530071490090, guid: b1bbfa63ee3f36543a7119f3f6793136, type: 2}
+      propertyPath: m_TagString
+      value: Beam
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b1bbfa63ee3f36543a7119f3f6793136, type: 2}
@@ -2689,6 +2705,10 @@ Prefab:
       propertyPath: activates.Array.data[0]
       value: 
       objectReference: {fileID: 1963027094}
+    - target: {fileID: 1858849061245228, guid: 917904f8af7c26c4c8a4124a49cdda7a, type: 2}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 917904f8af7c26c4c8a4124a49cdda7a, type: 2}
   m_IsPrefabParent: 0
@@ -2890,6 +2910,10 @@ Prefab:
       propertyPath: activates.Array.data[0]
       value: 
       objectReference: {fileID: 1963027094}
+    - target: {fileID: 1858849061245228, guid: 917904f8af7c26c4c8a4124a49cdda7a, type: 2}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 917904f8af7c26c4c8a4124a49cdda7a, type: 2}
   m_IsPrefabParent: 0
@@ -2979,7 +3003,7 @@ GameObject:
   - component: {fileID: 1778169172}
   m_Layer: 0
   m_Name: button_base (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3460,7 +3484,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1985525417}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -16.14, y: -7.68, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3477,15 +3501,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dccacf5fb09c64f66a59cbbec6768bbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 651565912}
   gravityScale: 4
   text: {fileID: 0}
   resources: []
   boxes:
   - {fileID: 775981450}
   - {fileID: 862309969}
+  - {fileID: 651565912}
   glues: []
   thrust: 4
+  gravity: D
 --- !u!114 &1985525424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3533,6 +3558,7 @@ MonoBehaviour:
   bg: {fileID: 1462933082}
   player: {fileID: 651565912}
   speed: 2
+  gravity: D
 --- !u!1001 &2041455244
 Prefab:
   m_ObjectHideFlags: 0

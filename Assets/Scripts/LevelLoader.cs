@@ -48,7 +48,7 @@ public class LevelLoader : MonoBehaviour
     }
 
 	void Start() {
-		player.position = new Vector2 (entry_point.position.x + playerPos.x, entry_point.position.y + playerPos.y);
+	//		player.position = new Vector2 (entry_point.position.x + playerPos.x, entry_point.position.y + playerPos.y);
 	}
 
 	void Update() {

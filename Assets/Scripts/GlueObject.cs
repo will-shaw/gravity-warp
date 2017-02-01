@@ -9,49 +9,55 @@ public class GlueObject : MonoBehaviour
 
     string currGrav;
 
+    GravityWarp gravitywarp;
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag != "Wall")
-        {
-            other.GetComponent<Glue>().gluing();
-            GetComponent<SpriteRenderer>().sprite = sprites[2];
-            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-			stuck = true;			
-        }
-        else
-        {
-            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-            GetComponent<SpriteRenderer>().sprite = sprites[1];
-			stuck = true;
+        if(other.gameObject.tag != "Beam"){
+            if (other.gameObject.tag != "Wall" )
+            {
+                other.GetComponent<Glue>().gluing();
+                GetComponent<SpriteRenderer>().sprite = sprites[2];
+                GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+                stuck = true;			
+            }
+            else
+            {
+                GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+                GetComponent<SpriteRenderer>().sprite = sprites[1];
+                stuck = true;
+            }
         }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.tag != "Wall")
+        if (other.gameObject.tag != "Wall" && other.gameObject.tag != "Beam")
         {
             Destroy(gameObject);
         }
     }
 
+    void start(){
+        gravitywarp = Camera.main.GetComponent<GravityWarp>();
+    }
     void Update()
     {
-        if (GravityWarp.gravity != currGrav && !stuck)
+        if (Camera.main.GetComponent<GravityWarp>().gravity != currGrav && !stuck)
         {
-			currGrav = GravityWarp.gravity;
-            if (GravityWarp.gravity == "U")
+			currGrav = Camera.main.GetComponent<GravityWarp>().gravity;
+            if (Camera.main.GetComponent<GravityWarp>().gravity == "U")
             {
                 gameObject.transform.Rotate(new Vector3(0, 0, 0));
             }
-            else if (GravityWarp.gravity == "R")
+            else if (Camera.main.GetComponent<GravityWarp>().gravity == "R")
             {
                 gameObject.transform.Rotate(new Vector3(0, 0, 90));
             }
-            else if (GravityWarp.gravity == "D")
+            else if (Camera.main.GetComponent<GravityWarp>().gravity == "D")
             {
                 gameObject.transform.Rotate(new Vector3(0, 0, 180));
             }
-            else if (GravityWarp.gravity == "L")
+            else if (Camera.main.GetComponent<GravityWarp>().gravity == "L")
             {
                 gameObject.transform.Rotate(new Vector3(0, 0, 270));
             }

@@ -16,7 +16,11 @@ public class GravityWarp : MonoBehaviour {
 
 	public float thrust;
 
+<<<<<<< HEAD
+	public static string gravity = "D";
+=======
 	public string gravity = "D";
+>>>>>>> abcc5ed04cbb8732721142f1de8f1a685984f6ce
 
 	string playerscript;
 	string lastGravDir;

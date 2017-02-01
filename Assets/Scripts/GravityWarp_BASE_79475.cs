@@ -16,13 +16,12 @@ public class GravityWarp : MonoBehaviour {
 
 	public float thrust;
 
-	public string gravity = "D";
+	string gravity = "D";
 
-	string playerscript;
 	string lastGravDir;
 	// Use this for initialization
 	void Start () {
-		playerscript = gameObject.GetComponent<Player>().gravity;
+
 	}
 
 	// Update is called once per frame
