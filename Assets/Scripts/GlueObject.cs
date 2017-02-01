@@ -2,29 +2,26 @@
 
 public class GlueObject : MonoBehaviour
 {
-
     public Sprite[] sprites = new Sprite[3];
-
-	bool stuck, once;
-
+    bool isStuck, once;
     string currGrav;
 
-    GravityWarp gravitywarp;
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag != "Beam"){
-            if (other.gameObject.tag != "Wall" )
+        if (other.gameObject.tag != "Beam")
+        {
+            if (other.gameObject.tag != "Wall")
             {
                 other.GetComponent<Glue>().gluing();
                 GetComponent<SpriteRenderer>().sprite = sprites[2];
                 GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-                stuck = true;			
+                isStuck = true;
             }
             else
             {
                 GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
                 GetComponent<SpriteRenderer>().sprite = sprites[1];
-                stuck = true;
+                isStuck = true;
             }
         }
     }
@@ -37,29 +34,25 @@ public class GlueObject : MonoBehaviour
         }
     }
 
-    void start(){
-        gravitywarp = Camera.main.GetComponent<GravityWarp>();
-    }
     void Update()
     {
-        if (GravityWarp.gravity != currGrav && !stuck)
+        if (GravityWarp.gravity != currGrav && !isStuck)
         {
-			currGrav = GravityWarp.gravity;
-            if (GravityWarp.gravity == "U")
+            currGrav = GravityWarp.gravity;
+            switch (currGrav)
             {
-                gameObject.transform.Rotate(new Vector3(0, 0, 0));
-            }
-            else if (GravityWarp.gravity == "R")
-            {
-                gameObject.transform.Rotate(new Vector3(0, 0, 90));
-            }
-            else if (GravityWarp.gravity == "D")
-            {
-                gameObject.transform.Rotate(new Vector3(0, 0, 180));
-            }
-            else if (GravityWarp.gravity == "L")
-            {
-                gameObject.transform.Rotate(new Vector3(0, 0, 270));
+                case "U":
+                    transform.rotation = new Quaternion(0, 0, 0, 0);
+                    break;
+                case "D":
+                    transform.rotation = new Quaternion(0, 0, 180, 0);
+                    break;
+                case "L":
+                    transform.rotation = new Quaternion(0, 0, 270, 0);
+                    break;
+                case "R":
+                    transform.rotation = new Quaternion(0, 0, 90, 0);
+                    break;
             }
         }
     }

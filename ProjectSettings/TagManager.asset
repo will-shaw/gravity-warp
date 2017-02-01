@@ -16,6 +16,7 @@ TagManager:
   - entry_point
   - exit_point
   - Beam
+  - switch_point
   layers:
   - Default
   - TransparentFX

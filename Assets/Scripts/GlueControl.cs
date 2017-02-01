@@ -1,23 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GlueControl : MonoBehaviour {
 
 	public Transform gluePrefab;
-
 	public int glueLimit;
-
 	public int glueCount;
-
 	public float spawnRange;
-
 	public AudioClip gluePlace;
 
-
-	// Update is called once per frame
 	void Update () {
-		float distance = Vector2.Distance(Camera.main.GetComponent<Player>().player.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+		float distance = Vector2.Distance(Camera.main.GetComponent<GravityWarp>().autoSetPlayer.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
 		if(Input.GetMouseButtonDown(0) && spawnRange > distance) {
 			GravityWarp gw = Camera.main.GetComponent<GravityWarp>();
 			if(glueCount < glueLimit){
