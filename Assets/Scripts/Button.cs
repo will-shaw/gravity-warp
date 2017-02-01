@@ -28,6 +28,9 @@ public class Button : MonoBehaviour
 			} else if (field.GetComponent<Door>() != null) {
 				field.GetComponent<Door>().Active(source);
 			}
+            else if( field.GetComponent<Emit>() != null){
+                field.GetComponent<Emit>().toggle();
+            }
 		}
 	}
 
