@@ -15,20 +15,22 @@ public class Button : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-		if (other.gameObject.GetComponent<GlueObject>() == null)
-        {
-            Activate(0);
+        if(!(toggleable)){
+            if (other.gameObject.GetComponent<GlueObject>() == null)
+            {
+                Activate(0);
+            }
         }
     }
 
 	void Activate(int source) {
 		foreach(Transform field in activates) {
 			if (field.GetComponent<Field>() != null) {
-				field.GetComponent<Field>().ToggleField();
+			    field.GetComponent<Field>().ToggleField();
 			} else if (field.GetComponent<Door>() != null) {
 				field.GetComponent<Door>().Active(source);
-			}
-		}
+    		}
+    	}
 	}
 
 }
