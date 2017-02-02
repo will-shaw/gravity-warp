@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     public Transform bg;
@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
     void FixedUpdate() {
         float move = Input.GetAxis("Horizontal");
         
+        canvas.FindChild("Xtext").GetComponent<Text>().text = "X:" + string.Format("{0:N2}", GetComponent<Rigidbody2D>().velocity.x);
+        canvas.FindChild("ytext").GetComponent<Text>().text = "Y:" + string.Format("{0:N2}", GetComponent<Rigidbody2D>().velocity.y);
         anim.SetFloat("Speed", Mathf.Abs(move));
 
         if(GravityWarp.gravity =="L" || GravityWarp.gravity == "R"){
