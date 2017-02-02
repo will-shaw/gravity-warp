@@ -4,15 +4,21 @@ public class CameraZoom : MonoBehaviour
     Transform cam; // Transform component of the main camera.
     public Transform player;
     public Vector3 levelCenter; // Centerpoint of the entire level.
+    static Vector3 eventCenter; // Centerpoint of event to move to.
     public float zoomFar; // Most zoomed OUT camera size.
     public float zoomClose; // Most zoomed IN camera size.
-    public float zoomSpeed; // Speed at which the camera moves.
+    public float zoomDuration = 0.5f;
     /* Static variables */
-    static Vector3 eventCenter; // Centerpoint of event to move to.
-    static int move = 0; // State of the movement.
+
+
     /* Camera Tracking */
-    public float trackingDistance; // Deadzone distance before triggering movement.
-    public float trackingSpeed; // Speed at which the camera follows.
+    public float trackSpeed; // Speed at which the camera moves.
+    public float trackDistance; // Deadzone distance before triggering movement.
+
+    static bool isLerping;
+    static float timeStartedLerping;
+    static int state = -1;
+
     void Start()
     {
         cam = Camera.main.GetComponent<Transform>();
@@ -20,80 +26,83 @@ public class CameraZoom : MonoBehaviour
     }
     void Update()
     {
-        if (GetDistFromCenter(player.position.x, player.position.y) > trackingDistance && Camera.main.orthographicSize == zoomClose)
+        if (player != null && GetDistFromCenter() > trackDistance && Camera.main.orthographicSize == zoomClose)
         {
-            Move(player.position.x, player.position.y, cam.position.z);
+            float dx = Mathf.Lerp(cam.position.x, player.position.x, trackSpeed * Time.deltaTime);
+            float dy = Mathf.Lerp(cam.position.y, player.position.y, trackSpeed * Time.deltaTime);
+            cam.position = new Vector3(dx, dy, -10);
         }
-        // If camera is currently zoomed out, pressing tab should zoom in.
         if (Camera.main.orthographicSize == zoomFar && Input.GetKeyDown(KeyCode.Tab))
         {
-            move = -1;
+            state = 1;
+            StartLerp();
         }
-        // If camera is currently zoomed in, pressing tab should zoom out.
         if (Camera.main.orthographicSize == zoomClose && Input.GetKeyDown(KeyCode.Tab))
         {
-            move = 1;
-        }
-        // If player is null, stop trying to modify the camera at all.
-        if (player != null && move != 0)
-        {
-            switch (move)
-            {
-                case -1:
-                    Zoom(zoomClose);
-                    Move(player.position.x, player.position.y, cam.position.z);
-                    break;
-                case 1:
-                    Zoom(zoomFar);
-                    Move(levelCenter.x, levelCenter.y, cam.position.z);
-                    break;
-                case 8:
-                    Zoom(zoomClose);
-                    Move(eventCenter.x, eventCenter.y, cam.position.z);
-                    break;
-                default:
-                    break;
-            }
-            if ((Camera.main.orthographicSize == zoomClose || Camera.main.orthographicSize == zoomFar) &&
-                        ((cam.position.x == player.position.x && cam.position.y == player.position.y) ||
-                        cam.position == levelCenter || cam.position == eventCenter))
-            {
-                move = 0;
-            }
-        }
-        else
-        {
-            move = 0;
+            state = 0;
+            StartLerp();
         }
     }
-    /* Zooms camera to the desired level. Can be any float value, but this uses only two. */
-    void Zoom(float target)
+
+    void FixedUpdate()
     {
-        float zoom = Mathf.MoveTowards(Camera.main.orthographicSize, target, zoomSpeed * Time.deltaTime);
-        Camera.main.orthographicSize = zoom;
+        if (isLerping)
+        {
+            float timeSinceStarted = Time.time - timeStartedLerping;
+            float percentageComplete = timeSinceStarted / zoomDuration;
+            switch (state)
+            {
+                case 0: // Zoom Out & Move cam to level center.
+                    Camera.main.orthographicSize = Mathf.Lerp(zoomClose, zoomFar, percentageComplete);
+                    float x = Mathf.Lerp(player.position.x, levelCenter.x, percentageComplete);
+                    float y = Mathf.Lerp(player.position.y, levelCenter.y, percentageComplete);
+                    cam.position = new Vector3(x, y, -10);
+                    break;
+                case 1: // Zoom In & Move cam to player.
+                    Camera.main.orthographicSize = Mathf.Lerp(zoomFar, zoomClose, percentageComplete);
+                    cam.position = Vector3.Lerp(levelCenter, player.position, percentageComplete);
+                    break;
+                case 2: // Move cam from player to event.
+                    cam.position = Vector3.Lerp(player.position, eventCenter, percentageComplete);
+                    break;
+                case 3: // Move cam from event to player.
+                    cam.position = Vector3.Lerp(eventCenter, player.position, percentageComplete);
+                    break;
+            }
+            if (percentageComplete >= 1.0f)
+            {
+                isLerping = false;
+                state = 0;
+            }
+        }
     }
+
+    static void StartLerp()
+    {
+        if (!isLerping)
+        {
+            isLerping = true;
+            timeStartedLerping = Time.time;
+        }
+    }
+
     /* Returns the object distance from the camera center point. */
-    float GetDistFromCenter(float x, float y)
+    float GetDistFromCenter()
     {
         return Mathf.Pow(player.position.x, 2) + Mathf.Pow(player.position.y, 2);
     }
-    /* Pans the camera to the given position. Really is a Vector3, but
-     splitting them up allows for any offsets to be added prior to the Move call.*/
-    void Move(float x, float y, float z)
-    {
-        float dx = Mathf.MoveTowards(cam.position.x, x, zoomSpeed * Time.deltaTime);
-        float dy = Mathf.MoveTowards(cam.position.y, y, zoomSpeed * Time.deltaTime);
-        cam.position = new Vector3(dx, dy, z);
-    }
+
     /* Static callable function to manually pan the camera to a specific location. */
     static void StartEvent(Vector3 centerPoint)
     {
         eventCenter = centerPoint;
-        move = 8;
+        state = 2;
+        StartLerp();
     }
     /* Returns the camera to the player; after a StartEvent. */
     static void StopEvent()
     {
-        move = -1;
+        state = 3;
+        StartLerp();
     }
 }
