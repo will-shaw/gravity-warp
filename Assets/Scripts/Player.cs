@@ -23,10 +23,16 @@ public class Player : MonoBehaviour
         Camera.main.GetComponent<CameraZoom>().player = transform;
     }
 
+    float CalculateVelocity(float x, float y) {
+        return Mathf.Sqrt(Mathf.Pow(x, 2) + Mathf.Pow(y, 2));
+    }
+
     void FixedUpdate() {
         float move = Input.GetAxis("Horizontal");
         
-        canvas.FindChild("Xtext").GetComponent<Text>().text = "X:" + string.Format("{0:N2}", GetComponent<Rigidbody2D>().velocity.x);
+        //canvas.FindChild("Xtext").GetComponent<Text>().text = "V:" + string.Format("{0:N2}", CalculateVelocity(GetComponent<Rigidbody2D>().velocity.x, GetComponent<Rigidbody2D>().velocity.y));
+        
+        canvas.FindChild("xtext").GetComponent<Text>().text = "X:" + string.Format("{0:N2}", GetComponent<Rigidbody2D>().velocity.x);
         canvas.FindChild("ytext").GetComponent<Text>().text = "Y:" + string.Format("{0:N2}", GetComponent<Rigidbody2D>().velocity.y);
         anim.SetFloat("Speed", Mathf.Abs(move));
 
@@ -55,7 +61,9 @@ public class Player : MonoBehaviour
         Vector3 hello = gameObject.transform.position;
         canvas.position = hello;
 
-        ChangeDirection();
+        if (player != null) {
+            ChangeDirection();
+        }
         if(!(player.GetComponent<Glue>().isGlued())) {
          /*   if (Input.GetKey(KeyCode.D)) {
                 //player.GetComponent<Rigidbody2D>().AddForce(new Vector2(Time.deltaTime * 250f, 0));
@@ -123,26 +131,44 @@ public class Player : MonoBehaviour
     }
 
     string GetNearestWall() {
-        RaycastHit2D down = Physics2D.Raycast(rb2D.position, Vector2.down, 6.0f);
-        RaycastHit2D up = Physics2D.Raycast(rb2D.position, Vector2.up, 6.0f);
-        RaycastHit2D left = Physics2D.Raycast(rb2D.position, Vector2.left, 6.0f);
-        RaycastHit2D right = Physics2D.Raycast(rb2D.position, Vector2.right, 6.0f);
+        RaycastHit2D[] down = Physics2D.RaycastAll(rb2D.position, Vector2.down, 6.0f);
+        RaycastHit2D[] up = Physics2D.RaycastAll(rb2D.position, Vector2.up, 6.0f);
+        RaycastHit2D[] left = Physics2D.RaycastAll(rb2D.position, Vector2.left, 6.0f);
+        RaycastHit2D[] right = Physics2D.RaycastAll(rb2D.position, Vector2.right, 6.0f);
+
+        Debug.DrawRay(transform.position, Vector2.down, Color.red, 10);
+        Debug.DrawRay(transform.position, Vector2.up, Color.red, 10);
+        Debug.DrawRay(transform.position, Vector2.left, Color.yellow, 10);
+        Debug.DrawRay(transform.position, Vector2.right, Color.yellow, 10);
+
         float dDist = 100f;
         float uDist = 100f;
         float lDist = 100f;
         float rDist = 100f;
 
-        if (down.collider != null && down.collider.gameObject.tag == "Wall") {
-            dDist = Mathf.Abs(down.point.y - rb2D.position.y);
+        foreach(RaycastHit2D hit in down) {
+            if (hit.collider != null && hit.collider.gameObject.tag == "Wall") {
+                dDist = Mathf.Abs(hit.point.y - rb2D.position.y);
+                Debug.DrawLine(transform.position, hit.point, Color.green, 10);
+            }
         }
-        if (up.collider != null && up.collider.gameObject.tag == "Wall") {
-            uDist = Mathf.Abs(up.point.y - rb2D.position.y);
+        foreach(RaycastHit2D hit in up) {
+            if (hit.collider != null && hit.collider.gameObject.tag == "Wall") {
+                uDist = Mathf.Abs(hit.point.y - rb2D.position.y);
+                Debug.DrawLine(transform.position, hit.point, Color.green, 10);
+            }
         }
-        if (left.collider != null && left.collider.gameObject.tag == "Wall") {
-            lDist = Mathf.Abs(left.point.x - rb2D.position.x);
+        foreach(RaycastHit2D hit in left) {
+            if (hit.collider != null && hit.collider.gameObject.tag == "Wall") {
+                lDist = Mathf.Abs(hit.point.y - rb2D.position.x);
+                Debug.DrawLine(transform.position, hit.point, Color.blue, 10);
+            }
         }
-        if (right.collider != null && right.collider.gameObject.tag == "Wall") {
-            rDist = Mathf.Abs(right.point.x - rb2D.position.x);
+        foreach(RaycastHit2D hit in right) {
+            if (hit.collider != null && hit.collider.gameObject.tag == "Wall") {
+                rDist = Mathf.Abs(hit.point.y - rb2D.position.y);
+                Debug.DrawLine(transform.position, hit.point, Color.blue, 10);
+            }
         }
 
         float smallest = Mathf.Min(dDist, uDist, lDist, rDist);
