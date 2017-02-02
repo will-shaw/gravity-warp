@@ -1310,7 +1310,7 @@ GameObject:
   - component: {fileID: 651565915}
   m_Layer: 2
   m_Name: player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2548,7 +2548,8 @@ Prefab:
       propertyPath: m_Name
       value: forcefield_vert_left
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114263108842821250, guid: b5f1e22d3e49a884fa489bcb8b202788, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: b5f1e22d3e49a884fa489bcb8b202788, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1233413178
@@ -3123,7 +3124,8 @@ Prefab:
       propertyPath: m_Name
       value: forcefield_hori_right
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114263108842821250, guid: b5f1e22d3e49a884fa489bcb8b202788, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: b5f1e22d3e49a884fa489bcb8b202788, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1527370413 stripped
@@ -3850,7 +3852,8 @@ Prefab:
       propertyPath: m_Name
       value: forcefield_hori_left
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114263108842821250, guid: b5f1e22d3e49a884fa489bcb8b202788, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: b5f1e22d3e49a884fa489bcb8b202788, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1933768804

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class GravityWarp : MonoBehaviour
 {
-	public Transform autoSetPlayer;
+
     public float gravityScale = 4.0f; // Amount of gravity to apply.
     public List<Transform> boxes = new List<Transform>();
     public List<Transform> glues = new List<Transform>();
@@ -17,10 +17,7 @@ public class GravityWarp : MonoBehaviour
         /* Updates box gravity. The player is also added to this list by Player.cs */
         BoxGravity();
         // If some glue exists, update glue gravity.
-        if (GetComponent<GlueControl>().glueCount > 0)
-        {
-            GlueGravity();
-        }
+        GlueGravity();
     }
 
     /* Handles user input for gravity change. */
