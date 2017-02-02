@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 171764785}
   - component: {fileID: 171764784}
   m_Layer: 5
-  m_Name: Xtext
+  m_Name: xtext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -655,10 +655,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc6ce663b2fb9d489744d5e8e16beef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: 0
   linksRequired: 1
-  opensUpward: 0
-  openSpeed: 2
+  lights:
+  - {fileID: 0}
+  - {fileID: 0}
+  gravityEnabled: 0
+  openY: 0
+  closedY: 0
+  openDuration: 0.5
 --- !u!1 &570406007
 GameObject:
   m_ObjectHideFlags: 0
@@ -2257,9 +2261,9 @@ MonoBehaviour:
   levelCenter: {x: 18, y: 15, z: 0}
   zoomFar: 23
   zoomClose: 10
-  zoomSpeed: 5
-  trackingDistance: 5
-  trackingSpeed: 70
+  zoomDuration: 0.5
+  trackSpeed: 6
+  trackDistance: 4
 --- !u!114 &1220529281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2271,7 +2275,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dccacf5fb09c64f66a59cbbec6768bbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityScale: 4
   boxes:
   - {fileID: 0}
   - {fileID: 884070356}
@@ -2519,10 +2522,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc6ce663b2fb9d489744d5e8e16beef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open: 0
   linksRequired: 0
-  opensUpward: 1
-  openSpeed: 2
+  lights:
+  - {fileID: 0}
+  - {fileID: 0}
+  gravityEnabled: 0
+  openY: 0
+  closedY: 0
+  openDuration: 0.5
 --- !u!4 &1423327431 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4864313613909910, guid: 114a29e0deec009439eb7d4c246d7e8c,
