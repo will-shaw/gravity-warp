@@ -297,8 +297,6 @@ GameObject:
   - component: {fileID: 134782226}
   - component: {fileID: 134782225}
   - component: {fileID: 134782230}
-  - component: {fileID: 134782231}
-  - component: {fileID: 134782232}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -386,8 +384,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravityScale: 4
-  text: {fileID: 0}
-  resources: []
   boxes:
   - {fileID: 1336495309}
   - {fileID: 143266791}
@@ -395,36 +391,7 @@ MonoBehaviour:
   - {fileID: 1253835259}
   glues: []
   thrust: 0
---- !u!114 &134782231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 134782224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d75fa720ab619496ca9644d926147fc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gluePrefab: {fileID: 4535306469873588, guid: ee86be60910051d48888721ee5ef233c, type: 2}
-  glueLimit: 5
-  glueCount: 0
-  spawnRange: 0
-  gluePlace: {fileID: 0}
---- !u!114 &134782232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 134782224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb5a5f6e0cac6f740b6f32461eef35f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bg: {fileID: 1476593018}
-  player: {fileID: 1336495309}
-  speed: 2
+  gravityControlEnabled: 0
 --- !u!1001 &143266790
 Prefab:
   m_ObjectHideFlags: 0
@@ -699,7 +666,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 211.6, y: -73.5}
+  m_AnchoredPosition: {x: 242, y: -73.5}
   m_SizeDelta: {x: 117.5, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &434171060
@@ -808,8 +775,8 @@ RectTransform:
   - {fileID: 434171058}
   - {fileID: 1011030119}
   - {fileID: 599479587}
-  m_Father: {fileID: 602817435}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1033,7 +1000,6 @@ Transform:
   m_Children:
   - {fileID: 48323607}
   - {fileID: 1336495309}
-  - {fileID: 517322270}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1071,7 +1037,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6, y: -73.5}
+  m_AnchoredPosition: {x: -10, y: -73.5}
   m_SizeDelta: {x: 117.5, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &604166334
@@ -1303,7 +1269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   field: {fileID: 1070324906}
-  scene: level_one
+  scene: facility_intro
   button: {fileID: 604166334}
 --- !u!1001 &763420047
 Prefab:
@@ -1581,7 +1547,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 429.2, y: -73.5}
+  m_AnchoredPosition: {x: 491, y: -73.5}
   m_SizeDelta: {x: 117.5, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1011030121

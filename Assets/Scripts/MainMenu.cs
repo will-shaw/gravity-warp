@@ -5,18 +5,28 @@ public class MainMenu : MonoBehaviour
 {
 
     public Transform field;
-	public string scene;
+    public string scene;
+    AsyncOperation op;
     public UnityEngine.UI.Button button;
 
     void Start()
     {
-		button.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => { field.GetComponent<Field>().ToggleField(); });
+        button.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => { Load(); });
     }
 
-	void Update() {
-		if (gameObject.GetComponent<Button>().active) {
-			SceneManager.LoadScene(scene);
-		}
-	}
+    void Update()
+    {
+        if (gameObject.GetComponent<Button>().active)
+        {
+            op.allowSceneActivation = true;
+        }
+    }
+
+    void Load()
+    {
+        field.GetComponent<Field>().ToggleField();
+        op = SceneManager.LoadSceneAsync(scene);
+        op.allowSceneActivation = false;
+    }
 
 }
