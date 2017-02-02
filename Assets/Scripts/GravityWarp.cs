@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class GravityWarp : MonoBehaviour
 {
 
-    public float gravityScale = 4.0f; // Amount of gravity to apply.
+    public static float gravityScale = 4.0f; // Amount of gravity to apply.
     public List<Transform> boxes = new List<Transform>();
     public List<Transform> glues = new List<Transform>();
     public float thrust; // For horizontal movement. Multiplies gravityScale.

@@ -72,7 +72,7 @@ public class CameraZoom : MonoBehaviour
             if (percentageComplete >= 1.0f)
             {
                 isLerping = false;
-                state = 0;
+                state = -1;
             }
         }
     }
