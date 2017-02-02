@@ -24,8 +24,11 @@ public class Player : MonoBehaviour
         
         anim.SetFloat("Speed", Mathf.Abs(move));
 
-        GetComponent<Rigidbody2D>().velocity = new Vector2(move * speed, GetComponent<Rigidbody2D>().velocity.y);
-
+        if(GravityWarp.gravity =="L" || GravityWarp.gravity == "R"){
+            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, move * speed );
+        }else{
+            GetComponent<Rigidbody2D>().velocity = new Vector2(move * speed, GetComponent<Rigidbody2D>().velocity.y);
+        }
         if (move > 0 && !facingRight) {
             Flip();
         } else if (move < 0 && facingRight) {
