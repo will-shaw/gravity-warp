@@ -1438,7 +1438,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336d38dfe48cf4ac1af65a03782a6c35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entry_point: {fileID: 1406983056}
   exit_point: {fileID: 1787908027}
   switch_point: {fileID: 0}
   player: {fileID: 651565912}
@@ -3495,7 +3494,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1340324368187012, guid: a18686ef00c814d8d825e17562a0ffe9, type: 2}
       propertyPath: m_TagString
-      value: switch_point
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a18686ef00c814d8d825e17562a0ffe9, type: 2}
@@ -4290,6 +4289,10 @@ Prefab:
     - target: {fileID: 4899647822280684, guid: 3e477eace5fc34132882dc5041170d98, type: 2}
       propertyPath: m_RootOrder
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615663284352256, guid: 3e477eace5fc34132882dc5041170d98, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3e477eace5fc34132882dc5041170d98, type: 2}

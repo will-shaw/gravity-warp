@@ -1,31 +1,28 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
 
 public class LevelLoader : MonoBehaviour
 {
-
-    public Transform entry_point;
     public Transform exit_point;
     public Transform switch_point;
     public Transform player;
     public Transform exitDoor;
     public string nextLevel;
     public bool asyncLoad = true;
-    bool once;
+    bool loadOnce;
     AsyncOperation op;
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "switch_point")
+        if (other == switch_point.GetComponent<Collider2D>())
         {
             op.allowSceneActivation = true;
         }
-        else if (other.tag == "exit_point")
+        else if (other == exit_point.GetComponent<Collider2D>())
         {
-            if (asyncLoad && !once)
+            if (asyncLoad && !loadOnce)
             {
-                once = true;
+                loadOnce = true;
                 print("Loading " + nextLevel);
                 op = SceneManager.LoadSceneAsync(nextLevel);
                 op.allowSceneActivation = false;
