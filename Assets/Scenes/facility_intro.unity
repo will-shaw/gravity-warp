@@ -104,7 +104,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4864313613909910, guid: 114a29e0deec009439eb7d4c246d7e8c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -4.39
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4864313613909910, guid: 114a29e0deec009439eb7d4c246d7e8c, type: 2}
       propertyPath: m_LocalPosition.z
@@ -133,6 +133,11 @@ Prefab:
     - target: {fileID: 1077509888209686, guid: 114a29e0deec009439eb7d4c246d7e8c, type: 2}
       propertyPath: m_Name
       value: facility_door_left
+      objectReference: {fileID: 0}
+    - target: {fileID: 50589770215866522, guid: 114a29e0deec009439eb7d4c246d7e8c,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 114a29e0deec009439eb7d4c246d7e8c, type: 2}
@@ -228,6 +233,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &381726965 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1077509888209686, guid: 114a29e0deec009439eb7d4c246d7e8c,
+    type: 2}
+  m_PrefabInternal: {fileID: 117749197}
+--- !u!114 &381726966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 381726965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fc6ce663b2fb9d489744d5e8e16beef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lights:
+  - {fileID: 1152773057}
+  - {fileID: 1367922265}
+  open: 1
+  linksRequired: 0
+  gravityEnabled: 1
+  openY: -4.5
+  closedY: 0.3
+  opensUpward: 0
+  openSpeed: 5
 --- !u!1001 &392505332
 Prefab:
   m_ObjectHideFlags: 0
@@ -483,6 +514,50 @@ Transform:
   m_PrefabParentObject: {fileID: 4864313613909910, guid: 114a29e0deec009439eb7d4c246d7e8c,
     type: 2}
   m_PrefabInternal: {fileID: 321344198}
+--- !u!1 &846369688
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 846369689}
+  - component: {fileID: 846369690}
+  m_Layer: 0
+  m_Name: DoorTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &846369689
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 846369688}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1054655526}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &846369690
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 846369688}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+  - {x: -2.8005104, y: -2.6986747}
+  - {x: -2.5747223, y: 3.5834863}
 --- !u!1001 &885005067
 Prefab:
   m_ObjectHideFlags: 0
@@ -661,6 +736,35 @@ Transform:
   m_PrefabParentObject: {fileID: 4864313613909910, guid: 114a29e0deec009439eb7d4c246d7e8c,
     type: 2}
   m_PrefabInternal: {fileID: 985058291}
+--- !u!1 &1054655525
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1054655526}
+  m_Layer: 0
+  m_Name: Triggers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1054655526
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1054655525}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.262323, y: -5.574734, z: -3.125741}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 846369689}
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1059180677
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,7 +857,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300014, guid: c53544ca5c2f7834d887812af0d7a37b, type: 3}
+  m_Sprite: {fileID: 21300002, guid: c53544ca5c2f7834d887812af0d7a37b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1028,14 +1132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f6f220fe47104c42bf9586fe649248e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doors:
-  - {fileID: 118284056}
-  - {fileID: 782001802}
-  lights:
-  - {fileID: 1367922264}
-  - {fileID: 1152773056}
-  - {fileID: 1661444857}
-  - {fileID: 1541765553}
+  leftDoor: {fileID: 118284056}
 --- !u!114 &1348518747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1113,7 +1210,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300012, guid: c53544ca5c2f7834d887812af0d7a37b, type: 3}
+  m_Sprite: {fileID: 21300006, guid: c53544ca5c2f7834d887812af0d7a37b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1212,7 +1309,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300014, guid: c53544ca5c2f7834d887812af0d7a37b, type: 3}
+  m_Sprite: {fileID: 21300006, guid: c53544ca5c2f7834d887812af0d7a37b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1433,7 +1530,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300012, guid: c53544ca5c2f7834d887812af0d7a37b, type: 3}
+  m_Sprite: {fileID: 21300002, guid: c53544ca5c2f7834d887812af0d7a37b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1492,6 +1589,9 @@ MonoBehaviour:
   bg: {fileID: 1165297219}
   speed: 8
   rb2D: {fileID: 0}
+  canvas: {fileID: 0}
+  spSide: {fileID: 0}
+  spUp: {fileID: 0}
 --- !u!95 &1726010690
 Animator:
   serializedVersion: 3
@@ -1535,6 +1635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glueTime: 2
+  canvas: {fileID: 0}
 --- !u!58 &1726010693
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -31,7 +31,7 @@ public class Button : MonoBehaviour
 			if (field.GetComponent<Field>() != null) {
 				field.GetComponent<Field>().ToggleField();
 			} else if (field.GetComponent<Door>() != null) {
-				field.GetComponent<Door>().Active(source);
+				field.GetComponent<Door>().ActivateLink(source);
 			}
             else if( field.GetComponent<Emit>() != null){
                 field.GetComponent<Emit>().toggle();
