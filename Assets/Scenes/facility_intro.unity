@@ -923,7 +923,6 @@ GameObject:
   - component: {fileID: 1348518740}
   - component: {fileID: 1348518745}
   - component: {fileID: 1348518746}
-  - component: {fileID: 1348518748}
   - component: {fileID: 1348518747}
   m_Layer: 0
   m_Name: Main Camera
@@ -994,7 +993,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1348518739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.5, y: -5, z: -10}
+  m_LocalPosition: {x: -21.47, y: 2.13, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1017,7 +1016,7 @@ MonoBehaviour:
   zoomClose: 5
   zoomSpeed: 6
   trackingDistance: 3
-  trackingSpeed: 6
+  trackingSpeed: 10
 --- !u!114 &1348518746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1048,28 +1047,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dccacf5fb09c64f66a59cbbec6768bbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoSetPlayer: {fileID: 0}
   gravityScale: 4
   boxes:
   - {fileID: 0}
   glues: []
   thrust: 4
---- !u!114 &1348518748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1348518739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d75fa720ab619496ca9644d926147fc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gluePrefab: {fileID: 4535306469873588, guid: ee86be60910051d48888721ee5ef233c, type: 2}
-  glueLimit: 0
-  glueCount: 0
-  spawnRange: 0
-  gluePlace: {fileID: 8300000, guid: 3754ff990caf04bad81b0e41a7a0f432, type: 3}
+  gravityControlEnabled: 0
 --- !u!1 &1367922263
 GameObject:
   m_ObjectHideFlags: 0
