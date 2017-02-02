@@ -12,7 +12,7 @@ public class GlueControl : MonoBehaviour
     void Update()
     {
         float distance = Vector2.Distance(transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
-        if (Input.GetMouseButtonDown(0) && spawnRange > distance && glueEnabled)
+        if (Input.GetMouseButtonDown(1) && spawnRange > distance && glueEnabled)
         {
             GravityWarp gw = Camera.main.GetComponent<GravityWarp>();
             if (glueCount < glueLimit)
