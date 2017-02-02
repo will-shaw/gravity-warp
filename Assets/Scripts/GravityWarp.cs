@@ -10,10 +10,14 @@ public class GravityWarp : MonoBehaviour
     public float thrust; // For horizontal movement. Multiplies gravityScale.
     public static string gravity = "D"; // The current gravity direction.
 
+    public bool gravityControlEnabled;
+
     void Update()
     {
         // Check for gravity change.
-        InputHandler();
+        if(gravityControlEnabled){
+            InputHandler();
+        }
         /* Updates box gravity. The player is also added to this list by Player.cs */
         BoxGravity();
         // If some glue exists, update glue gravity.
