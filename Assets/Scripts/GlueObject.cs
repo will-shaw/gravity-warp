@@ -3,14 +3,15 @@
 public class GlueObject : MonoBehaviour
 {
     public Sprite[] sprites = new Sprite[3];
-    bool isStuck, once;
+    bool isStuck;
+    bool once;
     string currGrav;
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag != "Beam")
         {
-            if (other.gameObject.tag != "Wall")
+            if (other.gameObject.tag != "Wall" && other.GetComponent<Glue>() != null)
             {
                 other.GetComponent<Glue>().gluing();
                 GetComponent<SpriteRenderer>().sprite = sprites[2];
@@ -42,10 +43,10 @@ public class GlueObject : MonoBehaviour
             switch (currGrav)
             {
                 case "U":
-                    transform.rotation = new Quaternion(0, 0, 0, 0);
+                    transform.rotation = new Quaternion(0, 0, 180, 0);
                     break;
                 case "D":
-                    transform.rotation = new Quaternion(0, 0, 180, 0);
+                    transform.rotation = new Quaternion(0, 0, 0, 0);
                     break;
                 case "L":
                     transform.rotation = new Quaternion(0, 0, 270, 0);
