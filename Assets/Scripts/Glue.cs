@@ -19,7 +19,7 @@ public class Glue : MonoBehaviour {
 		if(glued && gluedTime > 0){
 			gluedTime -= Time.deltaTime;
 			if(gameObject.GetComponent<Player>() != null){
-				canvas.FindChild("Text").GetComponent<Text>().text = string.Format("{0:N2}",gluedTime);
+				canvas.FindChild("Text").GetComponent<Text>().text = string.Format("{0:0}",gluedTime);
 			}
 		} else if (glued) {
 			glued = false;
