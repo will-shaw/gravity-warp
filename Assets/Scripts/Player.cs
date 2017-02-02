@@ -86,9 +86,9 @@ public class Player : MonoBehaviour
                 } else if(GravityWarp.gravity == "U") {
                     player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -700.0f));
                 } else if(GravityWarp.gravity == "L") {
-                    player.GetComponent<Rigidbody2D>().AddForce(new Vector2(-500.0f, 0));
+                    player.GetComponent<Rigidbody2D>().AddForce(new Vector2(550.0f, 0));
                 } else if(GravityWarp.gravity == "R") {
-                    player.GetComponent<Rigidbody2D>().AddForce(new Vector2(500.0f, 0));
+                    player.GetComponent<Rigidbody2D>().AddForce(new Vector2(-550.0f, 0));
                 } 
                 cooldown = Time.realtimeSinceStartup;
             }
@@ -104,7 +104,7 @@ public class Player : MonoBehaviour
         } else if (nearestWall == "Left" && GravityWarp.gravity == "L") {
             player.transform.rotation = new Quaternion(0,0,270,0);
         } else if (nearestWall == "Right" && GravityWarp.gravity == "R") {
-            player.transform.rotation = new Quaternion(0,0,90,0);
+            player.transform.rotation = new Quaternion(0,0,-90,0);
         }  
         Transform gravDirect = canvas.FindChild("GravityDirection");
         if(GravityWarp.gravity == "R"){
