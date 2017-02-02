@@ -7,9 +7,14 @@ public class Player : MonoBehaviour
     public float speed = 10f;
     float cooldown = 0;
     public Rigidbody2D rb2D;
+
+    public RectTransform canvas;
     bool facingRight = true;
     Animator anim;
 
+    public Sprite spSide;
+
+    public Sprite spUp;
     void Start() {
         player = transform;
         rb2D = player.GetComponent<Rigidbody2D>();
@@ -43,7 +48,11 @@ public class Player : MonoBehaviour
     }
 
     void Update()
-    {
+    {   
+
+        Vector3 hello = gameObject.transform.position;
+        canvas.position = hello;
+
         ChangeDirection();
         if(!(player.GetComponent<Glue>().isGlued())) {
          /*   if (Input.GetKey(KeyCode.D)) {
@@ -68,7 +77,7 @@ public class Player : MonoBehaviour
                 }								
             }
 */
-            if (Input.GetKey(KeyCode.W) && Time.realtimeSinceStartup > cooldown + 1)
+            if (Input.GetKey(KeyCode.Space) && Time.realtimeSinceStartup > cooldown + 1)
             {
                 if(GravityWarp.gravity == "D") {
                     player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 700.0f));
@@ -94,6 +103,20 @@ public class Player : MonoBehaviour
             player.transform.rotation = new Quaternion(0,0,270,0);
         } else if (nearestWall == "Right" && GravityWarp.gravity == "R") {
             player.transform.rotation = new Quaternion(0,0,90,0);
+        }  
+        Transform gravDirect = canvas.FindChild("GravityDirection");
+        if(GravityWarp.gravity == "R"){
+            gravDirect.GetComponent<SpriteRenderer>().sprite = spSide;
+            gravDirect.GetComponent<SpriteRenderer>().flipX = true;
+        }else if(GravityWarp.gravity == "U"){
+            gravDirect.GetComponent<SpriteRenderer>().flipY = false;
+            gravDirect.GetComponent<SpriteRenderer>().sprite = spUp;
+        }else if(GravityWarp.gravity == "D"){
+            gravDirect.GetComponent<SpriteRenderer>().flipY = true;
+            gravDirect.GetComponent<SpriteRenderer>().sprite = spUp;
+        }else if(GravityWarp.gravity == "L"){
+            gravDirect.GetComponent<SpriteRenderer>().sprite = spSide;
+            gravDirect.GetComponent<SpriteRenderer>().flipX = false;
         }
     }
 
