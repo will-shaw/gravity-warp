@@ -9,7 +9,7 @@ public class GlueControl : MonoBehaviour {
 	public AudioClip gluePlace;
 
 	void Update () {
-		float distance = Vector2.Distance(Camera.main.GetComponent<GravityWarp>().autoSetPlayer.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+		float distance = Vector2.Distance(gameObject.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
 		if(Input.GetMouseButtonDown(0) && spawnRange > distance) {
 			GravityWarp gw = Camera.main.GetComponent<GravityWarp>();
 			if(glueCount < glueLimit){

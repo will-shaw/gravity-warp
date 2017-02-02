@@ -14,7 +14,6 @@ public class Player : MonoBehaviour
         player = transform;
         rb2D = player.GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        Camera.main.GetComponent<GravityWarp>().autoSetPlayer = transform;
         Camera.main.GetComponent<GravityWarp>().boxes.Add(transform);
         Camera.main.GetComponent<CameraZoom>().player = transform;
     }

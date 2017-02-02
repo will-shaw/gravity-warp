@@ -24,7 +24,7 @@ public class Glue : MonoBehaviour {
 			glued = true;
 			gluedTime = glueTime;
 			GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-			Camera.main.GetComponent<GlueControl>().changeGlueCount(0);
+			Camera.main.GetComponent<CameraZoom>().player.GetComponent<GlueControl>().changeGlueCount(0);
 	}
 
 	public bool isGlued (){
