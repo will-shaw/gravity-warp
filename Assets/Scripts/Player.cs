@@ -30,9 +30,13 @@ public class Player : MonoBehaviour
     void FixedUpdate() {
         float moveHori = Input.GetAxis("Horizontal");
         float moveVert = Input.GetAxis("Vertical");
-        
+        float cooldown = Camera.main.GetComponent<GravityWarp>().coolDown;
+        if(cooldown!=0f){
+            cooldown = 2-cooldown;
+        }
         //canvas.FindChild("Xtext").GetComponent<Text>().text = "V:" + string.Format("{0:N2}", CalculateVelocity(GetComponent<Rigidbody2D>().velocity.x, GetComponent<Rigidbody2D>().velocity.y));
         
+        canvas.FindChild("Cooldown").GetComponent<Text>().text = "Cool Down: "+ string.Format("{0:N2}",cooldown);
         canvas.FindChild("xtext").GetComponent<Text>().text = "X:" + string.Format("{0:N2}", GetComponent<Rigidbody2D>().velocity.x);
         canvas.FindChild("ytext").GetComponent<Text>().text = "Y:" + string.Format("{0:N2}", GetComponent<Rigidbody2D>().velocity.y);
 

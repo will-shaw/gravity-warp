@@ -14,6 +14,8 @@ public class GravityWarp : MonoBehaviour
     public bool playerDead = false;
     public bool gravityControlEnabled;
 
+    public float coolDown =0f;
+    int gravityCount = 0;
     void Update()
     {
         // Check for gravity change.
@@ -31,23 +33,38 @@ public class GravityWarp : MonoBehaviour
 
     /* Handles user input for gravity change. */
     void InputHandler()
-    {
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            gravity = "U";
+    {   
+        if(gravityCount <5){
+            if (Input.GetKey(KeyCode.UpArrow) && gravity != "U")
+            {
+                gravity = "U";
+                gravityCount++;
+            }
+            if (Input.GetKey(KeyCode.DownArrow)&& gravity != "D")
+            {
+                gravity = "D";
+                gravityCount++;
+            }
+            if (Input.GetKey(KeyCode.LeftArrow)&& gravity != "L")
+            {
+                gravity = "L";
+                gravityCount++;
+            }
+            if (Input.GetKey(KeyCode.RightArrow)&& gravity != "R")
+            {
+                gravity = "R";
+                gravityCount++;
+            }
         }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            gravity = "D";
+        else{
+            if(coolDown>2f){
+                coolDown = 0f;
+                gravityCount= 0;
+            }else{
+                coolDown+= Time.deltaTime;
+            }
         }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            gravity = "L";
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            gravity = "R";
-        }
+
     }
 
     /* Controls gravity for all items in the glues list. */
