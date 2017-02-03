@@ -25,7 +25,6 @@ GameObject:
   - component: {fileID: 81633666791167568}
   - component: {fileID: 114505227209852082}
   - component: {fileID: 114420006540710784}
-  - component: {fileID: 114801370150686840}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -107,6 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxes: []
   glues: []
+  clutter: []
   thrust: 4
   deadMenu: {fileID: 0}
   playerDead: 0
@@ -130,23 +130,6 @@ MonoBehaviour:
   zoomDuration: 0.5
   trackSpeed: 6
   trackDistance: 4
---- !u!114 &114801370150686840
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1428836992498698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 336d38dfe48cf4ac1af65a03782a6c35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  exit_point: {fileID: 0}
-  switch_point: {fileID: 0}
-  player: {fileID: 0}
-  exitDoor: {fileID: 0}
-  nextLevel: 
-  asyncLoad: 1
 --- !u!124 &124802521527829638
 Behaviour:
   m_ObjectHideFlags: 1

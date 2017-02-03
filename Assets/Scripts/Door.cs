@@ -2,26 +2,58 @@
 
 public class Door : MonoBehaviour
 {
-    int linkCount = 0;
     public int linksRequired = 0;
     public SpriteRenderer[] lights = new SpriteRenderer[2];
+    float openPosY;
+    float closedPosY;
+    int linkCount = 0;
+    public bool isOpen = false;
+    public bool opensDown = true;
     public bool gravityEnabled = false;
-    public float openY;
-    public float closedY;
 
-    static bool isLerping;
-    static float timeStartedLerping;
-    static int state = -1;
+    bool isLerping;
+    float timeStartedLerping;
+    int state = -1;
     public float openDuration = 0.5f;
-
+    public float height = 5.2f;
 
     void Start()
     {
-        if (!gravityEnabled)
+        closedPosY = transform.position.y;
+        if (opensDown)
         {
-            transform.GetComponent<Rigidbody2D>().gravityScale = 0;
+            openPosY = transform.position.y - height;
+        }
+        else
+        {
+            openPosY = transform.position.y + height;
+        }
+        if (isOpen)
+        {
+            transform.position = new Vector3(transform.position.x, openPosY, -9);
+        }
+        if (gravityEnabled)
+        {
+            Gravity(true);
         }
     }
+
+    void Update()
+    {
+        if (transform.position.y <= (closedPosY - (height / 1.5)))
+        {
+            foreach (SpriteRenderer light in lights)
+            {
+                light.color = new Color(0, 255, 0);
+            }
+        } else if (transform.position.y >= (closedPosY - (height / 1.5))) {
+            foreach (SpriteRenderer light in lights)
+            {
+                light.color = new Color(255, 0, 0);
+            }
+        }
+    }
+
 
     void FixedUpdate()
     {
@@ -33,12 +65,12 @@ public class Door : MonoBehaviour
             switch (state)
             {
                 case 0: // Door is Closing.
-                    y = Mathf.Lerp(openY, closedY, percentageComplete);
-                    transform.position = new Vector2(transform.position.x, y);
+                    y = Mathf.Lerp(openPosY, closedPosY, percentageComplete);
+                    transform.position = new Vector3(transform.position.x, y, -9);
                     break;
                 case 1: // Door is Opening.
-                    y = Mathf.Lerp(closedY, openY, percentageComplete);
-                    transform.position = new Vector2(transform.position.x, y);
+                    y = Mathf.Lerp(closedPosY, openPosY, percentageComplete);
+                    transform.position = new Vector3(transform.position.x, y, -9);
                     break;
             }
             if (percentageComplete >= 1.0f)
@@ -49,9 +81,9 @@ public class Door : MonoBehaviour
         }
     }
 
-    static void StartLerp()
+    void StartLerp()
     {
-        if (!isLerping)
+        if (!isLerping && !gravityEnabled)
         {
             isLerping = true;
             timeStartedLerping = Time.time;
@@ -74,47 +106,44 @@ public class Door : MonoBehaviour
 
         if (linkCount >= linksRequired)
         {
-            OpenDoor();
+            DoorAction(1);
         }
         else
         {
-            CloseDoor();
+            DoorAction(0);
         }
     }
 
-    /* Sets lights green : Opens door */
-    public void OpenDoor()
+    public void Gravity(bool b)
     {
-        state = 1;
-        foreach (SpriteRenderer light in lights)
+        gravityEnabled = b;
+        if (b)
         {
-            light.color = new Color(0, 255, 0);
-        }
-        StartLerp();
-    }
-    /* Sets lights red : Closes door */
-    public void CloseDoor()
-    {
-        state = 0;
-        foreach (SpriteRenderer light in lights)
-        {
-            light.color = new Color(255, 0, 0);
-        }
-        StartLerp();
-    }
-
-    /* Sets door gravity to given bool value. */
-    public void Gravity(bool value)
-    {
-        gravityEnabled = value;
-        if (gravityEnabled)
-        {
-            transform.GetComponent<Rigidbody2D>().gravityScale = 0;
+            gameObject.AddComponent<Rigidbody2D>();
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
         }
         else
         {
-            transform.GetComponent<Rigidbody2D>().gravityScale = GravityWarp.gravityScale;
+            Destroy(gameObject.GetComponent<Rigidbody2D>());
         }
+    }
+
+    void DoorAction(int s)
+    {
+        state = s;
+        foreach (SpriteRenderer light in lights)
+        {
+            if (s == 0)
+            {
+                light.color = new Color(255, 0, 0);
+            }
+            else
+            {
+                light.color = new Color(0, 255, 0);
+            }
+        }
+        StartLerp();
     }
 
 }

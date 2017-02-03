@@ -5,7 +5,6 @@ public class LevelLoader : MonoBehaviour
 {
     public Transform exit_point;
     public Transform switch_point;
-    public Transform player;
     public Transform exitDoor;
     public string nextLevel;
     public bool asyncLoad = true;
@@ -26,8 +25,7 @@ public class LevelLoader : MonoBehaviour
                 print("Loading " + nextLevel);
                 op = SceneManager.LoadSceneAsync(nextLevel);
                 op.allowSceneActivation = false;
-                exitDoor.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-                exitDoor.GetComponent<Rigidbody2D>().gravityScale = 4f;
+                exitDoor.GetComponent<Door>().ActivateLink(1);
             }
         }
     }
