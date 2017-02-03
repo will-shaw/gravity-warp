@@ -30,11 +30,11 @@ public class BoxColision : MonoBehaviour {
 		if(velocityY1> gameObject.transform.GetComponent<Rigidbody2D>().velocity.y ){
 			velocityY1 = gameObject.transform.GetComponent<Rigidbody2D>().velocity.y;
 		}
-		Debug.Log("stats: "+ velocityY1);
+		
 	}
 		void OnCollisionEnter2D(Collision2D other)
 	{
-		Debug.Log(velocityY +" " + velocityX);
+		
 		if(other.transform.CompareTag("box destruct")){
 			mainWarp.boxes.Remove(gameObject.transform);
 			Destroy(gameObject);
@@ -61,7 +61,6 @@ public class BoxColision : MonoBehaviour {
 			}
 		}
 		else if((other.transform.CompareTag("Player"))){
-			Debug.Log("reached");
 			if(velocityY >15f){
 				Destroy(other.gameObject);
 				Camera.main.GetComponent<GravityWarp>().playerDead = true;
