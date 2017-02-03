@@ -30,16 +30,16 @@ public class BoxColision : MonoBehaviour {
 		if(velocityY1> gameObject.transform.GetComponent<Rigidbody2D>().velocity.y ){
 			velocityY1 = gameObject.transform.GetComponent<Rigidbody2D>().velocity.y;
 		}
-		Debug.Log("stats: "+ velocityY1);
+		
 	}
 		void OnCollisionEnter2D(Collision2D other)
 	{
-		Debug.Log(velocityY +" " + velocityX);
+		
 		if(other.transform.CompareTag("box destruct")){
 			mainWarp.boxes.Remove(gameObject.transform);
 			Destroy(gameObject);
 			}
-		else if(!(other.transform.CompareTag("Wall"))){
+		else if(!(other.transform.CompareTag("Wall"))&& !(other.transform.CompareTag("Player"))){
 			if(other.gameObject.tag == "destructable") {
 
 				if(velocityX1 >30f){
@@ -61,17 +61,21 @@ public class BoxColision : MonoBehaviour {
 			}
 		}
 		else if((other.transform.CompareTag("Player"))){
-			if(velocityY >30f){
+			if(velocityY >15f){
 				Destroy(other.gameObject);
+				Camera.main.GetComponent<GravityWarp>().playerDead = true;
 			}
-			if(velocityX >30f){
+			if(velocityX >15f){
 				Destroy(other.gameObject);
+				Camera.main.GetComponent<GravityWarp>().playerDead = true;
 			}
-			if(velocityY1 < -30f){
+			if(velocityY1 < -15f){
 				Destroy(other.gameObject);
+				Camera.main.GetComponent<GravityWarp>().playerDead = true;
 			}
-			if(velocityX1 < -30f){
+			if(velocityX1 < -15f){
 				Destroy(other.gameObject);
+				Camera.main.GetComponent<GravityWarp>().playerDead = true;
 			}
 		}
 		velocityX =0f;

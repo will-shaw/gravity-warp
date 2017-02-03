@@ -10,8 +10,13 @@ public class GravityWarp : MonoBehaviour
     public float thrust; // For horizontal movement. Multiplies gravityScale.
     public static string gravity = "D"; // The current gravity direction.
 
+    public GameObject deadMenu;
+    public bool playerDead = false;
     public bool gravityControlEnabled;
 
+    float reTimer =0f;
+    public float coolDown =0f;
+    int gravityCount = 0;
     void Update()
     {
         // Check for gravity change.
@@ -22,27 +27,56 @@ public class GravityWarp : MonoBehaviour
         BoxGravity();
         // If some glue exists, update glue gravity.
         GlueGravity();
+        if(playerDead){
+            deadMenu.GetComponent<DieMenuHandler>().ShowPause();
+        }
     }
 
     /* Handles user input for gravity change. */
     void InputHandler()
-    {
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            gravity = "U";
+    {   
+        if(gravityCount <5){
+            if (Input.GetKey(KeyCode.UpArrow) && gravity != "U")
+            {
+                gravity = "U";
+                gravityCount++;
+                reTimer =0f;
+            }
+            if (Input.GetKey(KeyCode.DownArrow)&& gravity != "D")
+            {
+                gravity = "D";
+                gravityCount++;
+                reTimer =0f;
+            }
+            if (Input.GetKey(KeyCode.LeftArrow)&& gravity != "L")
+            {
+                gravity = "L";
+                gravityCount++;
+                reTimer =0f;
+            }
+            if (Input.GetKey(KeyCode.RightArrow)&& gravity != "R")
+            {
+                gravity = "R";
+                gravityCount++;
+                reTimer =0f;
+            }
+            if(gravityCount>0){
+                reTimer += Time.deltaTime;
+                if(reTimer > 2f){
+                    reTimer =0;
+                    gravityCount =0;
+                }
+            }
         }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            gravity = "D";
+        else{
+            if(coolDown>2f){
+                coolDown = 0f;
+                gravityCount= 0;
+            }else{
+                coolDown+= Time.deltaTime;
+            }
         }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            gravity = "L";
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            gravity = "R";
-        }
+
     }
 
     /* Controls gravity for all items in the glues list. */
