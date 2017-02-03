@@ -1833,7 +1833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exit_point: {fileID: 1787908027}
-  switch_point: {fileID: 0}
+  switch_point: {fileID: 95726592}
   player: {fileID: 651565912}
   exitDoor: {fileID: 1963027094}
   nextLevel: level_1
@@ -1893,7 +1893,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 651565906}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.18, y: 2.136, z: 0}
+  m_LocalPosition: {x: 5.28, y: 2.29, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 200051136}
@@ -2236,6 +2236,18 @@ Prefab:
     - target: {fileID: 1599071706955266, guid: 727ed3a472f879a44b38bb7dbdfd1104, type: 2}
       propertyPath: m_Name
       value: pf-solid-box (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4498403540518504, guid: 727ed3a472f879a44b38bb7dbdfd1104, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 12.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4498403540518504, guid: 727ed3a472f879a44b38bb7dbdfd1104, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4498403540518504, guid: 727ed3a472f879a44b38bb7dbdfd1104, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 727ed3a472f879a44b38bb7dbdfd1104, type: 2}
