@@ -101,17 +101,17 @@ public class Player : MonoBehaviour
     }
 
     void ChangeDirection() {
-        string nearestWall = GetNearestWall();
-        if (nearestWall == "Down" && GravityWarp.gravity == "D") {
+        //string nearestWall = GetNearestWall();
+        if (/*nearestWall == "Down" && */GravityWarp.gravity == "D") {
             //player.transform.rotation = new Quaternion(0,0,0,0);
             player.transform.eulerAngles = new Vector3(0,0,0);
-        } else if (nearestWall == "Up" && GravityWarp.gravity == "U") {
+        } else if (/*nearestWall == "Up" && */GravityWarp.gravity == "U") {
             //player.transform.rotation = new Quaternion(0,0,180,0);
             player.transform.eulerAngles = new Vector3(0,0,180);
-        } else if (nearestWall == "Left" && GravityWarp.gravity == "L") {
+        } else if (/*nearestWall == "Left" && */GravityWarp.gravity == "L") {
             //player.transform.rotation = new Quaternion(0,0,270,0);
             player.transform.eulerAngles = new Vector3(0,0,270);
-        } else if (nearestWall == "Right" && GravityWarp.gravity == "R") {
+        } else if (/*nearestWall == "Right" && */GravityWarp.gravity == "R") {
             //player.transform.rotation = new Quaternion(0,0,-90,0);
             player.transform.eulerAngles = new Vector3(0,0,90);
         }  
