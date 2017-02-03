@@ -44,17 +44,25 @@ public class Player : MonoBehaviour
         if(GravityWarp.gravity =="L" || GravityWarp.gravity == "R"){
             anim.SetFloat("Speed", Mathf.Abs(moveVert));
             GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, moveVert * speed );
-            if (moveVert > 0 && !facingRight) {
+            if (moveVert > 0 && !facingRight && GravityWarp.gravity == "R") {
                 Flip();
-            } else if (moveVert < 0 && facingRight) {
+            } else if (moveVert < 0 && facingRight && GravityWarp.gravity == "R") {
+                Flip();
+            } else if (moveVert > 0 && facingRight && GravityWarp.gravity == "L") {
+                Flip();
+            } else if (moveVert < 0 && !facingRight && GravityWarp.gravity == "L") {
                 Flip();
             }
         }else {
             anim.SetFloat("Speed", Mathf.Abs(moveHori));
             GetComponent<Rigidbody2D>().velocity = new Vector2(moveHori * speed, GetComponent<Rigidbody2D>().velocity.y);
-            if (moveHori > 0 && !facingRight) {
+            if (moveHori > 0 && !facingRight && GravityWarp.gravity == "D") {
                 Flip();
-            } else if (moveHori < 0 && facingRight) {
+            } else if (moveHori < 0 && facingRight && GravityWarp.gravity == "D") {
+                Flip();
+            }  else if (moveHori > 0 && facingRight && GravityWarp.gravity == "U") {
+                Flip();
+            }  else if (moveHori < 0 && !facingRight && GravityWarp.gravity == "U") {
                 Flip();
             }
         }
