@@ -39,7 +39,7 @@ public class BoxColision : MonoBehaviour {
 			mainWarp.boxes.Remove(gameObject.transform);
 			Destroy(gameObject);
 			}
-		else if(!(other.transform.CompareTag("Wall"))){
+		else if(!(other.transform.CompareTag("Wall"))&& !(other.transform.CompareTag("Player"))){
 			if(other.gameObject.tag == "destructable") {
 
 				if(velocityX1 >30f){
@@ -61,17 +61,22 @@ public class BoxColision : MonoBehaviour {
 			}
 		}
 		else if((other.transform.CompareTag("Player"))){
-			if(velocityY >30f){
+			Debug.Log("reached");
+			if(velocityY >15f){
 				Destroy(other.gameObject);
+				Camera.main.GetComponent<GravityWarp>().playerDead = true;
 			}
-			if(velocityX >30f){
+			if(velocityX >15f){
 				Destroy(other.gameObject);
+				Camera.main.GetComponent<GravityWarp>().playerDead = true;
 			}
-			if(velocityY1 < -30f){
+			if(velocityY1 < -15f){
 				Destroy(other.gameObject);
+				Camera.main.GetComponent<GravityWarp>().playerDead = true;
 			}
-			if(velocityX1 < -30f){
+			if(velocityX1 < -15f){
 				Destroy(other.gameObject);
+				Camera.main.GetComponent<GravityWarp>().playerDead = true;
 			}
 		}
 		velocityX =0f;

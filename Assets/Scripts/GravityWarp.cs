@@ -10,6 +10,8 @@ public class GravityWarp : MonoBehaviour
     public float thrust; // For horizontal movement. Multiplies gravityScale.
     public static string gravity = "D"; // The current gravity direction.
 
+    public GameObject deadMenu;
+    public bool playerDead = false;
     public bool gravityControlEnabled;
 
     void Update()
@@ -22,6 +24,9 @@ public class GravityWarp : MonoBehaviour
         BoxGravity();
         // If some glue exists, update glue gravity.
         GlueGravity();
+        if(playerDead){
+            deadMenu.GetComponent<DieMenuHandler>().ShowPause();
+        }
     }
 
     /* Handles user input for gravity change. */
