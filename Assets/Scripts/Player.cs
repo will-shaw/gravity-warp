@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         Camera.main.GetComponent<GravityWarp>().boxes.Add(transform);
         Camera.main.GetComponent<CameraZoom>().player = transform;
+        Camera.main.GetComponent<LevelLoader>().player = transform;
     }
 
     float CalculateVelocity(float x, float y) {
