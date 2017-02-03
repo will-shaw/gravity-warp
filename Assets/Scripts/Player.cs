@@ -28,23 +28,30 @@ public class Player : MonoBehaviour
     }
 
     void FixedUpdate() {
-        float move = Input.GetAxis("Horizontal");
+        float moveHori = Input.GetAxis("Horizontal");
+        float moveVert = Input.GetAxis("Vertical");
         
         //canvas.FindChild("Xtext").GetComponent<Text>().text = "V:" + string.Format("{0:N2}", CalculateVelocity(GetComponent<Rigidbody2D>().velocity.x, GetComponent<Rigidbody2D>().velocity.y));
         
         canvas.FindChild("xtext").GetComponent<Text>().text = "X:" + string.Format("{0:N2}", GetComponent<Rigidbody2D>().velocity.x);
         canvas.FindChild("ytext").GetComponent<Text>().text = "Y:" + string.Format("{0:N2}", GetComponent<Rigidbody2D>().velocity.y);
-        anim.SetFloat("Speed", Mathf.Abs(move));
 
         if(GravityWarp.gravity =="L" || GravityWarp.gravity == "R"){
-            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, move * speed );
+            anim.SetFloat("Speed", Mathf.Abs(moveVert));
+            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, moveVert * speed );
+            if (moveVert > 0 && !facingRight) {
+                Flip();
+            } else if (moveVert < 0 && facingRight) {
+                Flip();
+            }
         }else{
-            GetComponent<Rigidbody2D>().velocity = new Vector2(move * speed, GetComponent<Rigidbody2D>().velocity.y);
-        }
-        if (move > 0 && !facingRight) {
-            Flip();
-        } else if (move < 0 && facingRight) {
-            Flip();
+            anim.SetFloat("Speed", Mathf.Abs(moveHori));
+            GetComponent<Rigidbody2D>().velocity = new Vector2(moveHori * speed, GetComponent<Rigidbody2D>().velocity.y);
+            if (moveHori > 0 && !facingRight) {
+                Flip();
+            } else if (moveHori < 0 && facingRight) {
+                Flip();
+            }
         }
     }
 
