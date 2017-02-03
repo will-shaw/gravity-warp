@@ -14,6 +14,7 @@ public class GravityWarp : MonoBehaviour
     public bool playerDead = false;
     public bool gravityControlEnabled;
 
+    float reTimer =0f;
     public float coolDown =0f;
     int gravityCount = 0;
     void Update()
@@ -39,21 +40,32 @@ public class GravityWarp : MonoBehaviour
             {
                 gravity = "U";
                 gravityCount++;
+                reTimer =0f;
             }
             if (Input.GetKey(KeyCode.DownArrow)&& gravity != "D")
             {
                 gravity = "D";
                 gravityCount++;
+                reTimer =0f;
             }
             if (Input.GetKey(KeyCode.LeftArrow)&& gravity != "L")
             {
                 gravity = "L";
                 gravityCount++;
+                reTimer =0f;
             }
             if (Input.GetKey(KeyCode.RightArrow)&& gravity != "R")
             {
                 gravity = "R";
                 gravityCount++;
+                reTimer =0f;
+            }
+            if(gravityCount>0){
+                reTimer += Time.deltaTime;
+                if(reTimer > 2f){
+                    reTimer =0;
+                    gravityCount =0;
+                }
             }
         }
         else{
