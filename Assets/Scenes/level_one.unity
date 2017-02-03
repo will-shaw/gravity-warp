@@ -210,6 +210,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4783376102200412, guid: 917904f8af7c26c4c8a4124a49cdda7a,
     type: 2}
   m_PrefabInternal: {fileID: 1647608673}
+--- !u!4 &16963290 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4498403540518504, guid: 727ed3a472f879a44b38bb7dbdfd1104,
+    type: 2}
+  m_PrefabInternal: {fileID: 748802214}
 --- !u!4 &22277643 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4783376102200412, guid: 917904f8af7c26c4c8a4124a49cdda7a,
@@ -826,6 +831,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 4498403540518504, guid: 727ed3a472f879a44b38bb7dbdfd1104, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 10.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 4498403540518504, guid: 727ed3a472f879a44b38bb7dbdfd1104, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4498403540518504, guid: 727ed3a472f879a44b38bb7dbdfd1104, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -15.77
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 727ed3a472f879a44b38bb7dbdfd1104, type: 2}
   m_IsPrefabParent: 0
@@ -1065,24 +1082,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &489783916 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1599071706955266, guid: 727ed3a472f879a44b38bb7dbdfd1104,
-    type: 2}
-  m_PrefabInternal: {fileID: 748802214}
---- !u!114 &489783920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 489783916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed42678329f0d4c50b173e3c49ae9232, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  glueTime: 5
-  canvas: {fileID: 0}
 --- !u!1 &503067893
 GameObject:
   m_ObjectHideFlags: 0
@@ -1305,24 +1304,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 114a29e0deec009439eb7d4c246d7e8c, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &584225346 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1599071706955266, guid: 727ed3a472f879a44b38bb7dbdfd1104,
+--- !u!4 &591687227 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4498403540518504, guid: 727ed3a472f879a44b38bb7dbdfd1104,
     type: 2}
   m_PrefabInternal: {fileID: 344153783}
---- !u!114 &584225350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 584225346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed42678329f0d4c50b173e3c49ae9232, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  glueTime: 5
-  canvas: {fileID: 0}
 --- !u!1001 &640819832
 Prefab:
   m_ObjectHideFlags: 0
@@ -1499,7 +1485,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 651565906}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.18, y: 2.136, z: 0}
+  m_LocalPosition: {x: 34.94, y: 1.99, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 200051136}
@@ -1603,8 +1589,8 @@ Transform:
   - {fileID: 2143996500}
   - {fileID: 799857548}
   - {fileID: 791747841}
-  - {fileID: 775981450}
-  - {fileID: 862309969}
+  - {fileID: 16963290}
+  - {fileID: 591687227}
   - {fileID: 1715043175}
   - {fileID: 1406983056}
   - {fileID: 1787908027}
@@ -1843,6 +1829,18 @@ Prefab:
       propertyPath: m_Name
       value: pf-solid-box (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4498403540518504, guid: 727ed3a472f879a44b38bb7dbdfd1104, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 10.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 4498403540518504, guid: 727ed3a472f879a44b38bb7dbdfd1104, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4498403540518504, guid: 727ed3a472f879a44b38bb7dbdfd1104, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 15.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 727ed3a472f879a44b38bb7dbdfd1104, type: 2}
   m_IsPrefabParent: 0
@@ -1925,11 +1923,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4124881192393374, guid: b5f1e22d3e49a884fa489bcb8b202788,
     type: 2}
   m_PrefabInternal: {fileID: 1231961735}
---- !u!4 &775981450 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4653648266933436, guid: 727ed3a472f879a44b38bb7dbdfd1104,
-    type: 2}
-  m_PrefabInternal: {fileID: 748802214}
 --- !u!1 &782792663
 GameObject:
   m_ObjectHideFlags: 0
@@ -2241,11 +2234,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 825722802}
---- !u!4 &862309969 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4653648266933436, guid: 727ed3a472f879a44b38bb7dbdfd1104,
-    type: 2}
-  m_PrefabInternal: {fileID: 344153783}
 --- !u!4 &884046110 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4365003114708360, guid: 20f3be01482946e4aa6b1c6ac6a2eca7,
@@ -4115,7 +4103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc6ce663b2fb9d489744d5e8e16beef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  linksRequired: 1
+  linksRequired: 2
   lights:
   - {fileID: 749975282}
   - {fileID: 1239931757}
@@ -4161,6 +4149,10 @@ Prefab:
     - target: {fileID: 4238048888044826, guid: 14e28a2aecfa54897bba354ba1ccab3c, type: 2}
       propertyPath: m_RootOrder
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403836600853374, guid: 14e28a2aecfa54897bba354ba1ccab3c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 14e28a2aecfa54897bba354ba1ccab3c, type: 2}
@@ -4858,8 +4850,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boxes:
-  - {fileID: 775981450}
-  - {fileID: 862309969}
+  - {fileID: 16963290}
+  - {fileID: 591687227}
   glues: []
   thrust: 4
   gravityControlEnabled: 1

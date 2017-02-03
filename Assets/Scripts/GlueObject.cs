@@ -18,7 +18,7 @@ public class GlueObject : MonoBehaviour
                 GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
                 isStuck = true;
             }
-            else
+            else if (other.gameObject.tag == "Wall")
             {
                 GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
                 GetComponent<SpriteRenderer>().sprite = sprites[1];
