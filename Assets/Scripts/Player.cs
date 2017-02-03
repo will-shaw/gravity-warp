@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
             } else if (moveVert < 0 && facingRight) {
                 Flip();
             }
-        }else{
+        }else {
             anim.SetFloat("Speed", Mathf.Abs(moveHori));
             GetComponent<Rigidbody2D>().velocity = new Vector2(moveHori * speed, GetComponent<Rigidbody2D>().velocity.y);
             if (moveHori > 0 && !facingRight) {
@@ -77,28 +77,6 @@ public class Player : MonoBehaviour
             ChangeDirection();
         }
         if(!(player.GetComponent<Glue>().isGlued())) {
-         /*   if (Input.GetKey(KeyCode.D)) {
-                //player.GetComponent<Rigidbody2D>().AddForce(new Vector2(Time.deltaTime * 250f, 0));
-                if(GravityWarp.gravity == "R") {
-                    player.transform.Translate(new Vector3(0, Time.deltaTime * speed * -1,0), Space.World);
-                } else if (GravityWarp.gravity == "U" || GravityWarp.gravity == "D"){
-                    player.transform.Translate(new Vector3(Time.deltaTime * speed,0,0), Space.World);
-                } else if (GravityWarp.gravity == "L"){
-                    player.transform.Translate(new Vector3(0, Time.deltaTime * speed,0), Space.World);
-                } else if (GravityWarp.gravity == "U"){
-                    player.transform.Translate(new Vector3(Time.deltaTime * speed,0,0), Space.World);
-                }		
-            } else if (Input.GetKey(KeyCode.A)) {
-                //player.GetComponent<Rigidbody2D>().AddForce(new Vector2(Time.deltaTime * -250f, 0));
-                if(GravityWarp.gravity == "R") {
-                    player.transform.Translate(new Vector3(0, Time.deltaTime * speed,0), Space.World);
-                } else if (GravityWarp.gravity == "U" || GravityWarp.gravity == "D"){
-                    player.transform.Translate(new Vector3(Time.deltaTime * speed * -1,0,0), Space.World);
-                } else if (GravityWarp.gravity == "L"){
-                    player.transform.Translate(new Vector3(0, Time.deltaTime * speed * -1,0), Space.World);
-                }								
-            }
-*/
             if (Input.GetKey(KeyCode.Space) && Time.realtimeSinceStartup > cooldown + 1)
             {
                 if(GravityWarp.gravity == "D") {
@@ -118,13 +96,17 @@ public class Player : MonoBehaviour
     void ChangeDirection() {
         string nearestWall = GetNearestWall();
         if (nearestWall == "Down" && GravityWarp.gravity == "D") {
-            player.transform.rotation = new Quaternion(0,0,0,0);
+            //player.transform.rotation = new Quaternion(0,0,0,0);
+            player.transform.eulerAngles = new Vector3(0,0,0);
         } else if (nearestWall == "Up" && GravityWarp.gravity == "U") {
-            player.transform.rotation = new Quaternion(0,0,180,0);
+            //player.transform.rotation = new Quaternion(0,0,180,0);
+            player.transform.eulerAngles = new Vector3(0,0,180);
         } else if (nearestWall == "Left" && GravityWarp.gravity == "L") {
-            player.transform.rotation = new Quaternion(0,0,270,0);
+            //player.transform.rotation = new Quaternion(0,0,270,0);
+            player.transform.eulerAngles = new Vector3(0,0,270);
         } else if (nearestWall == "Right" && GravityWarp.gravity == "R") {
-            player.transform.rotation = new Quaternion(0,0,-90,0);
+            //player.transform.rotation = new Quaternion(0,0,-90,0);
+            player.transform.eulerAngles = new Vector3(0,0,90);
         }  
         Transform gravDirect = canvas.FindChild("GravityDirection");
         if(GravityWarp.gravity == "R"){
