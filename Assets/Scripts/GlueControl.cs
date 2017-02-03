@@ -3,26 +3,31 @@
 public class GlueControl : MonoBehaviour
 {
     public Transform gluePrefab;
+    public Transform noPlacePrefab;
     public int glueLimit;
     public int glueCount;
-    public float spawnRange;
-    public AudioClip gluePlace;
+    public float spawnRange;   
     public bool glueEnabled;
+    Transform cantGlue;
 
     void Update()
     {
         float distance = Vector2.Distance(transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
-        if (Input.GetMouseButtonDown(1) && spawnRange > distance && glueEnabled)
+        if (Input.GetMouseButtonDown(1) && spawnRange >= distance && glueEnabled)
         {
             GravityWarp gw = Camera.main.GetComponent<GravityWarp>();
             if (glueCount < glueLimit)
             {
                 Transform glueNew;
                 glueNew = Instantiate(gluePrefab, VaildateTarget(), Quaternion.identity);
-                AudioSource.PlayClipAtPoint(gluePlace, Input.mousePosition);
                 glueCount++;
                 gw.glues.Add(glueNew);
             }
+        } else if ( Input.GetMouseButtonDown(1) && spawnRange < distance) {
+            cantGlue = Instantiate(noPlacePrefab, VaildateTarget(), Quaternion.identity);
+        }
+        if (Input.GetMouseButtonUp(1) && cantGlue != null) {
+            Destroy (cantGlue.gameObject);
         }
     }
 

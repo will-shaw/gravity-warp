@@ -2074,10 +2074,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gluePrefab: {fileID: 4535306469873588, guid: ee86be60910051d48888721ee5ef233c, type: 2}
+  noPlacePrefab: {fileID: 4917440775043628, guid: 4225345aa5d3121429e2c2f9a5cbf801,
+    type: 2}
   glueLimit: 3
   glueCount: 0
   spawnRange: 5
-  gluePlace: {fileID: 8300000, guid: 3754ff990caf04bad81b0e41a7a0f432, type: 3}
+  gluePlace: {fileID: 8300000, guid: 30746595eb7640f4ea1e5bcc0a4a73be, type: 3}
+  cantPlace: {fileID: 8300000, guid: babd1bc901d790d479628d6d4ffcdd46, type: 3}
   glueEnabled: 1
 --- !u!1 &657557395
 GameObject:
