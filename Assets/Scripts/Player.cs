@@ -102,16 +102,16 @@ public class Player : MonoBehaviour
 
     void ChangeDirection() {
         //string nearestWall = GetNearestWall();
-        if (/*nearestWall == "Down" && */GravityWarp.gravity == "D") {
+        if (/*nearestWall == "Down" && */GravityWarp.gravity == "D" && !(GetComponent<Glue>().isGlued())) {
             //player.transform.rotation = new Quaternion(0,0,0,0);
             player.transform.eulerAngles = new Vector3(0,0,0);
-        } else if (/*nearestWall == "Up" && */GravityWarp.gravity == "U") {
+        } else if (/*nearestWall == "Up" && */GravityWarp.gravity == "U" && !(GetComponent<Glue>().isGlued())) {
             //player.transform.rotation = new Quaternion(0,0,180,0);
             player.transform.eulerAngles = new Vector3(0,0,180);
-        } else if (/*nearestWall == "Left" && */GravityWarp.gravity == "L") {
+        } else if (/*nearestWall == "Left" && */GravityWarp.gravity == "L" && !(GetComponent<Glue>().isGlued())) {
             //player.transform.rotation = new Quaternion(0,0,270,0);
             player.transform.eulerAngles = new Vector3(0,0,270);
-        } else if (/*nearestWall == "Right" && */GravityWarp.gravity == "R") {
+        } else if (/*nearestWall == "Right" && */GravityWarp.gravity == "R" && !(GetComponent<Glue>().isGlued())) {
             //player.transform.rotation = new Quaternion(0,0,-90,0);
             player.transform.eulerAngles = new Vector3(0,0,90);
         }  
