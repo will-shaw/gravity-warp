@@ -12,29 +12,28 @@ public class GlueControl : MonoBehaviour
 
     void Update()
     {
-        float distance = Vector2.Distance(transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        float distance = Vector2.Distance(transform.position, ValidTarget());
         if (Input.GetMouseButtonDown(1) && spawnRange >= distance && glueEnabled)
         {
             GravityWarp gw = Camera.main.GetComponent<GravityWarp>();
             if (glueCount < glueLimit)
             {
                 Transform glueNew;
-                glueNew = Instantiate(gluePrefab, VaildateTarget(), Quaternion.identity);
+                glueNew = Instantiate(gluePrefab, ValidTarget(), Quaternion.identity);
                 glueCount++;
                 gw.glues.Add(glueNew);
             }
         } else if ( Input.GetMouseButtonDown(1) && spawnRange < distance) {
-            cantGlue = Instantiate(noPlacePrefab, VaildateTarget(), Quaternion.identity);
+            cantGlue = Instantiate(noPlacePrefab, ValidTarget(), Quaternion.identity);
         }
         if (Input.GetMouseButtonUp(1) && cantGlue != null) {
             Destroy (cantGlue.gameObject);
         }
     }
 
-    Vector3 VaildateTarget()
+    Vector3 ValidTarget()
     {
-        Vector3 target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        target.z = -9;
+        Vector2 target = Camera.main.ScreenToWorldPoint(Input.mousePosition);        
         RaycastHit2D[] hits = Physics2D.LinecastAll(transform.position, target);
         Debug.DrawLine(transform.position, target, Color.red, 10);
 
