@@ -4,7 +4,6 @@ public class GlueObject : MonoBehaviour
 {
     public Sprite[] sprites = new Sprite[3];
     bool isStuck;
-    bool once;
     string currGrav;
 
     void OnTriggerEnter2D(Collider2D other)

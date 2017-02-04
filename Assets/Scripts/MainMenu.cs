@@ -3,11 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-
-    public Transform field;
-    public string scene;
-    AsyncOperation op;
-    public UnityEngine.UI.Button button;
+    public Transform field; // The forcefield connected to this button.
+    public string scene; // The scene to load when button activates.
+    AsyncOperation op; // Allows level to load while box is falling, and activate with button.
+    public UnityEngine.UI.Button button; // The UI button.
 
     void Start()
     {
@@ -16,7 +15,7 @@ public class MainMenu : MonoBehaviour
 
     void Update()
     {
-        if (gameObject.GetComponent<Button>().active)
+        if (GetComponent<Button>().active)
         {
             op.allowSceneActivation = true;
         }
