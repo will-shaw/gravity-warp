@@ -11,6 +11,7 @@ public class DieMenuHandler : MonoBehaviour {
 	public void reset(){
 		Scene current = SceneManager.GetActiveScene();
 		SceneManager.LoadScene(current.name);
+		GravityWarp.gravity = "D";
 	}
 	public void mainMenu(){
 		SceneManager.LoadScene("main_menu");
