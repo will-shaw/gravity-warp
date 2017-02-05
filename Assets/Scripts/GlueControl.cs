@@ -9,7 +9,7 @@ public class GlueControl : MonoBehaviour
     public float spawnRange;   
     public bool glueEnabled;
     Transform cantGlue;
-    bool hasGun;
+    public bool hasGun;
 
     void Update()
     {

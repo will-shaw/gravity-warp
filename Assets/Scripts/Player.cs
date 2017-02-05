@@ -118,10 +118,10 @@ public class Player : MonoBehaviour
 
         if (player != null)
         {
+            anim.SetBool("isGrounded", IsGrounded());
             ChangeDirection();
             if (!(player.GetComponent<Glue>().isGlued()))
             {
-                anim.SetBool("isGrounded", IsGrounded());
                 if (Input.GetKey(KeyCode.Space) && Time.realtimeSinceStartup > cooldown + 0.1f && IsGrounded())
                 {
                     switch (GravityWarp.gravity)
@@ -209,7 +209,7 @@ public class Player : MonoBehaviour
         }
 
         RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, down, 3.0f);
-        Debug.DrawRay(transform.position, down, Color.red, 10);
+        Debug.DrawRay(transform.position, down, Color.yellow, 10);
 
         float dDist = 100f;
 
@@ -234,7 +234,7 @@ public class Player : MonoBehaviour
                 }
             }
         }
-
+        print(dDist);
         if (dDist <= 1.7f)
         {
             return true;
