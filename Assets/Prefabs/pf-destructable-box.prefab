@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 50553661008283958}
   - component: {fileID: 61262356641036030}
   - component: {fileID: 114418036779322066}
+  - component: {fileID: 114531767330075410}
   m_Layer: 0
   m_Name: pf-destructable-box
   m_TagString: destructable
@@ -90,6 +91,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   glueTime: 5
   canvas: {fileID: 0}
+--- !u!114 &114531767330075410
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1824159991899118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16efd446d8d5843e6a2ec1c1272e096b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212532852006428210
 SpriteRenderer:
   m_ObjectHideFlags: 1
