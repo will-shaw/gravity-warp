@@ -8,6 +8,8 @@ public class LevelLoader : MonoBehaviour
     public Transform exitDoor; // The exit door. Will as level loads.
     public string nextLevel; // The level to load.
     public bool asyncLoad = true; // Is the load immediate or async.
+    public string setGravity;
+
     bool loadOnce; // Makes sure that Exit trigger can only trigger once.
     AsyncOperation op; // Holds the async operation. Used to 'allowSceneActivation'.
 
@@ -15,6 +17,9 @@ public class LevelLoader : MonoBehaviour
     {
         if (other == switch_point.GetComponent<Collider2D>())
         {
+            if (setGravity != null) {
+                GravityWarp.gravity = setGravity;
+            }
             op.allowSceneActivation = true;
         }
         else if (other == exit_point.GetComponent<Collider2D>())

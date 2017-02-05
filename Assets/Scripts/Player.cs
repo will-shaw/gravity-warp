@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public Transform canvas;
     public RectTransform canvasPrefab;
 
-    bool facingRight = true;
+    public bool facingRight = true;
     Animator anim;
 
     public Sprite spSide;

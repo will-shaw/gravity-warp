@@ -2662,6 +2662,7 @@ MonoBehaviour:
   canvas: {fileID: 0}
   canvasPrefab: {fileID: 224629299449171768, guid: e53a41e1ce5acc8499bfe4930b3330eb,
     type: 2}
+  facingRight: 1
   spSide: {fileID: 21300000, guid: 3afbe5e7757c74d1c895494637a65207, type: 3}
   spUp: {fileID: 21300000, guid: 1b80f07f9538e44ae8e19b2acdaa869d, type: 3}
 --- !u!95 &1164776335
@@ -2756,8 +2757,9 @@ MonoBehaviour:
   exit_point: {fileID: 1126507069}
   switch_point: {fileID: 3528889}
   exitDoor: {fileID: 257386231}
-  nextLevel: level_one
+  nextLevel: glue_tutorial
   asyncLoad: 1
+  setGravity: D
 --- !u!212 &1164776341
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2818,7 +2820,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gluePrefab: {fileID: 4535306469873588, guid: ee86be60910051d48888721ee5ef233c, type: 2}
-  noPlacePrefab: {fileID: 0}
+  noPlacePrefab: {fileID: 4917440775043628, guid: 4225345aa5d3121429e2c2f9a5cbf801,
+    type: 2}
   glueLimit: 5
   glueCount: 0
   spawnRange: 5
@@ -3242,6 +3245,7 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 50589770215866522, guid: 114a29e0deec009439eb7d4c246d7e8c, type: 2}
+    - {fileID: 114104236034801492, guid: 114a29e0deec009439eb7d4c246d7e8c, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 114a29e0deec009439eb7d4c246d7e8c, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1270404312 stripped
@@ -3299,6 +3303,7 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 50589770215866522, guid: 114a29e0deec009439eb7d4c246d7e8c, type: 2}
+    - {fileID: 114104236034801492, guid: 114a29e0deec009439eb7d4c246d7e8c, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 114a29e0deec009439eb7d4c246d7e8c, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1388389492 stripped
