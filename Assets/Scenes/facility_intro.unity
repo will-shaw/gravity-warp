@@ -1453,6 +1453,7 @@ MonoBehaviour:
   - {fileID: 104979009}
   - {fileID: 1466362318}
   thrust: 4
+  player: {fileID: 0}
   deadMenu: {fileID: 0}
   playerDead: 0
   gravityControlEnabled: 0
@@ -2067,7 +2068,7 @@ MonoBehaviour:
   exitDoor: {fileID: 985058292}
   nextLevel: level_1
   asyncLoad: 1
-  setGravity: 
+  setGravity: D
 --- !u!212 &1726010696
 SpriteRenderer:
   m_ObjectHideFlags: 0

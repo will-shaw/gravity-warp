@@ -1684,7 +1684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.13305579, g: 0.7056147, b: 0.78676474, a: 0.392}
+  m_Color: {r: 0.32156864, g: 0.6156863, b: 0.8392157, a: 0.5568628}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1714,7 +1714,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4365003114708360, guid: 20f3be01482946e4aa6b1c6ac6a2eca7, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 28.71
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4365003114708360, guid: 20f3be01482946e4aa6b1c6ac6a2eca7, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1750,11 +1750,31 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4365003114708360, guid: 20f3be01482946e4aa6b1c6ac6a2eca7, type: 2}
       propertyPath: m_LocalScale.x
-      value: 8.370327
+      value: 8.239182
       objectReference: {fileID: 0}
     - target: {fileID: 4365003114708360, guid: 20f3be01482946e4aa6b1c6ac6a2eca7, type: 2}
       propertyPath: m_LocalScale.y
       value: 6.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 61991722513297938, guid: 20f3be01482946e4aa6b1c6ac6a2eca7,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 0.034045383
+      objectReference: {fileID: 0}
+    - target: {fileID: 61991722513297938, guid: 20f3be01482946e4aa6b1c6ac6a2eca7,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 0.003363548
+      objectReference: {fileID: 0}
+    - target: {fileID: 61991722513297938, guid: 20f3be01482946e4aa6b1c6ac6a2eca7,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 4.2111926
+      objectReference: {fileID: 0}
+    - target: {fileID: 61991722513297938, guid: 20f3be01482946e4aa6b1c6ac6a2eca7,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 3.1229181
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 20f3be01482946e4aa6b1c6ac6a2eca7, type: 2}
@@ -2826,6 +2846,7 @@ MonoBehaviour:
   glueCount: 0
   spawnRange: 5
   glueEnabled: 0
+  hasGun: 0
 --- !u!1001 &1190042158
 Prefab:
   m_ObjectHideFlags: 0
@@ -2835,7 +2856,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4347001563427038, guid: f02a9e72c70ed0045947a32b91d46544, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 10.66
+      value: 11.12
       objectReference: {fileID: 0}
     - target: {fileID: 4347001563427038, guid: f02a9e72c70ed0045947a32b91d46544, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2872,6 +2893,10 @@ Prefab:
     - target: {fileID: 4347001563427038, guid: f02a9e72c70ed0045947a32b91d46544, type: 2}
       propertyPath: m_LocalScale.y
       value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4347001563427038, guid: f02a9e72c70ed0045947a32b91d46544, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.7353008
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f02a9e72c70ed0045947a32b91d46544, type: 2}
@@ -3013,6 +3038,7 @@ MonoBehaviour:
   glues: []
   clutter: []
   thrust: 4
+  player: {fileID: 0}
   deadMenu: {fileID: 759669360}
   playerDead: 0
   gravityControlEnabled: 0
@@ -4683,7 +4709,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 2
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1220529277}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
