@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 68232321491618330}
   m_Layer: 0
   m_Name: pf-exit-point
-  m_TagString: exit_point
-  m_Icon: {fileID: 0}
+  m_TagString: Untagged
+  m_Icon: {fileID: -982381405332843317, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1615663284352256}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.012815507, z: -10}
+  m_LocalPosition: {x: -9.4, y: -1.274, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -53,5 +53,5 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
-  - {x: 18.856836, y: -9.591225}
-  - {x: 18.89771, y: -4.1416645}
+  - {x: -0.005282402, y: -2.7150483}
+  - {x: 0.0067214966, y: 2.5082192}
