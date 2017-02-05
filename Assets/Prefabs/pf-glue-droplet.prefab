@@ -173,6 +173,7 @@ MonoBehaviour:
   - {fileID: 21300002, guid: 64ab82043b481fb47a9b8133a92de4f9, type: 3}
   - {fileID: 21300000, guid: 64ab82043b481fb47a9b8133a92de4f9, type: 3}
   - {fileID: 21300004, guid: 64ab82043b481fb47a9b8133a92de4f9, type: 3}
+  expireTimer: 15
 --- !u!212 &212579335948011480
 SpriteRenderer:
   m_ObjectHideFlags: 1
