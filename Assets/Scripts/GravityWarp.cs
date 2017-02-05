@@ -11,6 +11,9 @@ public class GravityWarp : MonoBehaviour
     public float thrust; // For horizontal movement. Multiplies gravityScale.
     public static string gravity = "D"; // The current gravity direction.
 
+    public Transform player;
+    bool hasRemote;
+
     public GameObject deadMenu;
     public bool playerDead = false;
     public bool gravityControlEnabled;
@@ -24,7 +27,18 @@ public class GravityWarp : MonoBehaviour
         if (gravityControlEnabled)
         {
             InputHandler();
+            if (!hasRemote)
+            {
+                hasRemote = true;
+                player.GetComponent<Animator>().SetBool("hasRemote", hasRemote);
+            }
         }
+        else if (hasRemote)
+        {
+            hasRemote = false;
+            player.GetComponent<Animator>().SetBool("hasRemote", hasRemote);
+        }
+
         /* Updates box gravity. The player is also added to this list by Player.cs */
         BoxGravity();
         // If some glue exists, update glue gravity.

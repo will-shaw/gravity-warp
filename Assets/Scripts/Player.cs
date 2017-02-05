@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
         player = transform;
         rb2D = player.GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        Camera.main.GetComponent<GravityWarp>().player = transform;
         Camera.main.GetComponent<GravityWarp>().boxes.Add(transform);
         Camera.main.GetComponent<CameraZoom>().player = transform;
     }
@@ -118,28 +119,28 @@ public class Player : MonoBehaviour
         if (player != null)
         {
             ChangeDirection();
-            IsGrounded();
-        }
-        if (!(player.GetComponent<Glue>().isGlued()))
-        {
-            if (Input.GetKey(KeyCode.Space) && Time.realtimeSinceStartup > cooldown + 0.1f && IsGrounded())
+            if (!(player.GetComponent<Glue>().isGlued()))
             {
-                switch (GravityWarp.gravity)
+                anim.SetBool("isGrounded", IsGrounded());
+                if (Input.GetKey(KeyCode.Space) && Time.realtimeSinceStartup > cooldown + 0.1f && IsGrounded())
                 {
-                    case "D":
-                        player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 700.0f));
-                        break;
-                    case "U":
-                        player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -700.0f));
-                        break;
-                    case "L":
-                        player.GetComponent<Rigidbody2D>().AddForce(new Vector2(500.0f, 0));
-                        break;
-                    case "R":
-                        player.GetComponent<Rigidbody2D>().AddForce(new Vector2(-500.0f, 0));
-                        break;
+                    switch (GravityWarp.gravity)
+                    {
+                        case "D":
+                            player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 700.0f));
+                            break;
+                        case "U":
+                            player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -700.0f));
+                            break;
+                        case "L":
+                            player.GetComponent<Rigidbody2D>().AddForce(new Vector2(500.0f, 0));
+                            break;
+                        case "R":
+                            player.GetComponent<Rigidbody2D>().AddForce(new Vector2(-500.0f, 0));
+                            break;
+                    }
+                    cooldown = Time.realtimeSinceStartup;
                 }
-                cooldown = Time.realtimeSinceStartup;
             }
         }
     }
@@ -216,7 +217,7 @@ public class Player : MonoBehaviour
         {
             if (hit.collider != null)
             {
-                if (hit.collider.gameObject.tag == "Wall" || hit.collider.GetComponent<Field>() != null || hit.collider.GetComponent<Button>() != null)
+                if (hit.collider.gameObject.tag == "Wall" || hit.collider.GetComponent<Field>() != null || hit.collider.GetComponent<Button>() != null || hit.collider.GetComponent<BoxColision>() != null)
                 {
                     switch (grav)
                     {

@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: baad09775e9a9bd49b676f68871334a1
-timeCreated: 1486277853
+guid: 88ee3224e1c364444aa9572ad967e637
+timeCreated: 1486277894
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: player_running_0
-    21300002: player_running_1
-    21300004: player_running_2
-    21300006: player_running_3
-    21300008: player_running_4
-    21300010: player_running_5
-    21300012: player_running_6
-    21300014: player_running_7
+    21300000: player_running_remote_gun_0
+    21300002: player_running_remote_gun_1
+    21300004: player_running_remote_gun_2
+    21300006: player_running_remote_gun_3
+    21300008: player_running_remote_gun_4
+    21300010: player_running_remote_gun_5
+    21300012: player_running_remote_gun_6
+    21300014: player_running_remote_gun_7
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -75,18 +75,18 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: WebGL
-    maxTextureSize: 4096
-    textureFormat: 12
+    maxTextureSize: 2048
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 1
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player_running_0
+      name: player_running_remote_gun_0
       rect:
         serializedVersion: 2
         x: 0
@@ -99,7 +99,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_running_1
+      name: player_running_remote_gun_1
       rect:
         serializedVersion: 2
         x: 400
@@ -112,7 +112,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_running_2
+      name: player_running_remote_gun_2
       rect:
         serializedVersion: 2
         x: 800
@@ -125,7 +125,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_running_3
+      name: player_running_remote_gun_3
       rect:
         serializedVersion: 2
         x: 1200
@@ -138,7 +138,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_running_4
+      name: player_running_remote_gun_4
       rect:
         serializedVersion: 2
         x: 0
@@ -151,7 +151,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_running_5
+      name: player_running_remote_gun_5
       rect:
         serializedVersion: 2
         x: 400
@@ -164,7 +164,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_running_6
+      name: player_running_remote_gun_6
       rect:
         serializedVersion: 2
         x: 800
@@ -177,7 +177,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_running_7
+      name: player_running_remote_gun_7
       rect:
         serializedVersion: 2
         x: 1200

@@ -429,6 +429,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   glueTime: 2
   canvas: {fileID: 0}
+--- !u!114 &362937986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 362937980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16efd446d8d5843e6a2ec1c1272e096b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &381237605 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1428836992498698, guid: e3f30bfd6b9f8de4681baa1553a96802,
@@ -852,8 +863,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 960960391}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.54, y: -1.04, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalPosition: {x: 7.54, y: -1.08, z: 0}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 266699348}
   m_RootOrder: 0
@@ -939,9 +950,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0.049304724, y: 0.08569448}
+  m_Offset: {x: -0.08048439, y: 0.56386316}
   serializedVersion: 2
-  m_Size: {x: 0.33670342, y: 1.9679325}
+  m_Size: {x: 0.8148725, y: 3.1155384}
 --- !u!114 &960960398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -966,9 +977,9 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0.15, y: -0.8}
+  m_Offset: {x: -0.19, y: -1.61}
   serializedVersion: 2
-  m_Radius: 0.3
+  m_Radius: 0.58
 --- !u!50 &960960400
 Rigidbody2D:
   serializedVersion: 4

@@ -41,7 +41,7 @@ public class Glue : MonoBehaviour
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         Camera.main.GetComponent<CameraZoom>().player.GetComponent<GlueControl>().changeGlueCount(0);
         if (transform.tag == "Player") {
-            GetComponent<Animator>().SetFloat("Speed", 0);
+            GetComponent<Animator>().SetFloat("Speed", -1);
         }
     }
 

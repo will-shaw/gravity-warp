@@ -9,9 +9,23 @@ public class GlueControl : MonoBehaviour
     public float spawnRange;   
     public bool glueEnabled;
     Transform cantGlue;
+    bool hasGun;
 
     void Update()
     {
+        if (glueEnabled) {
+            if (!hasGun)
+            {
+                hasGun = true;
+                GetComponent<Animator>().SetBool("hasGun", hasGun);
+            }
+        }
+        else if (hasGun)
+        {
+            hasGun = false;
+            GetComponent<Animator>().SetBool("hasGun", hasGun);
+        }
+
         float distance = Vector2.Distance(transform.position, ValidTarget());
         if (Input.GetMouseButtonDown(1) && spawnRange >= distance && glueEnabled)
         {
