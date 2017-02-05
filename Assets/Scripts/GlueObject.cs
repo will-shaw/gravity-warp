@@ -5,6 +5,8 @@ public class GlueObject : MonoBehaviour
     public Sprite[] sprites = new Sprite[3];
     bool isStuck;
     string currGrav;
+    bool expire = true;
+    public float expireTimer = 15;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -15,6 +17,7 @@ public class GlueObject : MonoBehaviour
                 other.GetComponent<Glue>().gluing();
                 GetComponent<SpriteRenderer>().sprite = sprites[2];
                 GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+                expire = false;
                 isStuck = true;
             }
             else if (other.gameObject.tag == "Wall")
@@ -54,6 +57,15 @@ public class GlueObject : MonoBehaviour
                     transform.rotation = new Quaternion(0, 0, 90, 0);
                     break;
             }
+        }
+        if (expire && expireTimer < 0)
+        {
+            Destroy(gameObject);
+            Camera.main.GetComponent<CameraZoom>().player.GetComponent<GlueControl>().changeGlueCount(0);
+        }
+        else if (expire)
+        {
+            expireTimer -= Time.deltaTime;
         }
     }
 
