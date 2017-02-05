@@ -20,6 +20,8 @@ public class LevelLoader : MonoBehaviour
             if (setGravity != null) {
                 GravityWarp.gravity = setGravity;
             }
+            SaveLoadHandler.playerScene = nextLevel;
+            SaveLoadHandler.Save();
             op.allowSceneActivation = true;
         }
         else if (other == exit_point.GetComponent<Collider2D>())

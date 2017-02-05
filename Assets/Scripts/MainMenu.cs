@@ -11,6 +11,14 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         button.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => { Load(); });
+        if (name == "button_resume")
+        {
+            SaveLoadHandler.Load();
+            if (SaveLoadHandler.playerScene != null)
+            {
+                scene = SaveLoadHandler.playerScene;
+            }
+        }
     }
 
     void Update()

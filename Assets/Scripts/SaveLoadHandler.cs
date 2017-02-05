@@ -21,22 +21,22 @@ public class SaveLoadHandler : MonoBehaviour
         }
     }
 
-    public static void Save(string savename)
+    public static void Save()
     {
         BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Open(Application.persistentDataPath + "/player-" + savename + ".dat", FileMode.Create);
+        FileStream file = File.Open(Application.persistentDataPath + "/player-progress.dat", FileMode.Create);
         PlayerData data = new PlayerData();
         data.SetLevel(playerScene);
         bf.Serialize(file, data);
         file.Close();
     }
 
-    public static void Load(string savename)
+    public static void Load()
     {
-        if (File.Exists(Application.persistentDataPath + "/player-" + savename + ".dat"))
+        if (File.Exists(Application.persistentDataPath + "/player-progress.dat"))
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/player-" + savename + ".dat", FileMode.Open);
+            FileStream file = File.Open(Application.persistentDataPath + "/player-progress.dat", FileMode.Open);
             PlayerData data = (PlayerData)bf.Deserialize(file);
             file.Close();
             playerScene = data.GetLevel();
@@ -47,16 +47,13 @@ public class SaveLoadHandler : MonoBehaviour
 [Serializable]
 class PlayerData
 {
-   
     string level;
-   
-
-  
 
     public void SetLevel(string l)
     {
         this.level = l;
     }
+    
     public string GetLevel()
     {
         return this.level;

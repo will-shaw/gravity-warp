@@ -132,7 +132,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1858849061245228, guid: 917904f8af7c26c4c8a4124a49cdda7a, type: 2}
       propertyPath: m_Name
-      value: button_center
+      value: button_resume
       objectReference: {fileID: 0}
     - target: {fileID: 114682571620076592, guid: 917904f8af7c26c4c8a4124a49cdda7a,
         type: 2}
@@ -470,6 +470,7 @@ MonoBehaviour:
   glues: []
   clutter: []
   thrust: 0
+  player: {fileID: 0}
   deadMenu: {fileID: 0}
   playerDead: 0
   gravityControlEnabled: 0
@@ -2577,5 +2578,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   field: {fileID: 1491538579}
-  scene: level_1
+  scene: facility_intro
   button: {fileID: 1671947840}
