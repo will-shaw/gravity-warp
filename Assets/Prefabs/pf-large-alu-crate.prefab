@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 212943779867447448}
   - component: {fileID: 50925858076438324}
   - component: {fileID: 61292862994578708}
+  - component: {fileID: 82365512805121164}
+  - component: {fileID: 114535266848829404}
   m_Layer: 0
   m_Name: pf-large-alu-crate
   m_TagString: Untagged
@@ -76,6 +78,106 @@ BoxCollider2D:
   m_Offset: {x: -0.00015640259, y: -0.0020184517}
   serializedVersion: 2
   m_Size: {x: 3.9432545, y: 2.5593367}
+--- !u!82 &82365512805121164
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1442481542942020}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!114 &114535266848829404
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1442481542942020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16efd446d8d5843e6a2ec1c1272e096b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  metalBox: 1
+  metalClips:
+  - {fileID: 8300000, guid: 56bbde652d598864f956fd39bd49dd3d, type: 3}
+  - {fileID: 8300000, guid: d9f44e62a095cef47908c4c242da3805, type: 3}
+  - {fileID: 8300000, guid: 744bcf0d4376d2648a3500670f853f53, type: 3}
+  woodClips:
+  - {fileID: 8300000, guid: eb81f90add03e5b4fae9b47da763f196, type: 3}
+  - {fileID: 8300000, guid: 0f25737726e74634abb662c7dd8b6e55, type: 3}
+  - {fileID: 8300000, guid: f82481653ddab8645a44ee8b03e4ca43, type: 3}
 --- !u!212 &212943779867447448
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -756,6 +756,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16efd446d8d5843e6a2ec1c1272e096b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  metalBox: 0
+  metalClips:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  woodClips:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1001 &779279549
 Prefab:
   m_ObjectHideFlags: 0
@@ -830,22 +839,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4917845215279660, guid: c434bdd7b81af014b903951a7cc7df4d,
     type: 2}
   m_PrefabInternal: {fileID: 1718974265}
---- !u!1 &940568152 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1442481542942020, guid: baab671e9556fd64482952be50519f6b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1125810651}
---- !u!114 &940568156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 940568152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16efd446d8d5843e6a2ec1c1272e096b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &985058291
 Prefab:
   m_ObjectHideFlags: 0
