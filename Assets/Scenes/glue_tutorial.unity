@@ -1409,7 +1409,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4783376102200412, guid: 917904f8af7c26c4c8a4124a49cdda7a, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4783376102200412, guid: 917904f8af7c26c4c8a4124a49cdda7a, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1536,6 +1536,7 @@ MonoBehaviour:
   facingRight: 0
   spSide: {fileID: 21300000, guid: 3afbe5e7757c74d1c895494637a65207, type: 3}
   spUp: {fileID: 21300000, guid: 1b80f07f9538e44ae8e19b2acdaa869d, type: 3}
+  pause: {fileID: 0}
 --- !u!95 &960960396
 Animator:
   serializedVersion: 3
@@ -2042,7 +2043,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4783376102200412, guid: 917904f8af7c26c4c8a4124a49cdda7a, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4783376102200412, guid: 917904f8af7c26c4c8a4124a49cdda7a, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2104,6 +2105,11 @@ Prefab:
         type: 2}
       propertyPath: boxes.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114420006540710784, guid: e3f30bfd6b9f8de4681baa1553a96802,
+        type: 2}
+      propertyPath: bloods.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114420006540710784, guid: e3f30bfd6b9f8de4681baa1553a96802,
         type: 2}
@@ -2172,6 +2178,30 @@ Prefab:
       propertyPath: boxes.Array.data[1]
       value: 
       objectReference: {fileID: 1669314228}
+    - target: {fileID: 114420006540710784, guid: e3f30bfd6b9f8de4681baa1553a96802,
+        type: 2}
+      propertyPath: bloods.Array.data[1]
+      value: 
+      objectReference: {fileID: 4423630617035890, guid: a230aa9bcfb75f54c8d9cb03e8803370,
+        type: 2}
+    - target: {fileID: 114420006540710784, guid: e3f30bfd6b9f8de4681baa1553a96802,
+        type: 2}
+      propertyPath: bloods.Array.data[0]
+      value: 
+      objectReference: {fileID: 4262548228271756, guid: 417ed4a2d036b394d9df24371d4cea5b,
+        type: 2}
+    - target: {fileID: 114420006540710784, guid: e3f30bfd6b9f8de4681baa1553a96802,
+        type: 2}
+      propertyPath: bloods.Array.data[2]
+      value: 
+      objectReference: {fileID: 4542842171776392, guid: d0870b28c98350945883689c69f8760f,
+        type: 2}
+    - target: {fileID: 114420006540710784, guid: e3f30bfd6b9f8de4681baa1553a96802,
+        type: 2}
+      propertyPath: bloods.Array.data[3]
+      value: 
+      objectReference: {fileID: 4741945643049298, guid: dfc511da30a03b541bca2a4f52b1a50b,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e3f30bfd6b9f8de4681baa1553a96802, type: 2}
   m_IsPrefabParent: 0

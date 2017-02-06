@@ -62,19 +62,19 @@ public class BoxColision : MonoBehaviour {
 		}
 		else if((other.transform.CompareTag("Player"))){
 			if(velocityY >20f){
-				Destroy(other.gameObject);
+				//Destroy(other.gameObject);
 				Camera.main.GetComponent<GravityWarp>().playerDead = true;
 			}
 			if(velocityX >20f){
-				Destroy(other.gameObject);
+				//Destroy(other.gameObject);
 				Camera.main.GetComponent<GravityWarp>().playerDead = true;
 			}
 			if(velocityY1 < -20f){
-				Destroy(other.gameObject);
+				//Destroy(other.gameObject);
 				Camera.main.GetComponent<GravityWarp>().playerDead = true;
 			}
 			if(velocityX1 < -20f){
-				Destroy(other.gameObject);
+				//Destroy(other.gameObject);
 				Camera.main.GetComponent<GravityWarp>().playerDead = true;
 			}
 		}

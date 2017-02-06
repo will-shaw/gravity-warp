@@ -6734,6 +6734,11 @@ MonoBehaviour:
   - {fileID: 320343360}
   glues: []
   clutter: []
+  bloods:
+  - {fileID: 4262548228271756, guid: 417ed4a2d036b394d9df24371d4cea5b, type: 2}
+  - {fileID: 4423630617035890, guid: a230aa9bcfb75f54c8d9cb03e8803370, type: 2}
+  - {fileID: 4542842171776392, guid: d0870b28c98350945883689c69f8760f, type: 2}
+  - {fileID: 4741945643049298, guid: dfc511da30a03b541bca2a4f52b1a50b, type: 2}
   thrust: 4
   player: {fileID: 0}
   deadMenu: {fileID: 382163380}
