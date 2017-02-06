@@ -70,6 +70,7 @@ MonoBehaviour:
   activates:
   - {fileID: 0}
   toggleable: 0
+  active: 0
 --- !u!212 &212424651828351700
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -101,7 +102,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: aaa4fa3c702e4834392b141a61b41c34, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d023fa43b1a91554093a28655e6bc077, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
