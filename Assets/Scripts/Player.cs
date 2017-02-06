@@ -3,24 +3,26 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     Transform player;
-    public float speed = 10f;
     float cooldown = 0;
-    public Rigidbody2D rb2D;
-    public string surface;
-    public AudioClip[] landClip = new AudioClip[3];
-    public AudioClip sliding;
-
-    public Transform canvas;
-    public RectTransform canvasPrefab;
-
-    public bool facingRight = true;
+    Transform canvas;
     Animator anim;
     bool paused = false;
+    float timer = 0f;
+
+    public float speed = 10f;
+    public string surface;
+    public AudioClip[] landClip = new AudioClip[3];
+    public AudioClip[] footsteps = new AudioClip[3];
+    public AudioClip sliding;
+    public RectTransform canvasPrefab;
+    public bool facingRight = true;
     public Sprite spSide;
     public Sprite spUp;
-
     public GameObject pause;
-    float timer = 0f;
+
+    public float footstepDelay;
+    float footstepTimer;
+
     void Awake()
     {
         // Immediately Instantiate canvas so that Glue.cs can access it.
@@ -29,8 +31,8 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        footstepTimer = footstepDelay;
         player = transform;
-        rb2D = player.GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         Camera.main.GetComponent<GravityWarp>().player = transform;
         Camera.main.GetComponent<GravityWarp>().boxes.Add(transform);
@@ -42,6 +44,11 @@ public class Player : MonoBehaviour
         return Mathf.Sqrt(Mathf.Pow(x, 2) + Mathf.Pow(y, 2));
     }
 
+    public Transform GetCanvas()
+    {
+        return canvas;
+    }
+
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Wall")
@@ -51,14 +58,6 @@ public class Player : MonoBehaviour
         else if (other.gameObject.GetComponent<BoxCollision>() != null && surface != "boxM" && surface != "boxW")
         {
             GetComponent<AudioSource>().PlayOneShot(sliding, 1);
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if ((other.gameObject.GetComponent<Field>() != null && other.gameObject.GetComponent<Field>().laser))
-        {
-            //GetComponent<AudioSource>().PlayOneShot(landClip[Random.Range(0, 3)], 1);
         }
     }
 
@@ -88,6 +87,7 @@ public class Player : MonoBehaviour
             if (!(player.GetComponent<Glue>().isGlued()))
             {
                 anim.SetFloat("Speed", Mathf.Abs(moveVert));
+                FootSteps(Mathf.Abs(moveVert));
             }
             GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, moveVert * speed);
             if (moveVert > 0 && !facingRight && gravity == "R")
@@ -112,6 +112,7 @@ public class Player : MonoBehaviour
             if (!(player.GetComponent<Glue>().isGlued()))
             {
                 anim.SetFloat("Speed", Mathf.Abs(moveHori));
+                FootSteps(Mathf.Abs(moveHori));                
             }
             GetComponent<Rigidbody2D>().velocity = new Vector2(moveHori * speed, GetComponent<Rigidbody2D>().velocity.y);
             if (moveHori > 0 && !facingRight && gravity == "D")
@@ -129,6 +130,19 @@ public class Player : MonoBehaviour
             else if (moveHori < 0 && !facingRight && gravity == "U")
             {
                 Flip();
+            }
+        }
+    }
+
+    void FootSteps(float speed)
+    {
+        if (speed > 0.1f && IsGrounded())
+        {
+            footstepTimer -= Time.deltaTime;
+            if (footstepTimer <= 0)
+            {
+                GetComponent<AudioSource>().PlayOneShot(footsteps[Random.Range(0, 3)], 1);
+                footstepTimer = footstepDelay;
             }
         }
     }
@@ -314,7 +328,7 @@ public class Player : MonoBehaviour
                             if (Mathf.Abs(hit.point.x - transform.position.x) < dDist)
                             {
                                 dDist = Mathf.Abs(hit.point.x - transform.position.x);
-                                closestHit = hit;                            
+                                closestHit = hit;
                             }
                             break;
                     }

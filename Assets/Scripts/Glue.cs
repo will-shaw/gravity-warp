@@ -13,7 +13,7 @@ public class Glue : MonoBehaviour
         glued = false;
         if (gameObject.GetComponent<Player>() != null)
         {
-            canvas = gameObject.GetComponent<Player>().canvas;
+            canvas = gameObject.GetComponent<Player>().GetCanvas();
         }
     }
 
