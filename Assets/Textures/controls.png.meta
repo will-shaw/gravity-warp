@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: cf760c1c758a1db46b352b16a95f8409
-timeCreated: 1486083647
+timeCreated: 1486383435
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -10,6 +10,10 @@ TextureImporter:
     21300006: controls_3
     21300008: controls_4
     21300010: controls_5
+    21300012: controls_6
+    21300014: controls_7
+    21300016: controls_8
+    21300018: controls_9
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -87,10 +91,10 @@ TextureImporter:
       name: controls_0
       rect:
         serializedVersion: 2
-        x: 699
+        x: 875
         y: 632
-        width: 488
-        height: 206
+        width: 312
+        height: 102
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,6 +160,58 @@ TextureImporter:
         y: 420
         width: 130
         height: 130
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: controls_6
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 734
+        width: 102
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: controls_7
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 734
+        width: 153
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: controls_8
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 361
+        width: 98
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: controls_9
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 362
+        width: 103
+        height: 137
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
