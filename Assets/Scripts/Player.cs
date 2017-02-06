@@ -245,7 +245,7 @@ public class Player : MonoBehaviour
         {
             if (hit.collider != null)
             {
-                if (hit.collider.gameObject.tag == "Wall" || hit.collider.GetComponent<Field>() != null || hit.collider.GetComponent<Button>() != null || hit.collider.GetComponent<BoxColision>() != null)
+                if (hit.collider.gameObject.tag == "Wall" || (hit.collider.GetComponent<Field>() && !hit.collider.GetComponent<Field>().laser) || hit.collider.GetComponent<Button>() != null || hit.collider.GetComponent<BoxColision>() != null)
                 {
                     switch (grav)
                     {
@@ -262,7 +262,6 @@ public class Player : MonoBehaviour
                 }
             }
         }
-        print(dDist);
         if (dDist <= 1.7f)
         {
             return true;

@@ -5,8 +5,12 @@ public class BoxColision : MonoBehaviour {
 	Camera main;
 	GravityWarp mainWarp;
 
-	
-	float velocityY =0f;
+    public bool metalBox;
+
+	public AudioClip[] metalClips = new AudioClip[3];
+    public AudioClip[] woodClips = new AudioClip[3];
+
+    float velocityY =0f;
 	float velocityX=0f;
 	float velocityY1 =0f;
 	float velocityX1=0f;
@@ -34,6 +38,15 @@ public class BoxColision : MonoBehaviour {
 	}
 		void OnCollisionEnter2D(Collision2D other)
 	{
+		if (other.gameObject.tag == "Wall") {
+            AudioClip hit = null;
+            if (metalBox) {
+                hit = metalClips[Random.Range(0, 3)];
+            } else {
+                hit = woodClips[Random.Range(0, 3)];
+            }
+            GetComponent<AudioSource>().PlayOneShot(hit, 1);
+        }
 		
 		if(other.transform.CompareTag("box destruct")){
 			mainWarp.boxes.Remove(gameObject.transform);
