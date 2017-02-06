@@ -2014,6 +2014,11 @@ Prefab:
       propertyPath: pause
       value: 
       objectReference: {fileID: 2018145127}
+    - target: {fileID: 114660376833572366, guid: c03b27490b5b1444eb92a4ed34e0eee1,
+        type: 2}
+      propertyPath: glueEnabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c03b27490b5b1444eb92a4ed34e0eee1, type: 2}
   m_IsPrefabParent: 0
