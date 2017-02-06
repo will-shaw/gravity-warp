@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4348218765827700}
   - component: {fileID: 212312351436905040}
   - component: {fileID: 50386138393573330}
-  - component: {fileID: 58723087895399154}
   - component: {fileID: 61709835759391746}
   - component: {fileID: 95895508237084970}
   - component: {fileID: 82288841700928300}
@@ -42,8 +41,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1351072288701584}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 34.79, y: 2.07, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -26.99, y: -16.82, z: -7}
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -69,20 +68,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &58723087895399154
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1351072288701584}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: -0.27, y: -1.64}
-  serializedVersion: 2
-  m_Radius: 0.55
 --- !u!61 &61709835759391746
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -94,9 +79,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -0.09502157, y: 0.5519413}
+  m_Offset: {x: -0.0038579307, y: -0.044761658}
   serializedVersion: 2
-  m_Size: {x: 0.6253516, y: 3.1642494}
+  m_Size: {x: 0.8076727, y: 4.3576584}
 --- !u!82 &82288841700928300
 AudioSource:
   m_ObjectHideFlags: 1
@@ -218,7 +203,7 @@ MonoBehaviour:
   sliding: {fileID: 8300000, guid: 85342af3beb31984b89da29c64213ae0, type: 3}
   canvasPrefab: {fileID: 224629299449171768, guid: e53a41e1ce5acc8499bfe4930b3330eb,
     type: 2}
-  facingRight: 0
+  facingRight: 1
   spSide: {fileID: 21300000, guid: 3afbe5e7757c74d1c895494637a65207, type: 3}
   spUp: {fileID: 21300000, guid: 1b80f07f9538e44ae8e19b2acdaa869d, type: 3}
   pause: {fileID: 0}
@@ -250,10 +235,10 @@ MonoBehaviour:
   gluePrefab: {fileID: 4535306469873588, guid: ee86be60910051d48888721ee5ef233c, type: 2}
   noPlacePrefab: {fileID: 4917440775043628, guid: 4225345aa5d3121429e2c2f9a5cbf801,
     type: 2}
-  glueLimit: 3
+  glueLimit: 5
   glueCount: 0
   spawnRange: 5
-  glueEnabled: 1
+  glueEnabled: 0
   hasGun: 0
 --- !u!114 &114676943314986456
 MonoBehaviour:
@@ -269,9 +254,9 @@ MonoBehaviour:
   exit_point: {fileID: 0}
   switch_point: {fileID: 0}
   exitDoor: {fileID: 0}
-  nextLevel: level_1
+  nextLevel: glue_tutorial
   asyncLoad: 1
-  setGravity: 
+  setGravity: D
 --- !u!212 &212312351436905040
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -305,5 +290,5 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0c78234205144794e9ec7d3ec78bd453, type: 3}
   m_Color: {r: 0.5588235, g: 0.5588235, b: 0.5588235, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0

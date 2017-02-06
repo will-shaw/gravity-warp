@@ -72,46 +72,72 @@ public class Button : MonoBehaviour
 
     void Depression()
     {
+        Vector2 currentOffset = GetComponent<BoxCollider2D>().offset;
+        Vector2 newOffset;
         switch (wallAttached)
         {
             case "D":
                 if (active)
                 {
                     transform.Translate(0, -0.4F, 0, 0);
+                    newOffset = new Vector2(currentOffset.x, 0.4F+currentOffset.y);
+                    GetComponent<BoxCollider2D>().offset = newOffset;
+                    currentOffset = newOffset;
                 }
                 else
                 {
                     transform.Translate(0, 0.4F, 0, 0);
+                    newOffset = new Vector2(currentOffset.x, -0.4F+currentOffset.y);
+                    GetComponent<BoxCollider2D>().offset = newOffset;
+                    currentOffset = newOffset;
                 }
                 break;
             case "U":
                 if (active)
                 {
                     transform.Translate(0, 0.4F, 0, 0);
+                    newOffset = new Vector2(currentOffset.x, -0.4F+currentOffset.y);
+                    GetComponent<BoxCollider2D>().offset = newOffset;
+                    currentOffset = newOffset;
                 }
                 else
                 {
                     transform.Translate(0, -0.4F, 0, 0);
+                    newOffset = new Vector2(currentOffset.x, 0.4F+currentOffset.y);
+                    GetComponent<BoxCollider2D>().offset = newOffset;
+                    currentOffset = newOffset;
                 }
                 break;
             case "L":
                 if (active)
                 {
                     transform.Translate(-0.4F, 0, 0, 0);
+                    newOffset = new Vector2(currentOffset.x, -0.4F+currentOffset.y);
+                    GetComponent<BoxCollider2D>().offset = newOffset;
+                    currentOffset = newOffset;
                 }
                 else
                 {
                     transform.Translate(0.4F, 0, 0, 0);
+                    newOffset = new Vector2(currentOffset.x, 0.4F+currentOffset.y);
+                    GetComponent<BoxCollider2D>().offset = newOffset;
+                    currentOffset = newOffset;
                 }
                 break;
             case "R":
                 if (active)
                 {
                     transform.Translate(0.4F, 0, 0, 0);
+                    newOffset = new Vector2(currentOffset.x, 0.4F+currentOffset.y);
+                    GetComponent<BoxCollider2D>().offset = newOffset;
+                    currentOffset = newOffset;
                 }
                 else
                 {
                     transform.Translate(-0.4F, 0, 0, 0);
+                    newOffset = new Vector2(currentOffset.x, -0.4F+currentOffset.y);
+                    GetComponent<BoxCollider2D>().offset = newOffset;
+                    currentOffset = newOffset;
                 }
                 break;
         }
