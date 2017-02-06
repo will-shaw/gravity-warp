@@ -15,6 +15,7 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
+        warpTextTimer = warpTextDelay;
         button.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => { Load(); });
         if (name == "button_resume")
         {
