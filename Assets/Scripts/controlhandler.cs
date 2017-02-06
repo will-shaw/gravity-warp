@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class controlhandler : MonoBehaviour
+public class ControlHandler : MonoBehaviour
 {
     public GameObject pause;
     

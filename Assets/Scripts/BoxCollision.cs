@@ -1,7 +1,7 @@
 ﻿
 using UnityEngine;
 
-public class BoxColision : MonoBehaviour {
+public class BoxCollision : MonoBehaviour {
 	Camera main;
 	GravityWarp mainWarp;
 
