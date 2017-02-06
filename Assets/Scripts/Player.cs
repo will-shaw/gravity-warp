@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
     float cooldown = 0;
     Transform canvas;
     Animator anim;
-    bool paused = false;
+    public bool paused = false;
     float timer = 0f;
 
     public float speed = 10f;
@@ -302,8 +302,6 @@ public class Player : MonoBehaviour
         RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, down, 3.0f);
         Debug.DrawRay(transform.position, down, Color.yellow, 10);
 
-        RaycastHit2D closestHit;
-
         float dDist = 100f;
         bool check = false;
 
@@ -346,7 +344,6 @@ public class Player : MonoBehaviour
                             if (Mathf.Abs(hit.point.y - transform.position.y) < dDist)
                             {
                                 dDist = Mathf.Abs(hit.point.y - transform.position.y);
-                                closestHit = hit;
                             }
                             break;
                         case "L":
@@ -354,7 +351,6 @@ public class Player : MonoBehaviour
                             if (Mathf.Abs(hit.point.x - transform.position.x) < dDist)
                             {
                                 dDist = Mathf.Abs(hit.point.x - transform.position.x);
-                                closestHit = hit;
                             }
                             break;
                     }
