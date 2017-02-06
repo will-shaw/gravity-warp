@@ -4,6 +4,11 @@ public class Button : MonoBehaviour
 {
     public Transform[] activates;
     public bool toggleable = true;
+
+    public AudioClip toggleOn;
+    public AudioClip toggleOff;
+    public AudioClip release;
+
     public bool active = false;
     //For depression, D is floor, U is roof and L/R are left and right wall.
     public string wallAttached = "D";
@@ -27,10 +32,12 @@ public class Button : MonoBehaviour
             if (toggleable && active)
             {
                 active = false;
+                GetComponent<AudioSource>().PlayOneShot(toggleOn, 1);
             }
             else
             {
                 active = true;
+                GetComponent<AudioSource>().Play();
             }
             Depression();
 			Activate(1);
@@ -43,6 +50,7 @@ public class Button : MonoBehaviour
             if (other.gameObject.GetComponent<GlueObject>() == null)
             {
                 active = false;
+                GetComponent<AudioSource>().PlayOneShot(release, 1);                
                 Depression();
                 Activate(0);
             }
