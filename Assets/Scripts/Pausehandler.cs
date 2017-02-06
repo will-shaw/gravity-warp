@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PauseHandler : MonoBehaviour {
+public class Pausehandler : MonoBehaviour {
 
     float timer =0f;
     bool active = false;
@@ -8,8 +8,10 @@ public class PauseHandler : MonoBehaviour {
 
     public void showControls()
     {
-        controls.SetActive(true);
+        
         gameObject.SetActive(false);
+        controls.SetActive(true);
+        
     }
 
     public void hide() {
