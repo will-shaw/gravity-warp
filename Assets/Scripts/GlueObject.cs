@@ -6,6 +6,8 @@ public class GlueObject : MonoBehaviour
     bool isStuck;
     string currGrav;
     bool expire = true;
+
+    public AudioClip splat;
     public float expireTimer = 15;
 
     void OnTriggerEnter2D(Collider2D other)
@@ -22,6 +24,7 @@ public class GlueObject : MonoBehaviour
             }
             else if (other.gameObject.tag == "Wall")
             {
+                GetComponent<AudioSource>().PlayOneShot(splat, 1);
                 GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
                 GetComponent<SpriteRenderer>().sprite = sprites[1];
                 isStuck = true;

@@ -24,7 +24,7 @@ public class Field : MonoBehaviour {
 				}
 			} else {
 				if(other.gameObject.tag == "Player") {
-					Destroy(other.gameObject);
+					//Destroy(other.gameObject);
 					Camera.main.GetComponent<GravityWarp>().playerDead = true;
 				}
 			}

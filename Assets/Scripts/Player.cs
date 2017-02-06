@@ -12,10 +12,12 @@ public class Player : MonoBehaviour
 
     public bool facingRight = true;
     Animator anim;
-
+    bool active = false;
     public Sprite spSide;
     public Sprite spUp;
 
+    public GameObject pause;
+    float timer = 0f;
     void Awake()
     {
         // Immediately Instantiate canvas so that Glue.cs can access it.
@@ -47,7 +49,11 @@ public class Player : MonoBehaviour
             cooldown = 2 - cooldown;
         }
         //canvas.FindChild("Xtext").GetComponent<Text>().text = "V:" + string.Format("{0:N2}", CalculateVelocity(GetComponent<Rigidbody2D>().velocity.x, GetComponent<Rigidbody2D>().velocity.y));
-
+        if (Camera.main.GetComponent<GravityWarp>().playerDead)
+        {
+            moveHori = 0;
+            moveVert = 0;
+        }
         canvas.GetChild(6).GetComponent<Text>().text = "Cool Down: " + string.Format("{0:N2}", cooldown);
         canvas.GetChild(5).GetComponent<Text>().text = "X:" + string.Format("{0:N2}", GetComponent<Rigidbody2D>().velocity.x);
         canvas.GetChild(4).GetComponent<Text>().text = "Y:" + string.Format("{0:N2}", GetComponent<Rigidbody2D>().velocity.y);
@@ -116,6 +122,25 @@ public class Player : MonoBehaviour
     {
         canvas.position = transform.position;
 
+        if (timer > 0)
+        {
+            timer -= Time.deltaTime;
+        }
+        else
+        {
+            if (Input.GetKey(KeyCode.H) && !active)
+            {
+                pause.SetActive(true);
+                timer = 1f;
+            }
+            else if (Input.GetKey(KeyCode.H) && active)
+            {
+                pause.SetActive(false);
+                timer = 1f;
+            }
+        }
+
+
         if (player != null)
         {
             anim.SetBool("isGrounded", IsGrounded());
@@ -124,22 +149,25 @@ public class Player : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.Space) && Time.realtimeSinceStartup > cooldown + 0.1f && IsGrounded())
                 {
-                    switch (GravityWarp.gravity)
+                    if (!(Camera.main.GetComponent<GravityWarp>().playerDead))
                     {
-                        case "D":
-                            player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 700.0f));
-                            break;
-                        case "U":
-                            player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -700.0f));
-                            break;
-                        case "L":
-                            player.GetComponent<Rigidbody2D>().AddForce(new Vector2(500.0f, 0));
-                            break;
-                        case "R":
-                            player.GetComponent<Rigidbody2D>().AddForce(new Vector2(-500.0f, 0));
-                            break;
+                        switch (GravityWarp.gravity)
+                        {
+                            case "D":
+                                player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 700.0f));
+                                break;
+                            case "U":
+                                player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -700.0f));
+                                break;
+                            case "L":
+                                player.GetComponent<Rigidbody2D>().AddForce(new Vector2(500.0f, 0));
+                                break;
+                            case "R":
+                                player.GetComponent<Rigidbody2D>().AddForce(new Vector2(-500.0f, 0));
+                                break;
+                        }
+                        cooldown = Time.realtimeSinceStartup;
                     }
-                    cooldown = Time.realtimeSinceStartup;
                 }
             }
         }

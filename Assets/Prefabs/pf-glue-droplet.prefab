@@ -89,7 +89,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 30746595eb7640f4ea1e5bcc0a4a73be, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.349
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -173,6 +173,7 @@ MonoBehaviour:
   - {fileID: 21300002, guid: 64ab82043b481fb47a9b8133a92de4f9, type: 3}
   - {fileID: 21300000, guid: 64ab82043b481fb47a9b8133a92de4f9, type: 3}
   - {fileID: 21300004, guid: 64ab82043b481fb47a9b8133a92de4f9, type: 3}
+  splat: {fileID: 8300000, guid: dd8cf6cc6bf0cb54d846848bbbb0a80d, type: 3}
   expireTimer: 15
 --- !u!212 &212579335948011480
 SpriteRenderer:

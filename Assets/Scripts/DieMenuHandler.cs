@@ -16,4 +16,5 @@ public class DieMenuHandler : MonoBehaviour {
 	public void mainMenu(){
 		SceneManager.LoadScene("main_menu");
 	}
+   
 }
