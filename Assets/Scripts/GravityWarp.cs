@@ -8,6 +8,8 @@ public class GravityWarp : MonoBehaviour
     public List<Transform> boxes = new List<Transform>();
     public List<Transform> glues = new List<Transform>();
     public List<Transform> clutter = new List<Transform>();
+
+    public Transform[] bloods;
     public float thrust; // For horizontal movement. Multiplies gravityScale.
     public static string gravity = "D"; // The current gravity direction.
 
@@ -18,7 +20,11 @@ public class GravityWarp : MonoBehaviour
     public bool playerDead = false;
     public bool gravityControlEnabled;
 
+    bool blood = false;
+
     float reTimer = 0f;
+
+    float deathTimer = 0f;
     public float coolDown = 0f;
     int gravityCount = 0;
     void Update()
@@ -46,7 +52,39 @@ public class GravityWarp : MonoBehaviour
         ClutterGravity();
         if (playerDead)
         {
-            deadMenu.GetComponent<DieMenuHandler>().ShowPause();
+            if (!blood)
+            {
+                if (gravity == "U")
+                {
+                    Transform bloodSplatter = GameObject.Instantiate(bloods[3]);
+                    bloodSplatter.position = player.position;
+                }
+                else if (gravity == "D")
+                {
+                    Transform bloodSplatter = GameObject.Instantiate(bloods[1]);
+                    bloodSplatter.position = player.position;
+                }
+                else if (gravity == "L")
+                {
+                    Transform bloodSplatter = GameObject.Instantiate(bloods[0]);
+                    bloodSplatter.position = player.position;
+                }
+                else if (gravity == "R")
+                {
+                    Transform bloodSplatter = GameObject.Instantiate(bloods[2]);
+                    bloodSplatter.position = player.position;
+                }
+                blood = true;
+                
+            }
+            if (deathTimer < 1f)
+            {
+                deathTimer += Time.deltaTime;
+
+            }
+            else{
+                deadMenu.GetComponent<DieMenuHandler>().ShowPause();
+            }
         }
     }
 
