@@ -12,10 +12,12 @@ public class Player : MonoBehaviour
 
     public bool facingRight = true;
     Animator anim;
-
+    bool active = false;
     public Sprite spSide;
     public Sprite spUp;
 
+    public GameObject pause;
+    float timer = 0f;
     void Awake()
     {
         // Immediately Instantiate canvas so that Glue.cs can access it.
@@ -115,6 +117,25 @@ public class Player : MonoBehaviour
     void Update()
     {
         canvas.position = transform.position;
+
+        if (timer > 0)
+        {
+            timer -= Time.deltaTime;
+        }
+        else
+        {
+            if (Input.GetKey(KeyCode.H) && !active)
+            {
+                pause.SetActive(true);
+                timer = 1f;
+            }
+            else if (Input.GetKey(KeyCode.H) && active)
+            {
+                pause.SetActive(false);
+                timer = 1f;
+            }
+        }
+
 
         if (player != null)
         {
