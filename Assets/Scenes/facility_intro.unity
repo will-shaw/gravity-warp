@@ -293,7 +293,7 @@ MonoBehaviour:
   - {fileID: 1541765554}
   isOpen: 1
   opensDown: 1
-  gravityEnabled: 0
+  gravityEnabled: 1
   clip: {fileID: 8300000, guid: 4ed3c4551e3d79b4aac9cbe88f2f495f, type: 3}
   openDuration: 0.5
   height: 5.2
@@ -605,7 +605,7 @@ MonoBehaviour:
   - {fileID: 1367922265}
   isOpen: 1
   opensDown: 1
-  gravityEnabled: 0
+  gravityEnabled: 1
   clip: {fileID: 8300000, guid: 4ed3c4551e3d79b4aac9cbe88f2f495f, type: 3}
   openDuration: 0.5
   height: 5.2
