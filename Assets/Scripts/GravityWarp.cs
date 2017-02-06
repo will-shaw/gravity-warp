@@ -52,6 +52,7 @@ public class GravityWarp : MonoBehaviour
         ClutterGravity();
         if (playerDead)
         {
+            gravityControlEnabled = false;
             if (!blood)
             {
                 if (gravity == "U")

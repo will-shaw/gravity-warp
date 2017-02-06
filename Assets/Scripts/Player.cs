@@ -188,11 +188,15 @@ public class Player : MonoBehaviour
             if (Input.GetKey(KeyCode.H) && !paused)
             {
                 pause.SetActive(true);
+                Camera.main.GetComponent<GravityWarp>().gravityControlEnabled = false;
+                paused = true;
                 timer = 1f;
             }
             else if (Input.GetKey(KeyCode.H) && paused)
             {
                 pause.SetActive(false);
+                Camera.main.GetComponent<GravityWarp>().gravityControlEnabled = true;
+                paused = false;
                 timer = 1f;
             }
         }

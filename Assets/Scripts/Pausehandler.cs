@@ -16,6 +16,7 @@ public class Pausehandler : MonoBehaviour {
 
     public void hide() {
         gameObject.SetActive(false);
+        Camera.main.GetComponent<GravityWarp>().gravityControlEnabled = true;
     }
 	
 }
