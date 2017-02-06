@@ -178,6 +178,7 @@ MonoBehaviour:
   isOpen: 1
   opensDown: 1
   gravityEnabled: 0
+  clip: {fileID: 8300000, guid: 4ed3c4551e3d79b4aac9cbe88f2f495f, type: 3}
   openDuration: 0.5
   height: 5.2
 --- !u!1 &104979008
@@ -484,6 +485,7 @@ MonoBehaviour:
   isOpen: 1
   opensDown: 1
   gravityEnabled: 0
+  clip: {fileID: 8300000, guid: 4ed3c4551e3d79b4aac9cbe88f2f495f, type: 3}
   openDuration: 0.5
   height: 5.2
 --- !u!1001 &392505332
@@ -641,6 +643,7 @@ MonoBehaviour:
   isOpen: 0
   opensDown: 1
   gravityEnabled: 0
+  clip: {fileID: 8300000, guid: 4ed3c4551e3d79b4aac9cbe88f2f495f, type: 3}
   openDuration: 0.5
   height: 5.2
 --- !u!1 &766578318
@@ -655,6 +658,7 @@ GameObject:
   - component: {fileID: 766578320}
   - component: {fileID: 766578319}
   - component: {fileID: 766578323}
+  - component: {fileID: 766578324}
   m_Layer: 0
   m_Name: clutter_items_0
   m_TagString: Untagged
@@ -755,15 +759,92 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16efd446d8d5843e6a2ec1c1272e096b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  metalBox: 0
+  metalBox: 1
   metalClips:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  woodClips:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 56bbde652d598864f956fd39bd49dd3d, type: 3}
+  - {fileID: 8300000, guid: d9f44e62a095cef47908c4c242da3805, type: 3}
+  - {fileID: 8300000, guid: 744bcf0d4376d2648a3500670f853f53, type: 3}
+  woodClips: []
+--- !u!82 &766578324
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 766578318}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1001 &779279549
 Prefab:
   m_ObjectHideFlags: 0
@@ -957,6 +1038,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1524597866}
     m_Modifications:
+    - target: {fileID: 114535266848829404, guid: baab671e9556fd64482952be50519f6b,
+        type: 2}
+      propertyPath: woodClips.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4226368383244096, guid: baab671e9556fd64482952be50519f6b, type: 2}
       propertyPath: m_LocalPosition.x
       value: 2.06
@@ -997,6 +1083,21 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 0.85
       objectReference: {fileID: 0}
+    - target: {fileID: 114535266848829404, guid: baab671e9556fd64482952be50519f6b,
+        type: 2}
+      propertyPath: woodClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: eb81f90add03e5b4fae9b47da763f196, type: 3}
+    - target: {fileID: 114535266848829404, guid: baab671e9556fd64482952be50519f6b,
+        type: 2}
+      propertyPath: woodClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f25737726e74634abb662c7dd8b6e55, type: 3}
+    - target: {fileID: 114535266848829404, guid: baab671e9556fd64482952be50519f6b,
+        type: 2}
+      propertyPath: woodClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: f82481653ddab8645a44ee8b03e4ca43, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: baab671e9556fd64482952be50519f6b, type: 2}
   m_IsPrefabParent: 0

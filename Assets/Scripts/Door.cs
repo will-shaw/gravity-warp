@@ -10,6 +10,7 @@ public class Door : MonoBehaviour
     public bool isOpen = false;
     public bool opensDown = true;
     public bool gravityEnabled = false;
+    public AudioClip clip;
 
     bool isLerping;
     float timeStartedLerping;
@@ -87,6 +88,7 @@ public class Door : MonoBehaviour
         {
             isLerping = true;
             timeStartedLerping = Time.time;
+            GetComponent<AudioSource>().PlayOneShot(clip, 1);
         }
     }
 
