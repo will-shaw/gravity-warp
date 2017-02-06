@@ -22,11 +22,12 @@ public class GlueObject : MonoBehaviour
                 expire = false;
                 isStuck = true;
             }
-            else if (other.gameObject.tag == "Wall")
+            else if (other.gameObject.tag == "Wall" || other.gameObject.GetComponent<BoxCollision>() != null)
             {
                 GetComponent<AudioSource>().PlayOneShot(splat, 1);
                 GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
                 GetComponent<SpriteRenderer>().sprite = sprites[1];
+                FlipStuckGlue();
                 isStuck = true;
             }
         }
@@ -48,16 +49,16 @@ public class GlueObject : MonoBehaviour
             switch (currGrav)
             {
                 case "U":
-                    transform.rotation = new Quaternion(0, 0, 180, 0);
+                    transform.rotation = Quaternion.Euler(0, 0, 0);
                     break;
                 case "D":
-                    transform.rotation = new Quaternion(0, 0, 0, 0);
+                    transform.rotation = Quaternion.Euler(0, 0, 180);
                     break;
                 case "L":
-                    transform.rotation = new Quaternion(0, 0, 270, 0);
+                    transform.rotation = Quaternion.Euler(0, 0, 90);
                     break;
                 case "R":
-                    transform.rotation = new Quaternion(0, 0, 90, 0);
+                    transform.rotation = Quaternion.Euler(0, 0, 270);
                     break;
             }
         }
@@ -69,6 +70,25 @@ public class GlueObject : MonoBehaviour
         else if (expire)
         {
             expireTimer -= Time.deltaTime;
+        }
+    }
+
+    void FlipStuckGlue()
+    {
+        switch (currGrav)
+        {
+            case "U":
+                transform.rotation = Quaternion.Euler(0, 0, 180);
+                break;
+            case "D":
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+                break;
+            case "L":
+                transform.rotation = Quaternion.Euler(0, 0, 270);
+                break;
+            case "R":
+                transform.rotation = Quaternion.Euler(0, 0, 90);
+                break;
         }
     }
 

@@ -6,13 +6,16 @@ public class Player : MonoBehaviour
     public float speed = 10f;
     float cooldown = 0;
     public Rigidbody2D rb2D;
+    public string surface;
+    public AudioClip[] landClip = new AudioClip[3];
+    public AudioClip sliding;
 
     public Transform canvas;
     public RectTransform canvasPrefab;
 
     public bool facingRight = true;
     Animator anim;
-    bool active = false;
+    bool paused = false;
     public Sprite spSide;
     public Sprite spUp;
 
@@ -39,6 +42,26 @@ public class Player : MonoBehaviour
         return Mathf.Sqrt(Mathf.Pow(x, 2) + Mathf.Pow(y, 2));
     }
 
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Wall")
+        {
+            GetComponent<AudioSource>().PlayOneShot(landClip[Random.Range(0, 3)], 1);
+        }
+        else if (other.gameObject.GetComponent<BoxCollision>() != null && surface != "boxM" && surface != "boxW")
+        {
+            GetComponent<AudioSource>().PlayOneShot(sliding, 1);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if ((other.gameObject.GetComponent<Field>() != null && other.gameObject.GetComponent<Field>().laser))
+        {
+            //GetComponent<AudioSource>().PlayOneShot(landClip[Random.Range(0, 3)], 1);
+        }
+    }
+
     void FixedUpdate()
     {
         float moveHori = Input.GetAxis("Horizontal");
@@ -49,7 +72,7 @@ public class Player : MonoBehaviour
             cooldown = 2 - cooldown;
         }
         //canvas.FindChild("Xtext").GetComponent<Text>().text = "V:" + string.Format("{0:N2}", CalculateVelocity(GetComponent<Rigidbody2D>().velocity.x, GetComponent<Rigidbody2D>().velocity.y));
-        if (Camera.main.GetComponent<GravityWarp>().playerDead)
+        if (Camera.main.GetComponent<GravityWarp>().playerDead || paused)
         {
             moveHori = 0;
             moveVert = 0;
@@ -128,12 +151,12 @@ public class Player : MonoBehaviour
         }
         else
         {
-            if (Input.GetKey(KeyCode.H) && !active)
+            if (Input.GetKey(KeyCode.H) && !paused)
             {
                 pause.SetActive(true);
                 timer = 1f;
             }
-            else if (Input.GetKey(KeyCode.H) && active)
+            else if (Input.GetKey(KeyCode.H) && paused)
             {
                 pause.SetActive(false);
                 timer = 1f;
@@ -239,29 +262,67 @@ public class Player : MonoBehaviour
         RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, down, 3.0f);
         Debug.DrawRay(transform.position, down, Color.yellow, 10);
 
+        RaycastHit2D closestHit;
+
         float dDist = 100f;
+        bool check = false;
 
         foreach (RaycastHit2D hit in hits)
         {
             if (hit.collider != null)
             {
-                if (hit.collider.gameObject.tag == "Wall" || (hit.collider.GetComponent<Field>() && !hit.collider.GetComponent<Field>().laser) || hit.collider.GetComponent<Button>() != null || hit.collider.GetComponent<BoxColision>() != null)
+                if (hit.collider.gameObject.tag == "Wall")
+                {
+                    check = true;
+                    surface = "wall";
+                }
+                else if (hit.collider.GetComponent<Field>() && !hit.collider.GetComponent<Field>().laser)
+                {
+                    check = true;
+                    surface = "forcefield";
+                }
+                else if (hit.collider.GetComponent<Button>() != null)
+                {
+                    check = true;
+                    surface = "button";
+                }
+                else if (hit.collider.GetComponent<BoxCollision>() != null && hit.collider.GetComponent<BoxCollision>().metalBox)
+                {
+                    check = true;
+                    surface = "boxM";
+                }
+                else if (hit.collider.GetComponent<BoxCollision>() != null && !hit.collider.GetComponent<BoxCollision>().metalBox)
+                {
+                    check = true;
+                    surface = "boxW";
+                }
+
+                if (check)
                 {
                     switch (grav)
                     {
                         case "U":
                         case "D":
-                            dDist = Mathf.Abs(hit.point.y - transform.position.y);
+                            if (Mathf.Abs(hit.point.y - transform.position.y) < dDist)
+                            {
+                                dDist = Mathf.Abs(hit.point.y - transform.position.y);
+                                closestHit = hit;
+                            }
                             break;
                         case "L":
                         case "R":
-                            dDist = Mathf.Abs(hit.point.x - transform.position.x);
+                            if (Mathf.Abs(hit.point.x - transform.position.x) < dDist)
+                            {
+                                dDist = Mathf.Abs(hit.point.x - transform.position.x);
+                                closestHit = hit;                            
+                            }
                             break;
                     }
                     Debug.DrawLine(transform.position, hit.point, Color.green, 10);
                 }
             }
         }
+
         if (dDist <= 1.7f)
         {
             return true;
