@@ -8,6 +8,7 @@ public class GravityWarp : MonoBehaviour
     public static float gravityScale = 4.0f; // Amount of gravity to apply.
     public List<Transform> boxes = new List<Transform>();
     public List<Transform> glues = new List<Transform>();
+    public List<Transform> tutGlues = new List<Transform>();
     public List<Transform> clutter = new List<Transform>();
 
     public Transform[] bloods;
@@ -158,6 +159,31 @@ public class GravityWarp : MonoBehaviour
     /* Controls gravity for all items in the glues list. */
     void GlueGravity()
     {
+
+         foreach (Transform glue in tutGlues)
+        {
+            if (glue != null)
+            {
+                switch (gravity)
+                {
+                    case "U":
+                        glue.GetComponent<Rigidbody2D>().gravityScale = -gravityScale;
+                        break;
+                    case "D":
+                        glue.GetComponent<Rigidbody2D>().gravityScale = gravityScale;
+                        break;
+                    case "L":
+                        glue.GetComponent<Rigidbody2D>().gravityScale = 0;
+                        glue.GetComponent<Rigidbody2D>().AddForce(new Vector2(-gravityScale * thrust, 0));
+                        break;
+                    case "R":
+                        glue.GetComponent<Rigidbody2D>().gravityScale = 0;
+                        glue.GetComponent<Rigidbody2D>().AddForce(new Vector2(gravityScale * thrust, 0));
+                        break;
+                }
+            }
+        }
+
         foreach (Transform glue in glues)
         {
             if (glue != null)
