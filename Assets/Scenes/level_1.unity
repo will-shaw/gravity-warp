@@ -2781,7 +2781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exit_point: {fileID: 1126507069}
   switch_point: {fileID: 3528889}
-  exitDoor: {fileID: 257386231}
+  exitDoor: {fileID: 0}
   nextLevel: glue_tutorial
   asyncLoad: 1
   setGravity: D

@@ -108,6 +108,7 @@ MonoBehaviour:
   glues: []
   clutter: []
   thrust: 4
+  player: {fileID: 0}
   deadMenu: {fileID: 0}
   playerDead: 0
   gravityControlEnabled: 0
@@ -126,7 +127,7 @@ MonoBehaviour:
   player: {fileID: 0}
   levelCenter: {x: 0, y: 0, z: -10}
   zoomFar: 10
-  zoomClose: 5
+  zoomClose: 7
   zoomDuration: 0.5
   trackSpeed: 6
   trackDistance: 4
