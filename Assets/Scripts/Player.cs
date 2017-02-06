@@ -189,6 +189,7 @@ public class Player : MonoBehaviour
             {
                 pause.SetActive(true);
                 Camera.main.GetComponent<GravityWarp>().gravityControlEnabled = false;
+                Camera.main.GetComponent<GravityWarp>().time = false;
                 paused = true;
                 timer = 1f;
             }
@@ -196,6 +197,7 @@ public class Player : MonoBehaviour
             {
                 pause.SetActive(false);
                 Camera.main.GetComponent<GravityWarp>().gravityControlEnabled = true;
+                Camera.main.GetComponent<GravityWarp>().time = true;
                 paused = false;
                 timer = 1f;
             }

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class GravityWarp : MonoBehaviour
@@ -17,6 +18,8 @@ public class GravityWarp : MonoBehaviour
     bool hasRemote;
 
     public GameObject deadMenu;
+    public GameObject timerText;
+    public GameObject deadTimerText;
     public bool playerDead = false;
     public bool gravityControlEnabled;
 
@@ -27,8 +30,16 @@ public class GravityWarp : MonoBehaviour
     float deathTimer = 0f;
     public float coolDown = 0f;
     int gravityCount = 0;
+    
+    public bool time = true;
+    public float leveltmr =0f;
     void Update()
     {
+        if(time){
+            leveltmr += Time.deltaTime;
+            timerText.GetComponent<Text>().text = "Current Level Time: "+ string.Format("{0:N2}",leveltmr);
+            deadTimerText.GetComponent<Text>().text = "Your Time: "+ string.Format("{0:N2}",leveltmr);  
+        }
         // Check for gravity change.
         if (gravityControlEnabled)
         {
@@ -51,7 +62,8 @@ public class GravityWarp : MonoBehaviour
         GlueGravity();
         ClutterGravity();
         if (playerDead)
-        {
+        {   
+            time = false;
             gravityControlEnabled = false;
             if (!blood)
             {
