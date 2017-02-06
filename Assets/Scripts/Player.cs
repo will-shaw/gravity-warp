@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
     float cooldown = 0;
     Transform canvas;
     Animator anim;
-    bool paused = false;
+    public bool paused = false;
     float timer = 0f;
 
     public float speed = 10f;

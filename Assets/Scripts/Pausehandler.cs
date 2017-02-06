@@ -6,6 +6,7 @@ public class Pausehandler : MonoBehaviour {
     bool active = false;
     public GameObject controls;
 
+    public GameObject player;
     public void showControls()
     {
         
@@ -18,6 +19,7 @@ public class Pausehandler : MonoBehaviour {
         gameObject.SetActive(false);
         Camera.main.GetComponent<GravityWarp>().gravityControlEnabled = true;
         Camera.main.GetComponent<GravityWarp>().time = true;
+        player.GetComponent<Player>().paused=false;
     }
 	 void update(){
         float time = Camera.main.GetComponent<GravityWarp>().leveltmr;
