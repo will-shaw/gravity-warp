@@ -14,7 +14,8 @@ public class Tutorial_Glue : MonoBehaviour
         if (glueSpawnTimer <= 0)
         {
             Transform glue = Instantiate(gluePrefab, spawner.position, Quaternion.Euler(Vector2.up));
-            glue.GetComponent<SpriteRenderer>().flipY = true;
+            //glue.GetComponent<SpriteRenderer>().flipY = true;
+            Camera.main.GetComponent<GravityWarp>().tutGlues.Add(glue);
             glueSpawnTimer = glueSpawnDelay;
         }
     }
