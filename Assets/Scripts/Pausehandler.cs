@@ -25,6 +25,6 @@ public class Pausehandler : MonoBehaviour {
         float time = Camera.main.GetComponent<GravityWarp>().leveltmr;
         Debug.Log(gameObject.transform.GetChild(0).GetComponent<Text>().text);
         Debug.Log("hello");
-        gameObject.transform.GetChild(0).GetComponent<Text>().text = "Current Level Time: "+ string.Format( "{0:N2}", time);
+        gameObject.transform.GetChild(0).GetComponent<Text>().text = "Current Time: "+ string.Format( "{0:N2}", time);
     }
 }
