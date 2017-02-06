@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Pausehandler : MonoBehaviour {
+public class PauseHandler : MonoBehaviour {
 
     float timer =0f;
     bool active = false;
@@ -13,7 +11,9 @@ public class Pausehandler : MonoBehaviour {
         controls.SetActive(true);
         gameObject.SetActive(false);
     }
-	
-	// Update is called once per frame
+
+    public void hide() {
+        gameObject.SetActive(false);
+    }
 	
 }

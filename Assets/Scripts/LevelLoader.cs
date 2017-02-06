@@ -32,7 +32,10 @@ public class LevelLoader : MonoBehaviour
                 Debug.Log("Loading " + nextLevel);
                 op = SceneManager.LoadSceneAsync(nextLevel);
                 op.allowSceneActivation = false;
-                exitDoor.GetComponent<Door>().ActivateLink(1);
+                if (exitDoor != null)
+                {
+                    exitDoor.GetComponent<Door>().ActivateLink(1);
+                }
             }
         }
     }
