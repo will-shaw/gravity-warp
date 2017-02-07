@@ -337,6 +337,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1823604765}
     m_Modifications:
+    - target: {fileID: 114861201728345938, guid: 727ed3a472f879a44b38bb7dbdfd1104,
+        type: 2}
+      propertyPath: woodClips.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4498403540518504, guid: 727ed3a472f879a44b38bb7dbdfd1104, type: 2}
       propertyPath: m_LocalPosition.x
       value: -10.401697
@@ -369,6 +374,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114861201728345938, guid: 727ed3a472f879a44b38bb7dbdfd1104,
+        type: 2}
+      propertyPath: woodClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: eb81f90add03e5b4fae9b47da763f196, type: 3}
+    - target: {fileID: 114861201728345938, guid: 727ed3a472f879a44b38bb7dbdfd1104,
+        type: 2}
+      propertyPath: woodClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f25737726e74634abb662c7dd8b6e55, type: 3}
+    - target: {fileID: 114861201728345938, guid: 727ed3a472f879a44b38bb7dbdfd1104,
+        type: 2}
+      propertyPath: woodClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: f82481653ddab8645a44ee8b03e4ca43, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 727ed3a472f879a44b38bb7dbdfd1104, type: 2}
   m_IsPrefabParent: 0

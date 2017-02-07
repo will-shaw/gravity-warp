@@ -1905,7 +1905,7 @@ GameObject:
   - component: {fileID: 1650005721}
   - component: {fileID: 1650005723}
   m_Layer: 0
-  m_Name: trigger-stairs (1)
+  m_Name: trigger-roof
   m_TagString: Untagged
   m_Icon: {fileID: -3701561207968579530, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2464,7 +2464,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4011147956995674, guid: a18686ef00c814d8d825e17562a0ffe9, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4011147956995674, guid: a18686ef00c814d8d825e17562a0ffe9, type: 2}
       propertyPath: m_LocalRotation.x

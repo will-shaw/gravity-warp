@@ -4,14 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Metal
-  - Wood
   - box destruct
   - destructable
   - Wall
   - Glue
-  - pkl
-  - okl
   - bl
   - Beam
   layers:
