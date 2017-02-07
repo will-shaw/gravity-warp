@@ -44,7 +44,9 @@ public class GravityWarp : MonoBehaviour
         // Check for gravity change.
         if (gravityControlEnabled)
         {
-            InputHandler();
+            if (InputManager.controlScheme == 1) {
+                InputHandler();
+            }
             if (!hasRemote)
             {
                 hasRemote = true;
@@ -107,25 +109,25 @@ public class GravityWarp : MonoBehaviour
     {
         if (gravityCount < 5)
         {
-            if (Input.GetKey(KeyCode.UpArrow) && gravity != "U")
+            if (Input.GetKey(InputManager.gravityUp) && gravity != "U")
             {
                 gravity = "U";
                 gravityCount++;
                 reTimer = 0f;
             }
-            if (Input.GetKey(KeyCode.DownArrow) && gravity != "D")
+            if (Input.GetKey(InputManager.gravityDown) && gravity != "D")
             {
                 gravity = "D";
                 gravityCount++;
                 reTimer = 0f;
             }
-            if (Input.GetKey(KeyCode.LeftArrow) && gravity != "L")
+            if (Input.GetKey(InputManager.gravityLeft) && gravity != "L")
             {
                 gravity = "L";
                 gravityCount++;
                 reTimer = 0f;
             }
-            if (Input.GetKey(KeyCode.RightArrow) && gravity != "R")
+            if (Input.GetKey(InputManager.gravityRight) && gravity != "R")
             {
                 gravity = "R";
                 gravityCount++;

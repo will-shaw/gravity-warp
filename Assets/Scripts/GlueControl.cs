@@ -27,7 +27,7 @@ public class GlueControl : MonoBehaviour
         }
 
         float distance = Vector2.Distance(transform.position, ValidTarget());
-        if (Input.GetMouseButtonDown(1) && spawnRange >= distance && glueEnabled)
+        if (Input.GetKeyDown(InputManager.glue) && spawnRange >= distance && glueEnabled)
         {
             GravityWarp gw = Camera.main.GetComponent<GravityWarp>();
             if (glueCount < glueLimit)
@@ -37,10 +37,10 @@ public class GlueControl : MonoBehaviour
                 glueCount++;
                 gw.glues.Add(glueNew);
             }
-        } else if ( Input.GetMouseButtonDown(1) && spawnRange < distance) {
+        } else if ( Input.GetKeyDown(InputManager.glue) && spawnRange < distance) {
             cantGlue = Instantiate(noPlacePrefab, ValidTarget(), Quaternion.identity);
         }
-        if (Input.GetMouseButtonUp(1) && cantGlue != null) {
+        if (Input.GetKeyUp(InputManager.glue) && cantGlue != null) {
             Destroy (cantGlue.gameObject);
         }
     }

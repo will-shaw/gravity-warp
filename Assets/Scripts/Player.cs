@@ -63,9 +63,24 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {   
+
+        float moveHori = 0;
+        float moveVert = 0;
+
+        if (Input.GetKey(InputManager.axisUp)) {
+            moveVert = Input.GetAxis("Vertical");
+        }
+        if (Input.GetKey(InputManager.axisDown)) {
+            moveVert = Input.GetAxis("Vertical");
+        } 
+        if (Input.GetKey(InputManager.axisLeft)) {
+            moveHori = Input.GetAxis("Horizontal");
+        } 
+        if (Input.GetKey(InputManager.axisRight)) {
+            moveHori = Input.GetAxis("Horizontal");
+        }
+
         
-        float moveHori = Input.GetAxis("Horizontal");
-        float moveVert = Input.GetAxis("Vertical");
         float cooldown = Camera.main.GetComponent<GravityWarp>().coolDown;
         if (cooldown != 0f)
         {
@@ -185,7 +200,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            if (Input.GetKey(KeyCode.H) && !paused)
+            if (Input.GetKey(InputManager.menu) && !paused)
             {
                 pause.SetActive(true);
                 Camera.main.GetComponent<GravityWarp>().gravityControlEnabled = false;
@@ -193,7 +208,7 @@ public class Player : MonoBehaviour
                 paused = true;
                 timer = 1f;
             }
-            else if (Input.GetKey(KeyCode.H) && paused)
+            else if (Input.GetKey(InputManager.menu) && paused)
             {
                 pause.SetActive(false);
                 Camera.main.GetComponent<GravityWarp>().gravityControlEnabled = true;
@@ -210,7 +225,7 @@ public class Player : MonoBehaviour
             ChangeDirection();
             if (!(player.GetComponent<Glue>().isGlued()))
             {
-                if (Input.GetKey(KeyCode.Space) && Time.realtimeSinceStartup > cooldown + 0.1f && IsGrounded())
+                if (Input.GetKey(InputManager.jump) && Time.realtimeSinceStartup > cooldown + 0.1f && IsGrounded())
                 {
                     if (!(Camera.main.GetComponent<GravityWarp>().playerDead))
                     {

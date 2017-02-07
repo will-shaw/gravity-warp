@@ -35,12 +35,12 @@ public class CameraZoom : MonoBehaviour
             float dy = Mathf.Lerp(cam.position.y, player.position.y, trackSpeed * Time.deltaTime);
             cam.position = new Vector3(dx, dy, -10);
         }
-        if (Camera.main.orthographicSize == zoomFar && Input.GetKeyDown(KeyCode.Tab))
+        if (Camera.main.orthographicSize == zoomFar && Input.GetKeyDown(InputManager.zoom))
         {
             state = 1;
             StartLerp();
         }
-        if (Camera.main.orthographicSize == zoomClose && Input.GetKeyDown(KeyCode.Tab))
+        if (Camera.main.orthographicSize == zoomClose && Input.GetKeyDown(InputManager.zoom))
         {
             state = 0;
             StartLerp();
