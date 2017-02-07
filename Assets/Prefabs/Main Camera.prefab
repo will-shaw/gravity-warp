@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 81633666791167568}
   - component: {fileID: 114505227209852082}
   - component: {fileID: 114420006540710784}
+  - component: {fileID: 114918991816049254}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -106,13 +107,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxes: []
   glues: []
+  tutGlues: []
   clutter: []
+  bloods: []
   thrust: 4
   player: {fileID: 0}
   deadMenu: {fileID: 0}
+  timerText: {fileID: 0}
+  deadTimerText: {fileID: 0}
   playerDead: 0
   gravityControlEnabled: 0
   coolDown: 0
+  time: 1
+  leveltmr: 0
 --- !u!114 &114505227209852082
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -131,6 +138,20 @@ MonoBehaviour:
   zoomDuration: 0.5
   trackSpeed: 6
   trackDistance: 4
+--- !u!114 &114918991816049254
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1428836992498698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c5c86d837d874a89b1bf1435fa3acdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threshhold: 0.3
+  distance: 50
+  menu: {fileID: 4815869495243390, guid: 5c57410aa7b584e3a9e569f6bc0bfffc, type: 2}
 --- !u!124 &124802521527829638
 Behaviour:
   m_ObjectHideFlags: 1
