@@ -19,6 +19,9 @@ public class CameraZoom : MonoBehaviour
     static float timeStartedLerping;
     static int state = -1;
 
+    static bool eventTriggered = false;
+     
+
     void Start()
     {
         cam = Camera.main.GetComponent<Transform>();
@@ -26,7 +29,7 @@ public class CameraZoom : MonoBehaviour
     }
     void Update()
     {
-        if (player != null && GetDistFromCenter() > trackDistance && Camera.main.orthographicSize == zoomClose)
+        if (player != null && GetDistFromCenter() > trackDistance && Camera.main.orthographicSize == zoomClose && !eventTriggered)
         {
             float dx = Mathf.Lerp(cam.position.x, player.position.x, trackSpeed * Time.deltaTime);
             float dy = Mathf.Lerp(cam.position.y, player.position.y, trackSpeed * Time.deltaTime);
@@ -41,6 +44,7 @@ public class CameraZoom : MonoBehaviour
         {
             state = 0;
             StartLerp();
+            eventTriggered = false;
         }
     }
 
@@ -60,7 +64,9 @@ public class CameraZoom : MonoBehaviour
                     break;
                 case 1: // Zoom In & Move cam to player.
                     Camera.main.orthographicSize = Mathf.Lerp(zoomFar, zoomClose, percentageComplete);
-                    cam.position = Vector3.Lerp(levelCenter, player.position, percentageComplete);
+                    float dx = Mathf.Lerp(levelCenter.x, player.position.x, percentageComplete);
+                    float dy = Mathf.Lerp(levelCenter.y, player.position.y, percentageComplete);
+                    cam.position = new Vector3(dx, dy, -10);
                     break;
                 case 2: // Move cam from player to event.
                     cam.position = Vector3.Lerp(player.position, eventCenter, percentageComplete);
@@ -93,15 +99,17 @@ public class CameraZoom : MonoBehaviour
     }
 
     /* Static callable function to manually pan the camera to a specific location. */
-    static void StartEvent(Vector3 centerPoint)
+    public static void StartEvent(Vector3 centerPoint)
     {
+        eventTriggered = true;
         eventCenter = centerPoint;
         state = 2;
         StartLerp();
     }
     /* Returns the camera to the player; after a StartEvent. */
-    static void StopEvent()
+    public static void StopEvent()
     {
+        eventTriggered = false;        
         state = 3;
         StartLerp();
     }
