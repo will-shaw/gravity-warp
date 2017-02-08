@@ -12,6 +12,7 @@ public class BoxCollision : MonoBehaviour
     float velocityX = 0f;
     float velocityY1 = 0f;
     float velocityX1 = 0f;
+    GameObject activeButton;
     // Use this for initialization
     void Start()
     {
@@ -58,21 +59,33 @@ public class BoxCollision : MonoBehaviour
             {
                 if (velocityX1 < -20f)
                 {
+                    if(other.gameObject.GetComponent<BoxCollision>().activeButton != null) {
+                        other.gameObject.GetComponent<BoxCollision>().activeButton.GetComponent<Button>().Activate(0);
+                    }
                     mainWarp.boxes.Remove(other.transform);
                     Destroy(other.gameObject);
                 }
                 if (velocityX > 20f)
                 {
+                    if(other.gameObject.GetComponent<BoxCollision>().activeButton != null) {
+                        other.gameObject.GetComponent<BoxCollision>().activeButton.GetComponent<Button>().Activate(0);
+                    }
                     mainWarp.boxes.Remove(other.transform);
                     Destroy(other.gameObject);
                 }
                 if (velocityY > 20f)
                 {
+                    if(other.gameObject.GetComponent<BoxCollision>().activeButton != null) {
+                        other.gameObject.GetComponent<BoxCollision>().activeButton.GetComponent<Button>().Activate(0);
+                    }
                     mainWarp.boxes.Remove(other.transform);
                     Destroy(other.gameObject);
                 }
                 if (velocityY1 < -20f)
                 {
+                    if(other.gameObject.GetComponent<BoxCollision>().activeButton != null) {
+                        other.gameObject.GetComponent<BoxCollision>().activeButton.GetComponent<Button>().Activate(0);
+                    }
                     mainWarp.boxes.Remove(other.transform);
                     Destroy(other.gameObject);
                 }
@@ -105,5 +118,9 @@ public class BoxCollision : MonoBehaviour
         velocityY = 0f;
         velocityX1 = 0f;
         velocityY1 = 0f;
+    }
+
+    public void setActiveButton(GameObject button) {
+        activeButton = button;
     }
 }

@@ -49,6 +49,9 @@ public class Button : MonoBehaviour
             }
             else
             {
+                if(other.gameObject.tag == "destructable"){
+                    other.gameObject.GetComponent<BoxCollision>().setActiveButton(this.gameObject);
+                }
                 active = true;
                 GetComponent<AudioSource>().Play();
                 Depression();
@@ -70,7 +73,7 @@ public class Button : MonoBehaviour
         }
     }
 
-	void Activate(int source) {
+	public void Activate(int source) {
 		foreach(Transform field in activates) {
 			if (field.GetComponent<Field>() != null) {
 				field.GetComponent<Field>().ActivateLink(source);

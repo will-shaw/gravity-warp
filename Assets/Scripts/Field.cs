@@ -63,8 +63,6 @@ public class Field : MonoBehaviour
             currentLinks--;
         }
         ToggleField();
-
-        Debug.Log(currentLinks);
     }
 
     public void ToggleField()
