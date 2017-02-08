@@ -97,6 +97,8 @@ public class InputManager : MonoBehaviour
                 return gravityLeft;
             case "gravityRight":
                 return gravityRight;
+            case "menu":
+                return menu;
         }
         return KeyCode.None;
     }
