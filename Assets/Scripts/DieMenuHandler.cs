@@ -9,6 +9,12 @@ public class DieMenuHandler : MonoBehaviour {
 		gameObject.SetActive(false);
 	}
 	public void reset(){
+		if(Camera.main.GetComponent<GravityWarp>().playerDead){
+			Info.load = true;
+		}
+		else{
+			Info.load = false;
+		}
 		Scene current = SceneManager.GetActiveScene();
 		SceneManager.LoadScene(current.name);
 		GravityWarp.gravity = "D";

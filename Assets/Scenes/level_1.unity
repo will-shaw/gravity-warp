@@ -1502,6 +1502,22 @@ Transform:
   m_PrefabParentObject: {fileID: 4348218765827700, guid: c03b27490b5b1444eb92a4ed34e0eee1,
     type: 2}
   m_PrefabInternal: {fileID: 587094824}
+--- !u!1 &637590421 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1418852584812510, guid: 50b41ddc32c478d4c8f0f9402a252ce4,
+    type: 2}
+  m_PrefabInternal: {fileID: 908756914}
+--- !u!114 &637590426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 637590421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e786c654121f84be6a181f55fee1eb1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &637969728
 GameObject:
   m_ObjectHideFlags: 0
@@ -2484,6 +2500,11 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 24837154}
+    - target: {fileID: 114366299830922714, guid: 50b41ddc32c478d4c8f0f9402a252ce4,
+        type: 2}
+      propertyPath: m_Text
+      value: Load Checkpoint
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50b41ddc32c478d4c8f0f9402a252ce4, type: 2}
   m_IsPrefabParent: 0

@@ -8,6 +8,7 @@ public class GravityRemotePickup : MonoBehaviour {
 	{
 		if(other.gameObject.tag == "Player" && !once){
             once = true;
+            Info.checkpoint = new Vector3(-11.6f,7f,-7f);
             GetComponent<AudioSource>().Play();
             Camera.main.GetComponent<Level_1Control>().disableAutoGravity();
             GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
