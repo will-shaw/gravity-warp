@@ -185,7 +185,7 @@ public class MenuHandler : MonoBehaviour
         return KeyCode.None;
     }
 
-    void ResetLevel()
+    public void ResetLevel()
     {
         if (Camera.main.GetComponent<GravityWarp>().playerDead)
         {
@@ -200,7 +200,7 @@ public class MenuHandler : MonoBehaviour
         GravityWarp.gravity = "D";
     }
 
-    void MainMenu()
+    public void MainMenu()
     {
         Hide();
         SceneManager.LoadScene("main_menu");
