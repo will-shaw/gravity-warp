@@ -771,6 +771,29 @@ GameObject:
   m_PrefabParentObject: {fileID: 1273697315478768, guid: 50b41ddc32c478d4c8f0f9402a252ce4,
     type: 2}
   m_PrefabInternal: {fileID: 1386096806}
+--- !u!1 &478670836 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1442481542942020, guid: baab671e9556fd64482952be50519f6b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1125810651}
+--- !u!251 &478670842
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 478670836}
+  m_Enabled: 1
+  m_UseColliderMask: 0
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 90
 --- !u!1 &624442740
 GameObject:
   m_ObjectHideFlags: 0
@@ -1503,6 +1526,11 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 61292862994578708, guid: baab671e9556fd64482952be50519f6b,
+        type: 2}
+      propertyPath: m_UsedByEffector
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: baab671e9556fd64482952be50519f6b, type: 2}
   m_IsPrefabParent: 0
