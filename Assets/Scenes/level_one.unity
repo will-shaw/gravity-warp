@@ -1865,6 +1865,11 @@ Prefab:
       propertyPath: hasGun
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 61709835759391746, guid: c03b27490b5b1444eb92a4ed34e0eee1,
+        type: 2}
+      propertyPath: m_UsedByEffector
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c03b27490b5b1444eb92a4ed34e0eee1, type: 2}
   m_IsPrefabParent: 0
@@ -1873,6 +1878,24 @@ GameObject:
   m_PrefabParentObject: {fileID: 1351072288701584, guid: c03b27490b5b1444eb92a4ed34e0eee1,
     type: 2}
   m_PrefabInternal: {fileID: 763271556}
+--- !u!251 &763271558
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 763271557}
+  m_Enabled: 1
+  m_UseColliderMask: 0
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 0
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 90
 --- !u!4 &771007444 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4783376102200412, guid: 917904f8af7c26c4c8a4124a49cdda7a,
