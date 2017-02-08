@@ -60,6 +60,7 @@ public class MenuHandler : MonoBehaviour
             buttons[i].enabled = true;
         }
         pause.transform.GetChild(5).GetComponentInChildren<UnityEngine.UI.Text>().text = "Controls";
+        controls.SetActive(false);
         InputManager.Save();
     }
 
@@ -132,6 +133,14 @@ public class MenuHandler : MonoBehaviour
     {
         this.key = key;
         isListening = true;
+        UnityEngine.UI.Button[] buttons = setcontrols.GetComponentsInChildren<UnityEngine.UI.Button>();
+        foreach (UnityEngine.UI.Button button in buttons)
+        {
+            if (button.name != key)
+            {
+                button.enabled = false;
+            }
+        }
     }
 
     public void Update()
@@ -145,21 +154,28 @@ public class MenuHandler : MonoBehaviour
                 if (success)
                 {
                     setcontrols.transform.FindChild(key).GetComponentInChildren<UnityEngine.UI.Text>().text = val.ToString();
+                    Debug.Log("Success: " + key + " set to " + val);
                     this.key = null;
                     isListening = false;
-                    Debug.Log("Success: Key set to " + val);
+                    UnityEngine.UI.Button[] buttons = setcontrols.GetComponentsInChildren<UnityEngine.UI.Button>();
+                    foreach (UnityEngine.UI.Button button in buttons)
+                    {
+                        button.enabled = true;
+                    }
                 }
             }
         }
     }
 
-    public void EditControls() {
+    public void EditControls()
+    {
         setcontrols.SetActive(true);
     }
 
     KeyCode FetchKey()
     {
-        foreach(KeyCode key in validKeyCodes) {
+        foreach (KeyCode key in validKeyCodes)
+        {
             if (Input.GetKey(key) && (key != KeyCode.Escape))
             {
                 return key;

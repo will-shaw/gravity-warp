@@ -16,7 +16,7 @@ public class BoxCollision : MonoBehaviour
     void Start()
     {
         am = Camera.main.GetComponent<AudioManager>();
-        Camera.main.GetComponent<GravityWarp>();
+        mainWarp = Camera.main.GetComponent<GravityWarp>();
     }
 
     // Update is called once per frame

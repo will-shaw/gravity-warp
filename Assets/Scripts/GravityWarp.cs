@@ -56,7 +56,7 @@ public class GravityWarp : MonoBehaviour
         // Check for gravity change.
         if (gravityControlEnabled)
         {
-            if (InputManager.controlScheme == 1) {
+            if (InputManager.gravityControlScheme == 1) {
                 InputHandler();
             }
             if (!hasRemote)

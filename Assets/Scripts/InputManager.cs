@@ -5,10 +5,8 @@ using System.IO;
 
 public class InputManager : MonoBehaviour
 {
-
-    /* Sets Control Scheme */
-    public static int controlScheme = 0;
-
+    public static int gravityControlScheme = 0;
+    public static int glueControlScheme = 0;
     /* Left Hand. */
     public static KeyCode axisUp = KeyCode.W;
     public static KeyCode axisDown = KeyCode.S;
@@ -29,7 +27,6 @@ public class InputManager : MonoBehaviour
 
     void Start()
     {
-        UpdateControls();
         Load();
     }
 
@@ -58,11 +55,24 @@ public class InputManager : MonoBehaviour
             case "glue":
                 glue = val;
                 return true;
+            case "gravityUp":
+                gravityUp = val;
+                return true;
+            case "gravityDown":
+                gravityDown = val;
+                return true;
+            case "gravityLeft":
+                gravityLeft = val;
+                return true;
+            case "gravityRight":
+                gravityRight = val;
+                return true;
         }
         return false;
     }
 
-    public static KeyCode GrabKey(string key) {
+    public static KeyCode GrabKey(string key)
+    {
         switch (key)
         {
             case "axisUp":
@@ -79,6 +89,14 @@ public class InputManager : MonoBehaviour
                 return zoom;
             case "glue":
                 return glue;
+            case "gravityUp":
+                return gravityUp;
+            case "gravityDown":
+                return gravityDown;
+            case "gravityLeft":
+                return gravityLeft;
+            case "gravityRight":
+                return gravityRight;
         }
         return KeyCode.None;
     }
@@ -86,7 +104,7 @@ public class InputManager : MonoBehaviour
     public static void Save()
     {
         BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Open(Application.persistentDataPath + "/player-settings.dat", FileMode.Create);
+        FileStream file = File.Open(Application.persistentDataPath + "/player-controls.dat", FileMode.Create);
         ControlSettings data = new ControlSettings();
         data.axisUp = axisUp;
         data.axisDown = axisDown;
@@ -108,10 +126,10 @@ public class InputManager : MonoBehaviour
 
     void Load()
     {
-        if (File.Exists(Application.persistentDataPath + "/player-settings.dat"))
+        if (File.Exists(Application.persistentDataPath + "/player-controls.dat"))
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/player-settings.dat", FileMode.Open);
+            FileStream file = File.Open(Application.persistentDataPath + "/player-controls.dat", FileMode.Open);
             ControlSettings data = (ControlSettings)bf.Deserialize(file);
             file.Close();
             axisUp = data.axisUp;
@@ -125,28 +143,27 @@ public class InputManager : MonoBehaviour
             gravityDown = data.gravityDown;
             gravityLeft = data.gravityLeft;
             gravityRight = data.gravityRight;
-            glue = data.glue;
-        }
-    }
 
-    void UpdateControls()
-    {
-        switch (controlScheme)
-        {
-            case 0:
-                gravityUp = KeyCode.Mouse0;
-                gravityDown = KeyCode.Mouse0;
-                gravityLeft = KeyCode.Mouse0;
-                gravityRight = KeyCode.Mouse0;
-                glue = KeyCode.Mouse1;
-                break;
-            case 1:
-                gravityUp = KeyCode.UpArrow;
-                gravityDown = KeyCode.DownArrow;
-                gravityLeft = KeyCode.LeftArrow;
-                gravityRight = KeyCode.RightArrow;
-                glue = KeyCode.LeftControl;
-                break;
+            if (gravityUp.ToString().Substring(0, 5) == "Mouse")
+            {
+                Debug.Log("Gravity using mouse control");
+                gravityControlScheme = 0;
+            }
+            else
+            {
+                gravityControlScheme = 1;
+            }
+            if (glue.ToString().Substring(0, 5) == "Mouse")
+            {
+                Debug.Log("Glue using mouse control");
+                glueControlScheme = 0;
+            }
+            else
+            {
+                glueControlScheme = 1;
+            }
+
+            glue = data.glue;
         }
     }
 

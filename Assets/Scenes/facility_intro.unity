@@ -438,7 +438,6 @@ MonoBehaviour:
   isOpen: 1
   opensDown: 1
   gravityEnabled: 1
-  clip: {fileID: 8300000, guid: 4ed3c4551e3d79b4aac9cbe88f2f495f, type: 3}
   openDuration: 0.5
   height: 5.2
 --- !u!1 &104979008
@@ -750,7 +749,6 @@ MonoBehaviour:
   isOpen: 1
   opensDown: 1
   gravityEnabled: 1
-  clip: {fileID: 8300000, guid: 4ed3c4551e3d79b4aac9cbe88f2f495f, type: 3}
   openDuration: 0.5
   height: 5.2
 --- !u!1001 &392505332
@@ -859,7 +857,6 @@ MonoBehaviour:
   isOpen: 0
   opensDown: 1
   gravityEnabled: 0
-  clip: {fileID: 8300000, guid: 4ed3c4551e3d79b4aac9cbe88f2f495f, type: 3}
   openDuration: 0.5
   height: 5.2
 --- !u!1001 &666669050
@@ -1044,11 +1041,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   metalBox: 1
-  metalClips:
-  - {fileID: 8300000, guid: 56bbde652d598864f956fd39bd49dd3d, type: 3}
-  - {fileID: 8300000, guid: d9f44e62a095cef47908c4c242da3805, type: 3}
-  - {fileID: 8300000, guid: 744bcf0d4376d2648a3500670f853f53, type: 3}
-  woodClips: []
 --- !u!82 &766578324
 AudioSource:
   m_ObjectHideFlags: 0
