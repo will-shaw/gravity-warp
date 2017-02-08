@@ -6,9 +6,12 @@ public class GlueObject : MonoBehaviour
     bool isStuck;
     string currGrav;
     bool expire = true;
-
-    public AudioClip splat;
+    AudioClip splat;
     public float expireTimer = 15;
+
+    void Start() {
+        splat = Camera.main.GetComponent<AudioManager>().GetGlueSplat();
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {

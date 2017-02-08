@@ -10,7 +10,7 @@ public class Door : MonoBehaviour
     public bool isOpen = false;
     public bool opensDown = true;
     public bool gravityEnabled = false;
-    public AudioClip clip;
+    AudioClip clip;
 
     bool isLerping;
     float timeStartedLerping;
@@ -20,6 +20,7 @@ public class Door : MonoBehaviour
 
     void Start()
     {
+        clip = Camera.main.GetComponent<AudioManager>().GetDoorClip();
         closedPosY = transform.position.y;
         if (opensDown)
         {

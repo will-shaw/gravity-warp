@@ -6,22 +6,19 @@ public class Player : MonoBehaviour
     float cooldown = 0;
     Transform canvas;
     Animator anim;
-    public bool paused = false;
+    AudioManager am;
     float timer = 0f;
+    float footstepTimer;
 
+    public bool paused = false;
     public float speed = 10f;
     public string surface;
-    public AudioClip[] landClip = new AudioClip[3];
-    public AudioClip[] footsteps = new AudioClip[3];
-    public AudioClip sliding;
     public RectTransform canvasPrefab;
     public bool facingRight = true;
     public Sprite spSide;
     public Sprite spUp;
-    public GameObject pause;
-
+    public GameObject menu;
     public float footstepDelay;
-    float footstepTimer;
 
     void Awake()
     {
@@ -34,14 +31,17 @@ public class Player : MonoBehaviour
         footstepTimer = footstepDelay;
         player = transform;
         anim = GetComponent<Animator>();
+        menu.GetComponent<MenuHandler>().player = transform;
+        am = Camera.main.GetComponent<AudioManager>();
         Camera.main.GetComponent<GravityWarp>().player = transform;
         Camera.main.GetComponent<GravityWarp>().boxes.Add(transform);
         Camera.main.GetComponent<CameraZoom>().player = transform;
         Debug.Log(Info.checkpoint.x);
         Debug.Log(Info.load);
-        if(Info.load && Info.checkpoint.x != 0){
+        if (Info.load && Info.checkpoint.x != 0)
+        {
             Debug.Log("made");
-           gameObject.transform.localPosition = Info.checkpoint;
+            gameObject.transform.localPosition = Info.checkpoint;
         }
     }
 
@@ -57,36 +57,40 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Wall")
+        if (other.gameObject.tag == "Wall" || (other.collider.gameObject.GetComponent<Field>() != null && !other.collider.gameObject.GetComponent<Field>().laser))
         {
-            GetComponent<AudioSource>().PlayOneShot(landClip[Random.Range(0, 3)], 1);
+            GetComponent<AudioSource>().PlayOneShot(am.GetLanding(), 1);
         }
         else if (other.gameObject.GetComponent<BoxCollision>() != null && surface != "boxM" && surface != "boxW")
         {
-            GetComponent<AudioSource>().PlayOneShot(sliding, 1);
+            GetComponent<AudioSource>().PlayOneShot(am.GetBoxSlide(), 1);
         }
     }
 
     void FixedUpdate()
-    {   
+    {
 
         float moveHori = 0;
         float moveVert = 0;
 
-        if (Input.GetKey(InputManager.axisUp)) {
+        if (Input.GetKey(InputManager.axisUp))
+        {
             moveVert = Input.GetAxis("Vertical");
         }
-        if (Input.GetKey(InputManager.axisDown)) {
+        if (Input.GetKey(InputManager.axisDown))
+        {
             moveVert = Input.GetAxis("Vertical");
-        } 
-        if (Input.GetKey(InputManager.axisLeft)) {
+        }
+        if (Input.GetKey(InputManager.axisLeft))
+        {
             moveHori = Input.GetAxis("Horizontal");
-        } 
-        if (Input.GetKey(InputManager.axisRight)) {
+        }
+        if (Input.GetKey(InputManager.axisRight))
+        {
             moveHori = Input.GetAxis("Horizontal");
         }
 
-        
+
         float cooldown = Camera.main.GetComponent<GravityWarp>().coolDown;
         if (cooldown != 0f)
         {
@@ -104,7 +108,8 @@ public class Player : MonoBehaviour
 
         string gravity = GravityWarp.gravity;
 
-        if(gravity == "U"){
+        if (gravity == "U")
+        {
             canvas.FindChild("controls").GetComponent<SpriteRenderer>().flipY = true;
             canvas.FindChild("controls").localPosition = new Vector3(-3.141f, -1.84f, 0);
             canvas.FindChild("GravityDirection").localPosition = new Vector3(-5.552f, -1.97f, 0);
@@ -113,7 +118,9 @@ public class Player : MonoBehaviour
             canvas.FindChild("ytext").localPosition = new Vector3(-2.503f, -3.37f, 0);
             canvas.FindChild("xtext").localPosition = new Vector3(-3.686f, -3.37f, 0);
             canvas.FindChild("Cooldown").localPosition = new Vector3(-5.483f, -2.73f, 0);
-        }else if(gravity =="D"){
+        }
+        else if (gravity == "D")
+        {
             canvas.FindChild("controls").GetComponent<SpriteRenderer>().flipY = false;
             canvas.FindChild("controls").localPosition = new Vector3(-3.141f, 1.422f, 0);
             canvas.FindChild("GravityDirection").localPosition = new Vector3(-5.552f, 1.666f, 0);
@@ -153,7 +160,7 @@ public class Player : MonoBehaviour
             if (!(player.GetComponent<Glue>().isGlued()))
             {
                 anim.SetFloat("Speed", Mathf.Abs(moveHori));
-                FootSteps(Mathf.Abs(moveHori));                
+                FootSteps(Mathf.Abs(moveHori));
             }
             GetComponent<Rigidbody2D>().velocity = new Vector2(moveHori * speed, GetComponent<Rigidbody2D>().velocity.y);
             if (moveHori > 0 && !facingRight && gravity == "D")
@@ -182,7 +189,7 @@ public class Player : MonoBehaviour
             footstepTimer -= Time.deltaTime;
             if (footstepTimer <= 0)
             {
-                GetComponent<AudioSource>().PlayOneShot(footsteps[Random.Range(0, 3)], 1);
+                GetComponent<AudioSource>().PlayOneShot(am.GetFootstep(), 1);
                 footstepTimer = footstepDelay;
             }
         }
@@ -208,7 +215,7 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKey(InputManager.menu) && !paused)
             {
-                pause.SetActive(true);
+                menu.GetComponent<MenuHandler>().ShowPause();
                 Camera.main.GetComponent<GravityWarp>().gravityControlEnabled = false;
                 Camera.main.GetComponent<GravityWarp>().time = false;
                 paused = true;
@@ -216,7 +223,7 @@ public class Player : MonoBehaviour
             }
             else if (Input.GetKey(InputManager.menu) && paused)
             {
-                pause.SetActive(false);
+                menu.GetComponent<MenuHandler>().Hide();
                 Camera.main.GetComponent<GravityWarp>().gravityControlEnabled = true;
                 Camera.main.GetComponent<GravityWarp>().time = true;
                 paused = false;

@@ -5,9 +5,9 @@ public class Button : MonoBehaviour
     public Transform[] activates;
     public bool toggleable = true;
 
-    public AudioClip toggleOn;
-    public AudioClip toggleOff;
-    public AudioClip release;
+    AudioClip toggleOn;
+    AudioClip toggleOff;
+    AudioClip release;
 
     public bool active = false;
     //For depression, D is floor, U is roof and L/R are left and right wall.
@@ -15,6 +15,10 @@ public class Button : MonoBehaviour
 
     void Start()
     {
+        toggleOn = Camera.main.GetComponent<AudioManager>().GetButtonToggle(true);
+        toggleOff = Camera.main.GetComponent<AudioManager>().GetButtonToggle(false);
+        release = Camera.main.GetComponent<AudioManager>().GetButton();
+
         if (toggleable)
         {
             GetComponent<SpriteRenderer>().color = UnityEngine.Color.yellow;

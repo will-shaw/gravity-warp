@@ -151,9 +151,6 @@ MonoBehaviour:
   activates:
   - {fileID: 0}
   toggleable: 0
-  toggleOn: {fileID: 8300000, guid: 26709088ce559e34c97a36ff1dfd5436, type: 3}
-  toggleOff: {fileID: 8300000, guid: ab05548f721114a428ffe1e1781b6343, type: 3}
-  release: {fileID: 8300000, guid: 2dee2c1408b076d46965ab41cc84c690, type: 3}
   active: 0
   wallAttached: D
 --- !u!212 &212424651828351700
