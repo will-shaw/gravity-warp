@@ -24,7 +24,11 @@ public class Field : MonoBehaviour {
 		if (active && laser){
 			if(objectKilling) {
 				if(other.gameObject.tag != "Wall") {
-					Destroy(other.gameObject);
+					if(other.gameObject.tag == "Player"){
+						Camera.main.GetComponent<GravityWarp>().playerDead= true;
+					} else {
+						Destroy(other.gameObject);
+					}
 				}
 			} else {
 				if(other.gameObject.tag == "Player") {
@@ -48,7 +52,6 @@ public class Field : MonoBehaviour {
 
     	ToggleField();
 
-		Debug.Log(currentLinks);
     }
 
 	public void ToggleField() {

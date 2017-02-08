@@ -56,23 +56,22 @@ public class BoxCollision : MonoBehaviour
         {
             if (other.gameObject.tag == "destructable")
             {
-
-                if (velocityX1 > 30f)
+                if (velocityX1 < -20f)
                 {
                     mainWarp.boxes.Remove(other.transform);
                     Destroy(other.gameObject);
                 }
-                if (velocityX < -30f)
+                if (velocityX > 20f)
                 {
                     mainWarp.boxes.Remove(other.transform);
                     Destroy(other.gameObject);
                 }
-                if (velocityY > 30f)
+                if (velocityY > 20f)
                 {
                     mainWarp.boxes.Remove(other.transform);
                     Destroy(other.gameObject);
                 }
-                if (velocityY1 < -30f)
+                if (velocityY1 < -20f)
                 {
                     mainWarp.boxes.Remove(other.transform);
                     Destroy(other.gameObject);
