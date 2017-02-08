@@ -5,6 +5,10 @@ public class Field : MonoBehaviour {
 	public bool laser = false;
 	public bool active = true;
 	public bool objectKilling = true;
+	public int linksRequired = 1;
+
+	public bool startOff = false;
+	int currentLinks = 0;
 
 	void Start () {
 		if (active) {
@@ -31,15 +35,47 @@ public class Field : MonoBehaviour {
 		}
 	}
 
+	public void ActivateLink(int source)
+    {
+        if (source == 1)
+        {
+            currentLinks++;
+        }
+        else
+        {
+            currentLinks--;
+        }
+
+    	ToggleField();
+
+		Debug.Log(currentLinks);
+    }
+
 	public void ToggleField() {
-		if (active) {		
-			gameObject.GetComponent<Renderer>().enabled = false;
-			gameObject.GetComponent<Collider2D>().enabled = false;
-		} else {
-			gameObject.GetComponent<Renderer>().enabled = true;
-			gameObject.GetComponent<Collider2D>().enabled = true;
+		if(startOff)
+		{
+			if (!(active) && currentLinks >= linksRequired) {		
+				gameObject.GetComponent<Renderer>().enabled = true;
+				gameObject.GetComponent<Collider2D>().enabled = true;
+				active = !active;
+			} else if(active){
+				gameObject.GetComponent<Renderer>().enabled = false;
+				gameObject.GetComponent<Collider2D>().enabled = false;
+				active = !active;
+			}
 		}
-		active = !active;
+		else 
+		{
+			if (active && currentLinks >= linksRequired) {		
+				gameObject.GetComponent<Renderer>().enabled = false;
+				gameObject.GetComponent<Collider2D>().enabled = false;
+				active = !active;
+			} else if(!(active)){
+				gameObject.GetComponent<Renderer>().enabled = true;
+				gameObject.GetComponent<Collider2D>().enabled = true;
+				active = !active;
+			}
+		}
 	}
 
 }

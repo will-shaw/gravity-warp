@@ -2055,6 +2055,11 @@ Prefab:
       propertyPath: active
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114263108842821250, guid: b5f1e22d3e49a884fa489bcb8b202788,
+        type: 2}
+      propertyPath: startOff
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b5f1e22d3e49a884fa489bcb8b202788, type: 2}
   m_IsPrefabParent: 0

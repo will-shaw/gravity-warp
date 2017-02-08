@@ -33,14 +33,23 @@ public class Button : MonoBehaviour
             {
                 active = false;
                 GetComponent<AudioSource>().PlayOneShot(toggleOn, 1);
+                Depression();
+                Activate(0);
+            }
+            else if (toggleable && !(active))
+            {
+                active = true;
+                GetComponent<AudioSource>().PlayOneShot(toggleOn, 1);
+                Depression();
+                Activate(1);
             }
             else
             {
                 active = true;
                 GetComponent<AudioSource>().Play();
+                Depression();
+			    Activate(1);
             }
-            Depression();
-			Activate(1);
         }
     }
 
@@ -60,7 +69,7 @@ public class Button : MonoBehaviour
 	void Activate(int source) {
 		foreach(Transform field in activates) {
 			if (field.GetComponent<Field>() != null) {
-				field.GetComponent<Field>().ToggleField();
+				field.GetComponent<Field>().ActivateLink(source);
 			} else if (field.GetComponent<Door>() != null) {
 				field.GetComponent<Door>().ActivateLink(source);
 			}
