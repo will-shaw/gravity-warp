@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: f9efa58157031504d8aae86b06d9e59b
-timeCreated: 1485807481
+timeCreated: 1486540194
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -133,10 +133,10 @@ TextureImporter:
       name: level_set_3
       rect:
         serializedVersion: 2
-        x: 162
-        y: 742
-        width: 124
-        height: 706
+        x: 167
+        y: 746
+        width: 114
+        height: 698
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 2, y: 1, z: 2, w: 1}
@@ -242,7 +242,7 @@ TextureImporter:
         width: 1084
         height: 390
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
