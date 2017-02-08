@@ -37,10 +37,10 @@ public class InputManager : MonoBehaviour {
         data.axisUp = axisUp;
         data.axisDown = axisDown;
         data.axisLeft = axisLeft;
-        data.axisDown = axisRight;
+        data.axisRight = axisRight;
 
 		data.jump = jump;
-		data.jump = jump;
+		data.zoom = zoom;
 		data.gravity = gravityUp;
 		data.glue = glue;
 
