@@ -216,6 +216,7 @@ public class Player : MonoBehaviour
             if (Input.GetKey(InputManager.menu) && !paused)
             {
                 menu.GetComponent<MenuHandler>().ShowPause();
+                canvas.gameObject.SetActive(false);
                 Camera.main.GetComponent<GravityWarp>().gravityControlEnabled = false;
                 Camera.main.GetComponent<GravityWarp>().time = false;
                 paused = true;
@@ -223,6 +224,7 @@ public class Player : MonoBehaviour
             }
             else if (Input.GetKey(InputManager.menu) && paused)
             {
+                canvas.gameObject.SetActive(true);
                 menu.GetComponent<MenuHandler>().Hide();
                 Camera.main.GetComponent<GravityWarp>().gravityControlEnabled = true;
                 Camera.main.GetComponent<GravityWarp>().time = true;

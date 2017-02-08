@@ -124,6 +124,7 @@ public class MenuHandler : MonoBehaviour
         controls.SetActive(false);
         confirm.SetActive(false);
         setcontrols.SetActive(false);
+        player.GetComponent<Player>().GetCanvas().gameObject.SetActive(true);
         Camera.main.GetComponent<GravityWarp>().gravityControlEnabled = true;
         Camera.main.GetComponent<GravityWarp>().time = true;
         player.GetComponent<Player>().paused = false;
