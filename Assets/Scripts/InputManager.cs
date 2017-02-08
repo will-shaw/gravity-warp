@@ -33,7 +33,57 @@ public class InputManager : MonoBehaviour
         Load();
     }
 
-    void Save()
+    public static bool Set(string key, KeyCode val)
+    {
+        switch (key)
+        {
+            case "axisUp":
+                axisUp = val;
+                return true;
+            case "axisDown":
+                axisDown = val;
+                return true;
+            case "axisLeft":
+                axisLeft = val;
+                return true;
+            case "axisRight":
+                axisRight = val;
+                return true;
+            case "jump":
+                jump = val;
+                return true;
+            case "zoom":
+                zoom = val;
+                return true;
+            case "glue":
+                glue = val;
+                return true;
+        }
+        return false;
+    }
+
+    public static KeyCode GrabKey(string key) {
+        switch (key)
+        {
+            case "axisUp":
+                return axisUp;
+            case "axisDown":
+                return axisDown;
+            case "axisLeft":
+                return axisLeft;
+            case "axisRight":
+                return axisRight;
+            case "jump":
+                return jump;
+            case "zoom":
+                return zoom;
+            case "glue":
+                return glue;
+        }
+        return KeyCode.None;
+    }
+
+    public static void Save()
     {
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Open(Application.persistentDataPath + "/player-settings.dat", FileMode.Create);
@@ -53,6 +103,7 @@ public class InputManager : MonoBehaviour
 
         bf.Serialize(file, data);
         file.Close();
+        Debug.Log("Controls saved.");
     }
 
     void Load()

@@ -43,7 +43,7 @@ public class Button : MonoBehaviour
             else if (toggleable && !(active))
             {
                 active = true;
-                GetComponent<AudioSource>().PlayOneShot(toggleOn, 1);
+                GetComponent<AudioSource>().PlayOneShot(toggleOff, 1);
                 Depression();
                 Activate(1);
             }

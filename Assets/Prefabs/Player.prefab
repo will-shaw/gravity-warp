@@ -208,7 +208,7 @@ MonoBehaviour:
   facingRight: 1
   spSide: {fileID: 21300000, guid: 3afbe5e7757c74d1c895494637a65207, type: 3}
   spUp: {fileID: 21300000, guid: 1b80f07f9538e44ae8e19b2acdaa869d, type: 3}
-  pause: {fileID: 0}
+  menu: {fileID: 1418852584812510, guid: 50b41ddc32c478d4c8f0f9402a252ce4, type: 2}
   footstepDelay: 0.45
 --- !u!114 &114379225953951324
 MonoBehaviour:

@@ -48,7 +48,10 @@ public class MouseControls : MonoBehaviour
                 GravityWarp.gravity = "U";
             }
 
-            Destroy(instantiatedMenu.gameObject);
+            if (instantiatedMenu)
+            {
+                Destroy(instantiatedMenu.gameObject);
+            }
         }
 
     }

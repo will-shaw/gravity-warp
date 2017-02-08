@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114505227209852082}
   - component: {fileID: 114420006540710784}
   - component: {fileID: 114918991816049254}
+  - component: {fileID: 114126433362559836}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -94,6 +95,39 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1428836992498698}
   m_Enabled: 1
+--- !u!114 &114126433362559836
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1428836992498698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a5dc7f44fcab314ab24c291c054bcb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  landClip:
+  - {fileID: 8300000, guid: f24fa65d7ad72d34dbc28c0bf4907cbd, type: 3}
+  - {fileID: 8300000, guid: 9a21f149e62a54b4699db54e52f25a0a, type: 3}
+  - {fileID: 8300000, guid: 37192b3ea71af0f41b47fb657c4bd77f, type: 3}
+  footsteps:
+  - {fileID: 8300000, guid: d19c8f303cd170347ba9b3880a887ece, type: 3}
+  - {fileID: 8300000, guid: dbe5ecb335cb6464d9eb0cd2e2274e50, type: 3}
+  - {fileID: 8300000, guid: 8a24ae51c81f23a49b5c55053f97df1e, type: 3}
+  sliding: {fileID: 8300000, guid: 85342af3beb31984b89da29c64213ae0, type: 3}
+  metalClips:
+  - {fileID: 8300000, guid: 56bbde652d598864f956fd39bd49dd3d, type: 3}
+  - {fileID: 8300000, guid: d9f44e62a095cef47908c4c242da3805, type: 3}
+  - {fileID: 8300000, guid: 744bcf0d4376d2648a3500670f853f53, type: 3}
+  woodClips:
+  - {fileID: 8300000, guid: eb81f90add03e5b4fae9b47da763f196, type: 3}
+  - {fileID: 8300000, guid: 0f25737726e74634abb662c7dd8b6e55, type: 3}
+  - {fileID: 8300000, guid: f82481653ddab8645a44ee8b03e4ca43, type: 3}
+  splat: {fileID: 8300000, guid: dd8cf6cc6bf0cb54d846848bbbb0a80d, type: 3}
+  door: {fileID: 8300000, guid: 4ed3c4551e3d79b4aac9cbe88f2f495f, type: 3}
+  toggleOn: {fileID: 8300000, guid: 26709088ce559e34c97a36ff1dfd5436, type: 3}
+  toggleOff: {fileID: 8300000, guid: ab05548f721114a428ffe1e1781b6343, type: 3}
+  release: {fileID: 8300000, guid: 2dee2c1408b076d46965ab41cc84c690, type: 3}
 --- !u!114 &114420006540710784
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -112,11 +146,10 @@ MonoBehaviour:
   bloods: []
   thrust: 4
   player: {fileID: 0}
-  deadMenu: {fileID: 0}
-  timerText: {fileID: 0}
-  deadTimerText: {fileID: 0}
+  menu: {fileID: 0}
   playerDead: 0
   gravityControlEnabled: 0
+  checktmr: 0
   coolDown: 0
   time: 1
   leveltmr: 0

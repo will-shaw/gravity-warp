@@ -16,32 +16,37 @@ public class GravityWarp : MonoBehaviour
     public static string gravity = "D"; // The current gravity direction.
 
     public Transform player;
-    bool hasRemote;
-
-    public GameObject deadMenu;
-    public GameObject timerText;
-    public GameObject deadTimerText;
+    public GameObject menu;
     public bool playerDead = false;
     public bool gravityControlEnabled;
 
-    public GameObject checkpointText;
+    GameObject checkpointText;
+    GameObject pauseTimerText;
+    GameObject deathTimerText;
     bool blood = false;
-
-    float reTimer = 0f;
-
-    public float checktmr =0f;
-    float deathTimer = 0f;
-    public float coolDown = 0f;
-    int gravityCount = 0;
+    bool hasRemote;
     
+    float reTimer = 0f;
+    float deathTimer = 0f;
+    int gravityCount = 0;
+
+    public float checktmr = 0f;
+    public float coolDown = 0f;    
     public bool time = true;
     public float leveltmr =0f;
+
+    void Start() {
+        checkpointText = menu.transform.FindChild("txtCheck").gameObject;
+        deathTimerText = menu.transform.FindChild("DeathPanel").FindChild("deathTimerText").gameObject;
+        pauseTimerText = menu.transform.FindChild("PausePanel").FindChild("pauseTimerText").gameObject;
+    }
+
     void Update()
     {
         if(time){
             leveltmr += Time.deltaTime;
-            timerText.GetComponent<Text>().text = "Current Level Time: "+ string.Format("{0:N2}",leveltmr);
-            deadTimerText.GetComponent<Text>().text = "Your Time: "+ string.Format("{0:N2}",leveltmr);  
+            pauseTimerText.GetComponent<Text>().text = "Current Level Time: "+ string.Format("{0:N2}",leveltmr);
+            deathTimerText.GetComponent<Text>().text = "Your Time: "+ string.Format("{0:N2}",leveltmr);  
         }
         if(checktmr >0){
             checktmr -= Time.deltaTime;
@@ -106,7 +111,7 @@ public class GravityWarp : MonoBehaviour
 
             }
             else{
-                deadMenu.GetComponent<DieMenuHandler>().ShowPause();
+                menu.GetComponent<MenuHandler>().ShowDeath();
             }
         }
     }
