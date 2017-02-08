@@ -24,10 +24,12 @@ public class GravityWarp : MonoBehaviour
     public bool playerDead = false;
     public bool gravityControlEnabled;
 
+    public GameObject checkpointText;
     bool blood = false;
 
     float reTimer = 0f;
 
+    public float checktmr =0f;
     float deathTimer = 0f;
     public float coolDown = 0f;
     int gravityCount = 0;
@@ -40,6 +42,11 @@ public class GravityWarp : MonoBehaviour
             leveltmr += Time.deltaTime;
             timerText.GetComponent<Text>().text = "Current Level Time: "+ string.Format("{0:N2}",leveltmr);
             deadTimerText.GetComponent<Text>().text = "Your Time: "+ string.Format("{0:N2}",leveltmr);  
+        }
+        if(checktmr >0){
+            checktmr -= Time.deltaTime;
+        }else{
+            checkpointText.SetActive(false);
         }
         // Check for gravity change.
         if (gravityControlEnabled)

@@ -736,6 +736,11 @@ Prefab:
       propertyPath: deadTimerText
       value: 
       objectReference: {fileID: 141904477}
+    - target: {fileID: 114420006540710784, guid: e3f30bfd6b9f8de4681baa1553a96802,
+        type: 2}
+      propertyPath: checkpointText
+      value: 
+      objectReference: {fileID: 722220270}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e3f30bfd6b9f8de4681baa1553a96802, type: 2}
   m_IsPrefabParent: 0
@@ -805,6 +810,98 @@ Transform:
   m_PrefabParentObject: {fileID: 4864313613909910, guid: 114a29e0deec009439eb7d4c246d7e8c,
     type: 2}
   m_PrefabInternal: {fileID: 1201286703}
+--- !u!1 &722220270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 722220271}
+  - component: {fileID: 722220274}
+  - component: {fileID: 722220273}
+  - component: {fileID: 722220272}
+  m_Layer: 5
+  m_Name: txtCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &722220271
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 722220270}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 90}
+  m_LocalScale: {x: 0.02123, y: 0.02123, z: 0.02123}
+  m_Children: []
+  m_Father: {fileID: 761846076}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -442.60635, y: -239.34735}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &722220272
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 722220270}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 644a7f08f7e364f3d894fbab3db1380d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &722220273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 722220270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 25
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 225
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Check Point
+--- !u!222 &722220274
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 722220270}
 --- !u!4 &749207970 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4720744810693060, guid: 1e592531680a8d14095899d79bd05302,
@@ -1039,6 +1136,27 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50b41ddc32c478d4c8f0f9402a252ce4, type: 2}
   m_IsPrefabParent: 0
+--- !u!224 &761846076 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224321446073100974, guid: 50b41ddc32c478d4c8f0f9402a252ce4,
+    type: 2}
+  m_PrefabInternal: {fileID: 761846075}
+--- !u!1 &761846077 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1418852584812510, guid: 50b41ddc32c478d4c8f0f9402a252ce4,
+    type: 2}
+  m_PrefabInternal: {fileID: 761846075}
+--- !u!114 &761846078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 761846077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e786c654121f84be6a181f55fee1eb1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &777342659
 Prefab:
   m_ObjectHideFlags: 0
