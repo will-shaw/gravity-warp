@@ -794,11 +794,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   metalBox: 1
-  metalClips:
-  - {fileID: 8300000, guid: 56bbde652d598864f956fd39bd49dd3d, type: 3}
-  - {fileID: 8300000, guid: d9f44e62a095cef47908c4c242da3805, type: 3}
-  - {fileID: 8300000, guid: 744bcf0d4376d2648a3500670f853f53, type: 3}
-  woodClips: []
 --- !u!1 &381237605 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1428836992498698, guid: e3f30bfd6b9f8de4681baa1553a96802,
@@ -3500,7 +3495,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4348218765827700, guid: c03b27490b5b1444eb92a4ed34e0eee1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.08
+      value: -0.88
       objectReference: {fileID: 0}
     - target: {fileID: 4348218765827700, guid: c03b27490b5b1444eb92a4ed34e0eee1, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3781,7 +3776,6 @@ MonoBehaviour:
   isOpen: 0
   opensDown: 1
   gravityEnabled: 0
-  clip: {fileID: 0}
   openDuration: 0.5
   height: 5.2
 --- !u!1 &1833438608
@@ -4029,7 +4023,6 @@ MonoBehaviour:
   isOpen: 0
   opensDown: 1
   gravityEnabled: 0
-  clip: {fileID: 0}
   openDuration: 0.5
   height: 5.2
 --- !u!1001 &2040947776
