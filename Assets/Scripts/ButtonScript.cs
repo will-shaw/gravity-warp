@@ -15,6 +15,9 @@ public class ButtonScript : MonoBehaviour
     {
         if (other.GetComponent<GlueObject>() == null && other.tag != "Wall")
         {
+            if(other.tag  == "destructable") {
+                other.GetComponent<BoxCollision>().setActiveButton(gameObject);
+            }
             GetComponent<AudioSource>().Play();
             GetComponent<Animator>().SetBool("Active", true);
             AddLink();
@@ -25,6 +28,9 @@ public class ButtonScript : MonoBehaviour
     {
         if (other.GetComponent<GlueObject>() == null && other.tag != "Wall")
         {
+            if(other.tag  == "destructable") {
+                other.GetComponent<BoxCollision>().setActiveButton(null);
+            }
             GetComponent<Animator>().SetBool("Active", false);
             GetComponent<AudioSource>().PlayOneShot(release, 1);
             SubLink();
@@ -50,7 +56,7 @@ public class ButtonScript : MonoBehaviour
         }
     }
 
-    void SubLink()
+    public void SubLink()
     {
         foreach (Transform item in activates)
         {

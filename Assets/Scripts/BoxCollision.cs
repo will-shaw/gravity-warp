@@ -60,7 +60,7 @@ public class BoxCollision : MonoBehaviour
                 if (velocityX1 < -20f)
                 {
                     if(other.gameObject.GetComponent<BoxCollision>().activeButton != null) {
-                        other.gameObject.GetComponent<BoxCollision>().activeButton.GetComponent<Button>().Activate(0);
+                        other.gameObject.GetComponent<BoxCollision>().activeButton.GetComponent<ButtonScript>().SubLink();
                     }
                     mainWarp.boxes.Remove(other.transform);
                     Destroy(other.gameObject);
@@ -68,7 +68,7 @@ public class BoxCollision : MonoBehaviour
                 if (velocityX > 20f)
                 {
                     if(other.gameObject.GetComponent<BoxCollision>().activeButton != null) {
-                        other.gameObject.GetComponent<BoxCollision>().activeButton.GetComponent<Button>().Activate(0);
+                        other.gameObject.GetComponent<BoxCollision>().activeButton.GetComponent<ButtonScript>().SubLink();
                     }
                     mainWarp.boxes.Remove(other.transform);
                     Destroy(other.gameObject);
@@ -76,7 +76,7 @@ public class BoxCollision : MonoBehaviour
                 if (velocityY > 20f)
                 {
                     if(other.gameObject.GetComponent<BoxCollision>().activeButton != null) {
-                        other.gameObject.GetComponent<BoxCollision>().activeButton.GetComponent<Button>().Activate(0);
+                        other.gameObject.GetComponent<BoxCollision>().activeButton.GetComponent<ButtonScript>().SubLink();
                     }
                     mainWarp.boxes.Remove(other.transform);
                     Destroy(other.gameObject);
@@ -84,7 +84,7 @@ public class BoxCollision : MonoBehaviour
                 if (velocityY1 < -20f)
                 {
                     if(other.gameObject.GetComponent<BoxCollision>().activeButton != null) {
-                        other.gameObject.GetComponent<BoxCollision>().activeButton.GetComponent<Button>().Activate(0);
+                        other.gameObject.GetComponent<BoxCollision>().activeButton.GetComponent<ButtonScript>().SubLink();
                     }
                     mainWarp.boxes.Remove(other.transform);
                     Destroy(other.gameObject);
