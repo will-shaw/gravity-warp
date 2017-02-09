@@ -525,7 +525,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!212 &104979013
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1011,7 +1011,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 766578318}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 26.8, y: 5.3061748, z: 0}
+  m_LocalPosition: {x: 24.03, y: 5.3061748, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 1524597866}
@@ -1969,6 +1969,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114964896274623326, guid: 50b41ddc32c478d4c8f0f9402a252ce4,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 223421283788329252, guid: 50b41ddc32c478d4c8f0f9402a252ce4,
         type: 2}
       propertyPath: m_Camera
@@ -2474,6 +2479,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityChangeTime: 1000
   shipLandDelay: 2
+  hatch: {fileID: 104979012}
+  ship: {fileID: 1672162370}
 --- !u!1 &1672162367
 GameObject:
   m_ObjectHideFlags: 0
