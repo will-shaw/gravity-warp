@@ -207,18 +207,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1351072288701584, guid: c03b27490b5b1444eb92a4ed34e0eee1,
     type: 2}
   m_PrefabInternal: {fileID: 28521341}
---- !u!114 &28521344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 28521343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f6f220fe47104c42bf9586fe649248e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravityChangeTime: 3
 --- !u!251 &28521354
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -2468,6 +2456,24 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &1662191455 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1428836992498698, guid: e3f30bfd6b9f8de4681baa1553a96802,
+    type: 2}
+  m_PrefabInternal: {fileID: 2002724668}
+--- !u!114 &1662191456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1662191455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6f220fe47104c42bf9586fe649248e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravityChangeTime: 3
+  shipLandDelay: 2
 --- !u!1 &1672162367
 GameObject:
   m_ObjectHideFlags: 0
@@ -2477,6 +2483,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1672162368}
   - component: {fileID: 1672162369}
+  - component: {fileID: 1672162370}
   m_Layer: 0
   m_Name: ship
   m_TagString: Untagged
@@ -2490,13 +2497,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1672162367}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.17, y: 10.1, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.11744705, w: 0.9930791}
+  m_LocalPosition: {x: 15.39, y: 18.32, z: 0}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
   m_Children: []
   m_Father: {fileID: 1524597866}
   m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -13.490001}
 --- !u!212 &1672162369
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2532,6 +2539,23 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!95 &1672162370
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1672162367}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 51e9941f6228040d09eccdd4ac2f4762, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!4 &1697808677 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4899647822280684, guid: 3e477eace5fc34132882dc5041170d98,
@@ -3039,6 +3063,11 @@ Prefab:
       propertyPath: menu
       value: 
       objectReference: {fileID: 1386096809}
+    - target: {fileID: 114505227209852082, guid: e3f30bfd6b9f8de4681baa1553a96802,
+        type: 2}
+      propertyPath: zoomClose
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e3f30bfd6b9f8de4681baa1553a96802, type: 2}
   m_IsPrefabParent: 0
