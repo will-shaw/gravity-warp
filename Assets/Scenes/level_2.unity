@@ -531,6 +531,11 @@ Prefab:
       propertyPath: lights.Array.data[1]
       value: 
       objectReference: {fileID: 739050968}
+    - target: {fileID: 82061804149468602, guid: 114a29e0deec009439eb7d4c246d7e8c,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 114a29e0deec009439eb7d4c246d7e8c, type: 2}
   m_IsPrefabParent: 0
@@ -1363,6 +1368,11 @@ Prefab:
         type: 2}
       propertyPath: isOpen
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82061804149468602, guid: 114a29e0deec009439eb7d4c246d7e8c,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 114a29e0deec009439eb7d4c246d7e8c, type: 2}
