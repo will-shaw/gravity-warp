@@ -13,6 +13,9 @@ public class Field : MonoBehaviour
 
     void Start()
     {
+        if(objectKilling){
+            gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+        }
         if (active)
         {
             gameObject.GetComponent<Renderer>().enabled = true;
