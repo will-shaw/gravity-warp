@@ -235,7 +235,7 @@ Prefab:
     - target: {fileID: 114505227209852082, guid: e3f30bfd6b9f8de4681baa1553a96802,
         type: 2}
       propertyPath: levelCenter.y
-      value: 13.9
+      value: 15.5
       objectReference: {fileID: 0}
     - target: {fileID: 114505227209852082, guid: e3f30bfd6b9f8de4681baa1553a96802,
         type: 2}
@@ -245,7 +245,7 @@ Prefab:
     - target: {fileID: 114505227209852082, guid: e3f30bfd6b9f8de4681baa1553a96802,
         type: 2}
       propertyPath: zoomFar
-      value: 20
+      value: 23.5
       objectReference: {fileID: 0}
     - target: {fileID: 114420006540710784, guid: e3f30bfd6b9f8de4681baa1553a96802,
         type: 2}

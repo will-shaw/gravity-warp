@@ -1061,7 +1061,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4226368383244096, guid: baab671e9556fd64482952be50519f6b, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.8661999
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 114535266848829404, guid: baab671e9556fd64482952be50519f6b,
         type: 2}
@@ -1078,6 +1078,10 @@ Prefab:
       propertyPath: woodClips.Array.data[2]
       value: 
       objectReference: {fileID: 8300000, guid: f82481653ddab8645a44ee8b03e4ca43, type: 3}
+    - target: {fileID: 4226368383244096, guid: baab671e9556fd64482952be50519f6b, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114535266848829404, guid: baab671e9556fd64482952be50519f6b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: baab671e9556fd64482952be50519f6b, type: 2}
@@ -2091,7 +2095,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4011147956995674, guid: a18686ef00c814d8d825e17562a0ffe9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -30.55
+      value: -30.73
       objectReference: {fileID: 0}
     - target: {fileID: 4011147956995674, guid: a18686ef00c814d8d825e17562a0ffe9, type: 2}
       propertyPath: m_LocalPosition.y
