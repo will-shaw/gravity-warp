@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4348218765827700}
   - component: {fileID: 212312351436905040}
   - component: {fileID: 50386138393573330}
-  - component: {fileID: 61709835759391746}
   - component: {fileID: 95895508237084970}
   - component: {fileID: 82288841700928300}
   - component: {fileID: 114185252325596378}
@@ -29,6 +28,7 @@ GameObject:
   - component: {fileID: 114676943314986456}
   - component: {fileID: 114379225953951324}
   - component: {fileID: 251410446228623134}
+  - component: {fileID: 70554427099563694}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -69,8 +69,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61709835759391746
-BoxCollider2D:
+--- !u!70 &70554427099563694
+CapsuleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -80,9 +80,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 1
-  m_Offset: {x: -0.0038579307, y: -0.044761658}
-  serializedVersion: 2
-  m_Size: {x: 0.8076727, y: 4.3576584}
+  m_Offset: {x: -0.0061035156, y: -0.032418728}
+  m_Size: {x: 0.9787675, y: 4.286067}
+  m_Direction: 0
 --- !u!82 &82288841700928300
 AudioSource:
   m_ObjectHideFlags: 1
@@ -194,15 +194,6 @@ MonoBehaviour:
   paused: 0
   speed: 8
   surface: 
-  landClip:
-  - {fileID: 8300000, guid: f24fa65d7ad72d34dbc28c0bf4907cbd, type: 3}
-  - {fileID: 8300000, guid: 9a21f149e62a54b4699db54e52f25a0a, type: 3}
-  - {fileID: 8300000, guid: 37192b3ea71af0f41b47fb657c4bd77f, type: 3}
-  footsteps:
-  - {fileID: 8300000, guid: d19c8f303cd170347ba9b3880a887ece, type: 3}
-  - {fileID: 8300000, guid: dbe5ecb335cb6464d9eb0cd2e2274e50, type: 3}
-  - {fileID: 8300000, guid: 8a24ae51c81f23a49b5c55053f97df1e, type: 3}
-  sliding: {fileID: 8300000, guid: 85342af3beb31984b89da29c64213ae0, type: 3}
   canvasPrefab: {fileID: 224629299449171768, guid: e53a41e1ce5acc8499bfe4930b3330eb,
     type: 2}
   facingRight: 1

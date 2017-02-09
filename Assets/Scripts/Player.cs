@@ -349,7 +349,7 @@ public class Player : MonoBehaviour
                     check = true;
                     surface = "forcefield";
                 }
-                else if (hit.collider.GetComponent<Button>() != null)
+                else if (hit.collider.GetComponent<ButtonScript>() != null)
                 {
                     check = true;
                     surface = "button";
@@ -389,7 +389,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (dDist <= 1.7f)
+        if (dDist <= 1.8f)
         {
             return true;
         }

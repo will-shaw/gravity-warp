@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 82061804149468602}
   m_Layer: 0
   m_Name: pf-door
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,7 +155,6 @@ MonoBehaviour:
   isOpen: 0
   opensDown: 1
   gravityEnabled: 0
-  clip: {fileID: 8300000, guid: 4ed3c4551e3d79b4aac9cbe88f2f495f, type: 3}
   openDuration: 0.5
   height: 5.2
 --- !u!212 &212777582775883566
