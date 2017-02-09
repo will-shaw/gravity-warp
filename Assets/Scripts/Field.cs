@@ -13,7 +13,8 @@ public class Field : MonoBehaviour
 
     void Start()
     {
-        if(objectKilling){
+        if (objectKilling)
+        {
             gameObject.GetComponent<SpriteRenderer>().color = Color.green;
         }
         if (active)
@@ -63,7 +64,8 @@ public class Field : MonoBehaviour
         }
         else
         {
-            currentLinks--;
+            if (currentLinks > 0)
+                currentLinks--;
         }
         ToggleField();
     }
