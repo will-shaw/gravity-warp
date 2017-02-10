@@ -19,6 +19,9 @@ public class GlueObject : MonoBehaviour
         {
             if (other.gameObject.tag != "Wall" && other.GetComponent<Glue>() != null)
             {
+                if(other.tag == "destructable") {
+                    other.GetComponent<BoxCollision>().setActiveGlue(gameObject);
+                }
                 other.GetComponent<Glue>().gluing();
                 GetComponent<SpriteRenderer>().sprite = sprites[2];
                 GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;

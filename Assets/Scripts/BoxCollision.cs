@@ -13,6 +13,7 @@ public class BoxCollision : MonoBehaviour
     float velocityY1 = 0f;
     float velocityX1 = 0f;
     GameObject activeButton;
+    GameObject activeGlue;
     // Use this for initialization
     void Start()
     {
@@ -62,6 +63,9 @@ public class BoxCollision : MonoBehaviour
                     if(other.gameObject.GetComponent<BoxCollision>().activeButton != null) {
                         other.gameObject.GetComponent<BoxCollision>().activeButton.GetComponent<ButtonScript>().SubLink();
                     }
+                    if(other.gameObject.GetComponent<BoxCollision>().activeGlue != null) {
+                        Destroy(other.gameObject.GetComponent<BoxCollision>().activeGlue);
+                    }
                     mainWarp.boxes.Remove(other.transform);
                     Destroy(other.gameObject);
                 }
@@ -70,21 +74,30 @@ public class BoxCollision : MonoBehaviour
                     if(other.gameObject.GetComponent<BoxCollision>().activeButton != null) {
                         other.gameObject.GetComponent<BoxCollision>().activeButton.GetComponent<ButtonScript>().SubLink();
                     }
-                    mainWarp.boxes.Remove(other.transform);
-                    Destroy(other.gameObject);
-                }
-                if (velocityY > 20f)
-                {
-                    if(other.gameObject.GetComponent<BoxCollision>().activeButton != null) {
-                        other.gameObject.GetComponent<BoxCollision>().activeButton.GetComponent<ButtonScript>().SubLink();
+                    if(other.gameObject.GetComponent<BoxCollision>().activeGlue != null) {
+                        Destroy(other.gameObject.GetComponent<BoxCollision>().activeGlue);
                     }
                     mainWarp.boxes.Remove(other.transform);
                     Destroy(other.gameObject);
                 }
-                if (velocityY1 < -20f)
+                if (velocityY > 30f)
                 {
                     if(other.gameObject.GetComponent<BoxCollision>().activeButton != null) {
                         other.gameObject.GetComponent<BoxCollision>().activeButton.GetComponent<ButtonScript>().SubLink();
+                    }
+                    if(other.gameObject.GetComponent<BoxCollision>().activeGlue != null) {
+                        Destroy(other.gameObject.GetComponent<BoxCollision>().activeGlue);
+                    }
+                    mainWarp.boxes.Remove(other.transform);
+                    Destroy(other.gameObject);
+                }
+                if (velocityY1 < -30f)
+                {
+                    if(other.gameObject.GetComponent<BoxCollision>().activeButton != null) {
+                        other.gameObject.GetComponent<BoxCollision>().activeButton.GetComponent<ButtonScript>().SubLink();
+                    }
+                    if(other.gameObject.GetComponent<BoxCollision>().activeGlue != null) {
+                        Destroy(other.gameObject.GetComponent<BoxCollision>().activeGlue);
                     }
                     mainWarp.boxes.Remove(other.transform);
                     Destroy(other.gameObject);
@@ -122,5 +135,9 @@ public class BoxCollision : MonoBehaviour
 
     public void setActiveButton(GameObject button) {
         activeButton = button;
+    }
+
+    public void setActiveGlue(GameObject glue) {
+        activeGlue = glue;
     }
 }
