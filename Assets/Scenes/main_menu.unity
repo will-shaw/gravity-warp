@@ -731,6 +731,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 212871071607472036, guid: 2bb0679b1726cfd4fab2fc7ad6f91301,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212871071607472036, guid: 2bb0679b1726cfd4fab2fc7ad6f91301,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212871071607472036, guid: 2bb0679b1726cfd4fab2fc7ad6f91301,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bb0679b1726cfd4fab2fc7ad6f91301, type: 2}
   m_IsPrefabParent: 0
@@ -2704,6 +2719,10 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 134782228}
+    - target: {fileID: 1069962399946884, guid: 50b41ddc32c478d4c8f0f9402a252ce4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50b41ddc32c478d4c8f0f9402a252ce4, type: 2}
   m_IsPrefabParent: 0

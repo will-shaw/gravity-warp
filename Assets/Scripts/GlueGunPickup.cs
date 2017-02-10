@@ -14,6 +14,7 @@ public class GlueGunPickup : MonoBehaviour {
             GetComponent<SpriteRenderer>().sprite = opened;
             GetComponent<AudioSource>().PlayOneShot(clip, 1);
             once = true;
+            MenuHandler.hasGlue = true;
         }
 	}
 }

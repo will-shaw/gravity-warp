@@ -17,6 +17,9 @@ public class MenuHandler : MonoBehaviour
     string opt;
     string key;
 
+    public static bool hasGravity = false;
+    public static bool hasGlue = false;
+
     static private KeyCode[] validKeyCodes;
 
     void Awake()
@@ -76,6 +79,7 @@ public class MenuHandler : MonoBehaviour
             }
             pause.transform.GetChild(5).GetComponentInChildren<UnityEngine.UI.Text>().text = "Close";
             controls.SetActive(isControlShown);
+            LimitControlMenu(controls);
         }
         else
         {
@@ -206,4 +210,15 @@ public class MenuHandler : MonoBehaviour
         SceneManager.LoadScene("main_menu");
     }
 
+    public void LimitControlMenu(GameObject controls){
+        if(!(hasGravity)) {
+            controls.transform.GetChild(3).gameObject.SetActive(false);
+            controls.transform.GetChild(9).gameObject.SetActive(false);
+            controls.transform.GetChild(10).gameObject.SetActive(false);
+        }
+        if(!(hasGlue)) {
+            controls.transform.GetChild(1).gameObject.SetActive(false);
+            controls.transform.GetChild(11).gameObject.SetActive(false);
+        }
+    }
 }

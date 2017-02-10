@@ -16,6 +16,7 @@ public class GravityRemotePickup : MonoBehaviour {
             Camera.main.GetComponent<GravityWarp>().checktmr = 2f;
             checkpoint.SetActive(true);
             GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
+            MenuHandler.hasGravity = true;
         }
 	}
 
