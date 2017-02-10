@@ -902,6 +902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpoint: {fileID: 908756919}
+  menu: {fileID: 637590421}
   timer: 0
 --- !u!82 &398473058
 AudioSource:
@@ -2385,20 +2386,6 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 14299107}
-    - target: {fileID: 1310555005343038, guid: 50b41ddc32c478d4c8f0f9402a252ce4, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224751139036034244, guid: 50b41ddc32c478d4c8f0f9402a252ce4,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 171
-      objectReference: {fileID: 0}
-    - target: {fileID: 224751139036034244, guid: 50b41ddc32c478d4c8f0f9402a252ce4,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 264
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50b41ddc32c478d4c8f0f9402a252ce4, type: 2}
   m_IsPrefabParent: 0

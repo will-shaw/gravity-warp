@@ -11,6 +11,10 @@ public class MenuHandler : MonoBehaviour
     GameObject controls;
     GameObject confirm;
     GameObject setcontrols;
+    GameObject gravityControls;
+    bool gravityControlsShown = false;
+    GameObject glueControls;
+    bool glueControlsShown = false;
 
     bool isControlShown = false;
     bool isListening = false;
@@ -36,6 +40,8 @@ public class MenuHandler : MonoBehaviour
         controls = gameObject.transform.FindChild("Controls").gameObject;
         confirm = gameObject.transform.FindChild("Confirm").gameObject;
         setcontrols = gameObject.transform.FindChild("SetControls").gameObject;
+        gravityControls = gameObject.transform.FindChild("GravityInstructionsPanel").gameObject;
+        glueControls = gameObject.transform.FindChild("GlueInstructionsPanel").gameObject;
     }
 
     public void ShowPause()
@@ -51,6 +57,34 @@ public class MenuHandler : MonoBehaviour
         // pause game.
         panel.SetActive(true);
         death.SetActive(true);
+    }
+
+    public void ShowGravityControls()
+    {
+        if(gravityControlsShown)
+        {
+            gravityControls.SetActive(false);
+            gravityControlsShown = false;
+        } 
+        else 
+        {
+            gravityControls.SetActive(true);
+            gravityControlsShown = true;
+        }
+    }
+
+    public void ShowGlueControls()
+    {
+        if(glueControlsShown)
+        {
+            glueControls.SetActive(false);
+            glueControlsShown = false;
+        } 
+        else 
+        {
+            glueControls.SetActive(true);
+            glueControlsShown = true;
+        }
     }
 
     public void SaveControls()
