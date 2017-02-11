@@ -24,6 +24,15 @@ public class BoxCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		// new audio code
+		if (gameObject.transform.GetComponent<Rigidbody2D>().velocity.x ==0f &&gameObject.transform.GetComponent<Rigidbody2D>().velocity.y== 0f ){
+			while (gameObject.GetComponent<AudioSource>().volume > 0) {
+				Debug.Log(gameObject.GetComponent<AudioSource>().volume);
+            gameObject.GetComponent<AudioSource>().volume -= 1 * Time.deltaTime / 2f;
+			}
+ 
+			gameObject.GetComponent<AudioSource>().Stop();
+		}
         if (velocityX < gameObject.transform.GetComponent<Rigidbody2D>().velocity.x)
         {
             velocityX = gameObject.transform.GetComponent<Rigidbody2D>().velocity.x;

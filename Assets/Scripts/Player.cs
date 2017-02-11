@@ -63,7 +63,9 @@ public class Player : MonoBehaviour
         }
         else if (other.gameObject.GetComponent<BoxCollision>() != null && surface != "boxM" && surface != "boxW")
         {
-            GetComponent<AudioSource>().PlayOneShot(am.GetBoxSlide(), 1);
+			//new sound code
+            other.gameObject.GetComponent<AudioSource>().PlayOneShot(am.GetBoxSlide(), 1);
+			other.gameObject.GetComponent<AudioSource>().volume =1;
         }
     }
 
