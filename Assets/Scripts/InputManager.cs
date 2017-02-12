@@ -123,6 +123,26 @@ public class InputManager : MonoBehaviour
 
         bf.Serialize(file, data);
         file.Close();
+
+        if (gravityUp.ToString().Substring(0, 5) == "Mouse")
+        {
+            Debug.Log("Gravity using mouse control");
+            gravityControlScheme = 0;
+        }
+        else
+        {
+            gravityControlScheme = 1;
+        }
+        if (glue.ToString().Substring(0, 5) == "Mouse")
+        {
+            Debug.Log("Glue using mouse control");
+            glueControlScheme = 0;
+        }
+        else
+        {
+            glueControlScheme = 1;
+        }
+
         Debug.Log("Controls saved.");
     }
 
