@@ -20,6 +20,7 @@ public class LevelLoader : MonoBehaviour
             if (setGravity != null) {
                 GravityWarp.gravity = setGravity;
             }
+            Info.checkpoint = new Vector3(0,0,0);
             SaveLoadHandler.playerScene = nextLevel;
             SaveLoadHandler.Save();
             op.allowSceneActivation = true;
