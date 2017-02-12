@@ -15,7 +15,7 @@ public class Field : MonoBehaviour
     {
         if (objectKilling)
         {
-            gameObject.GetComponent<SpriteRenderer>().color = new Color(0.5F,0.8F,0.8F,0.85F);
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(0.5F, 0.8F, 0.8F, 0.85F);
         }
         if (active)
         {
@@ -39,6 +39,7 @@ public class Field : MonoBehaviour
                     if (other.gameObject.tag == "Player")
                     {
                         Camera.main.GetComponent<GravityWarp>().playerDead = true;
+                        GetComponent<AudioSource>().PlayOneShot(Camera.main.GetComponent<AudioManager>().GetLaserKill(), 1);
                     }
                     else
                     {
@@ -51,6 +52,7 @@ public class Field : MonoBehaviour
                 if (other.gameObject.tag == "Player")
                 {
                     Camera.main.GetComponent<GravityWarp>().playerDead = true;
+                    GetComponent<AudioSource>().PlayOneShot(Camera.main.GetComponent<AudioManager>().GetLaserKill(), 1);
                 }
             }
         }

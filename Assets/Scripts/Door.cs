@@ -106,7 +106,7 @@ public class Door : MonoBehaviour
         {
             linkCount--;
         }
-        Debug.Log(linkCount);
+        //Debug.Log(linkCount);
         if (linkCount >= linksRequired)
         {
             DoorAction(1);

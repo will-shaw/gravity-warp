@@ -7,6 +7,7 @@ public class Spike : MonoBehaviour {
 			Camera.main.GetComponent<GravityWarp>().playerDead = true;
 			//Destroy (other.gameObject.GetComponent<Player>().canvas.gameObject);
 			//Destroy(other.gameObject);
+			GetComponent<AudioSource>().PlayOneShot(Camera.main.GetComponent<AudioManager>().GetSpikeKill(), 1);                    
 		}
 	}
 }
