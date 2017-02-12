@@ -18,6 +18,7 @@ public class Lever : MonoBehaviour
         if (other.GetComponent<GlueObject>() == null)
         {
             GetComponent<Animator>().SetBool("Active", !active);
+            GetComponent<AudioSource>().PlayOneShot(change, 1);
             switch (connection)
             {
                 case true:

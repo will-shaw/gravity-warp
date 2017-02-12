@@ -24,15 +24,16 @@ public class BoxCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		// new audio code
-		if (gameObject.transform.GetComponent<Rigidbody2D>().velocity.x ==0f &&gameObject.transform.GetComponent<Rigidbody2D>().velocity.y== 0f ){
-			while (gameObject.GetComponent<AudioSource>().volume > 0) {
-				Debug.Log(gameObject.GetComponent<AudioSource>().volume);
-            gameObject.GetComponent<AudioSource>().volume -= 1 * Time.deltaTime / 2f;
-			}
- 
-			gameObject.GetComponent<AudioSource>().Stop();
-		}
+        // new audio code
+        if (gameObject.transform.GetComponent<Rigidbody2D>().velocity.x == 0f && gameObject.transform.GetComponent<Rigidbody2D>().velocity.y == 0f)
+        {
+            while (gameObject.GetComponent<AudioSource>().volume > 0)
+            {
+                gameObject.GetComponent<AudioSource>().volume -= 1 * Time.deltaTime / 2f;
+            }
+
+            gameObject.GetComponent<AudioSource>().Stop();
+        }
         if (velocityX < gameObject.transform.GetComponent<Rigidbody2D>().velocity.x)
         {
             velocityX = gameObject.transform.GetComponent<Rigidbody2D>().velocity.x;
@@ -69,10 +70,12 @@ public class BoxCollision : MonoBehaviour
             {
                 if (velocityX1 < -20f)
                 {
-                    if(other.gameObject.GetComponent<BoxCollision>().activeButton != null) {
+                    if (other.gameObject.GetComponent<BoxCollision>().activeButton != null)
+                    {
                         other.gameObject.GetComponent<BoxCollision>().activeButton.GetComponent<ButtonScript>().SubLink();
                     }
-                    if(other.gameObject.GetComponent<BoxCollision>().activeGlue != null) {
+                    if (other.gameObject.GetComponent<BoxCollision>().activeGlue != null)
+                    {
                         Destroy(other.gameObject.GetComponent<BoxCollision>().activeGlue);
                     }
                     mainWarp.boxes.Remove(other.transform);
@@ -80,10 +83,12 @@ public class BoxCollision : MonoBehaviour
                 }
                 if (velocityX > 20f)
                 {
-                    if(other.gameObject.GetComponent<BoxCollision>().activeButton != null) {
+                    if (other.gameObject.GetComponent<BoxCollision>().activeButton != null)
+                    {
                         other.gameObject.GetComponent<BoxCollision>().activeButton.GetComponent<ButtonScript>().SubLink();
                     }
-                    if(other.gameObject.GetComponent<BoxCollision>().activeGlue != null) {
+                    if (other.gameObject.GetComponent<BoxCollision>().activeGlue != null)
+                    {
                         Destroy(other.gameObject.GetComponent<BoxCollision>().activeGlue);
                     }
                     mainWarp.boxes.Remove(other.transform);
@@ -91,10 +96,12 @@ public class BoxCollision : MonoBehaviour
                 }
                 if (velocityY > 30f)
                 {
-                    if(other.gameObject.GetComponent<BoxCollision>().activeButton != null) {
+                    if (other.gameObject.GetComponent<BoxCollision>().activeButton != null)
+                    {
                         other.gameObject.GetComponent<BoxCollision>().activeButton.GetComponent<ButtonScript>().SubLink();
                     }
-                    if(other.gameObject.GetComponent<BoxCollision>().activeGlue != null) {
+                    if (other.gameObject.GetComponent<BoxCollision>().activeGlue != null)
+                    {
                         Destroy(other.gameObject.GetComponent<BoxCollision>().activeGlue);
                     }
                     mainWarp.boxes.Remove(other.transform);
@@ -102,10 +109,12 @@ public class BoxCollision : MonoBehaviour
                 }
                 if (velocityY1 < -30f)
                 {
-                    if(other.gameObject.GetComponent<BoxCollision>().activeButton != null) {
+                    if (other.gameObject.GetComponent<BoxCollision>().activeButton != null)
+                    {
                         other.gameObject.GetComponent<BoxCollision>().activeButton.GetComponent<ButtonScript>().SubLink();
                     }
-                    if(other.gameObject.GetComponent<BoxCollision>().activeGlue != null) {
+                    if (other.gameObject.GetComponent<BoxCollision>().activeGlue != null)
+                    {
                         Destroy(other.gameObject.GetComponent<BoxCollision>().activeGlue);
                     }
                     mainWarp.boxes.Remove(other.transform);
@@ -142,11 +151,13 @@ public class BoxCollision : MonoBehaviour
         velocityY1 = 0f;
     }
 
-    public void setActiveButton(GameObject button) {
+    public void setActiveButton(GameObject button)
+    {
         activeButton = button;
     }
 
-    public void setActiveGlue(GameObject glue) {
+    public void setActiveGlue(GameObject glue)
+    {
         activeGlue = glue;
     }
 }

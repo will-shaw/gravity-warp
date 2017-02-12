@@ -10,6 +10,8 @@ public class FacilityIntroLevelController : MonoBehaviour
 
     public Animator ship;
 
+    public Transform player;
+
     float gravityChangeTimer;
     float shipLandTimer;
 
@@ -28,10 +30,11 @@ public class FacilityIntroLevelController : MonoBehaviour
         }
         gravityChangeTimer -= Time.deltaTime;
         shipLandTimer -= Time.deltaTime;
-        if (shipLandTimer <= 0) {
+        if (shipLandTimer <= 0 && !playerActive) {
             hatch.constraints = RigidbodyConstraints2D.None;
             ship.SetBool("Landed", true);
             GetComponent<GravityWarp>().player.gameObject.SetActive(true);
+            player.GetComponent<Animator>().SetBool("facingRight", true);
             playerActive = true;
         }
         if (gravityChangeTimer <= 0)
