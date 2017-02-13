@@ -26,6 +26,7 @@ public class GravityWarp : MonoBehaviour
     bool blood = false;
     bool hasRemote;
     
+    public float changetmr =0.0f;
     float reTimer = 0f;
     float deathTimer = 0f;
     int gravityCount = 0;
@@ -42,7 +43,8 @@ public class GravityWarp : MonoBehaviour
     }
 
     void Update()
-    {
+    {   
+        changetmr += Time.deltaTime;
         if(time){
             leveltmr += Time.deltaTime;
             pauseTimerText.GetComponent<Text>().text = "Current Level Time: "+ string.Format("{0:N2}",leveltmr);
@@ -62,13 +64,11 @@ public class GravityWarp : MonoBehaviour
             if (!hasRemote)
             {
                 hasRemote = true;
-                player.GetComponent<Animator>().SetBool("HasItem", hasRemote);
             }
         }
         else if (hasRemote)
         {
             hasRemote = false;
-            player.GetComponent<Animator>().SetBool("HasItem", hasRemote);
         }
 
         /* Updates box gravity. The player is also added to this list by Player.cs */
@@ -126,24 +126,32 @@ public class GravityWarp : MonoBehaviour
                 gravity = "U";
                 gravityCount++;
                 reTimer = 0f;
+                player.GetComponent<Player>().antiPhase();
+                changetmr =0.0f;
             }
             if (Input.GetKey(InputManager.gravityDown) && gravity != "D")
             {
                 gravity = "D";
                 gravityCount++;
                 reTimer = 0f;
+                player.GetComponent<Player>().antiPhase();
+                changetmr =0.0f;
             }
             if (Input.GetKey(InputManager.gravityLeft) && gravity != "L")
             {
                 gravity = "L";
                 gravityCount++;
                 reTimer = 0f;
+                player.GetComponent<Player>().antiPhase();
+                changetmr =0.0f;
             }
             if (Input.GetKey(InputManager.gravityRight) && gravity != "R")
             {
                 gravity = "R";
                 gravityCount++;
                 reTimer = 0f;
+                player.GetComponent<Player>().antiPhase();
+                changetmr =0.0f;
             }
             if (gravityCount > 0)
             {
@@ -154,6 +162,7 @@ public class GravityWarp : MonoBehaviour
                     gravityCount = 0;
                 }
             }
+            
         }
         else
         {

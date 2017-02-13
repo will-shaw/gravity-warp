@@ -334,6 +334,69 @@ public class Player : MonoBehaviour
 
     /* Checks how far the player is from the floor. (Object must be tagged with 'Wall').
         Fields & Buttons are detected too */
+
+public void  antiPhase(){
+    char output;
+    Vector2 down = Vector2.down;
+    Vector2 up = Vector2.up;
+    string grav = GravityWarp.gravity;
+
+    switch (grav)
+        {
+            case "U":
+                down = Vector2.up;
+                up = Vector2.down;
+                break;
+            case "L":
+                down = Vector2.left;
+                up = Vector2.right;
+                break;
+            case "R":
+                down = Vector2.right;
+                up = Vector2.left;
+                break;
+            case "D":
+                down = Vector2.down;
+                up = Vector2.up;
+                break;
+        }
+        RaycastHit2D[] hitsDown = Physics2D.RaycastAll(transform.position, down, 3.0f);
+        RaycastHit2D[] hitsUp = Physics2D.RaycastAll(transform.position, up, 3.0f);
+        if(hitsDown.Length ==0 && !gameObject.GetComponent<Glue>().isGlued()){
+            switch (grav)
+                {
+                    case "U":
+                        gameObject.transform.position += new Vector3(0,1,0);
+                        break;
+                    case "L":
+                        gameObject.transform.position += new Vector3(-1,0,0);
+                        break;
+                    case "R":
+                        gameObject.transform.position += new Vector3(1,0,0);
+                        break;
+                    case "D":
+                        gameObject.transform.position += new Vector3(0,-1,0);
+                        break;
+                }
+        }else if(hitsUp.Length ==0 && !gameObject.GetComponent<Glue>().isGlued()){
+            switch (grav)
+                {
+                    case "U":
+                        gameObject.transform.position += new Vector3(0,-1,0);
+                        break;
+                    case "L":
+                        gameObject.transform.position += new Vector3(1,0,0);
+                        break;
+                    case "R":
+                        gameObject.transform.position += new Vector3(-1,0,0);
+                        break;
+                    case "D":
+                        gameObject.transform.position += new Vector3(0,1,0);
+                        break;
+                }
+        }
+    return;
+}
     bool IsGrounded()
     {
         Vector2 down = Vector2.down;
