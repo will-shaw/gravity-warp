@@ -691,15 +691,15 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1193731569}
     m_Modifications:
     - target: {fileID: 4027219413898614, guid: 1cc992d50b82c5a43a9af736e733d848, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -21.55
+      value: -12.211001
       objectReference: {fileID: 0}
     - target: {fileID: 4027219413898614, guid: 1cc992d50b82c5a43a9af736e733d848, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.04
+      value: 8.286175
       objectReference: {fileID: 0}
     - target: {fileID: 4027219413898614, guid: 1cc992d50b82c5a43a9af736e733d848, type: 2}
       propertyPath: m_LocalPosition.z
@@ -707,15 +707,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4027219413898614, guid: 1cc992d50b82c5a43a9af736e733d848, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4027219413898614, guid: 1cc992d50b82c5a43a9af736e733d848, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4027219413898614, guid: 1cc992d50b82c5a43a9af736e733d848, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4027219413898614, guid: 1cc992d50b82c5a43a9af736e733d848, type: 2}
       propertyPath: m_LocalRotation.w
@@ -723,7 +723,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4027219413898614, guid: 1cc992d50b82c5a43a9af736e733d848, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114830102485292760, guid: 1cc992d50b82c5a43a9af736e733d848,
         type: 2}
@@ -1657,6 +1657,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 28521342}
+  - {fileID: 1596224527}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
