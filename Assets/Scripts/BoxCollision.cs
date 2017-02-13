@@ -67,7 +67,7 @@ public class BoxCollision : MonoBehaviour
         {
             if (other.gameObject.tag == "destructable")
             {
-                if (velocityX1 < -20f)
+                if (velocityX1 < -18f)
                 {
                     if(other.gameObject.GetComponent<BoxCollision>().activeButton != null) {
                         other.gameObject.GetComponent<BoxCollision>().activeButton.GetComponent<ButtonScript>().SubLink();
@@ -78,7 +78,7 @@ public class BoxCollision : MonoBehaviour
                     mainWarp.boxes.Remove(other.transform);
                     Destroy(other.gameObject);
                 }
-                if (velocityX > 20f)
+                if (velocityX > 18f)
                 {
                     if(other.gameObject.GetComponent<BoxCollision>().activeButton != null) {
                         other.gameObject.GetComponent<BoxCollision>().activeButton.GetComponent<ButtonScript>().SubLink();
@@ -115,22 +115,22 @@ public class BoxCollision : MonoBehaviour
         }
         else if ((other.transform.CompareTag("Player")))
         {
-            if (velocityY > 18f)
+            if (velocityY > 23f)
             {
                 //Destroy(other.gameObject);
                 Camera.main.GetComponent<GravityWarp>().playerDead = true;
             }
-            if (velocityX > 18f)
+            if (velocityX > 23f)
             {
                 //Destroy(other.gameObject);
                 Camera.main.GetComponent<GravityWarp>().playerDead = true;
             }
-            if (velocityY1 < -18f)
+            if (velocityY1 < -23f)
             {
                 //Destroy(other.gameObject);
                 Camera.main.GetComponent<GravityWarp>().playerDead = true;
             }
-            if (velocityX1 < -18f)
+            if (velocityX1 < -23f)
             {
                 //Destroy(other.gameObject);
                 Camera.main.GetComponent<GravityWarp>().playerDead = true;
