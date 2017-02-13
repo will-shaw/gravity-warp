@@ -17,13 +17,13 @@ public class GlueControl : MonoBehaviour
             if (!hasGun)
             {
                 hasGun = true;
-                GetComponent<Animator>().SetBool("hasGun", hasGun);
+                //GetComponent<Animator>().SetBool("hasGun", hasGun);
             }
         }
         else if (hasGun)
         {
             hasGun = false;
-            GetComponent<Animator>().SetBool("hasGun", hasGun);
+            //GetComponent<Animator>().SetBool("hasGun", hasGun);
         }
 
         float distance = Vector2.Distance(transform.position, ValidTarget());
