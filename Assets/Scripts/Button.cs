@@ -81,7 +81,7 @@ public class Button : MonoBehaviour
 				field.GetComponent<Door>().ActivateLink(source);
 			}
             else if( field.GetComponent<Emit>() != null){
-                field.GetComponent<Emit>().toggle();
+                field.GetComponent<Emit>().toggle(1);
             }
 		}
 	}

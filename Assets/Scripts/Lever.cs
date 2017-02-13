@@ -48,7 +48,7 @@ public class Lever : MonoBehaviour
             }
             if (item.GetComponent<Emit>() != null)
             {
-                item.GetComponent<Emit>().toggle();
+                item.GetComponent<Emit>().toggle(1);
             }
         }
     }
@@ -67,7 +67,7 @@ public class Lever : MonoBehaviour
             }
             if (item.GetComponent<Emit>() != null)
             {
-                item.GetComponent<Emit>().toggle();
+                item.GetComponent<Emit>().toggle(0);
             }
         }
     }

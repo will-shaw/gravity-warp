@@ -51,7 +51,7 @@ public class ButtonScript : MonoBehaviour
             }
             if (item.GetComponent<Emit>() != null)
             {
-                item.GetComponent<Emit>().toggle();
+                item.GetComponent<Emit>().toggle(1);
             }
         }
     }
@@ -70,7 +70,7 @@ public class ButtonScript : MonoBehaviour
             }
             if (item.GetComponent<Emit>() != null)
             {
-                item.GetComponent<Emit>().toggle();
+                item.GetComponent<Emit>().toggle(0);
             }
         }
     }
