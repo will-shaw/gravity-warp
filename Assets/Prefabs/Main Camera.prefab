@@ -148,7 +148,7 @@ MonoBehaviour:
   tutGlues: []
   clutter: []
   bloods: []
-  thrust: 9.88
+  thrust: 4
   player: {fileID: 0}
   menu: {fileID: 0}
   playerDead: 0
