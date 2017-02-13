@@ -126,7 +126,7 @@ public class BoxCollision : MonoBehaviour
                 }
             }
         }
-        else if ((other.transform.CompareTag("Player")))
+        else if (other.transform.CompareTag("Player") && !GetComponent<Glue>().isGlued())
         {
             if (velocityY > 23f)
             {
