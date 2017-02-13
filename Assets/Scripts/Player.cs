@@ -276,10 +276,10 @@ public class Player : MonoBehaviour
                                 player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -700.0f));
                                 break;
                             case "L":
-                                player.GetComponent<Rigidbody2D>().AddForce(new Vector2(500.0f, 0));
+                                player.GetComponent<Rigidbody2D>().AddForce(new Vector2(550.0f, 0));
                                 break;
                             case "R":
-                                player.GetComponent<Rigidbody2D>().AddForce(new Vector2(-500.0f, 0));
+                                player.GetComponent<Rigidbody2D>().AddForce(new Vector2(-550.0f, 0));
                                 break;
                         }
                         cooldown = Time.realtimeSinceStartup;
