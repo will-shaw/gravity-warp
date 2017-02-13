@@ -601,7 +601,12 @@ Prefab:
         type: 2}
       propertyPath: menu
       value: 
-      objectReference: {fileID: 1386096809}
+      objectReference: {fileID: 1685072166}
+    - target: {fileID: 82286756726585448, guid: 1cc992d50b82c5a43a9af736e733d848,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1cc992d50b82c5a43a9af736e733d848, type: 2}
   m_IsPrefabParent: 0
@@ -708,11 +713,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e592531680a8d14095899d79bd05302, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &447327714 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1273697315478768, guid: 50b41ddc32c478d4c8f0f9402a252ce4,
-    type: 2}
-  m_PrefabInternal: {fileID: 1386096806}
 --- !u!1 &624442740
 GameObject:
   m_ObjectHideFlags: 0
@@ -6537,11 +6537,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4864313613909910, guid: 114a29e0deec009439eb7d4c246d7e8c,
     type: 2}
   m_PrefabInternal: {fileID: 321344198}
---- !u!1 &972233595 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1761656740709394, guid: 50b41ddc32c478d4c8f0f9402a252ce4,
-    type: 2}
-  m_PrefabInternal: {fileID: 1386096806}
 --- !u!1001 &985058291
 Prefab:
   m_ObjectHideFlags: 0
@@ -6654,11 +6649,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1062322915 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1310555005343038, guid: 50b41ddc32c478d4c8f0f9402a252ce4,
-    type: 2}
-  m_PrefabInternal: {fileID: 1386096806}
 --- !u!1001 &1078380063
 Prefab:
   m_ObjectHideFlags: 0
@@ -7311,7 +7301,7 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!1001 &1386096806
+--- !u!1001 &1381583530
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -7408,29 +7398,9 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114964896274623326, guid: 50b41ddc32c478d4c8f0f9402a252ce4,
-        type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 223421283788329252, guid: 50b41ddc32c478d4c8f0f9402a252ce4,
-        type: 2}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 2002724669}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50b41ddc32c478d4c8f0f9402a252ce4, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1386096807 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1490607355819852, guid: 50b41ddc32c478d4c8f0f9402a252ce4,
-    type: 2}
-  m_PrefabInternal: {fileID: 1386096806}
---- !u!1 &1386096809 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1418852584812510, guid: 50b41ddc32c478d4c8f0f9402a252ce4,
-    type: 2}
-  m_PrefabInternal: {fileID: 1386096806}
 --- !u!1001 &1434656286
 Prefab:
   m_ObjectHideFlags: 0
@@ -8010,6 +7980,11 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!1 &1685072166 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1418852584812510, guid: 50b41ddc32c478d4c8f0f9402a252ce4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1381583530}
 --- !u!4 &1697808677 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4899647822280684, guid: 3e477eace5fc34132882dc5041170d98,
@@ -8478,7 +8453,7 @@ Prefab:
         type: 2}
       propertyPath: deadMenu
       value: 
-      objectReference: {fileID: 1386096807}
+      objectReference: {fileID: 0}
     - target: {fileID: 114420006540710784, guid: e3f30bfd6b9f8de4681baa1553a96802,
         type: 2}
       propertyPath: bloods.Array.data[0]
@@ -8507,22 +8482,22 @@ Prefab:
         type: 2}
       propertyPath: deadTimerText
       value: 
-      objectReference: {fileID: 972233595}
+      objectReference: {fileID: 0}
     - target: {fileID: 114420006540710784, guid: e3f30bfd6b9f8de4681baa1553a96802,
         type: 2}
       propertyPath: timerText
       value: 
-      objectReference: {fileID: 447327714}
+      objectReference: {fileID: 0}
     - target: {fileID: 114420006540710784, guid: e3f30bfd6b9f8de4681baa1553a96802,
         type: 2}
       propertyPath: checkpointText
       value: 
-      objectReference: {fileID: 1062322915}
+      objectReference: {fileID: 0}
     - target: {fileID: 114420006540710784, guid: e3f30bfd6b9f8de4681baa1553a96802,
         type: 2}
       propertyPath: menu
       value: 
-      objectReference: {fileID: 1386096809}
+      objectReference: {fileID: 1685072166}
     - target: {fileID: 114505227209852082, guid: e3f30bfd6b9f8de4681baa1553a96802,
         type: 2}
       propertyPath: zoomClose
@@ -8531,11 +8506,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e3f30bfd6b9f8de4681baa1553a96802, type: 2}
   m_IsPrefabParent: 0
---- !u!20 &2002724669 stripped
-Camera:
-  m_PrefabParentObject: {fileID: 20076725243357740, guid: e3f30bfd6b9f8de4681baa1553a96802,
-    type: 2}
-  m_PrefabInternal: {fileID: 2002724668}
 --- !u!1001 &2088623011
 Prefab:
   m_ObjectHideFlags: 0
