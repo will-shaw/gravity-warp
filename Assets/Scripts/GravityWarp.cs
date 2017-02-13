@@ -64,13 +64,11 @@ public class GravityWarp : MonoBehaviour
             if (!hasRemote)
             {
                 hasRemote = true;
-                player.GetComponent<Animator>().SetBool("HasItem", hasRemote);
             }
         }
         else if (hasRemote)
         {
             hasRemote = false;
-            player.GetComponent<Animator>().SetBool("HasItem", hasRemote);
         }
 
         /* Updates box gravity. The player is also added to this list by Player.cs */
