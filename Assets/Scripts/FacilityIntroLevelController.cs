@@ -4,7 +4,7 @@ public class FacilityIntroLevelController : MonoBehaviour
 {
     public float gravityChangeTime;
 
-    public float shipLandDelay = 2;
+    public float shipLandDelay = 5;
 
     public Rigidbody2D hatch;
 
