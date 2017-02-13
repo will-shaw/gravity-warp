@@ -20,6 +20,11 @@ public class Player : MonoBehaviour
     public GameObject menu;
     public float footstepDelay;
 
+    public GameObject gunRight;
+    public GameObject gunLeft;
+    public GameObject remoteLeft;
+    public GameObject remoteRight;
+
     void Awake()
     {
         // Immediately Instantiate canvas so that Glue.cs can access it.
@@ -36,13 +41,13 @@ public class Player : MonoBehaviour
         Camera.main.GetComponent<GravityWarp>().player = transform;
         Camera.main.GetComponent<GravityWarp>().boxes.Add(transform);
         Camera.main.GetComponent<CameraZoom>().player = transform;
-        //Debug.Log(Info.checkpoint.x);
-        //Debug.Log(Info.load);
         if (Info.load && Info.checkpoint.x != 0)
         {
-            //Debug.Log("made");
             gameObject.transform.localPosition = Info.checkpoint;
         }
+        GetComponent<Animator>().SetBool("facingRight", facingRight);
+        transform.GetChild(0).gameObject.SetActive(facingRight);
+        transform.GetChild(1).gameObject.SetActive(!facingRight);
     }
 
     float CalculateVelocity(float x, float y)
@@ -59,13 +64,13 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.tag == "Wall" || (other.collider.gameObject.GetComponent<Field>() != null && !other.collider.gameObject.GetComponent<Field>().laser))
         {
-            GetComponent<AudioSource>().PlayOneShot(am.GetLanding(), 1);
+            GetComponent<AudioSource>().PlayOneShot(am.GetLanding(), Random.Range(40, 100) * 0.01f);
         }
         else if (other.gameObject.GetComponent<BoxCollision>() != null && surface != "boxM" && surface != "boxW")
         {
-			//new sound code
+            //new sound code
             other.gameObject.GetComponent<AudioSource>().PlayOneShot(am.GetBoxSlide(), 1);
-			other.gameObject.GetComponent<AudioSource>().volume =1;
+            other.gameObject.GetComponent<AudioSource>().volume = 1;
         }
     }
 
@@ -191,7 +196,7 @@ public class Player : MonoBehaviour
             footstepTimer -= Time.deltaTime;
             if (footstepTimer <= 0)
             {
-                GetComponent<AudioSource>().PlayOneShot(am.GetFootstep(), 1);
+                GetComponent<AudioSource>().PlayOneShot(am.GetFootstep(), Random.Range(40, 100) * 0.01f);
                 footstepTimer = footstepDelay;
             }
         }
@@ -200,13 +205,28 @@ public class Player : MonoBehaviour
     void Flip()
     {
         facingRight = !facingRight;
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;
+        GetComponent<Animator>().SetBool("facingRight", facingRight);
+        transform.GetChild(0).gameObject.SetActive(facingRight);
+        transform.GetChild(1).gameObject.SetActive(!facingRight);
+        //Vector3 theScale = transform.localScale;
+        //theScale.x *= -1;
+        //transform.localScale = theScale;
     }
 
     void Update()
     {
+        if (GetComponent<GlueControl>().glueEnabled)
+        {
+            gunLeft.SetActive(true);
+            gunRight.SetActive(true);
+        }
+        if (Camera.main.GetComponent<GravityWarp>().gravityControlEnabled)
+        {
+            remoteLeft.SetActive(true);
+            remoteRight.SetActive(true);
+        }
+
+
         canvas.position = transform.position;
 
         if (timer > 0)
@@ -391,7 +411,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (dDist <= 1.8f)
+        if (dDist <= 1.9f)
         {
             return true;
         }
