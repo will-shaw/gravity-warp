@@ -4,6 +4,7 @@ using UnityEngine;
 public class Info :MonoBehaviour{
 	public static Vector3 checkpoint;
 	public static bool load = false;
+	public static float checktime;
 	
 	// Use this for initialization
 }

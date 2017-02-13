@@ -45,6 +45,7 @@ public class Player : MonoBehaviour
         {
             gameObject.transform.localPosition = Info.checkpoint;
             Info.load =false;
+            Camera.main.GetComponent<GravityWarp>().leveltmr = Info.checktime;
         }
         GetComponent<Animator>().SetBool("facingRight", facingRight);
         transform.GetChild(0).gameObject.SetActive(facingRight);

@@ -13,6 +13,7 @@ public class GravityRemotePickup : MonoBehaviour {
 		if(other.gameObject.tag == "Player" && !once){
             once = true;
             Info.checkpoint = new Vector3(-11.6f,7f,-7f);
+            Info.checktime = Camera.main.GetComponent<GravityWarp>().leveltmr;
             GetComponent<AudioSource>().Play();
             Camera.main.GetComponent<Level_1Control>().disableAutoGravity();
             Camera.main.GetComponent<GravityWarp>().checktmr = 2f;
