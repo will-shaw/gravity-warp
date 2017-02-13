@@ -225,19 +225,16 @@ public class MenuHandler : MonoBehaviour
 
     public void ResetLevel()
     {
-        if (Camera.main.GetComponent<GravityWarp>().playerDead)
-        {
-            Info.load = true;
-        }
-        else
-        {
-            Info.load = false;
-        }
         Scene current = SceneManager.GetActiveScene();
         SceneManager.LoadScene(current.name);
         GravityWarp.gravity = "D";
     }
 
+    public void checkpointLoad()
+    {
+        Info.load = true;
+        ResetLevel();
+    }
     public void MainMenu()
     {
         Hide();

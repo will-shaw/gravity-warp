@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
         if (Info.load && Info.checkpoint.x != 0)
         {
             gameObject.transform.localPosition = Info.checkpoint;
+            Info.load =false;
         }
         GetComponent<Animator>().SetBool("facingRight", facingRight);
         transform.GetChild(0).gameObject.SetActive(facingRight);
