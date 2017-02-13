@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     void Awake()
     {
         // Immediately Instantiate canvas so that Glue.cs can access it.
-        canvas = Instantiate(canvasPrefab, GameObject.Find("PlayerLevel").transform, true);
+        canvas = menu.gameObject.transform.FindChild("PlayerDetails");
     }
 
     void Start()
@@ -118,25 +118,25 @@ public class Player : MonoBehaviour
 
         if (gravity == "U")
         {
-            canvas.FindChild("controls").GetComponent<SpriteRenderer>().flipY = true;
+ /*           canvas.FindChild("controls").GetComponent<SpriteRenderer>().flipY = true;
             canvas.FindChild("controls").localPosition = new Vector3(-3.141f, -1.84f, 0);
             canvas.FindChild("GravityDirection").localPosition = new Vector3(-5.552f, -1.97f, 0);
             canvas.FindChild("GlueGUI").localPosition = new Vector3(-2.611f, -2.07f, 0);
             canvas.FindChild("Text").localPosition = new Vector3(-2.2731f, -2.22f, 0);
             canvas.FindChild("ytext").localPosition = new Vector3(-2.503f, -3.37f, 0);
             canvas.FindChild("xtext").localPosition = new Vector3(-3.686f, -3.37f, 0);
-            canvas.FindChild("Cooldown").localPosition = new Vector3(-5.483f, -2.73f, 0);
+            canvas.FindChild("Cooldown").localPosition = new Vector3(-5.483f, -2.73f, 0);*/
         }
         else if (gravity == "D")
         {
-            canvas.FindChild("controls").GetComponent<SpriteRenderer>().flipY = false;
+        /*  canvas.FindChild("controls").GetComponent<SpriteRenderer>().flipY = false;
             canvas.FindChild("controls").localPosition = new Vector3(-3.141f, 1.422f, 0);
             canvas.FindChild("GravityDirection").localPosition = new Vector3(-5.552f, 1.666f, 0);
             canvas.FindChild("GlueGUI").localPosition = new Vector3(-2.611f, 1.755f, 0);
             canvas.FindChild("Text").localPosition = new Vector3(-2.2731f, 1.51f, 0);
             canvas.FindChild("ytext").localPosition = new Vector3(-2.503f, 2.731f, 0);
             canvas.FindChild("xtext").localPosition = new Vector3(-3.686f, 2.731f, 0);
-            canvas.FindChild("Cooldown").localPosition = new Vector3(-5.483f, 2.453f, 0);
+            canvas.FindChild("Cooldown").localPosition = new Vector3(-5.483f, 2.453f, 0);*/
         }
         if (gravity == "L" || gravity == "R")
         {
@@ -228,7 +228,7 @@ public class Player : MonoBehaviour
         }
 
 
-        canvas.position = transform.position;
+        //canvas.position = transform.position;
 
         if (timer > 0)
         {
