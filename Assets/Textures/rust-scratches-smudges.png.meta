@@ -1,0 +1,350 @@
+fileFormatVersion: 2
+guid: 9d1382ee61158384195c844a2edde249
+timeCreated: 1487023328
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: rust-scratches-smudges_0
+    21300002: rust-scratches-smudges_1
+    21300004: rust-scratches-smudges_2
+    21300006: rust-scratches-smudges_3
+    21300008: rust-scratches-smudges_4
+    21300010: rust-scratches-smudges_7
+    21300012: rust-scratches-smudges_8
+    21300014: rust-scratches-smudges_9
+    21300016: rust-scratches-smudges_10
+    21300018: rust-scratches-smudges_11
+    21300020: rust-scratches-smudges_13
+    21300022: rust-scratches-smudges_14
+    21300024: rust-scratches-smudges_15
+    21300026: rust-scratches-smudges_17
+    21300028: rust-scratches-smudges_18
+    21300030: rust-scratches-smudges_19
+    21300032: rust-scratches-smudges_20
+    21300034: rust-scratches-smudges_21
+    21300036: rust-scratches-smudges_22
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 4096
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 4096
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: rust-scratches-smudges_0
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 1442
+        width: 75
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rust-scratches-smudges_1
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1067
+        width: 106
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rust-scratches-smudges_2
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 1062
+        width: 122
+        height: 612
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rust-scratches-smudges_3
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 1066
+        width: 170
+        height: 608
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rust-scratches-smudges_4
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 1217
+        width: 171
+        height: 434
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rust-scratches-smudges_7
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 1321
+        width: 97
+        height: 345
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rust-scratches-smudges_8
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 1560
+        width: 368
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rust-scratches-smudges_9
+      rect:
+        serializedVersion: 2
+        x: 1579
+        y: 1413
+        width: 408
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rust-scratches-smudges_10
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 983
+        width: 41
+        height: 383
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rust-scratches-smudges_11
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 1202
+        width: 360
+        height: 314
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rust-scratches-smudges_13
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 947
+        width: 292
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rust-scratches-smudges_14
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 962
+        width: 144
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rust-scratches-smudges_15
+      rect:
+        serializedVersion: 2
+        x: 1442
+        y: 1072
+        width: 634
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rust-scratches-smudges_17
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 883
+        width: 501
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rust-scratches-smudges_18
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 431
+        width: 463
+        height: 473
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rust-scratches-smudges_19
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 360
+        width: 698
+        height: 526
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rust-scratches-smudges_20
+      rect:
+        serializedVersion: 2
+        x: 1326
+        y: 16
+        width: 755
+        height: 767
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rust-scratches-smudges_21
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 6
+        width: 468
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rust-scratches-smudges_22
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 0
+        width: 551
+        height: 341
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
