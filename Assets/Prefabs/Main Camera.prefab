@@ -148,11 +148,12 @@ MonoBehaviour:
   tutGlues: []
   clutter: []
   bloods: []
-  thrust: 4
+  thrust: 9.88
   player: {fileID: 0}
   menu: {fileID: 0}
   playerDead: 0
   gravityControlEnabled: 0
+  changetmr: 0
   checktmr: 0
   coolDown: 0
   time: 1
