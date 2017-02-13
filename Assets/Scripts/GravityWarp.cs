@@ -119,7 +119,7 @@ public class GravityWarp : MonoBehaviour
     /* Handles user input for gravity change. */
     void InputHandler()
     {
-        if (gravityCount < 5)
+        if (gravityCount < 6)
         {
             if (Input.GetKey(InputManager.gravityUp) && gravity != "U")
             {
