@@ -123,12 +123,15 @@ MonoBehaviour:
   - {fileID: 8300000, guid: eb81f90add03e5b4fae9b47da763f196, type: 3}
   - {fileID: 8300000, guid: 0f25737726e74634abb662c7dd8b6e55, type: 3}
   - {fileID: 8300000, guid: f82481653ddab8645a44ee8b03e4ca43, type: 3}
+  boxCrush: {fileID: 8300000, guid: a26d6cb7f8dcc3e49aa1f10ce6751f05, type: 3}
   splat: {fileID: 8300000, guid: dd8cf6cc6bf0cb54d846848bbbb0a80d, type: 3}
   door: {fileID: 8300000, guid: 4ed3c4551e3d79b4aac9cbe88f2f495f, type: 3}
   toggleOn: {fileID: 8300000, guid: 26709088ce559e34c97a36ff1dfd5436, type: 3}
   toggleOff: {fileID: 8300000, guid: ab05548f721114a428ffe1e1781b6343, type: 3}
   release: {fileID: 8300000, guid: 2dee2c1408b076d46965ab41cc84c690, type: 3}
   change: {fileID: 8300000, guid: 26709088ce559e34c97a36ff1dfd5436, type: 3}
+  spikeKill: {fileID: 8300000, guid: 93ffcae850c73c74b9986211d33f0f1f, type: 3}
+  laserKill: {fileID: 8300000, guid: 25606288e42e3e1498039a060cc8b91d, type: 3}
 --- !u!114 &114420006540710784
 MonoBehaviour:
   m_ObjectHideFlags: 1

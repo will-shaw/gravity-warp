@@ -36,11 +36,11 @@ public class Player : MonoBehaviour
         Camera.main.GetComponent<GravityWarp>().player = transform;
         Camera.main.GetComponent<GravityWarp>().boxes.Add(transform);
         Camera.main.GetComponent<CameraZoom>().player = transform;
-        Debug.Log(Info.checkpoint.x);
-        Debug.Log(Info.load);
+        //Debug.Log(Info.checkpoint.x);
+        //Debug.Log(Info.load);
         if (Info.load && Info.checkpoint.x != 0)
         {
-            Debug.Log("made");
+            //Debug.Log("made");
             gameObject.transform.localPosition = Info.checkpoint;
         }
     }

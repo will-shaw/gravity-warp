@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     /* Box Audio */
     public AudioClip[] metalClips = new AudioClip[3];
     public AudioClip[] woodClips = new AudioClip[3];
+    public AudioClip boxCrush;    
 
     /* Glue Audio */
     public AudioClip splat;
@@ -25,6 +26,8 @@ public class AudioManager : MonoBehaviour
 
     /* Lever Change */
     public AudioClip change;
+    public AudioClip spikeKill;
+    public AudioClip laserKill;
 
     public AudioClip GetLanding()
     {
@@ -77,6 +80,21 @@ public class AudioManager : MonoBehaviour
     public AudioClip GetLeverChange()
     {
         return release;
+    }
+
+    public AudioClip GetBoxCrush()
+    {
+        return boxCrush;
+    }
+
+    public AudioClip GetSpikeKill()
+    {
+        return spikeKill;
+    }
+
+    public AudioClip GetLaserKill()
+    {
+        return laserKill;
     }
 
 }
