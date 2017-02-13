@@ -12,6 +12,8 @@ public class FacilityIntroLevelController : MonoBehaviour
 
     public Transform player;
 
+    public AudioClip rocket;
+
     float gravityChangeTimer;
     float shipLandTimer;
 
@@ -21,20 +23,24 @@ public class FacilityIntroLevelController : MonoBehaviour
     {
         gravityChangeTimer = gravityChangeTime;
         shipLandTimer = shipLandDelay;
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(rocket, 1);
     }
 
     void Update()
     {
-        if (!playerActive) {
+        if (!playerActive)
+        {
             GetComponent<GravityWarp>().player.gameObject.SetActive(false);
         }
         gravityChangeTimer -= Time.deltaTime;
         shipLandTimer -= Time.deltaTime;
-        if (shipLandTimer <= 0 && !playerActive) {
+        if (shipLandTimer <= 0 && !playerActive)
+        {
             hatch.constraints = RigidbodyConstraints2D.None;
             ship.SetBool("Landed", true);
             GetComponent<GravityWarp>().player.gameObject.SetActive(true);
             player.GetComponent<Animator>().SetBool("facingRight", true);
+            player.GetComponent<AudioSource>().PlayOneShot(Camera.main.GetComponent<AudioManager>().GetDoorClip(), 1);
             playerActive = true;
         }
         if (gravityChangeTimer <= 0)
