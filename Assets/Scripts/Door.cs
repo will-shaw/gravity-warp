@@ -42,13 +42,13 @@ public class Door : MonoBehaviour
 
     void Update()
     {
-        if (transform.position.y <= (closedPosY - (height / 1.5)))
+        if ((transform.position.y <= (closedPosY - (height / 1.5))) || transform.position.y >= (closedPosY + (height / 1.5)))
         {
             foreach (SpriteRenderer light in lights)
             {
                 light.color = new Color(0, 255, 0);
             }
-        } else if (transform.position.y >= (closedPosY - (height / 1.5))) {
+        } else if ((transform.position.y >= (closedPosY - (height / 1.5))) || transform.position.y <= (closedPosY + (height / 1.5))) {
             foreach (SpriteRenderer light in lights)
             {
                 light.color = new Color(255, 0, 0);

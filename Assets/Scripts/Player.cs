@@ -337,7 +337,6 @@ public class Player : MonoBehaviour
         Fields & Buttons are detected too */
 
 public void  antiPhase(){
-    char output;
     Vector2 down = Vector2.down;
     Vector2 up = Vector2.up;
     string grav = GravityWarp.gravity;
