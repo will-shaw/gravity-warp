@@ -19,13 +19,18 @@ public class MenuHandler : MonoBehaviour
 
     bool isControlShown = false;
     bool isListening = false;
+    bool isOptions = false;
     string opt;
     string key;
+
+    public AudioClip successClip;
 
     public static bool hasGravity = false;
     public static bool hasGlue = false;
 
     static private KeyCode[] validKeyCodes;
+
+    UnityEngine.UI.Button[] buttons;
 
     void Awake()
     {
@@ -44,6 +49,10 @@ public class MenuHandler : MonoBehaviour
         gravityControls = gameObject.transform.FindChild("GravityInstructionsPanel").gameObject;
         glueControls = gameObject.transform.FindChild("GlueInstructionsPanel").gameObject;
         playerDetails = gameObject.transform.FindChild("PlayerDetails").gameObject;
+
+        buttons = pause.GetComponentsInChildren<UnityEngine.UI.Button>();
+        pause.transform.FindChild("btnEdit").gameObject.SetActive(false);
+
     }
 
     public void ShowPause()
@@ -63,12 +72,12 @@ public class MenuHandler : MonoBehaviour
 
     public void ShowGravityControls()
     {
-        if(gravityControlsShown)
+        if (gravityControlsShown)
         {
             gravityControls.SetActive(false);
             gravityControlsShown = false;
-        } 
-        else 
+        }
+        else
         {
             gravityControls.SetActive(true);
             gravityControlsShown = true;
@@ -77,12 +86,12 @@ public class MenuHandler : MonoBehaviour
 
     public void ShowGlueControls()
     {
-        if(glueControlsShown)
+        if (glueControlsShown)
         {
             glueControls.SetActive(false);
             glueControlsShown = false;
-        } 
-        else 
+        }
+        else
         {
             glueControls.SetActive(true);
             glueControlsShown = true;
@@ -93,14 +102,37 @@ public class MenuHandler : MonoBehaviour
     {
         setcontrols.SetActive(false);
         isControlShown = false;
-        UnityEngine.UI.Button[] buttons = pause.GetComponentsInChildren<UnityEngine.UI.Button>();
         for (int i = 0; i < buttons.Length - 1; i++)
-        {
-            buttons[i].enabled = true;
-        }
-        pause.transform.GetChild(5).GetComponentInChildren<UnityEngine.UI.Text>().text = "Controls";
+            if (!isOptions)
+            {
+                if (buttons[i].GetComponentInChildren<UnityEngine.UI.Text>().text == "Edit")
+                {
+                    buttons[i].gameObject.SetActive(false);
+                }
+                else
+                {
+                    buttons[i].gameObject.SetActive(true);
+                }
+            }
+            else
+            {
+                if (i == 0)
+                {
+                    buttons[i].gameObject.SetActive(true);
+                }
+                else
+                {
+                    buttons[i].gameObject.SetActive(false);
+                }
+
+            }
+        pause.transform.FindChild("btnControls").GetComponentInChildren<UnityEngine.UI.Text>().text = "Controls";
         controls.SetActive(false);
         InputManager.Save();
+        if (isOptions)
+        {
+            isOptions = false;
+        }
     }
 
     public void ShowControls()
@@ -108,24 +140,63 @@ public class MenuHandler : MonoBehaviour
         isControlShown = !isControlShown;
         if (isControlShown)
         {
-            UnityEngine.UI.Button[] buttons = pause.GetComponentsInChildren<UnityEngine.UI.Button>();
             for (int i = 0; i < buttons.Length - 1; i++)
             {
-                buttons[i].enabled = false;
+                if (buttons[i].GetComponentInChildren<UnityEngine.UI.Text>().text == "Edit")
+                {
+                    buttons[i].gameObject.SetActive(true);
+                }
+                else
+                {
+                    buttons[i].gameObject.SetActive(false);
+                }
             }
-            pause.transform.GetChild(5).GetComponentInChildren<UnityEngine.UI.Text>().text = "Close";
+            pause.transform.FindChild("btnControls").GetComponentInChildren<UnityEngine.UI.Text>().text = "Close";
             controls.SetActive(isControlShown);
             LimitControlMenu(controls);
         }
         else
         {
-            UnityEngine.UI.Button[] buttons = pause.GetComponentsInChildren<UnityEngine.UI.Button>();
             for (int i = 0; i < buttons.Length - 1; i++)
             {
-                buttons[i].enabled = true;
+                if (!isOptions)
+                {
+                    if (buttons[i].GetComponentInChildren<UnityEngine.UI.Text>().text == "Edit")
+                    {
+                        buttons[i].gameObject.SetActive(false);
+                    }
+                    else
+                    {
+                        buttons[i].gameObject.SetActive(true);
+                    }
+                }
+                else
+                {
+                    if (i == 0)
+                    {
+                        buttons[i].gameObject.SetActive(true);
+                    }
+                    else
+                    {
+                        buttons[i].gameObject.SetActive(false);
+                    }
+                }
             }
-            pause.transform.GetChild(5).GetComponentInChildren<UnityEngine.UI.Text>().text = "Controls";
+            pause.transform.FindChild("btnControls").GetComponentInChildren<UnityEngine.UI.Text>().text = "Controls";
             controls.SetActive(isControlShown);
+        }
+    }
+
+    public void ShowOptions()
+    {
+        isOptions = true;
+        setcontrols.SetActive(false);
+        panel.SetActive(true);
+        controls.SetActive(false);
+        pause.SetActive(true);
+        for (int i = 1; i < buttons.Length - 1; i++)
+        {
+            buttons[i].gameObject.SetActive(false);
         }
     }
 
@@ -165,10 +236,13 @@ public class MenuHandler : MonoBehaviour
         controls.SetActive(false);
         confirm.SetActive(false);
         setcontrols.SetActive(false);
-        player.GetComponent<Player>().GetCanvas().gameObject.SetActive(true);
-        Camera.main.GetComponent<GravityWarp>().gravityControlEnabled = true;
-        Camera.main.GetComponent<GravityWarp>().time = true;
-        player.GetComponent<Player>().paused = false;
+        if (player)
+        {
+            player.GetComponent<Player>().GetCanvas().gameObject.SetActive(true);
+            player.GetComponent<Player>().paused = false;
+            Camera.main.GetComponent<GravityWarp>().gravityControlEnabled = true;
+            Camera.main.GetComponent<GravityWarp>().time = true;
+        }
     }
 
     public void SetKey(string key)
@@ -195,12 +269,13 @@ public class MenuHandler : MonoBehaviour
                 bool success = InputManager.Set(key, val);
                 if (success)
                 {
+                    GetComponent<AudioSource>().PlayOneShot(successClip, 1);
                     setcontrols.transform.FindChild(key).GetComponentInChildren<UnityEngine.UI.Text>().text = val.ToString();
                     Debug.Log("Success: " + key + " set to " + val);
                     this.key = null;
                     isListening = false;
-                    UnityEngine.UI.Button[] buttons = setcontrols.GetComponentsInChildren<UnityEngine.UI.Button>();
-                    foreach (UnityEngine.UI.Button button in buttons)
+                    UnityEngine.UI.Button[] btns = setcontrols.GetComponentsInChildren<UnityEngine.UI.Button>();
+                    foreach (UnityEngine.UI.Button button in btns)
                     {
                         button.enabled = true;
                     }
@@ -245,13 +320,16 @@ public class MenuHandler : MonoBehaviour
         SceneManager.LoadScene("main_menu");
     }
 
-    public void LimitControlMenu(GameObject controls){
-        if(!(hasGravity)) {
+    public void LimitControlMenu(GameObject controls)
+    {
+        if (!(hasGravity))
+        {
             controls.transform.GetChild(3).gameObject.SetActive(false);
             controls.transform.GetChild(9).gameObject.SetActive(false);
             controls.transform.GetChild(10).gameObject.SetActive(false);
         }
-        if(!(hasGlue)) {
+        if (!(hasGlue))
+        {
             controls.transform.GetChild(1).gameObject.SetActive(false);
             controls.transform.GetChild(11).gameObject.SetActive(false);
         }
