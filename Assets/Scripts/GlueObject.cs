@@ -43,7 +43,7 @@ public class GlueObject : MonoBehaviour
     {
         if (other.gameObject.tag != "Wall" && other.gameObject.tag != "Beam" &&other.gameObject.tag != "Glue")
         {
-            Destroy(gameObject);
+            Camera.main.GetComponent<GravityWarp>().glues.Remove(gameObject.transform);
         }
     }
 

@@ -13,6 +13,7 @@ public class GlueControl : MonoBehaviour
 
     void Update()
     {
+
         if (glueEnabled) {
             if (!hasGun)
             {
@@ -48,9 +49,29 @@ public class GlueControl : MonoBehaviour
         if (Input.GetKeyUp(InputManager.glue) && cantGlue != null) {
             Destroy (cantGlue.gameObject);
         }
+        //keyboard gluing below
+        if (Input.GetKeyDown(InputManager.glue2) && spawnRange >= distance && glueEnabled)
+        {
+            if (glueCount < glueLimit)
+            {
+                Transform glueNew;
+                glueNew = Instantiate(gluePrefab, gameObject.transform.position + posistionG(), Quaternion.identity);
+                glueCount++;
+                Camera.main.GetComponent<GravityWarp>().glues.Add(glueNew);
+            }else if(glueCount >= glueLimit){
+                Camera.main.GetComponent<GravityWarp>().glueExtraPlace();
+                Transform glueNew;
+                glueNew = Instantiate(gluePrefab, gameObject.transform.position + posistionG(), Quaternion.identity);
+                glueCount++;
+                Camera.main.GetComponent<GravityWarp>().glues.Add(glueNew);
+            }
+       
+        if (Input.GetKeyUp(InputManager.glue2) && cantGlue != null) {
+            Destroy (cantGlue.gameObject);
+        }
     }
-
-    Vector3 ValidTarget()
+}
+    public Vector3 ValidTarget()
     {
         Vector2 target = Camera.main.ScreenToWorldPoint(Input.mousePosition);        
         RaycastHit2D[] hits = Physics2D.LinecastAll(transform.position, target);
@@ -65,6 +86,43 @@ public class GlueControl : MonoBehaviour
             }
         }
         return target;
+    }
+
+    public Vector3 posistionG(){
+        Vector3 value = new Vector3(0f,0f,0f);
+        string test = GravityWarp.gravity;
+        if(gameObject.GetComponent<Player>().facingRight){
+            switch(test){
+                case "U":
+                    value = new Vector3(-1.5f,0f,0f);
+                    break;
+                case "D":
+                    value = new Vector3(1.5f,0f,0f);
+                    break;
+                case "L":
+                    value = new Vector3(0f,-1.5f,0f);
+                    break;
+                case "R":
+                    value = new Vector3(0f,1.5f,0f);
+                    break;
+            }
+        }else{
+            switch(test){
+                case "U":
+                    value = new Vector3(1.5f,0f,0f);
+                    break;
+                case "D":
+                    value = new Vector3(-1.5f,0f,0f);
+                    break;
+                case "L":
+                    value = new Vector3(0f,1.5f,0f);
+                    break;
+                case "R":
+                    value = new Vector3(0f,-1.5f,0f);
+                    break;
+            }
+        }
+        return value;
     }
 
     public void changeGlueCount(int i)
