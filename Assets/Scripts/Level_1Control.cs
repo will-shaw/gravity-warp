@@ -17,6 +17,8 @@ public class Level_1Control : MonoBehaviour {
 	//Is gravity being automated
 	bool autoGravity = true;
 
+	public Transform halo;
+
 	//Sets timer to wait time.
 	void Start () {
 		gravityChangeTimer = gravityChangeTime;
@@ -40,5 +42,6 @@ public class Level_1Control : MonoBehaviour {
 	public void disableAutoGravity(){
 		autoGravity = false;
 		Camera.main.GetComponent<GravityWarp>().gravityControlEnabled = true;
+		halo.gameObject.SetActive(false);
 	}
 }
