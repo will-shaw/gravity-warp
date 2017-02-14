@@ -14,6 +14,7 @@ public class MenuHandler : MonoBehaviour
     GameObject gravityControls;
     bool gravityControlsShown = false;
     GameObject glueControls;
+    GameObject playerDetails;
     bool glueControlsShown = false;
 
     bool isControlShown = false;
@@ -42,6 +43,7 @@ public class MenuHandler : MonoBehaviour
         setcontrols = gameObject.transform.FindChild("SetControls").gameObject;
         gravityControls = gameObject.transform.FindChild("GravityInstructionsPanel").gameObject;
         glueControls = gameObject.transform.FindChild("GlueInstructionsPanel").gameObject;
+        playerDetails = gameObject.transform.FindChild("PlayerDetails").gameObject;
     }
 
     public void ShowPause()
@@ -157,6 +159,7 @@ public class MenuHandler : MonoBehaviour
     public void Hide()
     {
         panel.SetActive(false);
+        playerDetails.SetActive(false);
         death.SetActive(false);
         pause.SetActive(false);
         controls.SetActive(false);
@@ -238,6 +241,7 @@ public class MenuHandler : MonoBehaviour
     public void MainMenu()
     {
         Hide();
+        GravityWarp.gravity = "D";
         SceneManager.LoadScene("main_menu");
     }
 
