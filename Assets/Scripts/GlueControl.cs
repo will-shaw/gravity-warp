@@ -34,6 +34,13 @@ public class GlueControl : MonoBehaviour
                 Transform glueNew;
                 glueNew = Instantiate(gluePrefab, ValidTarget(), Quaternion.identity);
                 glueCount++;
+                Camera.main.GetComponent<GravityWarp>().glues.Add(glueNew);
+            }else if(glueCount >= glueLimit){
+                Camera.main.GetComponent<GravityWarp>().glueExtraPlace();
+                Transform glueNew;
+                glueNew = Instantiate(gluePrefab, ValidTarget(), Quaternion.identity);
+                glueCount++;
+                Camera.main.GetComponent<GravityWarp>().glues.Add(glueNew);
             }
         } else if ( Input.GetKeyDown(InputManager.glue) && spawnRange < distance) {
             cantGlue = Instantiate(noPlacePrefab, ValidTarget(), Quaternion.identity);

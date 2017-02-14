@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class GravityWarp : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class GravityWarp : MonoBehaviour
     public Transform[] bloods;
     public static string gravity = "D"; // The current gravity direction.
 
+    public List<Transform> glues;
     public Transform player;
     public GameObject menu;
     public bool playerDead = false;
@@ -189,4 +191,8 @@ public class GravityWarp : MonoBehaviour
         }
 
     }
+    public void glueExtraPlace(){
+        Destroy(glues[0].gameObject);
+        glues.RemoveAt(0);
+    }   
 }
