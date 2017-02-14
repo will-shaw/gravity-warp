@@ -7729,8 +7729,8 @@ EdgeCollider2D:
   m_Points:
   - {x: 22.547314, y: 0.8059032}
   - {x: 25.149693, y: 0.5450921}
-  - {x: 26.50156, y: -0.01829648}
-  - {x: 26.532215, y: -4.879444}
+  - {x: 27.790363, y: 0.11058378}
+  - {x: 27.756577, y: -4.900924}
   - {x: 25.948645, y: -4.9055505}
 --- !u!61 &1661358794
 BoxCollider2D:
@@ -7914,7 +7914,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -8236,11 +8236,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4011147956995674, guid: a18686ef00c814d8d825e17562a0ffe9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 25.38
+      value: 27.09
       objectReference: {fileID: 0}
     - target: {fileID: 4011147956995674, guid: a18686ef00c814d8d825e17562a0ffe9, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.0028155074
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4011147956995674, guid: a18686ef00c814d8d825e17562a0ffe9, type: 2}
       propertyPath: m_LocalPosition.z
