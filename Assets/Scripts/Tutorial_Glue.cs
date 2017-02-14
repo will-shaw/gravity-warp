@@ -2,7 +2,6 @@
 
 public class Tutorial_Glue : MonoBehaviour
 {
-
     public Transform spawner;
     public Transform gluePrefab;
     public float glueSpawnDelay;
@@ -14,7 +13,6 @@ public class Tutorial_Glue : MonoBehaviour
         if (glueSpawnTimer <= 0)
         {
             Transform glue = Instantiate(gluePrefab, spawner.position, Quaternion.Euler(Vector2.up));
-            //glue.GetComponent<SpriteRenderer>().flipY = true;
             glueSpawnTimer = glueSpawnDelay;
         }
     }

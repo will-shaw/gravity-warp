@@ -7,7 +7,6 @@ public class GlueObject : MonoBehaviour
     string currGrav;
     bool expire = true;
     AudioClip splat;
-    bool stuckExpire = false;
     public float expireTimer = 15;
 
     void Start() {
