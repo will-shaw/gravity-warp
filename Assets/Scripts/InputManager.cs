@@ -21,6 +21,7 @@ public class InputManager : MonoBehaviour
     public static KeyCode gravityLeft = KeyCode.Mouse0;
     public static KeyCode gravityRight = KeyCode.Mouse0;
     public static KeyCode glue = KeyCode.Mouse1;
+    public static KeyCode glue2 = KeyCode.P;
 
     /* Menus */
     public static KeyCode menu = KeyCode.Escape;
