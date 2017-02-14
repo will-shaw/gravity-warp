@@ -15,7 +15,7 @@ public class GlueObject : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag != "Beam")
+        if (other.gameObject.tag != "Beam" && other.gameObject.tag != "Glue")
         {
             if (other.gameObject.tag != "Wall" && other.GetComponent<Glue>() != null)
             {
@@ -41,7 +41,7 @@ public class GlueObject : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.tag != "Wall" && other.gameObject.tag != "Beam")
+        if (other.gameObject.tag != "Wall" && other.gameObject.tag != "Beam" &&other.gameObject.tag != "Glue")
         {
             Destroy(gameObject);
         }
@@ -70,7 +70,7 @@ public class GlueObject : MonoBehaviour
         }
         if (expire && expireTimer < 0)
         {
-            Destroy(gameObject);
+            Camera.main.GetComponent<GravityWarp>().glueExtraPlace();
             Camera.main.GetComponent<CameraZoom>().player.GetComponent<GlueControl>().changeGlueCount(0);
         }
         else if (expire)

@@ -6,7 +6,6 @@ public class GravityWarp : MonoBehaviour
 
     public static float gravityScale = 3.5f; // Amount of gravity to apply.
     public Transform[] bloods;
-    public float thrust; // For horizontal movement. Multiplies gravityScale.
     public static string gravity = "D"; // The current gravity direction.
 
     public Transform player;
