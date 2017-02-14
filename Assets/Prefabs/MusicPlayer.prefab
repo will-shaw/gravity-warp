@@ -132,4 +132,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e626eecb24ae64bad36666dd55a7a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicVolume: 1
+  playlist:
+  - {fileID: 8300000, guid: 35d9bda84b4d2db44b4a432d9d4720a2, type: 3}
+  - {fileID: 8300000, guid: 3f9211fd3b853534c8d8fc76e148e43b, type: 3}
+  - {fileID: 8300000, guid: e44c3ab104d90a4489527428d0a1312e, type: 3}
+  - {fileID: 8300000, guid: 6133d8d9cc1f4b84a8f82bc0d1dd5068, type: 3}
