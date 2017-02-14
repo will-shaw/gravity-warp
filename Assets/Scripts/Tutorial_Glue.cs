@@ -14,6 +14,7 @@ public class Tutorial_Glue : MonoBehaviour
         {
             Transform glue = Instantiate(gluePrefab, spawner.position, Quaternion.Euler(Vector2.up));
             glueSpawnTimer = glueSpawnDelay;
+            glue.GetComponent<GlueObject>().tutGlue = true;
         }
     }
 }

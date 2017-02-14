@@ -34,12 +34,14 @@ public class Glue : MonoBehaviour
         }
     }
 
-    public void gluing()
+    public void gluing(bool tutGlue)
     {
         glued = true;
         gluedTime = glueTime;
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-        Camera.main.GetComponent<CameraZoom>().player.GetComponent<GlueControl>().changeGlueCount(0);
+        if(!tutGlue){
+            Camera.main.GetComponent<CameraZoom>().player.GetComponent<GlueControl>().changeGlueCount(0);
+        }
         if (transform.tag == "Player") {
             GetComponent<Animator>().SetFloat("Speed", -1);
         }

@@ -9,6 +9,8 @@ public class GlueObject : MonoBehaviour
     AudioClip splat;
     public float expireTimer = 15;
 
+    public bool tutGlue =false;
+
     void Start() {
         splat = Camera.main.GetComponent<AudioManager>().GetGlueSplat();
     }
@@ -22,7 +24,7 @@ public class GlueObject : MonoBehaviour
                 if(other.tag == "destructable") {
                     other.GetComponent<BoxCollision>().setActiveGlue(gameObject);
                 }
-                other.GetComponent<Glue>().gluing();
+                other.GetComponent<Glue>().gluing(tutGlue);
                 GetComponent<SpriteRenderer>().sprite = sprites[2];
                 GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
                 expire = false;
@@ -43,8 +45,11 @@ public class GlueObject : MonoBehaviour
     {
         if (other.gameObject.tag != "Wall" && other.gameObject.tag != "Beam" &&other.gameObject.tag != "Glue")
         {
-            Camera.main.GetComponent<GravityWarp>().glues.Remove(gameObject.transform);
+            if(!tutGlue){
+                Camera.main.GetComponent<GravityWarp>().glues.Remove(gameObject.transform); 
+            }else{
             Destroy(gameObject);
+            }
         }
     }
 
@@ -70,9 +75,14 @@ public class GlueObject : MonoBehaviour
             }
         }
         if (expire && expireTimer < 0)
-        {
-            Camera.main.GetComponent<GravityWarp>().glueExtraPlace();
-            Camera.main.GetComponent<CameraZoom>().player.GetComponent<GlueControl>().changeGlueCount(0);
+        {   
+            if(!tutGlue){
+                Camera.main.GetComponent<GravityWarp>().glueExtraPlace();
+                Camera.main.GetComponent<CameraZoom>().player.GetComponent<GlueControl>().changeGlueCount(0);
+            }else{
+                Destroy(gameObject);
+            }
+            
         }
         else if (expire)
         {

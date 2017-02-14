@@ -40,7 +40,6 @@ public class GlueControl : MonoBehaviour
                 Camera.main.GetComponent<GravityWarp>().glueExtraPlace();
                 Transform glueNew;
                 glueNew = Instantiate(gluePrefab, ValidTarget(), Quaternion.identity);
-                glueCount++;
                 Camera.main.GetComponent<GravityWarp>().glues.Add(glueNew);
             }
         } else if ( Input.GetKeyDown(InputManager.glue) && spawnRange < distance) {
@@ -62,7 +61,6 @@ public class GlueControl : MonoBehaviour
                 Camera.main.GetComponent<GravityWarp>().glueExtraPlace();
                 Transform glueNew;
                 glueNew = Instantiate(gluePrefab, gameObject.transform.position + posistionG(), Quaternion.identity);
-                glueCount++;
                 Camera.main.GetComponent<GravityWarp>().glues.Add(glueNew);
             }
        
