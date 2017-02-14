@@ -53,6 +53,7 @@ public class MenuHandler : MonoBehaviour
         buttons = pause.GetComponentsInChildren<UnityEngine.UI.Button>();
         pause.transform.FindChild("btnEdit").gameObject.SetActive(false);
 
+        pause.transform.FindChild("MusicVolume").GetComponent<UnityEngine.UI.Slider>().value = MusicPlayer.Instance.GetMusicVolume();
     }
 
     public void ShowPause()
@@ -129,10 +130,6 @@ public class MenuHandler : MonoBehaviour
         pause.transform.FindChild("btnControls").GetComponentInChildren<UnityEngine.UI.Text>().text = "Controls";
         controls.SetActive(false);
         InputManager.Save();
-        if (isOptions)
-        {
-            isOptions = false;
-        }
     }
 
     public void ShowControls()
@@ -229,6 +226,10 @@ public class MenuHandler : MonoBehaviour
 
     public void Hide()
     {
+        if (isOptions)
+        {
+            isOptions = false;
+        }
         panel.SetActive(false);
         playerDetails.SetActive(false);
         death.SetActive(false);
