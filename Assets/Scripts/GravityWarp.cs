@@ -18,7 +18,7 @@ public class GravityWarp : MonoBehaviour
     public Transform player;
     public GameObject menu;
     public bool playerDead = false;
-    public bool gravityControlEnabled;
+    public bool gravityControlEnabled = false;
 
     GameObject checkpointText;
     GameObject pauseTimerText;
