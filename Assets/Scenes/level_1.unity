@@ -603,6 +603,45 @@ Transform:
   m_PrefabParentObject: {fileID: 4429646857624070, guid: 2a4ef6d8f01b54ef78febeb6b8705dbe,
     type: 2}
   m_PrefabInternal: {fileID: 1220624659}
+--- !u!1 &335651399 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1338078586116976, guid: 1cc992d50b82c5a43a9af736e733d848,
+    type: 2}
+  m_PrefabInternal: {fileID: 1362004662}
+--- !u!50 &335651401
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 335651399}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.5
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &335651402
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 335651399}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0.0000019073486, y: 0.0000019073486}
+  serializedVersion: 2
+  m_Radius: 0.98
 --- !u!1 &343157446
 GameObject:
   m_ObjectHideFlags: 0
@@ -5451,6 +5490,45 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &2136576775 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1307031476128580, guid: 1cc992d50b82c5a43a9af736e733d848,
+    type: 2}
+  m_PrefabInternal: {fileID: 1362004662}
+--- !u!50 &2136576777
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2136576775}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.5
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &2136576778
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2136576775}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0.000005722046, y: 0.0000019073486}
+  serializedVersion: 2
+  m_Radius: 0.98
 --- !u!1 &2137881915
 GameObject:
   m_ObjectHideFlags: 0

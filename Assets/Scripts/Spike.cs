@@ -7,6 +7,7 @@ public class Spike : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D other) {
 		if(other.gameObject.tag == "Player") {
+			other.gameObject.GetComponent<Animator>().SetBool("isCrushed", true);			
 			//player = other.transform;
 			//if(Camera.main.GetComponent<GravityWarp>().changetmr >0.1f){
 				Camera.main.GetComponent<GravityWarp>().playerDead = true;
@@ -29,6 +30,7 @@ public class Spike : MonoBehaviour {
 			tmr += Time.deltaTime;
 			if(tmr >0.2f){
 				Camera.main.GetComponent<GravityWarp>().playerDead = true;
+
 			}
 		}	
 	}

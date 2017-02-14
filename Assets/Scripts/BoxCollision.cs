@@ -12,13 +12,12 @@ public class BoxCollision : MonoBehaviour
     float velocityX1 = 0f;
     GameObject activeButton;
     GameObject activeGlue;
-    // Use this for initialization
+
     void Start()
     {
         am = Camera.main.GetComponent<AudioManager>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         // new audio code
@@ -123,29 +122,30 @@ public class BoxCollision : MonoBehaviour
         {
             if (velocityY > 23f)
             {
-                //Destroy(other.gameObject);
                 Camera.main.GetComponent<GravityWarp>().playerDead = true;
                 GetComponent<AudioSource>().PlayOneShot(am.GetBoxCrush(), 1);
+                			other.gameObject.GetComponent<Animator>().SetBool("isCrushed", true);			
+
             }
             if (velocityX > 23f)
             {
-                //Destroy(other.gameObject);
                 Camera.main.GetComponent<GravityWarp>().playerDead = true;
                 GetComponent<AudioSource>().PlayOneShot(am.GetBoxCrush(), 1);
+                			other.gameObject.GetComponent<Animator>().SetBool("isCrushed", true);			
 
             }
             if (velocityY1 < -23f)
             {
-                //Destroy(other.gameObject);
                 Camera.main.GetComponent<GravityWarp>().playerDead = true;
                 GetComponent<AudioSource>().PlayOneShot(am.GetBoxCrush(), 1);
+                			other.gameObject.GetComponent<Animator>().SetBool("isCrushed", true);			
 
             }
             if (velocityX1 < -23f)
             {
-                //Destroy(other.gameObject);
                 Camera.main.GetComponent<GravityWarp>().playerDead = true;
                 GetComponent<AudioSource>().PlayOneShot(am.GetBoxCrush(), 1);
+                			other.gameObject.GetComponent<Animator>().SetBool("isCrushed", true);			
 
             }
         }
