@@ -25,6 +25,8 @@ public class Field : MonoBehaviour
         {
             gameObject.GetComponent<Renderer>().enabled = false;
             gameObject.GetComponent<Collider2D>().enabled = false;
+                GetComponent<Light>().enabled = false;
+            
         }
     }
 
@@ -82,6 +84,7 @@ public class Field : MonoBehaviour
             {
                 gameObject.GetComponent<Renderer>().enabled = true;
                 gameObject.GetComponent<Collider2D>().enabled = true;
+                GetComponent<Light>().enabled = true;
                 active = !active;
             }
             else if (active)
@@ -89,6 +92,7 @@ public class Field : MonoBehaviour
                 gameObject.GetComponent<Renderer>().enabled = false;
                 gameObject.GetComponent<Collider2D>().enabled = false;
                 active = !active;
+                GetComponent<Light>().enabled = false;
             }
         }
         else
@@ -98,12 +102,14 @@ public class Field : MonoBehaviour
                 gameObject.GetComponent<Renderer>().enabled = false;
                 gameObject.GetComponent<Collider2D>().enabled = false;
                 active = !active;
+                GetComponent<Light>().enabled = false;                
             }
             else if (!(active))
             {
                 gameObject.GetComponent<Renderer>().enabled = true;
                 gameObject.GetComponent<Collider2D>().enabled = true;
                 active = !active;
+                GetComponent<Light>().enabled = true;                
             }
         }
     }

@@ -197,7 +197,7 @@ public class Player : MonoBehaviour
             footstepTimer -= Time.deltaTime;
             if (footstepTimer <= 0)
             {
-                GetComponent<AudioSource>().PlayOneShot(am.GetFootstep(), Random.Range(40, 100) * 0.01f);
+                GetComponent<AudioSource>().PlayOneShot(am.GetFootstep(), Random.Range(60, 100) * 0.01f);
                 footstepTimer = footstepDelay;
             }
         }
