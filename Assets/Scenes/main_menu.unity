@@ -524,15 +524,15 @@ MonoBehaviour:
   - {fileID: 8300000, guid: eb81f90add03e5b4fae9b47da763f196, type: 3}
   - {fileID: 8300000, guid: 0f25737726e74634abb662c7dd8b6e55, type: 3}
   - {fileID: 8300000, guid: f82481653ddab8645a44ee8b03e4ca43, type: 3}
-  boxCrush: {fileID: 0}
+  boxCrush: {fileID: 8300000, guid: a26d6cb7f8dcc3e49aa1f10ce6751f05, type: 3}
   splat: {fileID: 8300000, guid: dd8cf6cc6bf0cb54d846848bbbb0a80d, type: 3}
   door: {fileID: 8300000, guid: 4ed3c4551e3d79b4aac9cbe88f2f495f, type: 3}
   toggleOn: {fileID: 8300000, guid: 26709088ce559e34c97a36ff1dfd5436, type: 3}
   toggleOff: {fileID: 8300000, guid: ab05548f721114a428ffe1e1781b6343, type: 3}
   release: {fileID: 8300000, guid: 2dee2c1408b076d46965ab41cc84c690, type: 3}
-  change: {fileID: 0}
-  spikeKill: {fileID: 0}
-  laserKill: {fileID: 0}
+  change: {fileID: 8300000, guid: 26709088ce559e34c97a36ff1dfd5436, type: 3}
+  spikeKill: {fileID: 8300000, guid: 93ffcae850c73c74b9986211d33f0f1f, type: 3}
+  laserKill: {fileID: 8300000, guid: 25606288e42e3e1498039a060cc8b91d, type: 3}
 --- !u!82 &134782231
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1294,7 +1294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   field: {fileID: 1070324906}
-  scene: facility_intro
+  scene: Story
   button: {fileID: 391756174}
   warpText: {fileID: 1593183624}
   warpTextDelay: 2
@@ -1657,6 +1657,73 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &940750563
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 114569720856848374, guid: 9849d467c4d8bf743afeb648e53ae4eb,
+        type: 2}
+      propertyPath: playlist.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558801952765622, guid: 9849d467c4d8bf743afeb648e53ae4eb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -5.511248
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558801952765622, guid: 9849d467c4d8bf743afeb648e53ae4eb, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.637604
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558801952765622, guid: 9849d467c4d8bf743afeb648e53ae4eb, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 4.699263
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558801952765622, guid: 9849d467c4d8bf743afeb648e53ae4eb, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558801952765622, guid: 9849d467c4d8bf743afeb648e53ae4eb, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558801952765622, guid: 9849d467c4d8bf743afeb648e53ae4eb, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558801952765622, guid: 9849d467c4d8bf743afeb648e53ae4eb, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558801952765622, guid: 9849d467c4d8bf743afeb648e53ae4eb, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114569720856848374, guid: 9849d467c4d8bf743afeb648e53ae4eb,
+        type: 2}
+      propertyPath: playlist.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 35d9bda84b4d2db44b4a432d9d4720a2, type: 3}
+    - target: {fileID: 114569720856848374, guid: 9849d467c4d8bf743afeb648e53ae4eb,
+        type: 2}
+      propertyPath: playlist.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3f9211fd3b853534c8d8fc76e148e43b, type: 3}
+    - target: {fileID: 114569720856848374, guid: 9849d467c4d8bf743afeb648e53ae4eb,
+        type: 2}
+      propertyPath: playlist.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: e44c3ab104d90a4489527428d0a1312e, type: 3}
+    - target: {fileID: 114569720856848374, guid: 9849d467c4d8bf743afeb648e53ae4eb,
+        type: 2}
+      propertyPath: playlist.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6133d8d9cc1f4b84a8f82bc0d1dd5068, type: 3}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 9849d467c4d8bf743afeb648e53ae4eb, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &960070107
 GameObject:
   m_ObjectHideFlags: 0

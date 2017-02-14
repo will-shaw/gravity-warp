@@ -42,6 +42,7 @@ public class FacilityIntroLevelController : MonoBehaviour
             player.GetComponent<Animator>().SetBool("facingRight", true);
             player.GetComponent<AudioSource>().PlayOneShot(Camera.main.GetComponent<AudioManager>().GetDoorClip(), 1);
             playerActive = true;
+            MusicPlayer.Instance.PlayMusic();
         }
         if (gravityChangeTimer <= 0)
         {

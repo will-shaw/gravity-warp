@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MusicPlayer : MonoBehaviour
 {
@@ -6,7 +7,7 @@ public class MusicPlayer : MonoBehaviour
 
     public static float musicVolume = 1;
 
-    AudioClip[] playlist = new AudioClip[0];
+    public AudioClip[] playlist = new AudioClip[0];
 
     public static MusicPlayer Instance
     {
@@ -38,11 +39,13 @@ public class MusicPlayer : MonoBehaviour
 
     void Start()
     {
-		playlist = Camera.main.GetComponent<AudioManager>().GetMusicList();
-        PlayMusic();
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            PlayMusic();
+        }
     }
 
-    void PlayMusic()
+    public void PlayMusic()
     {
         GetComponent<AudioSource>().PlayOneShot(playlist[0], musicVolume);
     }
