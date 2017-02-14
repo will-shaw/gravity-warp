@@ -129,7 +129,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 3528887}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.57, y: -3.29, z: 0}
+  m_LocalPosition: {x: -1.75, y: -3.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 286160133}
@@ -3464,6 +3464,11 @@ Prefab:
         type: 2}
       propertyPath: nextLevel
       value: level_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 82286756726585448, guid: 1cc992d50b82c5a43a9af736e733d848,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1cc992d50b82c5a43a9af736e733d848, type: 2}
