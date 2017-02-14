@@ -7,6 +7,8 @@ public class GlueGunPickup : MonoBehaviour {
 
     public GameObject menu;
 
+    public Transform halo;
+
     bool once;
 
     void OnTriggerEnter2D(Collider2D other)
@@ -17,6 +19,7 @@ public class GlueGunPickup : MonoBehaviour {
             GetComponent<AudioSource>().PlayOneShot(clip, 1);
             once = true;
             MenuHandler.hasGlue = true;
+            halo.gameObject.SetActive(false);
             menu.GetComponent<MenuHandler>().ShowGlueControls();
         }
 	}
