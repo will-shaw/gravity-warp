@@ -21,7 +21,6 @@ public class InputManager : MonoBehaviour
     public static KeyCode gravityLeft = KeyCode.Mouse0;
     public static KeyCode gravityRight = KeyCode.Mouse0;
     public static KeyCode glue = KeyCode.Mouse1;
-    public static KeyCode glue2 = KeyCode.P;
 
     /* Menus */
     public static KeyCode menu = KeyCode.Escape;
@@ -124,23 +123,30 @@ public class InputManager : MonoBehaviour
 
         bf.Serialize(file, data);
         file.Close();
-
-        if (gravityUp.ToString().Substring(0, 5) == "Mouse")
-        {
-            Debug.Log("Gravity using mouse control");
-            gravityControlScheme = 0;
+        if(gravityUp.ToString().Length>4){
+            if (gravityUp.ToString().Substring(0, 5) == "Mouse")
+            {
+              Debug.Log("Gravity using mouse control");
+               gravityControlScheme = 0;
+            }
+            else
+            {
+               gravityControlScheme = 1;
+            }
+        }else{
+            gravityControlScheme=1;
         }
-        else
-        {
-            gravityControlScheme = 1;
-        }
-        if (glue.ToString().Substring(0, 5) == "Mouse")
-        {
-            Debug.Log("Glue using mouse control");
-            glueControlScheme = 0;
-        }
-        else
-        {
+        if(glue.ToString().Length>4){
+            if (glue.ToString().Substring(0, 5) == "Mouse")
+            {
+                Debug.Log("Glue using mouse control");
+                glueControlScheme = 0;
+            }
+            else
+            {
+                glueControlScheme = 1;
+            }
+        }else{
             glueControlScheme = 1;
         }
 
@@ -167,15 +173,20 @@ public class InputManager : MonoBehaviour
             gravityLeft = data.gravityLeft;
             gravityRight = data.gravityRight;
 
+        if(gravityUp.ToString().Length>4){
             if (gravityUp.ToString().Substring(0, 5) == "Mouse")
             {
-                Debug.Log("Gravity using mouse control");
-                gravityControlScheme = 0;
+              Debug.Log("Gravity using mouse control");
+               gravityControlScheme = 0;
             }
             else
             {
-                gravityControlScheme = 1;
+               gravityControlScheme = 1;
             }
+        }else{
+            gravityControlScheme=1;
+        }
+        if(glue.ToString().Length>4){
             if (glue.ToString().Substring(0, 5) == "Mouse")
             {
                 Debug.Log("Glue using mouse control");
@@ -185,6 +196,9 @@ public class InputManager : MonoBehaviour
             {
                 glueControlScheme = 1;
             }
+        }else{
+            glueControlScheme = 1;
+        }
 
             glue = data.glue;
         }

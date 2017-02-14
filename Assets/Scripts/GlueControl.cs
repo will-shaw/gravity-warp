@@ -28,7 +28,7 @@ public class GlueControl : MonoBehaviour
         }
 
         float distance = Vector2.Distance(transform.position, ValidTarget());
-        if (Input.GetKeyDown(InputManager.glue) && spawnRange >= distance && glueEnabled)
+        if (Input.GetKeyDown(InputManager.glue) && InputManager.glueControlScheme ==0 && spawnRange >= distance && glueEnabled)
         {
             if (glueCount < glueLimit)
             {
@@ -50,7 +50,7 @@ public class GlueControl : MonoBehaviour
             Destroy (cantGlue.gameObject);
         }
         //keyboard gluing below
-        if (Input.GetKeyDown(InputManager.glue2) && spawnRange >= distance && glueEnabled)
+        if (Input.GetKeyDown(InputManager.glue) &&  InputManager.glueControlScheme ==1 && glueEnabled)
         {
             if (glueCount < glueLimit)
             {
@@ -66,7 +66,7 @@ public class GlueControl : MonoBehaviour
                 Camera.main.GetComponent<GravityWarp>().glues.Add(glueNew);
             }
        
-        if (Input.GetKeyUp(InputManager.glue2) && cantGlue != null) {
+        if (Input.GetKeyUp(InputManager.glue) && cantGlue != null) {
             Destroy (cantGlue.gameObject);
         }
     }
