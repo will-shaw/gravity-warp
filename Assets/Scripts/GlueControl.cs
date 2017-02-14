@@ -29,13 +29,11 @@ public class GlueControl : MonoBehaviour
         float distance = Vector2.Distance(transform.position, ValidTarget());
         if (Input.GetKeyDown(InputManager.glue) && spawnRange >= distance && glueEnabled)
         {
-            GravityWarp gw = Camera.main.GetComponent<GravityWarp>();
             if (glueCount < glueLimit)
             {
                 Transform glueNew;
                 glueNew = Instantiate(gluePrefab, ValidTarget(), Quaternion.identity);
                 glueCount++;
-                gw.glues.Add(glueNew);
             }
         } else if ( Input.GetKeyDown(InputManager.glue) && spawnRange < distance) {
             cantGlue = Instantiate(noPlacePrefab, ValidTarget(), Quaternion.identity);
