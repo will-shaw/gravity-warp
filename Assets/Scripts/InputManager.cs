@@ -123,7 +123,7 @@ public class InputManager : MonoBehaviour
 
         bf.Serialize(file, data);
         file.Close();
-        if(glue.ToString().Length>4){
+        if(gravityUp.ToString().Length>4){
             if (gravityUp.ToString().Substring(0, 5) == "Mouse")
             {
               Debug.Log("Gravity using mouse control");
@@ -173,15 +173,20 @@ public class InputManager : MonoBehaviour
             gravityLeft = data.gravityLeft;
             gravityRight = data.gravityRight;
 
+        if(gravityUp.ToString().Length>4){
             if (gravityUp.ToString().Substring(0, 5) == "Mouse")
             {
-                Debug.Log("Gravity using mouse control");
-                gravityControlScheme = 0;
+              Debug.Log("Gravity using mouse control");
+               gravityControlScheme = 0;
             }
             else
             {
-                gravityControlScheme = 1;
+               gravityControlScheme = 1;
             }
+        }else{
+            gravityControlScheme=1;
+        }
+        if(glue.ToString().Length>4){
             if (glue.ToString().Substring(0, 5) == "Mouse")
             {
                 Debug.Log("Glue using mouse control");
@@ -191,6 +196,9 @@ public class InputManager : MonoBehaviour
             {
                 glueControlScheme = 1;
             }
+        }else{
+            glueControlScheme = 1;
+        }
 
             glue = data.glue;
         }
