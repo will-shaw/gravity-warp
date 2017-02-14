@@ -38,10 +38,9 @@ public class Field : MonoBehaviour
                 {
                     if (other.gameObject.tag == "Player")
                     {
-                        if(Camera.main.GetComponent<GravityWarp>().changetmr>0.1f){
                             Camera.main.GetComponent<GravityWarp>().playerDead = true;
                             GetComponent<AudioSource>().PlayOneShot(Camera.main.GetComponent<AudioManager>().GetLaserKill(), 1);
-                        }
+                    
                     }
                     else
                     {
@@ -53,10 +52,9 @@ public class Field : MonoBehaviour
             {
                 if (other.gameObject.tag == "Player")
                 {
-                    if(Camera.main.GetComponent<GravityWarp>().changetmr>0.1f){
                         Camera.main.GetComponent<GravityWarp>().playerDead = true;
                         GetComponent<AudioSource>().PlayOneShot(Camera.main.GetComponent<AudioManager>().GetLaserKill(), 1);
-                    }
+                    
                 }
             }
         }

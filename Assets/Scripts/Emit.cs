@@ -4,17 +4,49 @@ public class Emit : MonoBehaviour
 {
     bool isActive = true;
 
-    public void toggle()
+    public int links=1; 
+    public bool startStoped;
+   
+   public int noLinked;
+   
+    void Start()
     {
-        if (!isActive)
-        {
-            gameObject.GetComponent<ParticleSystem>().Play();
+        if(startStoped){
+             gameObject.GetComponent<ParticleSystem>().Stop();
+             isActive = false;
         }
-        else
-        {
-            gameObject.GetComponent<ParticleSystem>().Stop();
+    }
+    public void toggle(int linked)
+    {
+        if(linked > 0){
+            noLinked++;
+        }else{
+            noLinked--;
         }
-        isActive = !isActive;
+        
+        if(startStoped){
+            if (noLinked >= links){
+                gameObject.GetComponent<ParticleSystem>().Play();
+            }
+            else
+            {
+                gameObject.GetComponent<ParticleSystem>().Stop();
+                
+            }
+            isActive = !isActive;
+
+        }else{
+            if (noLinked >= links){
+            
+                gameObject.GetComponent<ParticleSystem>().Stop();
+            }
+            else
+            {
+                gameObject.GetComponent<ParticleSystem>().Play();
+                
+            }
+            isActive = !isActive;
+        }
     }
 
 }
