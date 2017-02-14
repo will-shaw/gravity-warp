@@ -39,7 +39,6 @@ public class Player : MonoBehaviour
         menu.GetComponent<MenuHandler>().player = transform;
         am = Camera.main.GetComponent<AudioManager>();
         Camera.main.GetComponent<GravityWarp>().player = transform;
-        Camera.main.GetComponent<GravityWarp>().boxes.Add(transform);
         Camera.main.GetComponent<CameraZoom>().player = transform;
         if (Info.load && Info.checkpoint.x != 0)
         {
@@ -210,9 +209,6 @@ public class Player : MonoBehaviour
         GetComponent<Animator>().SetBool("facingRight", facingRight);
         transform.GetChild(0).gameObject.SetActive(facingRight);
         transform.GetChild(1).gameObject.SetActive(!facingRight);
-        //Vector3 theScale = transform.localScale;
-        //theScale.x *= -1;
-        //transform.localScale = theScale;
     }
 
     void Update()
@@ -227,9 +223,6 @@ public class Player : MonoBehaviour
             remoteLeft.SetActive(true);
             remoteRight.SetActive(true);
         }
-
-
-        //canvas.position = transform.position;
 
         if (timer > 0)
         {
@@ -277,10 +270,10 @@ public class Player : MonoBehaviour
                                 player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -700.0f));
                                 break;
                             case "L":
-                                player.GetComponent<Rigidbody2D>().AddForce(new Vector2(550.0f, 0));
+                                player.GetComponent<Rigidbody2D>().AddForce(new Vector2(700.0f, 0));
                                 break;
                             case "R":
-                                player.GetComponent<Rigidbody2D>().AddForce(new Vector2(-550.0f, 0));
+                                player.GetComponent<Rigidbody2D>().AddForce(new Vector2(-700.0f, 0));
                                 break;
                         }
                         cooldown = Time.realtimeSinceStartup;
