@@ -325,14 +325,14 @@ public class MenuHandler : MonoBehaviour
     {
         if (!(hasGravity))
         {
-            controls.transform.GetChild(3).gameObject.SetActive(false);
+            controls.transform.GetChild(2).gameObject.SetActive(false);
+            controls.transform.GetChild(8).gameObject.SetActive(false);
             controls.transform.GetChild(9).gameObject.SetActive(false);
-            controls.transform.GetChild(10).gameObject.SetActive(false);
         }
         if (!(hasGlue))
         {
-            controls.transform.GetChild(1).gameObject.SetActive(false);
-            controls.transform.GetChild(11).gameObject.SetActive(false);
+            controls.transform.GetChild(0).gameObject.SetActive(false);
+            controls.transform.GetChild(10).gameObject.SetActive(false);
         }
     }
 }
