@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class BoxCollision : MonoBehaviour
 {
-    GravityWarp mainWarp;
     AudioManager am;
     public bool metalBox;
 
@@ -17,7 +16,6 @@ public class BoxCollision : MonoBehaviour
     void Start()
     {
         am = Camera.main.GetComponent<AudioManager>();
-        mainWarp = Camera.main.GetComponent<GravityWarp>();
     }
 
     // Update is called once per frame
@@ -61,7 +59,6 @@ public class BoxCollision : MonoBehaviour
 
         if (other.transform.CompareTag("box destruct"))
         {
-            mainWarp.boxes.Remove(gameObject.transform);
             Destroy(gameObject);
         }
         else if (!(other.transform.CompareTag("Wall")) && !(other.transform.CompareTag("Player")))
@@ -78,7 +75,6 @@ public class BoxCollision : MonoBehaviour
                     {
                         Destroy(other.gameObject.GetComponent<BoxCollision>().activeGlue);
                     }
-                    mainWarp.boxes.Remove(other.transform);
                     Destroy(other.gameObject);
                     GetComponent<AudioSource>().PlayOneShot(am.GetBoxCrush(), 1);
                 }
@@ -92,7 +88,6 @@ public class BoxCollision : MonoBehaviour
                     {
                         Destroy(other.gameObject.GetComponent<BoxCollision>().activeGlue);
                     }
-                    mainWarp.boxes.Remove(other.transform);
                     Destroy(other.gameObject);
                     GetComponent<AudioSource>().PlayOneShot(am.GetBoxCrush(), 1);
                 }
@@ -106,7 +101,6 @@ public class BoxCollision : MonoBehaviour
                     {
                         Destroy(other.gameObject.GetComponent<BoxCollision>().activeGlue);
                     }
-                    mainWarp.boxes.Remove(other.transform);
                     Destroy(other.gameObject);
                     GetComponent<AudioSource>().PlayOneShot(am.GetBoxCrush(), 1);
                 }
@@ -120,7 +114,6 @@ public class BoxCollision : MonoBehaviour
                     {
                         Destroy(other.gameObject.GetComponent<BoxCollision>().activeGlue);
                     }
-                    mainWarp.boxes.Remove(other.transform);
                     Destroy(other.gameObject);
                     GetComponent<AudioSource>().PlayOneShot(am.GetBoxCrush(), 1);
                 }
