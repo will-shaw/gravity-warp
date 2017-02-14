@@ -7,6 +7,7 @@ public class GlueObject : MonoBehaviour
     string currGrav;
     bool expire = true;
     AudioClip splat;
+    bool stuckExpire = false;
     public float expireTimer = 15;
 
     void Start() {
@@ -44,6 +45,7 @@ public class GlueObject : MonoBehaviour
         if (other.gameObject.tag != "Wall" && other.gameObject.tag != "Beam" &&other.gameObject.tag != "Glue")
         {
             Camera.main.GetComponent<GravityWarp>().glues.Remove(gameObject.transform);
+            Destroy(gameObject);
         }
     }
 

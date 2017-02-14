@@ -28,6 +28,7 @@ public class InputManager : MonoBehaviour
     void Start()
     {
         Load();
+        Debug.Log(gravityControlScheme);
     }
 
     public static bool Set(string key, KeyCode val)
@@ -172,6 +173,7 @@ public class InputManager : MonoBehaviour
             gravityDown = data.gravityDown;
             gravityLeft = data.gravityLeft;
             gravityRight = data.gravityRight;
+            data.glue = glue;
 
         if(gravityUp.ToString().Length>4){
             if (gravityUp.ToString().Substring(0, 5) == "Mouse")
