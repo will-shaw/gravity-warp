@@ -29,6 +29,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip spikeKill;
     public AudioClip laserKill;
 
+    public AudioClip[] music;
+
     public AudioClip GetLanding()
     {
         return landClip[Random.Range(0, landClip.Length)];
@@ -95,6 +97,10 @@ public class AudioManager : MonoBehaviour
     public AudioClip GetLaserKill()
     {
         return laserKill;
+    }
+
+    public AudioClip[] GetMusicList() {
+        return music;
     }
 
 }

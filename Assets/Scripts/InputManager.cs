@@ -122,6 +122,8 @@ public class InputManager : MonoBehaviour
         data.gravityRight = gravityRight;
         data.glue = glue;
 
+        data.musicVolume = MusicPlayer.Instance.GetComponent<AudioSource>().volume;
+
         bf.Serialize(file, data);
         file.Close();
         if(gravityUp.ToString().Length>4){
@@ -175,7 +177,9 @@ public class InputManager : MonoBehaviour
             gravityRight = data.gravityRight;
             data.glue = glue;
 
-        if(gravityUp.ToString().Length>4){
+            MusicPlayer.Instance.SetVolume(data.musicVolume);
+
+            if(gravityUp.ToString().Length>4){
             if (gravityUp.ToString().Substring(0, 5) == "Mouse")
             {
               Debug.Log("Gravity using mouse control");
@@ -222,4 +226,6 @@ class ControlSettings
     public KeyCode gravityDown;
     public KeyCode gravityLeft;
     public KeyCode gravityRight;
+
+    public float musicVolume;
 }
