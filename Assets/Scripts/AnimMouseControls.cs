@@ -128,7 +128,6 @@ public class AnimMouseControls : MonoBehaviour {
 
     float Deadzone(float v, int s)
     {
-		Debug.Log("hi");
         if (s == 0)
         {
             return v * threshhold;
