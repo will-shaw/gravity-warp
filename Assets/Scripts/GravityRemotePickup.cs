@@ -6,7 +6,6 @@ public class GravityRemotePickup : MonoBehaviour {
 
     public GameObject menu;
 
-    static bool menuOnce = false;
 
     public float timer;
     //Calls disableAutoGravity when gravity remote is pickuped by player
@@ -14,7 +13,7 @@ public class GravityRemotePickup : MonoBehaviour {
 	{
 		if(other.gameObject.tag == "Player" && !once){
             once = true;
-            Info.checkpoint = new Vector3(-11.6f,7f,-7f);
+            Info.checkpoint = new Vector3(-11.6f,7f,0f);
             Info.checktime = Camera.main.GetComponent<GravityWarp>().leveltmr;
             GetComponent<AudioSource>().Play();
             Camera.main.GetComponent<Level_1Control>().disableAutoGravity();
@@ -22,10 +21,10 @@ public class GravityRemotePickup : MonoBehaviour {
             checkpoint.SetActive(true);
             GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
             MenuHandler.hasGravity = true;
-            if(!(menuOnce))
+            if(Info.GravInfo)
             {
                 menu.GetComponent<MenuHandler>().ShowGravityControls();
-                menuOnce = true;
+                Info.GravInfo = false;
             }
         }
 	}
