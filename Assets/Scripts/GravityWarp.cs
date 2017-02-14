@@ -289,4 +289,12 @@ public class GravityWarp : MonoBehaviour
             }
         }
     }
+    
+    public void glueExtraPlace(){
+        Destroy(glues[0].gameObject);
+        glues.RemoveAt(0);
+        /*for(int i=1;i<glues.Capacity;i++){
+            glues[i-1] = glues[i];
+        }*/
+    }
 }
