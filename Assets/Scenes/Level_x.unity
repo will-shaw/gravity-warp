@@ -357,6 +357,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114170733892747208, guid: ee86be60910051d48888721ee5ef233c,
+        type: 2}
+      propertyPath: expireTimer
+      value: 100000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ee86be60910051d48888721ee5ef233c, type: 2}
   m_IsPrefabParent: 0
