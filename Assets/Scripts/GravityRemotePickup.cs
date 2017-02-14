@@ -6,6 +6,8 @@ public class GravityRemotePickup : MonoBehaviour {
 
     public GameObject menu;
 
+    static bool menuOnce = false;
+
     public float timer;
     //Calls disableAutoGravity when gravity remote is pickuped by player
     void OnTriggerEnter2D(Collider2D other)
@@ -20,7 +22,11 @@ public class GravityRemotePickup : MonoBehaviour {
             checkpoint.SetActive(true);
             GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
             MenuHandler.hasGravity = true;
-            menu.GetComponent<MenuHandler>().ShowGravityControls();
+            if(!(menuOnce))
+            {
+                menu.GetComponent<MenuHandler>().ShowGravityControls();
+                menuOnce = true;
+            }
         }
 	}
 
