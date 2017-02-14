@@ -38,9 +38,9 @@ public class Field : MonoBehaviour
                 {
                     if (other.gameObject.tag == "Player")
                     {
-                            Camera.main.GetComponent<GravityWarp>().playerDead = true;
-                            GetComponent<AudioSource>().PlayOneShot(Camera.main.GetComponent<AudioManager>().GetLaserKill(), 1);
-                    
+                        Camera.main.GetComponent<GravityWarp>().playerDead = true;
+                        GetComponent<AudioSource>().PlayOneShot(Camera.main.GetComponent<AudioManager>().GetLaserKill(), 1);
+                        other.gameObject.GetComponent<Animator>().SetBool("isCrushed", true);
                     }
                     else
                     {
@@ -52,9 +52,9 @@ public class Field : MonoBehaviour
             {
                 if (other.gameObject.tag == "Player")
                 {
-                        Camera.main.GetComponent<GravityWarp>().playerDead = true;
-                        GetComponent<AudioSource>().PlayOneShot(Camera.main.GetComponent<AudioManager>().GetLaserKill(), 1);
-                    
+                    Camera.main.GetComponent<GravityWarp>().playerDead = true;
+                    GetComponent<AudioSource>().PlayOneShot(Camera.main.GetComponent<AudioManager>().GetLaserKill(), 1);
+                    other.gameObject.GetComponent<Animator>().SetBool("isCrushed", true);
                 }
             }
         }

@@ -120,33 +120,11 @@ public class BoxCollision : MonoBehaviour
         }
         else if (other.transform.CompareTag("Player") && !GetComponent<Glue>().isGlued())
         {
-            if (velocityY > 23f)
+            if (velocityY > 23f || velocityX > 23f || velocityY1 < -23f || velocityX1 < -23f)
             {
                 Camera.main.GetComponent<GravityWarp>().playerDead = true;
                 GetComponent<AudioSource>().PlayOneShot(am.GetBoxCrush(), 1);
-                			other.gameObject.GetComponent<Animator>().SetBool("isCrushed", true);			
-
-            }
-            if (velocityX > 23f)
-            {
-                Camera.main.GetComponent<GravityWarp>().playerDead = true;
-                GetComponent<AudioSource>().PlayOneShot(am.GetBoxCrush(), 1);
-                			other.gameObject.GetComponent<Animator>().SetBool("isCrushed", true);			
-
-            }
-            if (velocityY1 < -23f)
-            {
-                Camera.main.GetComponent<GravityWarp>().playerDead = true;
-                GetComponent<AudioSource>().PlayOneShot(am.GetBoxCrush(), 1);
-                			other.gameObject.GetComponent<Animator>().SetBool("isCrushed", true);			
-
-            }
-            if (velocityX1 < -23f)
-            {
-                Camera.main.GetComponent<GravityWarp>().playerDead = true;
-                GetComponent<AudioSource>().PlayOneShot(am.GetBoxCrush(), 1);
-                			other.gameObject.GetComponent<Animator>().SetBool("isCrushed", true);			
-
+                other.gameObject.GetComponent<Animator>().SetBool("isCrushed", true);
             }
         }
         velocityX = 0f;
