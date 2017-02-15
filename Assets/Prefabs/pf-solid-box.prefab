@@ -184,14 +184,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   metalBox: 1
-  metalClips:
-  - {fileID: 8300000, guid: 56bbde652d598864f956fd39bd49dd3d, type: 3}
-  - {fileID: 8300000, guid: d9f44e62a095cef47908c4c242da3805, type: 3}
-  - {fileID: 8300000, guid: 744bcf0d4376d2648a3500670f853f53, type: 3}
-  woodClips:
-  - {fileID: 8300000, guid: eb81f90add03e5b4fae9b47da763f196, type: 3}
-  - {fileID: 8300000, guid: 0f25737726e74634abb662c7dd8b6e55, type: 3}
-  - {fileID: 8300000, guid: f82481653ddab8645a44ee8b03e4ca43, type: 3}
 --- !u!212 &212907124603322772
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -205,7 +197,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b7e14e296568bb44597b2001159582e8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

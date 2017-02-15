@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212316143659602638}
   - component: {fileID: 61452891380853910}
   - component: {fileID: 114263108842821250}
+  - component: {fileID: 108236090496551742}
   m_Layer: 0
   m_Name: pf-forcefield-beam
   m_TagString: Untagged
@@ -56,6 +57,40 @@ BoxCollider2D:
   m_Offset: {x: -0.09098947, y: 0.007905245}
   serializedVersion: 2
   m_Size: {x: 1.4636533, y: 5.152176}
+--- !u!108 &108236090496551742
+Light:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1351011284950344}
+  m_Enabled: 1
+  serializedVersion: 7
+  m_Type: 2
+  m_Color: {r: 0.10980393, g: 0.3372549, b: 0.49803925, a: 1}
+  m_Intensity: 2.39
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 1
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!114 &114263108842821250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -70,6 +105,8 @@ MonoBehaviour:
   laser: 0
   active: 1
   objectKilling: 0
+  linksRequired: 1
+  startOff: 0
 --- !u!212 &212316143659602638
 SpriteRenderer:
   m_ObjectHideFlags: 1
