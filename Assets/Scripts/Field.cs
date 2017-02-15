@@ -25,8 +25,7 @@ public class Field : MonoBehaviour
         {
             gameObject.GetComponent<Renderer>().enabled = false;
             gameObject.GetComponent<Collider2D>().enabled = false;
-                GetComponent<Light>().enabled = false;
-            
+            GetComponent<Light>().enabled = false;
         }
     }
 
@@ -42,7 +41,7 @@ public class Field : MonoBehaviour
                     {
                         Camera.main.GetComponent<GravityWarp>().playerDead = true;
                         GetComponent<AudioSource>().PlayOneShot(Camera.main.GetComponent<AudioManager>().GetLaserKill(), 1);
-                        other.gameObject.GetComponent<Animator>().SetBool("isCrushed", true);
+                        other.gameObject.GetComponent<Animator>().SetBool("hitLaser", true);
                     }
                     else
                     {
@@ -56,7 +55,7 @@ public class Field : MonoBehaviour
                 {
                     Camera.main.GetComponent<GravityWarp>().playerDead = true;
                     GetComponent<AudioSource>().PlayOneShot(Camera.main.GetComponent<AudioManager>().GetLaserKill(), 1);
-                    other.gameObject.GetComponent<Animator>().SetBool("isCrushed", true);
+                    other.gameObject.GetComponent<Animator>().SetBool("hitLaser", true);
                 }
             }
         }
@@ -102,14 +101,14 @@ public class Field : MonoBehaviour
                 gameObject.GetComponent<Renderer>().enabled = false;
                 gameObject.GetComponent<Collider2D>().enabled = false;
                 active = !active;
-                GetComponent<Light>().enabled = false;                
+                GetComponent<Light>().enabled = false;
             }
             else if (!(active))
             {
                 gameObject.GetComponent<Renderer>().enabled = true;
                 gameObject.GetComponent<Collider2D>().enabled = true;
                 active = !active;
-                GetComponent<Light>().enabled = true;                
+                GetComponent<Light>().enabled = true;
             }
         }
     }
