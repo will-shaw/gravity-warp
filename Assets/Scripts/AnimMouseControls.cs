@@ -83,9 +83,9 @@ public class AnimMouseControls : MonoBehaviour {
                 // Instantiate the radial menu at the mouse position.
                 Vector3 mousePos = Input.mousePosition;
                 Vector3 objectPos = Camera.main.ScreenToWorldPoint(mousePos);
-				objectPos.x += -22.2F;
-				objectPos.y += -17.5F;
-                menu.transform.localPosition = objectPos;
+				objectPos.x += -12.2F;
+				objectPos.y += -9.7F;
+                menu.transform.position = objectPos;
 				outer.gameObject.SetActive(true);
 				inner.gameObject.SetActive(true);
 				controlsActive = true;
