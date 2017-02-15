@@ -85,6 +85,7 @@ public class AnimMouseControls : MonoBehaviour {
                 Vector3 objectPos = Camera.main.ScreenToWorldPoint(mousePos);
 				objectPos.x += -12.2F;
 				objectPos.y += -9.7F;
+                objectPos.z = -13;
                 menu.transform.position = objectPos;
 				outer.gameObject.SetActive(true);
 				inner.gameObject.SetActive(true);
