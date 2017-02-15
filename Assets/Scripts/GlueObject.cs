@@ -27,7 +27,7 @@ public class GlueObject : MonoBehaviour
                 other.GetComponent<Glue>().gluing(tutGlue);
                 GetComponent<SpriteRenderer>().sprite = sprites[2];
                 GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-                expire = false;
+                expireTimer = 15f;
                 isStuck = true;
             }
             else if (other.gameObject.tag == "Wall" || other.gameObject.GetComponent<BoxCollision>() != null)
@@ -77,7 +77,8 @@ public class GlueObject : MonoBehaviour
         if (expire && expireTimer < 0)
         {   
             if(!tutGlue){
-                Camera.main.GetComponent<GravityWarp>().glueExtraPlace();
+                Camera.main.GetComponent<GravityWarp>().glues.Remove(gameObject.transform);
+                Destroy(gameObject);
                 Camera.main.GetComponent<CameraZoom>().player.GetComponent<GlueControl>().changeGlueCount(0);
             }else{
                 Destroy(gameObject);
