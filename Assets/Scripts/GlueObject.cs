@@ -47,9 +47,9 @@ public class GlueObject : MonoBehaviour
         {
             if(!tutGlue){
                 Camera.main.GetComponent<GravityWarp>().glues.Remove(gameObject.transform); 
-            }else{
-            Destroy(gameObject);
             }
+            Destroy(gameObject);
+            
         }
     }
 
