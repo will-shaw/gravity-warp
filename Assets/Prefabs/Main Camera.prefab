@@ -56,7 +56,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.27058825, g: 0.27058825, b: 0.27058825, a: 0}
+  m_BackGroundColor: {r: 0.078431375, g: 0.08627451, b: 0.09803922, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -132,11 +132,6 @@ MonoBehaviour:
   change: {fileID: 8300000, guid: 26709088ce559e34c97a36ff1dfd5436, type: 3}
   spikeKill: {fileID: 8300000, guid: 93ffcae850c73c74b9986211d33f0f1f, type: 3}
   laserKill: {fileID: 8300000, guid: 25606288e42e3e1498039a060cc8b91d, type: 3}
-  music:
-  - {fileID: 8300000, guid: 35d9bda84b4d2db44b4a432d9d4720a2, type: 3}
-  - {fileID: 8300000, guid: 3f9211fd3b853534c8d8fc76e148e43b, type: 3}
-  - {fileID: 8300000, guid: e44c3ab104d90a4489527428d0a1312e, type: 3}
-  - {fileID: 8300000, guid: 6133d8d9cc1f4b84a8f82bc0d1dd5068, type: 3}
 --- !u!114 &114420006540710784
 MonoBehaviour:
   m_ObjectHideFlags: 1
