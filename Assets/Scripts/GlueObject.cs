@@ -9,7 +9,7 @@ public class GlueObject : MonoBehaviour
     AudioClip splat;
     public float expireTimer = 15;
 
-    public float playerImmunity = 1F;
+    public float playerImmunity = 0.003F;
     public float playerImmunityTimer;
 
     public bool tutGlue =false;
@@ -60,6 +60,9 @@ public class GlueObject : MonoBehaviour
             {
                 return;
             }
+            if(!tutGlue){
+                Camera.main.GetComponent<CameraZoom>().player.GetComponent<GlueControl>().changeGlueCount(0);
+            }
             Destroy(gameObject);
             
         }
@@ -88,7 +91,8 @@ public class GlueObject : MonoBehaviour
             //float angle = Mathf.Atan2(GetComponent<Rigidbody2D>().velocity.y, GetComponent<Rigidbody2D>().velocity.x) * Mathf.Rad2Deg;
             //transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             Vector3 angleFromVelocity = GetComponent<Rigidbody2D>().velocity;
-            float currentX = angleFromVelocity.x;
+            transform.right = angleFromVelocity;
+            /*float currentX = angleFromVelocity.x;
             float currentY = angleFromVelocity.y;
             float currentZ = angleFromVelocity.z;
             switch(GravityWarp.gravity) {
@@ -104,7 +108,7 @@ public class GlueObject : MonoBehaviour
                 case "R" :
                     transform.right = new Vector3(currentX,currentY+90F,currentZ);
                     break;            
-            }
+            }*/
         }
         if (expire && expireTimer < 0)
         {   
@@ -152,7 +156,6 @@ public class GlueObject : MonoBehaviour
         direction.Normalize();
         direction *= 55;
         GetComponent<Rigidbody2D>().velocity = direction;
-        Debug.Log(GetComponent<Rigidbody2D>().velocity);
     }
     
 }
