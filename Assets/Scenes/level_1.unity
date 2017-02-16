@@ -1374,11 +1374,11 @@ Transform:
   - {fileID: 257386231}
   - {fileID: 1423327431}
   - {fileID: 1630468699}
+  - {fileID: 1010291007}
   - {fileID: 1526905199}
   - {fileID: 2020823588}
   - {fileID: 256201130}
   - {fileID: 2097305746}
-  - {fileID: 1010291007}
   - {fileID: 1473878453}
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -5432,6 +5432,11 @@ Prefab:
       propertyPath: spreadCustomCurve.m_RotationOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114311439765813586, guid: 1cc992d50b82c5a43a9af736e733d848,
+        type: 2}
+      propertyPath: facingRight
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1cc992d50b82c5a43a9af736e733d848, type: 2}
   m_IsPrefabParent: 0
@@ -6539,6 +6544,25 @@ Light:
   m_BounceIntensity: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1566914930 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1626041011987022, guid: 727ed3a472f879a44b38bb7dbdfd1104,
+    type: 2}
+  m_PrefabInternal: {fileID: 955278753}
+--- !u!61 &1566914931
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1566914930}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: -0.008123398, y: -0.002128601}
+  serializedVersion: 2
+  m_Size: {x: 2.6226392, y: 2.5701475}
 --- !u!1 &1567040272
 GameObject:
   m_ObjectHideFlags: 0
