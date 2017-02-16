@@ -6,13 +6,18 @@ public class BoxCollision : MonoBehaviour
     AudioManager am;
     public bool metalBox;
 
-    float velocityY = 0f;
-    float velocityX = 0f;
-    float velocityY1 = 0f;
-    float velocityX1 = 0f;
+    public float velocityY = 0f;
+    public float velocityX = 0f;
+    public float velocityY1 = 0f;
+    public float velocityX1 = 0f;
     GameObject activeButton;
     GameObject activeGlue;
+    bool velocityPositive = false;
+    bool velocitynegitive = false;
 
+    public Transform boxFragmentPrefab;
+
+    float tmr = 0.0f;
     void Start()
     {
         am = Camera.main.GetComponent<AudioManager>();
@@ -20,6 +25,8 @@ public class BoxCollision : MonoBehaviour
 
     void Update()
     {
+
+
         // new audio code
         if (gameObject.transform.GetComponent<Rigidbody2D>().velocity.x == 0f && gameObject.transform.GetComponent<Rigidbody2D>().velocity.y == 0f)
         {
@@ -31,21 +38,53 @@ public class BoxCollision : MonoBehaviour
 
             gameObject.GetComponent<AudioSource>().Stop();
         }
-        if (velocityX < gameObject.transform.GetComponent<Rigidbody2D>().velocity.x)
+        if (gameObject.transform.GetComponent<Rigidbody2D>().velocity.y < 1 && gameObject.transform.GetComponent<Rigidbody2D>().velocity.x < 1)
         {
-            velocityX = gameObject.transform.GetComponent<Rigidbody2D>().velocity.x;
+            velocityPositive = false;
         }
-        if (velocityY < gameObject.transform.GetComponent<Rigidbody2D>().velocity.y)
+        else
         {
-            velocityY = gameObject.transform.GetComponent<Rigidbody2D>().velocity.y;
+            velocityPositive = true;
         }
-        if (velocityX1 > gameObject.transform.GetComponent<Rigidbody2D>().velocity.x)
+        if (gameObject.transform.GetComponent<Rigidbody2D>().velocity.y > -1 && gameObject.transform.GetComponent<Rigidbody2D>().velocity.x > -1)
         {
-            velocityX1 = gameObject.transform.GetComponent<Rigidbody2D>().velocity.x;
+            velocitynegitive = false;
         }
-        if (velocityY1 > gameObject.transform.GetComponent<Rigidbody2D>().velocity.y)
+        else
         {
-            velocityY1 = gameObject.transform.GetComponent<Rigidbody2D>().velocity.y;
+            velocitynegitive = true;
+        }
+        if (!(velocitynegitive) && !(velocityPositive))
+        {
+            tmr += Time.deltaTime;
+            if (tmr > 1)
+            {
+                velocityX = 0f;
+                velocityX1 = 0f;
+                velocityY = 0f;
+                velocityY1 = 0f;
+            }
+
+        }
+        else
+        {
+            tmr = 0f;
+            if (velocityX < gameObject.transform.GetComponent<Rigidbody2D>().velocity.x)
+            {
+                velocityX = gameObject.transform.GetComponent<Rigidbody2D>().velocity.x;
+            }
+            if (velocityY < gameObject.transform.GetComponent<Rigidbody2D>().velocity.y)
+            {
+                velocityY = gameObject.transform.GetComponent<Rigidbody2D>().velocity.y;
+            }
+            if (velocityX1 > gameObject.transform.GetComponent<Rigidbody2D>().velocity.x)
+            {
+                velocityX1 = gameObject.transform.GetComponent<Rigidbody2D>().velocity.x;
+            }
+            if (velocityY1 > gameObject.transform.GetComponent<Rigidbody2D>().velocity.y)
+            {
+                velocityY1 = gameObject.transform.GetComponent<Rigidbody2D>().velocity.y;
+            }
         }
 
     }
@@ -64,7 +103,7 @@ public class BoxCollision : MonoBehaviour
         {
             if (other.gameObject.tag == "destructable")
             {
-                if (velocityX1 < -18f)
+                if (velocityX1 < -18f || velocityX > 18f || velocityY > 30f || velocityY1 < -30f)
                 {
                     if (other.gameObject.GetComponent<BoxCollision>().activeButton != null)
                     {
@@ -75,45 +114,7 @@ public class BoxCollision : MonoBehaviour
                         Destroy(other.gameObject.GetComponent<BoxCollision>().activeGlue);
                     }
                     Destroy(other.gameObject);
-                    GetComponent<AudioSource>().PlayOneShot(am.GetBoxCrush(), 1);
-                }
-                if (velocityX > 18f)
-                {
-                    if (other.gameObject.GetComponent<BoxCollision>().activeButton != null)
-                    {
-                        other.gameObject.GetComponent<BoxCollision>().activeButton.GetComponent<ButtonScript>().SubLink();
-                    }
-                    if (other.gameObject.GetComponent<BoxCollision>().activeGlue != null)
-                    {
-                        Destroy(other.gameObject.GetComponent<BoxCollision>().activeGlue);
-                    }
-                    Destroy(other.gameObject);
-                    GetComponent<AudioSource>().PlayOneShot(am.GetBoxCrush(), 1);
-                }
-                if (velocityY > 30f)
-                {
-                    if (other.gameObject.GetComponent<BoxCollision>().activeButton != null)
-                    {
-                        other.gameObject.GetComponent<BoxCollision>().activeButton.GetComponent<ButtonScript>().SubLink();
-                    }
-                    if (other.gameObject.GetComponent<BoxCollision>().activeGlue != null)
-                    {
-                        Destroy(other.gameObject.GetComponent<BoxCollision>().activeGlue);
-                    }
-                    Destroy(other.gameObject);
-                    GetComponent<AudioSource>().PlayOneShot(am.GetBoxCrush(), 1);
-                }
-                if (velocityY1 < -30f)
-                {
-                    if (other.gameObject.GetComponent<BoxCollision>().activeButton != null)
-                    {
-                        other.gameObject.GetComponent<BoxCollision>().activeButton.GetComponent<ButtonScript>().SubLink();
-                    }
-                    if (other.gameObject.GetComponent<BoxCollision>().activeGlue != null)
-                    {
-                        Destroy(other.gameObject.GetComponent<BoxCollision>().activeGlue);
-                    }
-                    Destroy(other.gameObject);
+                    Instantiate(boxFragmentPrefab, other.transform.position, Quaternion.identity);
                     GetComponent<AudioSource>().PlayOneShot(am.GetBoxCrush(), 1);
                 }
             }

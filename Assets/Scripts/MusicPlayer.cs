@@ -7,6 +7,10 @@ public class MusicPlayer : MonoBehaviour
 
     public static float musicVolume = 1;
 
+    float fadeSpeed = 2;
+
+    AudioSource aSource;
+
     public AudioClip[] playlist = new AudioClip[0];
 
     public static MusicPlayer Instance
@@ -14,12 +18,18 @@ public class MusicPlayer : MonoBehaviour
         get { return instance; }
     }
 
-	public float GetMusicVolume() {
-        musicVolume = GetComponent<AudioSource>().volume;
+    void Start()
+    {
+        aSource = GetComponent<AudioSource>();
+    }
+
+    public float GetMusicVolume()
+    {
         return musicVolume;
     }
 
-	public void SetVolume(float vol) {
+    public void SetVolume(float vol)
+    {
         musicVolume = vol;
     }
 
@@ -37,17 +47,28 @@ public class MusicPlayer : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    void Start()
+    void FixedUpdate()
     {
-        if (SceneManager.GetActiveScene().buildIndex != 0)
+        if (!aSource.isPlaying && SceneManager.GetActiveScene().buildIndex != 0)
         {
             PlayMusic();
+            aSource.volume = musicVolume;
+        }
+
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            StopMusic();
         }
     }
 
-    public void PlayMusic()
+    void PlayMusic()
     {
-        GetComponent<AudioSource>().PlayOneShot(playlist[0], musicVolume);
+        aSource.PlayOneShot(playlist[Random.Range(0, playlist.Length - 1)], musicVolume);
+    }
+
+    void StopMusic()
+    {
+        aSource.Stop();
     }
 
 }

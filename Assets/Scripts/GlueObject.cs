@@ -9,10 +9,15 @@ public class GlueObject : MonoBehaviour
     AudioClip splat;
     public float expireTimer = 15;
 
+    public float playerImmunity = 5F;
+    public float playerImmunityTimer;
+
     public bool tutGlue =false;
 
     void Start() {
         splat = Camera.main.GetComponent<AudioManager>().GetGlueSplat();
+        SetInitalVelocity();
+        playerImmunityTimer = 0;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -23,6 +28,9 @@ public class GlueObject : MonoBehaviour
             {
                 if(other.tag == "destructable") {
                     other.GetComponent<BoxCollision>().setActiveGlue(gameObject);
+                }
+                if(other.gameObject.tag == "Player" && playerImmunityTimer < playerImmunity) {
+                    return;
                 }
                 other.GetComponent<Glue>().gluing(tutGlue);
                 GetComponent<SpriteRenderer>().sprite = sprites[2];
@@ -48,6 +56,10 @@ public class GlueObject : MonoBehaviour
             if(!tutGlue){
                 Camera.main.GetComponent<GravityWarp>().glues.Remove(gameObject.transform); 
             }
+            if(playerImmunityTimer < playerImmunity)
+            {
+                return;
+            }
             Destroy(gameObject);
             
         }
@@ -55,9 +67,9 @@ public class GlueObject : MonoBehaviour
 
     void Update()
     {
-        if (GravityWarp.gravity != currGrav && !isStuck)
+        if (/*GravityWarp.gravity != currGrav && */!isStuck)
         {
-            currGrav = GravityWarp.gravity;
+            /*currGrav = GravityWarp.gravity;
             switch (currGrav)
             {
                 case "U":
@@ -72,6 +84,26 @@ public class GlueObject : MonoBehaviour
                 case "R":
                     transform.rotation = Quaternion.Euler(0, 0, 270);
                     break;
+            }*/
+            //float angle = Mathf.Atan2(GetComponent<Rigidbody2D>().velocity.y, GetComponent<Rigidbody2D>().velocity.x) * Mathf.Rad2Deg;
+            //transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            Vector3 angleFromVelocity = GetComponent<Rigidbody2D>().velocity;
+            float currentX = angleFromVelocity.x;
+            float currentY = angleFromVelocity.y;
+            float currentZ = angleFromVelocity.z;
+            switch(GravityWarp.gravity) {
+                case "D" :
+                    transform.right = new Vector3(currentX+90F,currentY,currentZ);  
+                    break;
+                case "U" :
+                    transform.right = new Vector3(currentX-90F,currentY,currentZ);
+                    break;
+                case "L" :
+                    transform.right = new Vector3(currentX,currentY-90F,currentZ);
+                    break;
+                case "R" :
+                    transform.right = new Vector3(currentX,currentY+90F,currentZ);
+                    break;            
             }
         }
         if (expire && expireTimer < 0)
@@ -88,6 +120,9 @@ public class GlueObject : MonoBehaviour
         else if (expire)
         {
             expireTimer -= Time.deltaTime;
+        }
+        if(playerImmunityTimer < playerImmunity) {
+            playerImmunityTimer += Time.deltaTime;
         }
     }
 
@@ -108,6 +143,16 @@ public class GlueObject : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0, 0, 90);
                 break;
         }
+    }
+
+    void SetInitalVelocity()
+    {
+        Vector3 worldMousePosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+        Vector3 direction = worldMousePosition - Camera.main.GetComponent<CameraZoom>().player.transform.position;
+        direction.Normalize();
+        direction *= 70;
+        GetComponent<Rigidbody2D>().velocity = direction;
+        Debug.Log(GetComponent<Rigidbody2D>().velocity);
     }
     
 }

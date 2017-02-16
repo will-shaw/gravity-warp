@@ -71,7 +71,15 @@ public class Player : MonoBehaviour
         {
             //new sound code
             other.gameObject.GetComponent<AudioSource>().PlayOneShot(am.GetBoxSlide(), 1);
+            GetComponent<Animator>().SetBool("isPushing", true);
             other.gameObject.GetComponent<AudioSource>().volume = 1;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.GetComponent<BoxCollision>() != null) {
+            GetComponent<Animator>().SetBool("isPushing", false);
         }
     }
 
@@ -335,6 +343,7 @@ public void  antiPhase(){
     Vector2 up = Vector2.up;
     string grav = GravityWarp.gravity;
 
+    Debug.Log("antiphase");
     switch (grav)
         {
             case "U":

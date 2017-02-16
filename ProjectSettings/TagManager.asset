@@ -10,6 +10,8 @@ TagManager:
   - Glue
   - bl
   - Beam
+  - test1
+  - test2
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - 
   - 
   - Clutter
-  - 
+  - Laser
   - 
   - 
   - 

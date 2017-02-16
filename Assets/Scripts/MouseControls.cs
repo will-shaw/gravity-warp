@@ -36,18 +36,22 @@ public class MouseControls : MonoBehaviour
                 if (dx > distance && (dy < Deadzone(dx, 0) && dy > Deadzone(dx, 1)))
                 {
                     GravityWarp.gravity = "L";
+                    Camera.main.GetComponent<GravityWarp>().antiPhaseRE();
                 }
                 else if (dx < -distance && (dy < Deadzone(dx, 1) && dy > Deadzone(dx, 0)))
                 {
                     GravityWarp.gravity = "R";
+                    Camera.main.GetComponent<GravityWarp>().antiPhaseRE();
                 }
                 else if (dy > distance && (dx < Deadzone(dy, 0) && dx > Deadzone(dy, 1)))
                 {
                     GravityWarp.gravity = "D";
+                    Camera.main.GetComponent<GravityWarp>().antiPhaseRE();
                 }
                 else if (dy < -distance && (dx < Deadzone(dy, 1) && dx > Deadzone(dy, 0)))
                 {
                     GravityWarp.gravity = "U";
+                    Camera.main.GetComponent<GravityWarp>().antiPhaseRE();
                 }
 
                 if (instantiatedMenu)

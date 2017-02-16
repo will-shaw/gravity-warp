@@ -33,7 +33,7 @@ public class GlueControl : MonoBehaviour
             if (glueCount < glueLimit)
             {
                 Transform glueNew;
-                glueNew = Instantiate(gluePrefab, ValidTarget(), Quaternion.identity);
+                glueNew = Instantiate(gluePrefab, /*ValidTarget()*/Camera.main.GetComponent<CameraZoom>().player.position, Quaternion.identity);
                 glueCount++;
                 Camera.main.GetComponent<GravityWarp>().glues.Add(glueNew);
             }else if(glueCount >= glueLimit){
