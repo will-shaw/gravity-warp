@@ -46,12 +46,14 @@ public class Door : MonoBehaviour
         {
             foreach (SpriteRenderer light in lights)
             {
-                light.color = new Color(0, 255, 0);
+                light.color = Color.green;
+                light.GetComponentInChildren<Light>().color = Color.green;                
             }
         } else if ((transform.position.y >= (closedPosY - (height / 1.5))) || transform.position.y <= (closedPosY + (height / 1.5))) {
             foreach (SpriteRenderer light in lights)
             {
-                light.color = new Color(255, 0, 0);
+                light.color = Color.red;
+                light.GetComponentInChildren<Light>().color = Color.red;
             }
         }
     }
@@ -139,11 +141,13 @@ public class Door : MonoBehaviour
         {
             if (s == 0)
             {
-                light.color = new Color(255, 0, 0);
+                light.color = Color.red;
+                light.GetComponentInChildren<Light>().color = Color.red;
             }
             else
             {
-                light.color = new Color(0, 255, 0);
+                light.GetComponentInChildren<Light>().color = Color.green;
+                light.color = Color.green;
             }
         }
         StartLerp();

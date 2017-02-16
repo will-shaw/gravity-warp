@@ -61,7 +61,7 @@ public class MusicPlayer : MonoBehaviour
         }
     }
 
-    public void PlayMusic()
+    void PlayMusic()
     {
         aSource.PlayOneShot(playlist[Random.Range(0, playlist.Length - 1)], musicVolume);
     }
