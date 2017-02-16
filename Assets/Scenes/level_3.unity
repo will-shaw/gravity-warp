@@ -2941,7 +2941,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1268476290539460, guid: 50b41ddc32c478d4c8f0f9402a252ce4, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1418852584812510, guid: 50b41ddc32c478d4c8f0f9402a252ce4, type: 2}
       propertyPath: m_IsActive
@@ -9112,6 +9112,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   metalBox: 1
+  velocityY: 0
+  velocityX: 0
+  velocityY1: 0
+  velocityX1: 0
+  boxFragmentPrefab: {fileID: 0}
 --- !u!114 &2064042408
 MonoBehaviour:
   m_ObjectHideFlags: 0
