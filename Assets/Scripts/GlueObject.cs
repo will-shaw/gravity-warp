@@ -9,7 +9,7 @@ public class GlueObject : MonoBehaviour
     AudioClip splat;
     public float expireTimer = 15;
 
-    public float playerImmunity = 5F;
+    public float playerImmunity = 1F;
     public float playerImmunityTimer;
 
     public bool tutGlue =false;
@@ -56,7 +56,7 @@ public class GlueObject : MonoBehaviour
             if(!tutGlue){
                 Camera.main.GetComponent<GravityWarp>().glues.Remove(gameObject.transform); 
             }
-            if(playerImmunityTimer < playerImmunity)
+            if(playerImmunityTimer < playerImmunity+0.5F)
             {
                 return;
             }
@@ -121,7 +121,7 @@ public class GlueObject : MonoBehaviour
         {
             expireTimer -= Time.deltaTime;
         }
-        if(playerImmunityTimer < playerImmunity) {
+        if(playerImmunityTimer < playerImmunity+0.6F) {
             playerImmunityTimer += Time.deltaTime;
         }
     }
@@ -150,7 +150,7 @@ public class GlueObject : MonoBehaviour
         Vector3 worldMousePosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
         Vector3 direction = worldMousePosition - Camera.main.GetComponent<CameraZoom>().player.transform.position;
         direction.Normalize();
-        direction *= 70;
+        direction *= 55;
         GetComponent<Rigidbody2D>().velocity = direction;
         Debug.Log(GetComponent<Rigidbody2D>().velocity);
     }

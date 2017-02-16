@@ -7308,6 +7308,11 @@ Prefab:
       propertyPath: glueEnabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114830102485292760, guid: 1cc992d50b82c5a43a9af736e733d848,
+        type: 2}
+      propertyPath: exitDoor
+      value: 
+      objectReference: {fileID: 848122168}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1cc992d50b82c5a43a9af736e733d848, type: 2}
   m_IsPrefabParent: 0
@@ -8567,7 +8572,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4551502124392962, guid: b6e58a8cb5cc66240829db150ba3816c, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4551502124392962, guid: b6e58a8cb5cc66240829db150ba3816c, type: 2}
       propertyPath: m_LocalRotation.x
