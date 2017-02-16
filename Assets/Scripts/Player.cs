@@ -335,6 +335,7 @@ public void  antiPhase(){
     Vector2 up = Vector2.up;
     string grav = GravityWarp.gravity;
 
+    Debug.Log("antiphase");
     switch (grav)
         {
             case "U":
