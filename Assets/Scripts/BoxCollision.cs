@@ -6,10 +6,10 @@ public class BoxCollision : MonoBehaviour
     AudioManager am;
     public bool metalBox;
 
-    float velocityY = 0f;
-    float velocityX = 0f;
-    float velocityY1 = 0f;
-    float velocityX1 = 0f;
+    public float velocityY = 0f;
+    public float velocityX = 0f;
+    public float velocityY1 = 0f;
+    public float velocityX1 = 0f;
     GameObject activeButton;
     GameObject activeGlue;
 
