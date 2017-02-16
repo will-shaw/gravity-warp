@@ -28,7 +28,6 @@ public class InputManager : MonoBehaviour
     void Start()
     {
         Load();
-        Debug.Log(gravityControlScheme);
     }
 
     public static bool Set(string key, KeyCode val)

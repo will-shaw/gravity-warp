@@ -4,10 +4,8 @@ using UnityEngine.SceneManagement;
 public class MusicPlayer : MonoBehaviour
 {
     private static MusicPlayer instance = null;
-
+    
     public static float musicVolume = 1;
-
-    float fadeSpeed = 2;
 
     AudioSource aSource;
 

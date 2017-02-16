@@ -69,8 +69,8 @@ public class GlueObject : MonoBehaviour
     {
         if (/*GravityWarp.gravity != currGrav && */!isStuck)
         {
-            /*currGrav = GravityWarp.gravity;
-            switch (currGrav)
+            currGrav = GravityWarp.gravity;
+            /*switch (currGrav)
             {
                 case "U":
                     transform.rotation = Quaternion.Euler(0, 0, 0);

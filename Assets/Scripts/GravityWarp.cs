@@ -19,7 +19,6 @@ public class GravityWarp : MonoBehaviour
     GameObject pauseTimerText;
     GameObject deathTimerText;
     bool blood = false;
-    bool hasRemote;
 
     public float changetmr = 0.0f;
     float reTimer = 0f;
@@ -55,21 +54,12 @@ public class GravityWarp : MonoBehaviour
         {
             checkpointText.SetActive(false);
         }
-        // Check for gravity change.
         if (gravityControlEnabled)
         {
             if (InputManager.gravityControlScheme == 1)
             {
                 InputHandler();
             }
-            if (!hasRemote)
-            {
-                hasRemote = true;
-            }
-        }
-        else if (hasRemote)
-        {
-            hasRemote = false;
         }
 
         switch (gravity)
