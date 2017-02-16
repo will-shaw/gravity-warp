@@ -1,11 +1,17 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+
 public class Player : MonoBehaviour
 {
+    /** Object components. */
     Transform player;
+    Rigidbody2D rb;
+    AudioSource audioSource;
+    Animator anim;
+
     float cooldown = 0;
     Transform canvas;
-    Animator anim;
+
     AudioManager am;
     float timer = 0f;
     float footstepTimer;
@@ -35,20 +41,22 @@ public class Player : MonoBehaviour
     {
         footstepTimer = footstepDelay;
         player = transform;
+        rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
-        menu.GetComponent<MenuHandler>().player = transform;
+        menu.GetComponent<MenuHandler>().player = player;
         am = Camera.main.GetComponent<AudioManager>();
-        Camera.main.GetComponent<GravityWarp>().player = transform;
-        Camera.main.GetComponent<CameraZoom>().player = transform;
+        Camera.main.GetComponent<GravityWarp>().player = player;
+        Camera.main.GetComponent<CameraZoom>().player = player;
         if (Info.load && Info.checkpoint.x != 0)
         {
             gameObject.transform.localPosition = Info.checkpoint;
-            Info.load =false;
+            Info.load = false;
             Camera.main.GetComponent<GravityWarp>().leveltmr = Info.checktime;
         }
-        GetComponent<Animator>().SetBool("facingRight", facingRight);
-        transform.GetChild(0).gameObject.SetActive(facingRight);
-        transform.GetChild(1).gameObject.SetActive(!facingRight);
+        anim.SetBool("facingRight", facingRight);
+        player.GetChild(0).gameObject.SetActive(facingRight);
+        player.GetChild(1).gameObject.SetActive(!facingRight);
     }
 
     float CalculateVelocity(float x, float y)
@@ -65,21 +73,22 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.tag == "Wall" || (other.collider.gameObject.GetComponent<Field>() != null && !other.collider.gameObject.GetComponent<Field>().laser))
         {
-            GetComponent<AudioSource>().PlayOneShot(am.GetLanding(), Random.Range(40, 100) * 0.01f);
+            audioSource.PlayOneShot(am.GetLanding(), Random.Range(40, 100) * 0.01f);
         }
         else if (other.gameObject.GetComponent<BoxCollision>() != null && surface != "boxM" && surface != "boxW")
         {
             //new sound code
             other.gameObject.GetComponent<AudioSource>().PlayOneShot(am.GetBoxSlide(), 1);
-            GetComponent<Animator>().SetBool("isPushing", true);
+            anim.SetBool("isPushing", true);
             other.gameObject.GetComponent<AudioSource>().volume = 1;
         }
     }
 
-    void OnTriggerExit2D(Collider2D other)
+    void OnCollisionExit2D(Collision2D other)
     {
-        if (other.gameObject.GetComponent<BoxCollision>() != null) {
-            GetComponent<Animator>().SetBool("isPushing", false);
+        if (other.gameObject.GetComponent<BoxCollision>() != null)
+        {
+            anim.SetBool("isPushing", false);
         }
     }
 
@@ -112,7 +121,6 @@ public class Player : MonoBehaviour
         {
             cooldown = 2 - cooldown;
         }
-        //canvas.FindChild("Xtext").GetComponent<Text>().text = "V:" + string.Format("{0:N2}", CalculateVelocity(GetComponent<Rigidbody2D>().velocity.x, GetComponent<Rigidbody2D>().velocity.y));
         if (Camera.main.GetComponent<GravityWarp>().playerDead || paused)
         {
             moveHori = 0;
@@ -124,28 +132,6 @@ public class Player : MonoBehaviour
 
         string gravity = GravityWarp.gravity;
 
-        if (gravity == "U")
-        {
- /*           canvas.FindChild("controls").GetComponent<SpriteRenderer>().flipY = true;
-            canvas.FindChild("controls").localPosition = new Vector3(-3.141f, -1.84f, 0);
-            canvas.FindChild("GravityDirection").localPosition = new Vector3(-5.552f, -1.97f, 0);
-            canvas.FindChild("GlueGUI").localPosition = new Vector3(-2.611f, -2.07f, 0);
-            canvas.FindChild("Text").localPosition = new Vector3(-2.2731f, -2.22f, 0);
-            canvas.FindChild("ytext").localPosition = new Vector3(-2.503f, -3.37f, 0);
-            canvas.FindChild("xtext").localPosition = new Vector3(-3.686f, -3.37f, 0);
-            canvas.FindChild("Cooldown").localPosition = new Vector3(-5.483f, -2.73f, 0);*/
-        }
-        else if (gravity == "D")
-        {
-        /*  canvas.FindChild("controls").GetComponent<SpriteRenderer>().flipY = false;
-            canvas.FindChild("controls").localPosition = new Vector3(-3.141f, 1.422f, 0);
-            canvas.FindChild("GravityDirection").localPosition = new Vector3(-5.552f, 1.666f, 0);
-            canvas.FindChild("GlueGUI").localPosition = new Vector3(-2.611f, 1.755f, 0);
-            canvas.FindChild("Text").localPosition = new Vector3(-2.2731f, 1.51f, 0);
-            canvas.FindChild("ytext").localPosition = new Vector3(-2.503f, 2.731f, 0);
-            canvas.FindChild("xtext").localPosition = new Vector3(-3.686f, 2.731f, 0);
-            canvas.FindChild("Cooldown").localPosition = new Vector3(-5.483f, 2.453f, 0);*/
-        }
         if (gravity == "L" || gravity == "R")
         {
             if (!(player.GetComponent<Glue>().isGlued()))
@@ -153,7 +139,7 @@ public class Player : MonoBehaviour
                 anim.SetFloat("Speed", Mathf.Abs(moveVert));
                 FootSteps(Mathf.Abs(moveVert));
             }
-            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, moveVert * speed);
+            rb.velocity = new Vector2(rb.velocity.x, moveVert * speed);
             if (moveVert > 0 && !facingRight && gravity == "R")
             {
                 Flip();
@@ -178,7 +164,7 @@ public class Player : MonoBehaviour
                 anim.SetFloat("Speed", Mathf.Abs(moveHori));
                 FootSteps(Mathf.Abs(moveHori));
             }
-            GetComponent<Rigidbody2D>().velocity = new Vector2(moveHori * speed, GetComponent<Rigidbody2D>().velocity.y);
+            rb.velocity = new Vector2(moveHori * speed, rb.velocity.y);
             if (moveHori > 0 && !facingRight && gravity == "D")
             {
                 Flip();
@@ -205,7 +191,7 @@ public class Player : MonoBehaviour
             footstepTimer -= Time.deltaTime;
             if (footstepTimer <= 0)
             {
-                GetComponent<AudioSource>().PlayOneShot(am.GetFootstep(), Random.Range(60, 100) * 0.01f);
+                audioSource.PlayOneShot(am.GetFootstep(), Random.Range(60, 100) * 0.01f);
                 footstepTimer = footstepDelay;
             }
         }
@@ -214,7 +200,7 @@ public class Player : MonoBehaviour
     void Flip()
     {
         facingRight = !facingRight;
-        GetComponent<Animator>().SetBool("facingRight", facingRight);
+        anim.SetBool("facingRight", facingRight);
         transform.GetChild(0).gameObject.SetActive(facingRight);
         transform.GetChild(1).gameObject.SetActive(!facingRight);
     }
@@ -272,16 +258,16 @@ public class Player : MonoBehaviour
                         switch (GravityWarp.gravity)
                         {
                             case "D":
-                                player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 700.0f));
+                                rb.AddForce(new Vector2(0, 700.0f));
                                 break;
                             case "U":
-                                player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -700.0f));
+                                rb.AddForce(new Vector2(0, -700.0f));
                                 break;
                             case "L":
-                                player.GetComponent<Rigidbody2D>().AddForce(new Vector2(700.0f, 0));
+                                rb.AddForce(new Vector2(700.0f, 0));
                                 break;
                             case "R":
-                                player.GetComponent<Rigidbody2D>().AddForce(new Vector2(-700.0f, 0));
+                                rb.AddForce(new Vector2(-700.0f, 0));
                                 break;
                         }
                         cooldown = Time.realtimeSinceStartup;
@@ -299,16 +285,16 @@ public class Player : MonoBehaviour
             switch (GravityWarp.gravity)
             {
                 case "D":
-                    player.transform.eulerAngles = new Vector3(0, 0, 0);
+                    player.eulerAngles = new Vector3(0, 0, 0);
                     break;
                 case "U":
-                    player.transform.eulerAngles = new Vector3(0, 0, 180);
+                    player.eulerAngles = new Vector3(0, 0, 180);
                     break;
                 case "L":
-                    player.transform.eulerAngles = new Vector3(0, 0, 270);
+                    player.eulerAngles = new Vector3(0, 0, 270);
                     break;
                 case "R":
-                    player.transform.eulerAngles = new Vector3(0, 0, 90);
+                    player.eulerAngles = new Vector3(0, 0, 90);
                     break;
             }
         }
@@ -338,13 +324,13 @@ public class Player : MonoBehaviour
     /* Checks how far the player is from the floor. (Object must be tagged with 'Wall').
         Fields & Buttons are detected too */
 
-public void  antiPhase(){
-    Vector2 down = Vector2.down;
-    Vector2 up = Vector2.up;
-    string grav = GravityWarp.gravity;
+    public void antiPhase()
+    {
+        Vector2 down = Vector2.down;
+        Vector2 up = Vector2.up;
+        string grav = GravityWarp.gravity;
 
-    Debug.Log("antiphase");
-    switch (grav)
+        switch (grav)
         {
             case "U":
                 down = Vector2.up;
@@ -365,41 +351,44 @@ public void  antiPhase(){
         }
         RaycastHit2D[] hitsDown = Physics2D.RaycastAll(transform.position, down, 3.0f);
         RaycastHit2D[] hitsUp = Physics2D.RaycastAll(transform.position, up, 3.0f);
-        if(hitsDown.Length ==0 && !gameObject.GetComponent<Glue>().isGlued()){
+        if (hitsDown.Length == 0 && !GetComponent<Glue>().isGlued())
+        {
             switch (grav)
-                {
-                    case "U":
-                        gameObject.transform.position += new Vector3(0,1,0);
-                        break;
-                    case "L":
-                        gameObject.transform.position += new Vector3(-1,0,0);
-                        break;
-                    case "R":
-                        gameObject.transform.position += new Vector3(1,0,0);
-                        break;
-                    case "D":
-                        gameObject.transform.position += new Vector3(0,-1,0);
-                        break;
-                }
-        }else if(hitsUp.Length ==0 && !gameObject.GetComponent<Glue>().isGlued()){
-            switch (grav)
-                {
-                    case "U":
-                        gameObject.transform.position += new Vector3(0,-1,0);
-                        break;
-                    case "L":
-                        gameObject.transform.position += new Vector3(1,0,0);
-                        break;
-                    case "R":
-                        gameObject.transform.position += new Vector3(-1,0,0);
-                        break;
-                    case "D":
-                        gameObject.transform.position += new Vector3(0,1,0);
-                        break;
-                }
+            {
+                case "U":
+                    player.position += new Vector3(0, 1, 0);
+                    break;
+                case "L":
+                    player.position += new Vector3(-1, 0, 0);
+                    break;
+                case "R":
+                    player.position += new Vector3(1, 0, 0);
+                    break;
+                case "D":
+                    player.position += new Vector3(0, -1, 0);
+                    break;
+            }
         }
-    return;
-}
+        else if (hitsUp.Length == 0 && !GetComponent<Glue>().isGlued())
+        {
+            switch (grav)
+            {
+                case "U":
+                    player.position += new Vector3(0, -1, 0);
+                    break;
+                case "L":
+                    player.position += new Vector3(1, 0, 0);
+                    break;
+                case "R":
+                    player.position += new Vector3(-1, 0, 0);
+                    break;
+                case "D":
+                    player.position += new Vector3(0, 1, 0);
+                    break;
+            }
+        }
+        return;
+    }
     bool IsGrounded()
     {
         Vector2 down = Vector2.down;
@@ -417,8 +406,8 @@ public void  antiPhase(){
                 break;
         }
 
-        RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, down, 3.0f);
-        Debug.DrawRay(transform.position, down, Color.yellow, 10);
+        RaycastHit2D[] hits = Physics2D.RaycastAll(player.position, down, 3.0f);
+        Debug.DrawRay(player.position, down, Color.yellow, 10);
 
         float dDist = 100f;
         bool check = false;
@@ -472,7 +461,7 @@ public void  antiPhase(){
                             }
                             break;
                     }
-                    Debug.DrawLine(transform.position, hit.point, Color.green, 10);
+                    Debug.DrawLine(player.position, hit.point, Color.green, 10);
                 }
             }
         }
