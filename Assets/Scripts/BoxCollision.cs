@@ -80,7 +80,6 @@ public class BoxCollision : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log(gameObject.tag);
         if (other.gameObject.tag == "Wall")
         {
             GetComponent<AudioSource>().PlayOneShot(am.GetBoxHit(metalBox), 1);

@@ -194,5 +194,8 @@ public class GravityWarp : MonoBehaviour
     public void glueExtraPlace(){
         Destroy(glues[0].gameObject);
         glues.RemoveAt(0);
-    }   
+    } 
+    public void antiPhaseRE(){
+        player.GetComponent<Player>().antiPhase();
+    }  
 }
