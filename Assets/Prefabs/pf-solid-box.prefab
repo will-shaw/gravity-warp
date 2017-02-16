@@ -184,6 +184,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   metalBox: 1
+  velocityY: 0
+  velocityX: 0
+  velocityY1: 0
+  velocityX1: 0
+  boxFragmentPrefab: {fileID: 4760000996255208, guid: fd669ad5ce558440bbadb7a7406a8823,
+    type: 2}
 --- !u!212 &212907124603322772
 SpriteRenderer:
   m_ObjectHideFlags: 1

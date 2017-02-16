@@ -15,6 +15,7 @@ public class Field : MonoBehaviour
     {
         if (objectKilling)
         {
+            gameObject.layer = 9;
             gameObject.GetComponent<SpriteRenderer>().color = new Color(0.5F, 0.8F, 0.8F, 0.85F);
         }
         if (active)
