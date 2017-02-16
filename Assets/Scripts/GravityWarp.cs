@@ -139,7 +139,7 @@ public class GravityWarp : MonoBehaviour
                 gravity = "U";
                 gravityCount++;
                 reTimer = 0f;
-                player.GetComponent<Player>().antiPhase();
+                //player.GetComponent<Player>().antiPhase();
                 changetmr = 0.0f;
             }
             if (Input.GetKey(InputManager.gravityDown) && gravity != "D")
@@ -147,7 +147,7 @@ public class GravityWarp : MonoBehaviour
                 gravity = "D";
                 gravityCount++;
                 reTimer = 0f;
-                player.GetComponent<Player>().antiPhase();
+                //player.GetComponent<Player>().antiPhase();
                 changetmr = 0.0f;
             }
             if (Input.GetKey(InputManager.gravityLeft) && gravity != "L")
@@ -155,7 +155,7 @@ public class GravityWarp : MonoBehaviour
                 gravity = "L";
                 gravityCount++;
                 reTimer = 0f;
-                player.GetComponent<Player>().antiPhase();
+                //player.GetComponent<Player>().antiPhase();
                 changetmr = 0.0f;
             }
             if (Input.GetKey(InputManager.gravityRight) && gravity != "R")
@@ -163,7 +163,7 @@ public class GravityWarp : MonoBehaviour
                 gravity = "R";
                 gravityCount++;
                 reTimer = 0f;
-                player.GetComponent<Player>().antiPhase();
+                //player.GetComponent<Player>().antiPhase();
                 changetmr = 0.0f;
             }
             if (gravityCount > 0)
@@ -196,6 +196,6 @@ public class GravityWarp : MonoBehaviour
         glues.RemoveAt(0);
     } 
     public void antiPhaseRE(){
-        player.GetComponent<Player>().antiPhase();
+        //player.GetComponent<Player>().antiPhase();
     }  
 }
