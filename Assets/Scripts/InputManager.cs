@@ -175,7 +175,7 @@ public class InputManager : MonoBehaviour
             gravityDown = data.gravityDown;
             gravityLeft = data.gravityLeft;
             gravityRight = data.gravityRight;
-            data.glue = glue;
+            glue = data.glue;
 
             MusicPlayer.Instance.SetVolume(data.musicVolume);
 
