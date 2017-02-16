@@ -5202,6 +5202,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9849d467c4d8bf743afeb648e53ae4eb, type: 2}
   m_IsPrefabParent: 0
+--- !u!82 &1779985092 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82275500715361090, guid: 9849d467c4d8bf743afeb648e53ae4eb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1779985091}
 --- !u!1001 &1787908026
 Prefab:
   m_ObjectHideFlags: 0
@@ -6416,7 +6421,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2018145133}
+      objectReference: {fileID: 1779985092}
     - target: {fileID: 114329081989669496, guid: 50b41ddc32c478d4c8f0f9402a252ce4,
         type: 2}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -6448,11 +6453,6 @@ GameObject:
 --- !u!1 &2018145132 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1418852584812510, guid: 50b41ddc32c478d4c8f0f9402a252ce4,
-    type: 2}
-  m_PrefabInternal: {fileID: 2018145126}
---- !u!82 &2018145133 stripped
-AudioSource:
-  m_PrefabParentObject: {fileID: 82756025966969282, guid: 50b41ddc32c478d4c8f0f9402a252ce4,
     type: 2}
   m_PrefabInternal: {fileID: 2018145126}
 --- !u!1001 &2027879902
