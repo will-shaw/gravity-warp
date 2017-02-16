@@ -853,7 +853,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -970,7 +970,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -3892,6 +3892,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   metalBox: 1
+  velocityY: 0
+  velocityX: 0
+  velocityY1: 0
+  velocityX1: 0
+  boxFragmentPrefab: {fileID: 0}
 --- !u!82 &766578324
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7630,6 +7635,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 108165506627210986, guid: 5e3562d01b5f4c0499d89ee25bad7a21,
+        type: 2}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e3562d01b5f4c0499d89ee25bad7a21, type: 2}
   m_IsPrefabParent: 0
@@ -8820,7 +8830,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -9072,7 +9082,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -9628,7 +9638,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -9709,6 +9719,11 @@ Prefab:
     - target: {fileID: 4881307391563136, guid: 5e3562d01b5f4c0499d89ee25bad7a21, type: 2}
       propertyPath: m_LocalPosition.z
       value: -2.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 108165506627210986, guid: 5e3562d01b5f4c0499d89ee25bad7a21,
+        type: 2}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e3562d01b5f4c0499d89ee25bad7a21, type: 2}
