@@ -12,7 +12,10 @@ public class BoxCollision : MonoBehaviour
     public float velocityX1 = 0f;
     GameObject activeButton;
     GameObject activeGlue;
+    bool velocityPositive = false;
+    bool velocitynegitive =false;
 
+    float tmr=0.0f;
     void Start()
     {
         am = Camera.main.GetComponent<AudioManager>();
@@ -20,6 +23,8 @@ public class BoxCollision : MonoBehaviour
 
     void Update()
     {
+
+    
         // new audio code
         if (gameObject.transform.GetComponent<Rigidbody2D>().velocity.x == 0f && gameObject.transform.GetComponent<Rigidbody2D>().velocity.y == 0f)
         {
@@ -31,23 +36,47 @@ public class BoxCollision : MonoBehaviour
 
             gameObject.GetComponent<AudioSource>().Stop();
         }
-        if (velocityX < gameObject.transform.GetComponent<Rigidbody2D>().velocity.x)
-        {
-            velocityX = gameObject.transform.GetComponent<Rigidbody2D>().velocity.x;
+        if(gameObject.transform.GetComponent<Rigidbody2D>().velocity.y <1 && gameObject.transform.GetComponent<Rigidbody2D>().velocity.x <1){
+            velocityPositive = false;
         }
-        if (velocityY < gameObject.transform.GetComponent<Rigidbody2D>().velocity.y)
-        {
-            velocityY = gameObject.transform.GetComponent<Rigidbody2D>().velocity.y;
+        else{
+            velocityPositive = true;
         }
-        if (velocityX1 > gameObject.transform.GetComponent<Rigidbody2D>().velocity.x)
-        {
-            velocityX1 = gameObject.transform.GetComponent<Rigidbody2D>().velocity.x;
+        if(gameObject.transform.GetComponent<Rigidbody2D>().velocity.y >-1 && gameObject.transform.GetComponent<Rigidbody2D>().velocity.x >-1){
+            velocitynegitive = false;
         }
-        if (velocityY1 > gameObject.transform.GetComponent<Rigidbody2D>().velocity.y)
-        {
-            velocityY1 = gameObject.transform.GetComponent<Rigidbody2D>().velocity.y;
+        else{
+            velocitynegitive = true;
         }
+         if(!(velocitynegitive)&& !(velocityPositive)){
+            tmr += Time.deltaTime;
+            if(tmr >1){
+                velocityX=0f;
+                velocityX1=0f;
+                velocityY=0f;
+                velocityY1 =0f;
+            }
 
+        }else{
+            tmr =0f;
+            if (velocityX < gameObject.transform.GetComponent<Rigidbody2D>().velocity.x)
+            {
+                velocityX = gameObject.transform.GetComponent<Rigidbody2D>().velocity.x;
+            }
+            if (velocityY < gameObject.transform.GetComponent<Rigidbody2D>().velocity.y)
+            {
+                velocityY = gameObject.transform.GetComponent<Rigidbody2D>().velocity.y;
+            }
+            if (velocityX1 > gameObject.transform.GetComponent<Rigidbody2D>().velocity.x)
+            {
+                velocityX1 = gameObject.transform.GetComponent<Rigidbody2D>().velocity.x;
+            }
+            if (velocityY1 > gameObject.transform.GetComponent<Rigidbody2D>().velocity.y)
+            {
+                velocityY1 = gameObject.transform.GetComponent<Rigidbody2D>().velocity.y;
+            }
+        }
+       
     }
     void OnCollisionEnter2D(Collision2D other)
     {

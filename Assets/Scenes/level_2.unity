@@ -5399,6 +5399,81 @@ Transform:
   m_PrefabParentObject: {fileID: 4347001563427038, guid: f02a9e72c70ed0045947a32b91d46544,
     type: 2}
   m_PrefabInternal: {fileID: 1395600329}
+--- !u!1 &1397718617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1397718618}
+  - component: {fileID: 1397718620}
+  - component: {fileID: 1397718619}
+  m_Layer: 8
+  m_Name: Clutter-bounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1397718618
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1397718617}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1679246909}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1397718619
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1397718617}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 1.5274415, y: -0.37060165}
+  serializedVersion: 2
+  m_Size: {x: 1.2692081, y: 4.827286}
+--- !u!68 &1397718620
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1397718617}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+  - {x: -18.606846, y: -11.9783745}
+  - {x: -18.637562, y: -6.7449746}
+  - {x: -7.0472465, y: -6.7655587}
+  - {x: -7.1825433, y: 6.314767}
+  - {x: -17.639732, y: 6.263973}
+  - {x: -17.553715, y: 12.003651}
+  - {x: 1.090148, y: 12.099041}
+  - {x: 1.0687084, y: 6.049018}
+  - {x: 2.2927122, y: 6.069354}
+  - {x: 2.207881, y: 12.172554}
+  - {x: 17.91652, y: 12.144098}
+  - {x: 18.065321, y: -6.7775164}
+  - {x: 18.136732, y: -12.056297}
+  - {x: 2.256155, y: -11.925051}
+  - {x: 2.2008152, y: -6.747926}
+  - {x: 0.7832184, y: -6.7438655}
+  - {x: 0.79304504, y: -12.025244}
+  - {x: -18.665396, y: -12.145514}
 --- !u!1001 &1403181089
 Prefab:
   m_ObjectHideFlags: 0
@@ -6605,6 +6680,7 @@ Transform:
   - {fileID: 167240559}
   - {fileID: 807502764}
   - {fileID: 292036727}
+  - {fileID: 1397718618}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
