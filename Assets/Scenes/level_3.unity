@@ -2863,34 +2863,16 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1268476290539460, guid: 50b41ddc32c478d4c8f0f9402a252ce4, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1418852584812510, guid: 50b41ddc32c478d4c8f0f9402a252ce4, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 223421283788329252, guid: 50b41ddc32c478d4c8f0f9402a252ce4,
-        type: 2}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 218333433}
-    - target: {fileID: 82756025966969282, guid: 50b41ddc32c478d4c8f0f9402a252ce4,
-        type: 2}
-      propertyPath: spreadCustomCurve.m_RotationOrder
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 114329081989669496, guid: 50b41ddc32c478d4c8f0f9402a252ce4,
         type: 2}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1289117075}
-    - target: {fileID: 114329081989669496, guid: 50b41ddc32c478d4c8f0f9402a252ce4,
+    - target: {fileID: 223421283788329252, guid: 50b41ddc32c478d4c8f0f9402a252ce4,
         type: 2}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: set_volume
-      objectReference: {fileID: 0}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 218333433}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50b41ddc32c478d4c8f0f9402a252ce4, type: 2}
   m_IsPrefabParent: 0
