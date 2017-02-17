@@ -1351,6 +1351,9 @@ MonoBehaviour:
   scene: Story
   button: {fileID: 391756174}
   warpText: {fileID: 1593183624}
+  otherButtons:
+  - {fileID: 1671947840}
+  - {fileID: 847001052}
   warpTextDelay: 2
 --- !u!1001 &763420047
 Prefab:
@@ -2037,6 +2040,9 @@ MonoBehaviour:
   scene: facility_intro
   button: {fileID: 847001052}
   warpText: {fileID: 0}
+  otherButtons:
+  - {fileID: 391756174}
+  - {fileID: 1671947840}
   warpTextDelay: 0
 --- !u!1 &1146652216
 GameObject:
@@ -2391,7 +2397,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Controls
+  m_Text: Options
 --- !u!222 &1409189065
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3182,4 +3188,7 @@ MonoBehaviour:
   scene: facility_intro
   button: {fileID: 1671947840}
   warpText: {fileID: 0}
+  otherButtons:
+  - {fileID: 391756174}
+  - {fileID: 847001052}
   warpTextDelay: 0

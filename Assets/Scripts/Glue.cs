@@ -30,7 +30,12 @@ public class Glue : MonoBehaviour
         else if (glued)
         {
             glued = false;
-            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+            if (GetComponent<Player>() != null)
+            {
+                GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+            } else {
+                GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;                
+            }
         }
     }
 

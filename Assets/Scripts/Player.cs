@@ -480,39 +480,33 @@ public class Player : MonoBehaviour
     bool IsBoxAbove(Vector2 other)
     {
         float offset = 1.5f;
-
         switch (GravityWarp.gravity)
         {
             case "D":
                 if (other.y > player.position.y + offset)
                 {
-                    print("Above");
                     return true;
                 }
                 break;
             case "U":
                 if (other.y < player.position.y - offset)
                 {
-                    print("Above");
                     return true;
                 }
                 break;
             case "L":
                 if (other.x > player.position.x + offset)
                 {
-                    print("Above");
                     return true;
                 }
                 break;
             case "R":
                 if (other.x < player.position.x - offset)
                 {
-                    print("Above");
                     return true;
                 }
                 break;
         }
-
         return false;
     }
 

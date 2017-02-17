@@ -9,6 +9,8 @@ public class MainMenu : MonoBehaviour
     public UnityEngine.UI.Button button; // The UI button.
     public Rigidbody2D warpText; // Only set in ONE MainMenu script.
 
+    public UnityEngine.UI.Button[] otherButtons;
+
     public float warpTextDelay;
 
     float warpTextTimer;
@@ -48,6 +50,10 @@ public class MainMenu : MonoBehaviour
 
     void Load()
     {
+        foreach(UnityEngine.UI.Button button in otherButtons) {
+            button.enabled = false;
+        }
+
         field.GetComponent<Field>().ToggleField();
         op = SceneManager.LoadSceneAsync(scene);
         op.allowSceneActivation = false;
