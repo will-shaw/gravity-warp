@@ -12,3 +12,4 @@ Controls:
 Known Issues:
 
 Pre placed glue doesn't always spawn in Level 8.
+Music volume slider only works on the level in which the music starts.
