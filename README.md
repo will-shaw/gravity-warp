@@ -1,8 +1,10 @@
+# Gravity Warp
+
 Gravity Warp is a 2D puzzle platformer where you must manipulate the direction of gravity in order to solve puzzles and advanced through an abandoned research facility.
 ---
-==Default Controls:==  
+## Default Controls:  
 
-| Action   |      Binding      |
+| **Action**   |      **Binding**      |
 |----------|:-------------:|
 | Player movement | WASD |
 | Jump |    Space   |
@@ -11,7 +13,7 @@ Gravity Warp is a 2D puzzle platformer where you must manipulate the direction o
 | Zoom Camera | Tab |
 | Bring up Menu | Escape |
   
-Known Issues:  
+## Known Issues:  
 ---
 Boxes stop rotating after being glued.
 Pre placed glue doesn't always spawn in Level 8.
