@@ -10,6 +10,10 @@ public class GenArms : MonoBehaviour
             other.gameObject.GetComponent<AudioSource>().PlayOneShot(Camera.main.GetComponent<AudioManager>().GetBoxCrush(), 1);
             other.gameObject.GetComponent<Animator>().SetBool("isCrushed", true);
         }
+        else
+        {
+            GetComponent<AudioSource>().PlayOneShot(Camera.main.GetComponent<AudioManager>().GetBoxHit(true));
+        }
     }
 
 }

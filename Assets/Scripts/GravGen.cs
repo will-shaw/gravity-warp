@@ -16,8 +16,8 @@ public class GravGen : MonoBehaviour
     {
         if (other.tag != "Player")
         {
-            print("Enter");
             anim.SetBool("explode", true);
+            GetComponent<AudioSource>().Play();
             door.GetComponent<Door>().ActivateLink(1);
             GravityWarp.gravity = "D";
             Camera.main.GetComponent<GravityWarp>().gravityControlEnabled = false;
