@@ -7,7 +7,8 @@ Default Controls:
 [Right Mouse Click and drag] Ð change gravity  
 [Tab] Ð change camera zoom  
 [Esc]  - bring up menu
----
+  
 Known Issues:  
+---
 Boxes stop rotating after being glued.
 Pre placed glue doesnÕt always spawn in Level 8.
