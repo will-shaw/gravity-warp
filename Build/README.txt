@@ -1,12 +1,12 @@
-Gravity Warp is a 2D puzzle platformer where you must manipulate the direction of gravity in order to solve puzzles and advanced through an abandoned research facility.
+Gravity Warp is a 2D puzzle platformer where you must manipulate the direction of gravity in order to solve puzzles and advance through an abandoned research facility.
 
-Controls:
+Default Controls:
 
 [WASD] - Player Movement
-[Space] Ð Jump
-[Left Mouse Click] Ð Change Gravity
-[Right Mouse Click and drag] Ð Place Glue
-[Tab] Ð Change Camera Zoom
+[Space] - Jump
+[Left Mouse Click] - Change Gravity
+[Right Mouse Click and drag] - Place Glue
+[Tab] - Change Camera Zoom
 [Esc]  - Show Pause Menu
 
 Known Issues:
