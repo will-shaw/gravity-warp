@@ -2,14 +2,15 @@ Gravity Warp is a 2D puzzle platformer where you must manipulate the direction o
 
 Controls:
 
-[WASD] - player movement
-[Space] – jump
-[Left Mouse Click] – place glue
-[Right Mouse Click and drag] – change gravity
-[Tab] – change camera zoom
-[Esc]  - bring up menu
+[WASD] - Player Movement
+[Space] – Jump
+[Left Mouse Click] – Change Gravity
+[Right Mouse Click and drag] – Place Glue
+[Tab] – Change Camera Zoom
+[Esc]  - Show Pause Menu
 
 Known Issues:
 
 Boxes stop rotating after being glued.
 Pre placed glue doesn’t always spawn in Level 8.
+Player animation can rapidly switch states while standing next to a box at just the right distance.
