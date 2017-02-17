@@ -79,7 +79,10 @@ public class Player : MonoBehaviour
         {
             //new sound code
             other.gameObject.GetComponent<AudioSource>().PlayOneShot(am.GetBoxSlide(), 1);
-            anim.SetBool("isPushing", true);
+            if (!IsBoxAbove(other.transform.position))
+            {
+                anim.SetBool("isPushing", true);
+            }
             other.gameObject.GetComponent<AudioSource>().volume = 1;
         }
     }
@@ -389,6 +392,7 @@ public class Player : MonoBehaviour
         }
         return;
     }
+
     bool IsGrounded()
     {
         Vector2 down = Vector2.down;
@@ -470,6 +474,45 @@ public class Player : MonoBehaviour
         {
             return true;
         }
+        return false;
+    }
+
+    bool IsBoxAbove(Vector2 other)
+    {
+        float offset = 1.5f;
+
+        switch (GravityWarp.gravity)
+        {
+            case "D":
+                if (other.y > player.position.y + offset)
+                {
+                    print("Above");
+                    return true;
+                }
+                break;
+            case "U":
+                if (other.y < player.position.y - offset)
+                {
+                    print("Above");
+                    return true;
+                }
+                break;
+            case "L":
+                if (other.x > player.position.x + offset)
+                {
+                    print("Above");
+                    return true;
+                }
+                break;
+            case "R":
+                if (other.x < player.position.x - offset)
+                {
+                    print("Above");
+                    return true;
+                }
+                break;
+        }
+
         return false;
     }
 
