@@ -12,6 +12,7 @@ TagManager:
   - Beam
   - test1
   - test2
+  - killPlayer
   layers:
   - Default
   - TransparentFX
