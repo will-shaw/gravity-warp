@@ -3294,7 +3294,7 @@ Prefab:
     - target: {fileID: 114104236034801492, guid: 114a29e0deec009439eb7d4c246d7e8c,
         type: 2}
       propertyPath: linksRequired
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114104236034801492, guid: 114a29e0deec009439eb7d4c246d7e8c,
         type: 2}
@@ -4232,7 +4232,7 @@ Prefab:
     - target: {fileID: 114505227209852082, guid: e3f30bfd6b9f8de4681baa1553a96802,
         type: 2}
       propertyPath: levelCenter.y
-      value: 6.5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114505227209852082, guid: e3f30bfd6b9f8de4681baa1553a96802,
         type: 2}
@@ -4242,7 +4242,7 @@ Prefab:
     - target: {fileID: 114505227209852082, guid: e3f30bfd6b9f8de4681baa1553a96802,
         type: 2}
       propertyPath: levelCenter.x
-      value: 6.8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114420006540710784, guid: e3f30bfd6b9f8de4681baa1553a96802,
         type: 2}

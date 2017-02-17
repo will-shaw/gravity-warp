@@ -572,7 +572,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glueTime: 0
-  canvas: {fileID: 0}
 --- !u!1 &228225057
 GameObject:
   m_ObjectHideFlags: 0
@@ -4177,7 +4176,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glueTime: 0
-  canvas: {fileID: 0}
 --- !u!1 &776949916
 GameObject:
   m_ObjectHideFlags: 0
@@ -9793,7 +9791,13 @@ Prefab:
       propertyPath: zoomClose
       value: 7
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114918991816049254, guid: e3f30bfd6b9f8de4681baa1553a96802,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114918991816049254, guid: e3f30bfd6b9f8de4681baa1553a96802, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e3f30bfd6b9f8de4681baa1553a96802, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &2012844910

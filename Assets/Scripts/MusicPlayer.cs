@@ -5,7 +5,7 @@ public class MusicPlayer : MonoBehaviour
 {
     private static MusicPlayer instance = null;
     
-    public static float musicVolume = 1;
+    public static float musicVolume = 0.5f;
 
     AudioSource aSource;
 
@@ -29,6 +29,7 @@ public class MusicPlayer : MonoBehaviour
     public void SetVolume(float vol)
     {
         musicVolume = vol;
+        MusicPlayer.Instance.GetComponent<AudioSource>().volume = vol;
     }
 
     void Awake()

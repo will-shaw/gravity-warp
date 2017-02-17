@@ -1683,7 +1683,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glueTime: 2
-  canvas: {fileID: 0}
 --- !u!1001 &543109997
 Prefab:
   m_ObjectHideFlags: 0
@@ -2042,7 +2041,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glueTime: 2
-  canvas: {fileID: 0}
 --- !u!4 &586879142 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4249566831117692, guid: 33e3f8d67180541ddbdda7a2f50bfda7,
@@ -3820,7 +3818,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glueTime: 2
-  canvas: {fileID: 0}
 --- !u!1001 &1316749134
 Prefab:
   m_ObjectHideFlags: 0
@@ -4849,7 +4846,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glueTime: 0.5
-  canvas: {fileID: 0}
 --- !u!4 &1832045528 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4226368383244096, guid: baab671e9556fd64482952be50519f6b,
@@ -5676,7 +5672,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glueTime: 2
-  canvas: {fileID: 0}
 --- !u!1 &2105526633
 GameObject:
   m_ObjectHideFlags: 0

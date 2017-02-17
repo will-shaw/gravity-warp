@@ -1,31 +1,16 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 public class Glue : MonoBehaviour
 {
-    bool glued;
+    bool glued = false;
     float gluedTime;
     public float glueTime;
-    public Transform canvas;
-
-    void Start()
-    {
-        glued = false;
-        if (gameObject.GetComponent<Player>() != null)
-        {
-            canvas = gameObject.GetComponent<Player>().GetCanvas();
-        }
-    }
 
     void Update()
     {
         if (glued && gluedTime > 0)
         {
             gluedTime -= Time.deltaTime;
-            if (GetComponent<Player>() != null)
-            {
-                canvas.GetChild(3).GetComponent<Text>().text = string.Format("{0:0}", gluedTime);
-            }
         }
         else if (glued)
         {

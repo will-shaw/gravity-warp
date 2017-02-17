@@ -14,10 +14,7 @@ public class ForcedZoom : MonoBehaviour {
 		}
 		else if (other.gameObject.tag == "Player" && Camera.main.orthographicSize == cameraZoom.zoomClose)
 		{
-			CameraZoom.state = 0;
-			CameraZoom.StartLerp();
 			CameraZoom.eventTriggered = false;
 		}
-		
 	}
 }

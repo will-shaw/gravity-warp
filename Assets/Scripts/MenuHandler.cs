@@ -14,8 +14,9 @@ public class MenuHandler : MonoBehaviour
     GameObject gravityControls;
     bool gravityControlsShown = false;
     GameObject glueControls;
-    GameObject playerDetails;
     bool glueControlsShown = false;
+
+    bool wasControlEnabled = false;
 
     bool isControlShown = false;
     bool isListening = false;
@@ -48,7 +49,6 @@ public class MenuHandler : MonoBehaviour
         setcontrols = gameObject.transform.FindChild("SetControls").gameObject;
         gravityControls = gameObject.transform.FindChild("GravityInstructionsPanel").gameObject;
         glueControls = gameObject.transform.FindChild("GlueInstructionsPanel").gameObject;
-        playerDetails = gameObject.transform.FindChild("PlayerDetails").gameObject;
 
         buttons = pause.GetComponentsInChildren<UnityEngine.UI.Button>();
         pause.transform.FindChild("btnEdit").gameObject.SetActive(false);
@@ -62,6 +62,7 @@ public class MenuHandler : MonoBehaviour
         panel.SetActive(true);
         controls.SetActive(false);
         pause.SetActive(true);
+        wasControlEnabled = Camera.main.GetComponent<GravityWarp>().gravityControlEnabled;
     }
 
     public void ShowDeath()
@@ -231,7 +232,6 @@ public class MenuHandler : MonoBehaviour
             isOptions = false;
         }
         panel.SetActive(false);
-        playerDetails.SetActive(false);
         death.SetActive(false);
         pause.SetActive(false);
         controls.SetActive(false);
@@ -239,10 +239,12 @@ public class MenuHandler : MonoBehaviour
         setcontrols.SetActive(false);
         if (player)
         {
-            player.GetComponent<Player>().GetCanvas().gameObject.SetActive(true);
             player.GetComponent<Player>().paused = false;
-            Camera.main.GetComponent<GravityWarp>().gravityControlEnabled = true;
             Camera.main.GetComponent<GravityWarp>().time = true;
+            if (wasControlEnabled || player.GetComponent<Player>().wasControlEnabled)
+            {
+                Camera.main.GetComponent<GravityWarp>().gravityControlEnabled = true;
+            }
         }
     }
 

@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -10,7 +9,6 @@ public class Player : MonoBehaviour
     Animator anim;
 
     float cooldown = 0;
-    Transform canvas;
 
     AudioManager am;
     float timer = 0f;
@@ -19,23 +17,16 @@ public class Player : MonoBehaviour
     public bool paused = false;
     public float speed = 10f;
     public string surface;
-    public RectTransform canvasPrefab;
     public bool facingRight = true;
-    public Sprite spSide;
-    public Sprite spUp;
     public GameObject menu;
     public float footstepDelay;
+
+    public bool wasControlEnabled = false;
 
     public GameObject gunRight;
     public GameObject gunLeft;
     public GameObject remoteLeft;
     public GameObject remoteRight;
-
-    void Awake()
-    {
-        // Immediately Instantiate canvas so that Glue.cs can access it.
-        canvas = menu.gameObject.transform.FindChild("PlayerDetails");
-    }
 
     void Start()
     {
@@ -62,11 +53,6 @@ public class Player : MonoBehaviour
     float CalculateVelocity(float x, float y)
     {
         return Mathf.Sqrt(Mathf.Pow(x, 2) + Mathf.Pow(y, 2));
-    }
-
-    public Transform GetCanvas()
-    {
-        return canvas;
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -129,9 +115,6 @@ public class Player : MonoBehaviour
             moveHori = 0;
             moveVert = 0;
         }
-        canvas.GetChild(6).GetComponent<Text>().text = "Cool Down: " + string.Format("{0:N2}", cooldown);
-        canvas.GetChild(5).GetComponent<Text>().text = "X:" + string.Format("{0:N2}", GetComponent<Rigidbody2D>().velocity.x);
-        canvas.GetChild(4).GetComponent<Text>().text = "Y:" + string.Format("{0:N2}", GetComponent<Rigidbody2D>().velocity.y);
 
         string gravity = GravityWarp.gravity;
 
@@ -230,7 +213,8 @@ public class Player : MonoBehaviour
             if (Input.GetKey(InputManager.menu) && !paused)
             {
                 menu.GetComponent<MenuHandler>().ShowPause();
-                canvas.gameObject.SetActive(false);
+
+                wasControlEnabled = Camera.main.GetComponent<GravityWarp>().gravityControlEnabled;
                 Camera.main.GetComponent<GravityWarp>().gravityControlEnabled = false;
                 Camera.main.GetComponent<GravityWarp>().time = false;
                 paused = true;
@@ -238,9 +222,11 @@ public class Player : MonoBehaviour
             }
             else if (Input.GetKey(InputManager.menu) && paused)
             {
-                canvas.gameObject.SetActive(true);
                 menu.GetComponent<MenuHandler>().Hide();
-                Camera.main.GetComponent<GravityWarp>().gravityControlEnabled = true;
+                if (wasControlEnabled)
+                {
+                    Camera.main.GetComponent<GravityWarp>().gravityControlEnabled = true;
+                }
                 Camera.main.GetComponent<GravityWarp>().time = true;
                 paused = false;
                 timer = 1f;
@@ -300,27 +286,6 @@ public class Player : MonoBehaviour
                     player.eulerAngles = new Vector3(0, 0, 90);
                     break;
             }
-        }
-
-        SpriteRenderer spr = canvas.GetChild(1).GetComponent<SpriteRenderer>();
-        switch (GravityWarp.gravity)
-        {
-            case "D":
-                spr.flipY = true;
-                spr.sprite = spUp;
-                break;
-            case "U":
-                spr.flipY = false;
-                spr.sprite = spUp;
-                break;
-            case "L":
-                spr.sprite = spSide;
-                spr.flipX = false;
-                break;
-            case "R":
-                spr.sprite = spSide;
-                spr.flipX = true;
-                break;
         }
     }
 
