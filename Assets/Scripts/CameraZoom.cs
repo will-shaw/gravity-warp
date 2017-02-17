@@ -17,7 +17,7 @@ public class CameraZoom : MonoBehaviour
 
     static bool isLerping;
     static float timeStartedLerping;
-    static int state = -1;
+    public static int state = -1;
 
     static bool eventTriggered = false;
      
@@ -83,7 +83,7 @@ public class CameraZoom : MonoBehaviour
         }
     }
 
-    static void StartLerp()
+    public static void StartLerp()
     {
         if (!isLerping)
         {
