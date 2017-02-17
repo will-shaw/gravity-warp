@@ -307,7 +307,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 292, y: 249.27}
+  m_AnchoredPosition: {x: 295, y: 421}
   m_SizeDelta: {x: 246, y: 218}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &133051209
@@ -343,74 +343,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 133051207}
---- !u!1 &135333931
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 135333932}
-  - component: {fileID: 135333934}
-  - component: {fileID: 135333933}
-  m_Layer: 5
-  m_Name: Image (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &135333932
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 135333931}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1501954393}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 323.2, y: -28}
-  m_SizeDelta: {x: 183.5, y: 139.5}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &135333933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 135333931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &135333934
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 135333931}
 --- !u!1 &149516502
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,7 +551,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 215220431}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.57123655
+  m_Size: 0.38919413
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -694,7 +626,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 295, y: 91}
+  m_AnchoredPosition: {x: 298, y: 262}
   m_SizeDelta: {x: 240, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &551429010
@@ -1190,8 +1122,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -129, y: 0}
-  m_SizeDelta: {x: 573, y: 718}
+  m_AnchoredPosition: {x: -126, y: 4}
+  m_SizeDelta: {x: 573, y: 1052}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1466758341
 MonoBehaviour:
@@ -1205,7 +1137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1225,12 +1157,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'BEGIN TRANSMISSION >>>>>>>>>>>>>>>>>>>>>
+  m_Text: '<color=#00aacc>BEGIN TRANSMISSION >>>>>>>>>>>>>>>>>>>>> </color>
 
 
     We have received intel of a possible attempt to control gravity has been conducted
-    at a facility belonging to Mega Corp. Situated on Planet COROT-7b, the facility
-    has gone dark, and any attempt to make contact has been met with no result.
+    at a facility belonging to Mega Corp. Situated on Planet <color=#333333>COROT-7b</color>,
+    the facility has gone dark, and any attempt to make contact has been met with
+    no result.
 
 
     As our closest ship in this sector, You are to divert from your current tasking,
@@ -1243,10 +1176,14 @@ MonoBehaviour:
     for atmospheric flight.
 
 
+    <color=#ff0000>DESTROY THE GRAVITY DEVICE IF IT EXISTS.</color>
+
+
     Proceed with caution!
 
+    <color=#00aacc>
 
-    END TRANSMISSION >>>>>>>>>>>>>>>>>>>>>>>>'
+    END TRANSMISSION >>>>>>>>>>>>>>>>>>>>>>>></color>'
 --- !u!222 &1466758342
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1281,14 +1218,13 @@ RectTransform:
   - {fileID: 1466758340}
   - {fileID: 133051208}
   - {fileID: 551429009}
-  - {fileID: 135333932}
   m_Father: {fileID: 39410776}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 744}
+  m_SizeDelta: {x: 0, y: 1092}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1786832667
 GameObject:
