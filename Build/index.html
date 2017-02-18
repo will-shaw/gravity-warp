@@ -21,7 +21,7 @@
     TOTAL_MEMORY: 268435456,
     errorhandler: null,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
     compatibilitycheck: null,
-    backgroundColor: "#091A4B",
+    backgroundColor: "#000000",
     splashStyle: "Light",
     dataUrl: "Release/Build.data",
     codeUrl: "Release/Build.js",
@@ -30,6 +30,23 @@
   };
 </script>
 <script src="Release/UnityLoader.js"></script>
+
+<!-- Takes calls from WebGL and posts to server -->
+<script>
+    function post(url) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', url);
+        xhr.send();
+    }
+
+    function PostScore(name, time) {
+        post("http://gravitywarp.ddns.net:3000/scoreboard/post/" + name + '/' + time);
+    }
+
+    function LoadScoreboard() {
+        window.open("http://gravitywarp.ddns.net:3000/scoreboard", "blank");
+    }
+</script>
 
   </body>
 </html>
