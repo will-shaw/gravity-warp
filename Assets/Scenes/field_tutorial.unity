@@ -1195,6 +1195,11 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114505227209852082, guid: e3f30bfd6b9f8de4681baa1553a96802,
+        type: 2}
+      propertyPath: startZoomed
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114918991816049254, guid: e3f30bfd6b9f8de4681baa1553a96802, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e3f30bfd6b9f8de4681baa1553a96802, type: 2}

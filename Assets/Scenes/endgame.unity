@@ -1397,6 +1397,11 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114505227209852082, guid: e3f30bfd6b9f8de4681baa1553a96802,
+        type: 2}
+      propertyPath: startZoomed
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114918991816049254, guid: e3f30bfd6b9f8de4681baa1553a96802, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e3f30bfd6b9f8de4681baa1553a96802, type: 2}
@@ -2391,6 +2396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoomIn: 0
+  zoomOut: 1
 --- !u!68 &718008055
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -2413,7 +2419,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 718008053}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.055944, y: 13.702068, z: 6.90625}
+  m_LocalPosition: {x: -7.055944, y: 17.45, z: 6.90625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2788,6 +2794,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoomIn: 1
+  zoomOut: 0
 --- !u!68 &907347072
 EdgeCollider2D:
   m_ObjectHideFlags: 0

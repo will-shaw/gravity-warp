@@ -20,12 +20,18 @@ public class CameraZoom : MonoBehaviour
     public static int state = -1;
 
     public static bool eventTriggered = false;
-     
+
+    public bool startZoomed = true;
 
     void Start()
     {
         cam = Camera.main.GetComponent<Transform>();
-        Camera.main.orthographicSize = zoomClose;
+        if (startZoomed)
+        {
+            Camera.main.orthographicSize = zoomClose;
+        } else {
+            Camera.main.orthographicSize = zoomFar;            
+        }
     }
     void Update()
     {
