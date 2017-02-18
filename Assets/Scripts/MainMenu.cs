@@ -26,7 +26,9 @@ public class MainMenu : MonoBehaviour
             if (SaveLoadHandler.playerScene != null && SaveLoadHandler.playerScene != "credits")
             {
                 scene = SaveLoadHandler.playerScene;
-            } else {
+            }
+            else
+            {
                 scene = "Story";
             }
         }
@@ -46,13 +48,18 @@ public class MainMenu : MonoBehaviour
 
         if (GetComponent<Button>().active)
         {
+            if (name == "button_left")
+            {
+                Info.gameTime = 0;
+            }
             op.allowSceneActivation = true;
         }
     }
 
     void Load()
     {
-        foreach(UnityEngine.UI.Button button in otherButtons) {
+        foreach (UnityEngine.UI.Button button in otherButtons)
+        {
             button.enabled = false;
         }
 

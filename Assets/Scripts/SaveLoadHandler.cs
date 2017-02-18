@@ -7,7 +7,7 @@ public class SaveLoadHandler : MonoBehaviour
 {
     public static SaveLoadHandler master;
     public static string playerScene;
-     void Awake()
+    void Awake()
     {
         // Basically makes this a singleton, in case we ever instantiate.
         if (master == null)
@@ -27,6 +27,7 @@ public class SaveLoadHandler : MonoBehaviour
         FileStream file = File.Open(Application.persistentDataPath + "/player-progress.dat", FileMode.Create);
         PlayerData data = new PlayerData();
         data.SetLevel(playerScene);
+        data.SetTime(Info.gameTime);
         bf.Serialize(file, data);
         file.Close();
     }
@@ -40,6 +41,7 @@ public class SaveLoadHandler : MonoBehaviour
             PlayerData data = (PlayerData)bf.Deserialize(file);
             file.Close();
             playerScene = data.GetLevel();
+            Info.gameTime = data.GetTime();
         }
     }
 }
@@ -49,14 +51,26 @@ class PlayerData
 {
     string level;
 
+    float time;
+
     public void SetLevel(string l)
     {
         this.level = l;
     }
-    
+
     public string GetLevel()
     {
         return this.level;
+    }
+
+    public void SetTime(float t)
+    {
+        this.time = t;
+    }
+
+    public float GetTime()
+    {
+        return this.time;
     }
 
 }
