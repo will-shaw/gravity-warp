@@ -23,9 +23,14 @@ public class MainMenu : MonoBehaviour
         if (name == "button_resume")
         {
             SaveLoadHandler.Load();
-            if (SaveLoadHandler.playerScene != null)
+            if (SaveLoadHandler.playerScene != null && SaveLoadHandler.playerScene != "credits")
             {
                 scene = SaveLoadHandler.playerScene;
+            }
+            else
+            {
+                scene = "Story";
+                Info.gameTime = 0;
             }
         }
     }
@@ -44,13 +49,18 @@ public class MainMenu : MonoBehaviour
 
         if (GetComponent<Button>().active)
         {
+            if (name == "button_left")
+            {
+                Info.gameTime = 0;
+            }
             op.allowSceneActivation = true;
         }
     }
 
     void Load()
     {
-        foreach(UnityEngine.UI.Button button in otherButtons) {
+        foreach (UnityEngine.UI.Button button in otherButtons)
+        {
             button.enabled = false;
         }
 
