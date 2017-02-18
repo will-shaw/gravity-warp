@@ -15,7 +15,5 @@ Gravity Warp is a 2D puzzle platformer where you must manipulate the direction o
   
 ## Known Issues:  
 ---
-Boxes stop rotating after being glued.  
 Pre placed glue doesn't always spawn in Level 8.  
-Player animation can rapidly switch states while standing next to a box at just the right distance.  
 
