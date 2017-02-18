@@ -23,9 +23,11 @@ public class MainMenu : MonoBehaviour
         if (name == "button_resume")
         {
             SaveLoadHandler.Load();
-            if (SaveLoadHandler.playerScene != null)
+            if (SaveLoadHandler.playerScene != null && SaveLoadHandler.playerScene != "credits")
             {
                 scene = SaveLoadHandler.playerScene;
+            } else {
+                scene = "Story";
             }
         }
     }
