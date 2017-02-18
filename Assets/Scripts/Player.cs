@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Wall" || (other.collider.gameObject.GetComponent<Field>() != null && !other.collider.gameObject.GetComponent<Field>().laser))
+        if (other.gameObject.tag == "Wall" || other.gameObject.GetComponent<BoxCollision>() || (other.collider.gameObject.GetComponent<Field>() != null && !other.collider.gameObject.GetComponent<Field>().laser))
         {
             audioSource.PlayOneShot(am.GetLanding(), Random.Range(40, 100) * 0.01f);
         }

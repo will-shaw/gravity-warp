@@ -2,11 +2,9 @@
 
 public class GravGen : MonoBehaviour
 {
-
     Animator anim;
-
+    public AudioClip explode;
     public Transform door;
-
     bool once;
 
     void Start()
@@ -19,7 +17,8 @@ public class GravGen : MonoBehaviour
         if (other.tag != "Player" && !once)
         {
             anim.SetBool("explode", true);
-            GetComponent<AudioSource>().Play();
+            GetComponent<AudioSource>().Stop();            
+            GetComponent<AudioSource>().PlayOneShot(explode, 10);
             door.GetComponent<Door>().ActivateLink(1);
             GravityWarp.gravity = "D";
             Camera.main.GetComponent<GravityWarp>().gravityControlEnabled = false;
