@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class MenuHandler : MonoBehaviour
 {
     public Transform player;
+    public GameObject mainMenu;
 
     GameObject panel;
     GameObject death;
@@ -32,6 +33,7 @@ public class MenuHandler : MonoBehaviour
     static private KeyCode[] validKeyCodes;
 
     UnityEngine.UI.Button[] buttons;
+    UnityEngine.UI.Button[] mainMenuBtns;
 
     void Awake()
     {
@@ -52,6 +54,11 @@ public class MenuHandler : MonoBehaviour
 
         buttons = pause.GetComponentsInChildren<UnityEngine.UI.Button>();
         pause.transform.FindChild("btnEdit").gameObject.SetActive(false);
+
+        if (mainMenu != null) {
+            mainMenuBtns = mainMenu.GetComponentsInChildren<UnityEngine.UI.Button>();
+            print("buttons set: " + mainMenuBtns.Length);
+        }
 
         pause.transform.FindChild("MusicVolume").GetComponent<UnityEngine.UI.Slider>().value = MusicPlayer.Instance.GetMusicVolume();
     }
@@ -187,6 +194,11 @@ public class MenuHandler : MonoBehaviour
 
     public void ShowOptions()
     {
+        if (mainMenu != null) {
+            foreach (UnityEngine.UI.Button btn in mainMenuBtns) {
+                btn.enabled = false;
+            }
+        }
         isOptions = true;
         setcontrols.SetActive(false);
         panel.SetActive(true);
@@ -230,6 +242,11 @@ public class MenuHandler : MonoBehaviour
         if (isOptions)
         {
             isOptions = false;
+        }
+        if (mainMenu != null) {
+            foreach (UnityEngine.UI.Button btn in mainMenuBtns) {
+                btn.enabled = true;
+            }
         }
         panel.SetActive(false);
         death.SetActive(false);
