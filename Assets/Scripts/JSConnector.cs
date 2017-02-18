@@ -7,6 +7,11 @@ public class JSConnector : MonoBehaviour
     public GameObject nameInput;
     public GameObject btnSubmit;
     public Text nameField;
+    public Text time;
+
+    void Start() {
+        time.text = "Your time:\n" + Info.gameTime;
+    }
 
     public void PostScore()
     {
