@@ -57,7 +57,6 @@ public class MenuHandler : MonoBehaviour
 
         if (mainMenu != null) {
             mainMenuBtns = mainMenu.GetComponentsInChildren<UnityEngine.UI.Button>();
-            print("buttons set: " + mainMenuBtns.Length);
         }
 
         pause.transform.FindChild("MusicVolume").GetComponent<UnityEngine.UI.Slider>().value = MusicPlayer.Instance.GetMusicVolume();

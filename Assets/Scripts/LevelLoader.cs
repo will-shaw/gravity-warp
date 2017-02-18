@@ -20,6 +20,7 @@ public class LevelLoader : MonoBehaviour
             if (setGravity != null) {
                 GravityWarp.gravity = setGravity;
             }
+            Info.gameTime += Camera.main.GetComponent<GravityWarp>().leveltmr;
             Info.checkpoint = new Vector3(0,0,0);
             SaveLoadHandler.playerScene = nextLevel;
             SaveLoadHandler.Save();
