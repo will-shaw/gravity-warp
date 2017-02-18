@@ -1313,11 +1313,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4881851913177790, guid: e3f30bfd6b9f8de4681baa1553a96802, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: 4881851913177790, guid: e3f30bfd6b9f8de4681baa1553a96802, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.06
       objectReference: {fileID: 0}
     - target: {fileID: 4881851913177790, guid: e3f30bfd6b9f8de4681baa1553a96802, type: 2}
       propertyPath: m_LocalPosition.z
