@@ -30,6 +30,7 @@ public class MainMenu : MonoBehaviour
             else
             {
                 scene = "Story";
+                Info.gameTime = 0;
             }
         }
     }
