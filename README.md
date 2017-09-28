@@ -1,6 +1,6 @@
 # Gravity Warp
 
-Gravity Warp is a 2D puzzle platformer where you must manipulate the direction of gravity in order to solve puzzles and advanced through an abandoned research facility.
+Gravity Warp is a 2D puzzle platformer where you must manipulate the direction of gravity in order to solve puzzles and advance through an abandoned research facility.
 ---
 ## Default Controls: (Game controls are customizable).
 
@@ -16,4 +16,5 @@ Gravity Warp is a 2D puzzle platformer where you must manipulate the direction o
 ## Known Issues:  
 ---
 Pre placed glue doesn't always spawn in Level 8.  
+Menu volume control works only on the first level loaded.
 
